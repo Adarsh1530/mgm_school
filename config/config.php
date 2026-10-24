@@ -42,7 +42,9 @@ $isHttps = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
 $protocol = $isHttps ? "https://" : "http://";
 $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
 
-if (php_sapi_name() === 'cli' && empty($_SERVER['HTTP_HOST'])) {
+if (php_sapi_name() === 'cli-server') {
+    $basePath = '';
+} elseif (php_sapi_name() === 'cli' && empty($_SERVER['HTTP_HOST'])) {
     $basePath = '/MGM SCHOOL';
 } else {
     $scriptDir = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? ''));
