@@ -1,0 +1,100 @@
+{
+  "id": 15979,
+  "date": "2026-07-27T12:53:37",
+  "date_gmt": "2026-07-27T12:53:37",
+  "guid": {
+    "rendered": "https://mgm-school.nbtksa.in/?page_id=15979"
+  },
+  "modified": "2026-07-27T12:54:46",
+  "modified_gmt": "2026-07-27T12:54:46",
+  "slug": "pta",
+  "status": "publish",
+  "type": "page",
+  "link": "https://mgm-school.nbtksa.in/pta/",
+  "title": {
+    "rendered": "PTA"
+  },
+  "content": {
+    "rendered": "\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"15979\" class=\"elementor elementor-15979\" data-elementor-post-type=\"page\">\n\t\t\t\t<div class=\"elementor-element elementor-element-5273ec4 e-flex e-con-boxed e-con e-parent\" data-id=\"5273ec4\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t<div class=\"elementor-element elementor-element-a02afb9 elementor-widget elementor-widget-image\" data-id=\"a02afb9\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image.default\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img fetchpriority=\"high\" decoding=\"async\" width=\"640\" height=\"426\" src=\"https://mgm-school.nbtksa.in/wp-content/uploads/2026/07/2149220327.jpg\" class=\"attachment-large size-large wp-image-15981\" alt=\"\" />\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-9167be2 elementor-widget elementor-widget-text-editor\" data-id=\"9167be2\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t\t\t\t\t\t<main role=\"main\"><div class=\"container\"><div class=\"row sa-row\"><div class=\"col-sm sa-col\"><p>M G M Model School is a community school. So a strong PTA is an inevitable feature. The school gives due importance to the PTA meetings. The PTA works on three levels – (1) Class room PTA, (2) PTA class representative – Executive meetings and (3) PTA Executive meetings. The PTA Class representative – Executive meeting has been converted into the General body. When the parents of nearly 3000 students participate in the General body meetings, it is natural that all of them cannot voice their opinions or complaints here. Hence it was decided to elect a class representative and an Executive member from each class. These elected members collect the suggestions, opinions and complaints from the other parents of the class they represent and present them at the PTA Executive meetings held on the second Saturday of each month. The class representatives are the chairpersons of the class room PTA meeting held each term. The class representatives and Executive members together elect the PTA President and PTA Vice President. The PTA Secretary, is elected by the teaching staff and PTA members from among the senior teachers.</p></div></div></div></main>\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t",
+    "protected": false
+  },
+  "excerpt": {
+    "rendered": "<p>M G M Model School is a community school. So a strong PTA is an inevitable feature. The school gives [&hellip;]</p>\n",
+    "protected": false
+  },
+  "author": 1,
+  "featured_media": 0,
+  "parent": 0,
+  "menu_order": 0,
+  "comment_status": "closed",
+  "ping_status": "closed",
+  "template": "elementor_header_footer",
+  "meta": {
+    "footnotes": ""
+  },
+  "class_list": [
+    "post-15979",
+    "page",
+    "type-page",
+    "status-publish",
+    "hentry"
+  ],
+  "_links": {
+    "self": [
+      {
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/pages/15979",
+        "targetHints": {
+          "allow": [
+            "GET"
+          ]
+        }
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/pages"
+      }
+    ],
+    "about": [
+      {
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/types/page"
+      }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/users/1"
+      }
+    ],
+    "replies": [
+      {
+        "embeddable": true,
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/comments?post=15979"
+      }
+    ],
+    "version-history": [
+      {
+        "count": 4,
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/pages/15979/revisions"
+      }
+    ],
+    "predecessor-version": [
+      {
+        "id": 15984,
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/pages/15979/revisions/15984"
+      }
+    ],
+    "wp:attachment": [
+      {
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/media?parent=15979"
+      }
+    ],
+    "curies": [
+      {
+        "name": "wp",
+        "href": "https://api.w.org/{rel}",
+        "templated": true
+      }
+    ]
+  }
+}

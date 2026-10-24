@@ -1,0 +1,27 @@
+/*!
+Theme Name: Acadia
+Theme URI: https://wp.themepure.net/acadia/
+Author: Theme_Pure
+Author URI: https://themeforest.net/user/theme_pure/
+Description: Acadia - University & Online Course WordPress Theme
+Version: 3.2.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: acadia
+Tested up to: 6.9
+Requires PHP: 7.4 or later
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+body.single-lesson.tutor-lms .breadcrumb__area,
+body.single-lesson.tutor-lms footer {
+    display: none !important;
+}
+
+html,
+body.learnpress-page {
+    overflow: initial !important;
+}

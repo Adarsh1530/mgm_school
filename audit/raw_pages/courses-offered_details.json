@@ -1,0 +1,303 @@
+{
+  "title": "Courses Offered – MGM School",
+  "h1": "Courses Offered",
+  "breadcrumb": "",
+  "bannerBg": "url(\"https://mgm-school.nbtksa.in/wp-content/uploads/2024/08/breadcrumb-bg.jpg\")",
+  "tables": [
+    {
+      "index": 0,
+      "headers": [
+        "Search",
+        "Classes",
+        "Subjects taught"
+      ],
+      "rows": [
+        [
+          {
+            "text": "Search",
+            "html": "<form class=\"form-inline\"><div class=\"form-group footable-filtering-search\"><label class=\"sr-only\">Search</label><div class=\"input-group\"><input type=\"text\" class=\"form-control\" placeholder=\"Search\" aria-label=\"Search table\" spellcheck=\"false\" autocorrect=\"off\" autocapitalize=\"off\"><div class=\"input-group-btn\"><button type=\"submit\" class=\"btn btn-primary\" aria-label=\"Search\" title=\"Search\" value=\"Search\"><span class=\"fooicon fooicon-search\"></span></button><button type=\"button\" class=\"btn btn-default dropdown-toggle\" aria-label=\"Search in\" value=\"Search in\"><span class=\"caret\"></span></button><ul class=\"dropdown-menu dropdown-menu-right\" role=\"group\" aria-labelledby=\"ninja_drop_down_id_footable_15963\"><li class=\"dropdown-header\" id=\"ninja_drop_down_id_footable_15963\">Search in</li><li><a class=\"checkbox\"><label><input type=\"checkbox\" checked=\"checked\" spellcheck=\"false\" autocorrect=\"off\" autocapitalize=\"off\">Classes</label></a></li><li><a class=\"checkbox\"><label><input type=\"checkbox\" checked=\"checked\" spellcheck=\"false\" autocorrect=\"off\" autocapitalize=\"off\">Subjects taught </label></a></li></ul></div></div></div></form>",
+            "link": null
+          }
+        ],
+        [
+          {
+            "text": "Classes",
+            "html": "Classes<span class=\"fooicon fooicon-sort\"></span>",
+            "link": null
+          },
+          {
+            "text": "Subjects taught",
+            "html": "Subjects taught <span class=\"fooicon fooicon-sort\"></span>",
+            "link": null
+          }
+        ],
+        [
+          {
+            "text": "I - V",
+            "html": "I - V",
+            "link": null
+          },
+          {
+            "text": "English, Hindi, Malayalam, Maths, E.V.S, IT, Music, Dance, Drawing, Chess, Karate, Painting, Culinary, Swimming, Robotics(from grade 3 onwards), Health & Physical Education, Yoga and Abacus.",
+            "html": "English, Hindi, Malayalam, Maths, E.V.S, IT, Music, Dance, Drawing, Chess, Karate, Painting, Culinary, Swimming, Robotics(from grade 3 onwards), Health &amp; Physical Education, Yoga and Abacus.",
+            "link": null
+          }
+        ],
+        [
+          {
+            "text": "VI - VIII",
+            "html": "VI - VIII",
+            "link": null
+          },
+          {
+            "text": "English, Hindi, Malayalam, Maths, Science, Social Science, AI, Health & Physical Education, Art Education and Life Skills, Karate, Chess, Yoga",
+            "html": "English, Hindi, Malayalam, Maths, Science, Social Science, AI, Health &amp; Physical Education, Art Education and Life Skills, Karate, Chess, Yoga",
+            "link": null
+          }
+        ],
+        [
+          {
+            "text": "IX - X",
+            "html": "IX - X",
+            "link": null
+          },
+          {
+            "text": "English, Hindi, Malayalam, Maths, Science & Technology, Social Science, AI. Health & Physical Education, Work Experience and Life Skills",
+            "html": "English, Hindi, Malayalam, Maths, Science &amp; Technology, Social Science, AI. Health &amp; Physical Education, Work Experience and Life Skills",
+            "link": null
+          }
+        ],
+        [
+          {
+            "text": "XI – XII",
+            "html": "XI – XII",
+            "link": null
+          },
+          {
+            "text": "Group I - English, Physics, Chemistry, Biology, Mathematics",
+            "html": "Group I -  English, Physics, Chemistry, Biology, Mathematics",
+            "link": null
+          }
+        ],
+        [
+          {
+            "text": "XI – XII",
+            "html": "XI – XII",
+            "link": null
+          },
+          {
+            "text": "Group II - English, Physics, Chemistry, Mathematics, Computer Science",
+            "html": "Group II - English, Physics, Chemistry, Mathematics, Computer Science",
+            "link": null
+          }
+        ],
+        [
+          {
+            "text": "XI – XII",
+            "html": "XI – XII",
+            "link": null
+          },
+          {
+            "text": "Group III - English, Physics, Chemistry, Biology, Informatics Practices",
+            "html": "Group III - English, Physics, Chemistry, Biology, Informatics Practices",
+            "link": null
+          }
+        ],
+        [
+          {
+            "text": "XI – XII",
+            "html": "XI – XII",
+            "link": null
+          },
+          {
+            "text": "Group IV - English, Physics, Chemistry, Biology, Malayalam",
+            "html": "Group IV -  English, Physics, Chemistry, Biology, Malayalam",
+            "link": null
+          }
+        ],
+        [
+          {
+            "text": "XI – XII",
+            "html": "XI – XII",
+            "link": null
+          },
+          {
+            "text": "Group V - English, Physics, Chemistry, Biology, Psychology",
+            "html": "Group V - English, Physics, Chemistry, Biology, Psychology",
+            "link": null
+          }
+        ],
+        [
+          {
+            "text": "XI – XII",
+            "html": "XI – XII",
+            "link": null
+          },
+          {
+            "text": "Group VI - English, Accountancy, Business Studies, Economics, Informatics Practices",
+            "html": "Group VI - English, Accountancy, Business Studies, Economics, Informatics Practices",
+            "link": null
+          }
+        ],
+        [
+          {
+            "text": "XI – XII",
+            "html": "XI – XII",
+            "link": null
+          },
+          {
+            "text": "Group VII - English, Accountancy, Business Studies, Economics, Mathematics",
+            "html": "Group VII - English, Accountancy, Business Studies, Economics, Mathematics",
+            "link": null
+          }
+        ],
+        [
+          {
+            "text": "XI – XII",
+            "html": "XI – XII",
+            "link": null
+          },
+          {
+            "text": "Group VIII - English, Accountancy, Business Studies, Economics, Malayalam",
+            "html": "Group VIII - English, Accountancy, Business Studies, Economics, Malayalam",
+            "link": null
+          }
+        ],
+        [
+          {
+            "text": "XI – XII",
+            "html": "XI – XII",
+            "link": null
+          },
+          {
+            "text": "Group IX - English, History, Geography, Economics, Informatics Practices",
+            "html": "Group IX - English, History, Geography, Economics, Informatics Practices",
+            "link": null
+          }
+        ],
+        [
+          {
+            "text": "XI – XII",
+            "html": "XI – XII",
+            "link": null
+          },
+          {
+            "text": "Group X - English, History, Geography, Economics, Mathematics",
+            "html": "Group X - English, History, Geography, Economics, Mathematics",
+            "link": null
+          }
+        ],
+        [
+          {
+            "text": "XI – XII",
+            "html": "XI – XII",
+            "link": null
+          },
+          {
+            "text": "Group XI - English, History, Geography, Economics, Malayalam",
+            "html": "Group XI - English, History, Geography, Economics, Malayalam",
+            "link": null
+          }
+        ],
+        [
+          {
+            "text": "XI – XII",
+            "html": "XI – XII",
+            "link": null
+          },
+          {
+            "text": "Group XII - English, History, Geography, Economics, Psychology",
+            "html": "Group XII - English, History, Geography, Economics, Psychology",
+            "link": null
+          }
+        ]
+      ]
+    }
+  ],
+  "contentImages": [
+    {
+      "src": "https://mgm-school.nbtksa.in/wp-content/uploads/2024/07/1733381285.jpg",
+      "alt": "",
+      "width": 376,
+      "height": 397,
+      "class": ""
+    },
+    {
+      "src": "https://mgm-school.nbtksa.in/wp-content/uploads/2024/09/about-thumb-2.png",
+      "alt": "",
+      "width": 360,
+      "height": 528,
+      "class": "attachment-full size-full wp-image-10615"
+    },
+    {
+      "src": "https://mgm-school.nbtksa.in/wp-content/uploads/2024/09/about-shape-1.png",
+      "alt": "",
+      "width": 180,
+      "height": 223,
+      "class": "attachment-full size-full wp-image-10616"
+    },
+    {
+      "src": "https://mgm-school.nbtksa.in/wp-content/uploads/2024/09/about-shape-2.png",
+      "alt": "",
+      "width": 23,
+      "height": 70,
+      "class": "attachment-full size-full wp-image-10617"
+    },
+    {
+      "src": "https://mgm-school.nbtksa.in/wp-content/uploads/2024/09/about-thumb-1-2.jpg",
+      "alt": "",
+      "width": 316,
+      "height": 500,
+      "class": "attachment-full size-full wp-image-10618"
+    },
+    {
+      "src": "https://mgm-school.nbtksa.in/wp-content/uploads/2024/07/cropped-1733381285-removebg-preview.png",
+      "alt": "",
+      "width": 512,
+      "height": 512,
+      "class": "attachment-full size-full wp-image-15765"
+    }
+  ],
+  "docLinks": [],
+  "bodyStyles": {
+    "fontFamily": "Outfit, sans-serif",
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "lineHeight": "26px",
+    "color": "rgb(87, 89, 95)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "margin": "0px",
+    "padding": "0px"
+  },
+  "h1Styles": {
+    "fontFamily": "Outfit, sans-serif",
+    "fontSize": "56px",
+    "fontWeight": "600",
+    "lineHeight": "67.2px",
+    "color": "rgb(3, 31, 66)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "margin": "0px",
+    "padding": "0px"
+  },
+  "pStyles": {
+    "fontFamily": "Outfit, sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "26px",
+    "color": "rgb(87, 89, 95)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "margin": "0px 0px 15px",
+    "padding": "0px"
+  },
+  "aStyles": {
+    "fontFamily": "Outfit, sans-serif",
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "lineHeight": "26px",
+    "color": "rgb(87, 89, 95)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "margin": "0px",
+    "padding": "0px"
+  },
+  "mainTextExcerpt": "Home About Us Academics Activities Mandatory Disclosure Contact\nWelcome To..!\n\nM.G.M Model School\n\nHome\nAbout Us\nAcademics\nActivities\nMandatory Disclosure\nContact\nCONTACT US\n+ 04702602193\n+918891509590\nMgmmodelschools@Gmail.Com\nMgmmodelschool@Rediffmail.Com\nMGM Model School, Ayiroor, Varkala 695310\nFOLLOW US\n Courses Offered\nCourses Offered\n\nHere is the same content with only minor corrections for punctuation and consistency:\n\nOur school, following the NCERT syllabus, prepares students for the A"
+}

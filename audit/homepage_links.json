@@ -1,0 +1,576 @@
+[
+  {
+    "text": "MGM Model School, Ayiroor, Varkala",
+    "href": "tel:0123456789",
+    "classes": "",
+    "parentTag": "LI",
+    "parentClass": "elementor-icon-list-item elementor-inline-item"
+  },
+  {
+    "text": "04702602193",
+    "href": "tel:0123456789",
+    "classes": "",
+    "parentTag": "LI",
+    "parentClass": "elementor-icon-list-item elementor-inline-item"
+  },
+  {
+    "text": "Admission",
+    "href": "https://mgm-school.nbtksa.in/",
+    "classes": " tp-el-footer-link-item",
+    "parentTag": "LI",
+    "parentClass": ""
+  },
+  {
+    "text": "Login",
+    "href": "https://mgm-school.nbtksa.in/",
+    "classes": " tp-el-footer-link-item",
+    "parentTag": "LI",
+    "parentClass": ""
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/",
+    "classes": "",
+    "parentTag": "DIV",
+    "parentClass": "tp-header-logo-1 tp-el-logo"
+  },
+  {
+    "text": "Home",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "nav-links",
+    "parentTag": "LI",
+    "parentClass": "menu-item menu-item-type-custom menu-item-object-custom menu-item-15731 nav-item"
+  },
+  {
+    "text": "About Us",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "nav-links",
+    "parentTag": "LI",
+    "parentClass": "menu-item menu-item-type-custom menu-item-object-custom menu-item-15726 nav-item"
+  },
+  {
+    "text": "Academics",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "nav-links",
+    "parentTag": "LI",
+    "parentClass": "menu-item menu-item-type-custom menu-item-object-custom menu-item-15727 nav-item"
+  },
+  {
+    "text": "Activities",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "nav-links",
+    "parentTag": "LI",
+    "parentClass": "menu-item menu-item-type-custom menu-item-object-custom menu-item-15728 nav-item"
+  },
+  {
+    "text": "Mandatory Disclosure",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "nav-links",
+    "parentTag": "LI",
+    "parentClass": "menu-item menu-item-type-custom menu-item-object-custom menu-item-15729 nav-item"
+  },
+  {
+    "text": "Contact",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "nav-links",
+    "parentTag": "LI",
+    "parentClass": "menu-item menu-item-type-custom menu-item-object-custom menu-item-15732 nav-item"
+  },
+  {
+    "text": "Apply Now",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": " tp-el-btn",
+    "parentTag": "DIV",
+    "parentClass": "tp-header-btn d-none d-md-block ml-30"
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/",
+    "classes": "",
+    "parentTag": "DIV",
+    "parentClass": "offcanvas__logo logo tp-el-off-logo"
+  },
+  {
+    "text": "Home",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "elementor-item elementor-item-anchor",
+    "parentTag": "LI",
+    "parentClass": "menu-item menu-item-type-custom menu-item-object-custom menu-item-15731"
+  },
+  {
+    "text": "About Us",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "elementor-item elementor-item-anchor",
+    "parentTag": "LI",
+    "parentClass": "menu-item menu-item-type-custom menu-item-object-custom menu-item-15726"
+  },
+  {
+    "text": "Academics",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "elementor-item elementor-item-anchor",
+    "parentTag": "LI",
+    "parentClass": "menu-item menu-item-type-custom menu-item-object-custom menu-item-15727"
+  },
+  {
+    "text": "Activities",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "elementor-item elementor-item-anchor",
+    "parentTag": "LI",
+    "parentClass": "menu-item menu-item-type-custom menu-item-object-custom menu-item-15728"
+  },
+  {
+    "text": "Mandatory Disclosure",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "elementor-item elementor-item-anchor",
+    "parentTag": "LI",
+    "parentClass": "menu-item menu-item-type-custom menu-item-object-custom menu-item-15729"
+  },
+  {
+    "text": "Contact",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "elementor-item elementor-item-anchor",
+    "parentTag": "LI",
+    "parentClass": "menu-item menu-item-type-custom menu-item-object-custom menu-item-15732"
+  },
+  {
+    "text": "Home",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "elementor-item elementor-item-anchor",
+    "parentTag": "LI",
+    "parentClass": "menu-item menu-item-type-custom menu-item-object-custom menu-item-15731"
+  },
+  {
+    "text": "About Us",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "elementor-item elementor-item-anchor",
+    "parentTag": "LI",
+    "parentClass": "menu-item menu-item-type-custom menu-item-object-custom menu-item-15726"
+  },
+  {
+    "text": "Academics",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "elementor-item elementor-item-anchor",
+    "parentTag": "LI",
+    "parentClass": "menu-item menu-item-type-custom menu-item-object-custom menu-item-15727"
+  },
+  {
+    "text": "Activities",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "elementor-item elementor-item-anchor",
+    "parentTag": "LI",
+    "parentClass": "menu-item menu-item-type-custom menu-item-object-custom menu-item-15728"
+  },
+  {
+    "text": "Mandatory Disclosure",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "elementor-item elementor-item-anchor",
+    "parentTag": "LI",
+    "parentClass": "menu-item menu-item-type-custom menu-item-object-custom menu-item-15729"
+  },
+  {
+    "text": "Contact",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "elementor-item elementor-item-anchor",
+    "parentTag": "LI",
+    "parentClass": "menu-item menu-item-type-custom menu-item-object-custom menu-item-15732"
+  },
+  {
+    "text": "+ 04702602193",
+    "href": "https://mgm-school.nbtksa.in/",
+    "classes": " tp-el-footer-link-item",
+    "parentTag": "LI",
+    "parentClass": ""
+  },
+  {
+    "text": "+918891509590",
+    "href": "http://+918891509590/",
+    "classes": " tp-el-footer-link-item",
+    "parentTag": "LI",
+    "parentClass": ""
+  },
+  {
+    "text": "Mgmmodelschools@Gmail.Com",
+    "href": "mailto:mgmmodelschools@gmail.com",
+    "classes": " tp-el-footer-link-item",
+    "parentTag": "LI",
+    "parentClass": ""
+  },
+  {
+    "text": "Mgmmodelschool@Rediffmail.Com",
+    "href": "mailto:%20mgmmodelschool@rediffmail.com",
+    "classes": " tp-el-footer-link-item",
+    "parentTag": "LI",
+    "parentClass": ""
+  },
+  {
+    "text": "MGM Model School, Ayiroor, Varkala 695310",
+    "href": "mailto:%20mgmmodelschool@rediffmail.com",
+    "classes": " tp-el-footer-link-item",
+    "parentTag": "LI",
+    "parentClass": ""
+  },
+  {
+    "text": "Learn More About Our Campus",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "tp-btn tp-btn",
+    "parentTag": "DIV",
+    "parentClass": "tp-hero-btn"
+  },
+  {
+    "text": "Explore Our Courses",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "tp-btn tp-btn",
+    "parentTag": "DIV",
+    "parentClass": "tp-hero-btn"
+  },
+  {
+    "text": "Learn More About Our Campus",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "tp-btn tp-btn",
+    "parentTag": "DIV",
+    "parentClass": "tp-hero-btn"
+  },
+  {
+    "text": "Explore Our Courses",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "tp-btn tp-btn",
+    "parentTag": "DIV",
+    "parentClass": "tp-hero-btn"
+  },
+  {
+    "text": "Why study at MGM Model School",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "",
+    "parentTag": "H4",
+    "parentClass": "tp-service-title tp-el-title"
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "tp-el-service-btn tp-el-service-btn",
+    "parentTag": "DIV",
+    "parentClass": "tp-service-btn"
+  },
+  {
+    "text": "Certification\nGuarantee",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "",
+    "parentTag": "H4",
+    "parentClass": "tp-service-title tp-el-title"
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "tp-el-service-btn tp-el-service-btn",
+    "parentTag": "DIV",
+    "parentClass": "tp-service-btn"
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "",
+    "parentTag": "H4",
+    "parentClass": "tp-service-title tp-el-title"
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "tp-el-service-btn tp-el-service-btn",
+    "parentTag": "DIV",
+    "parentClass": "tp-service-btn"
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "",
+    "parentTag": "H4",
+    "parentClass": "tp-service-title tp-el-title"
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "tp-el-service-btn tp-el-service-btn",
+    "parentTag": "DIV",
+    "parentClass": "tp-service-btn"
+  },
+  {
+    "text": "Best School",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "tp-el-theme-btn d-inline-flex align-items-centertp-acadia-btn-line tp-el-btn",
+    "parentTag": "DIV",
+    "parentClass": "tp-btn-wrapper tp-program-all"
+  },
+  {
+    "text": "Know More",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "tp-el-theme-btn d-inline-flex align-items-center tp-btn-round inline tp-el-btn",
+    "parentTag": "DIV",
+    "parentClass": "tp-btn-wrapper "
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "",
+    "parentTag": "H2",
+    "parentClass": "tp-program-title tp-el-academic-title tp-program-title tp-el-academic-title tp-program-title tp-el-academic-title"
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "tp-el-academic-btn",
+    "parentTag": "DIV",
+    "parentClass": "tp-program-btn"
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "",
+    "parentTag": "H2",
+    "parentClass": "tp-program-title tp-el-academic-title tp-program-title tp-el-academic-title tp-program-title tp-el-academic-title tp-program-title tp-el-academic-title"
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "tp-el-academic-btn",
+    "parentTag": "DIV",
+    "parentClass": "tp-program-btn"
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "",
+    "parentTag": "H2",
+    "parentClass": "tp-program-title tp-el-academic-title"
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "tp-el-academic-btn",
+    "parentTag": "DIV",
+    "parentClass": "tp-program-btn"
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "",
+    "parentTag": "H2",
+    "parentClass": "tp-program-title tp-el-academic-title tp-program-title tp-el-academic-title"
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "tp-el-academic-btn",
+    "parentTag": "DIV",
+    "parentClass": "tp-program-btn"
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "",
+    "parentTag": "H2",
+    "parentClass": "tp-program-title tp-el-academic-title tp-program-title tp-el-academic-title tp-program-title tp-el-academic-title"
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "tp-el-academic-btn",
+    "parentTag": "DIV",
+    "parentClass": "tp-program-btn"
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "",
+    "parentTag": "H2",
+    "parentClass": "tp-program-title tp-el-academic-title tp-program-title tp-el-academic-title tp-program-title tp-el-academic-title tp-program-title tp-el-academic-title"
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "tp-el-academic-btn",
+    "parentTag": "DIV",
+    "parentClass": "tp-program-btn"
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "",
+    "parentTag": "H2",
+    "parentClass": "tp-program-title tp-el-academic-title"
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "tp-el-academic-btn",
+    "parentTag": "DIV",
+    "parentClass": "tp-program-btn"
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "",
+    "parentTag": "H2",
+    "parentClass": "tp-program-title tp-el-academic-title tp-program-title tp-el-academic-title"
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "tp-el-academic-btn",
+    "parentTag": "DIV",
+    "parentClass": "tp-program-btn"
+  },
+  {
+    "text": "View All",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "tp-el-theme-btn d-inline-flex align-items-centertp-acadia-btn-line tp-el-btn",
+    "parentTag": "DIV",
+    "parentClass": "tp-btn-wrapper tp-program-all"
+  },
+  {
+    "text": "See More Events",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "tp-el-theme-btn d-inline-flex align-items-center tp-btn-round inline tp-el-btn",
+    "parentTag": "DIV",
+    "parentClass": "tp-btn-wrapper "
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/etn/global-education-fall-meeting-for-everyone-2/",
+    "classes": "tp-img-reveal tp-img-reveal-item",
+    "parentTag": "H3",
+    "parentClass": "tp-event-title tp-el-box-title"
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "",
+    "parentTag": "SPAN",
+    "parentClass": ""
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "",
+    "parentTag": "SPAN",
+    "parentClass": ""
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "",
+    "parentTag": "SPAN",
+    "parentClass": ""
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/etn/global-education-fall-meeting-for-everyone-2/",
+    "classes": "",
+    "parentTag": "DIV",
+    "parentClass": "tp-event-arrow text-lg-end"
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/etn/acadia-global-in-education-fair/",
+    "classes": "tp-img-reveal tp-img-reveal-item",
+    "parentTag": "H3",
+    "parentClass": "tp-event-title tp-el-box-title"
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "",
+    "parentTag": "SPAN",
+    "parentClass": ""
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "",
+    "parentTag": "SPAN",
+    "parentClass": ""
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "",
+    "parentTag": "SPAN",
+    "parentClass": ""
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/etn/acadia-global-in-education-fair/",
+    "classes": "",
+    "parentTag": "DIV",
+    "parentClass": "tp-event-arrow text-lg-end"
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/etn/students-success-of-workshop/",
+    "classes": "tp-img-reveal tp-img-reveal-item",
+    "parentTag": "H3",
+    "parentClass": "tp-event-title tp-el-box-title"
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "",
+    "parentTag": "SPAN",
+    "parentClass": ""
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "",
+    "parentTag": "SPAN",
+    "parentClass": ""
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "",
+    "parentTag": "SPAN",
+    "parentClass": ""
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/etn/students-success-of-workshop/",
+    "classes": "",
+    "parentTag": "DIV",
+    "parentClass": "tp-event-arrow text-lg-end"
+  },
+  {
+    "text": "Apply Now",
+    "href": "https://mgm-school.nbtksa.in/#",
+    "classes": "tp-el-theme-btn d-inline-flex align-items-center tp-btn-round inline tp-el-btn",
+    "parentTag": "DIV",
+    "parentClass": "tp-btn-wrapper "
+  },
+  {
+    "text": "",
+    "href": "https://mgm-school.nbtksa.in/acadia/",
+    "classes": "",
+    "parentTag": "DIV",
+    "parentClass": "elementor-element elementor-element-34f4454 elementor-widget elementor-widget-image"
+  },
+  {
+    "text": "8891509590",
+    "href": "tel:%208891509590",
+    "classes": "",
+    "parentTag": "LI",
+    "parentClass": "elementor-icon-list-item"
+  },
+  {
+    "text": "mgmmodelschools@gmail.com",
+    "href": "mailto:sofial@gmail.com",
+    "classes": "",
+    "parentTag": "LI",
+    "parentClass": "elementor-icon-list-item"
+  },
+  {
+    "text": "Contact",
+    "href": "https://mgm-school.nbtksa.in/acadia/contact/",
+    "classes": "",
+    "parentTag": "LI",
+    "parentClass": "elementor-icon-list-item"
+  }
+]

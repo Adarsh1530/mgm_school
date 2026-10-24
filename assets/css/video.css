@@ -1,0 +1,119 @@
+/*  8.1 Video css
+/*----------------------------------------*/
+@media only screen and (min-width: 768px) and (max-width: 991px), only screen and (max-width: 767px) {
+  .tp-video-wrap {
+    padding-top: 120px;
+    padding-bottom: 120px;
+    justify-content: center;
+  }
+}
+.tp-video-icon a {
+  display: inline-block;
+  margin-bottom: 50px;
+}
+.tp-video-icon a span {
+  display: inline-block;
+  color: var(--tp-theme-primary);
+  height: 74px;
+  width: 74px;
+  line-height: 74px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: var(--tp-common-white);
+  box-shadow: 0px 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+.tp-video-icon a span svg {
+  display: inline-block;
+  transform: translate(2px, -1px);
+}
+.tp-video-icon p {
+  color: var(--tp-common-white);
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+.tp-video-hover {
+  position: relative;
+}
+.tp-video-hover:hover .tp-m-play-inner {
+  -webkit-clip-path: circle(50% at 50% 50%);
+  clip-path: circle(50% at 50% 50%);
+}
+.tp-video-hover:hover .tp-circle-svg {
+  animation-play-state: running;
+}
+.tp-video-inner-bg {
+  height: 760px;
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.tp-video-5-bg {
+  height: 668px;
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.tp-video-5-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tp-video-button .tp-m-play {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  line-height: 1;
+}
+
+.tp-video-button .tp-m-play-inner {
+  position: relative;
+  width: 152px;
+  height: 152px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #F0EC51;
+  -webkit-clip-path: circle(37% at 50% 50%);
+  clip-path: circle(37% at 50% 50%);
+  transition: -webkit-clip-path 0.35s ease;
+  transition: clip-path 0.35s ease;
+  transition: clip-path 0.35s ease, -webkit-clip-path 0.35s ease;
+}
+
+.tp-video-button .tp-m-play-inner.campus {
+  background-color: var(--tp-common-white);
+}
+
+.tp-video-button .tp-m-play-inner > .tp-svg--play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tp-video-button .tp-circle-text {
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.tp-video-button .tp-circle-svg {
+  transform: rotate(-45deg);
+  animation: tp-rotate-video-text 5s linear infinite;
+  animation-play-state: paused;
+}
+
+/*----------------------------------------*/

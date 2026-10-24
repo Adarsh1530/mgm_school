@@ -1,0 +1,100 @@
+{
+  "id": 15992,
+  "date": "2026-07-27T14:48:17",
+  "date_gmt": "2026-07-27T14:48:17",
+  "guid": {
+    "rendered": "https://mgm-school.nbtksa.in/?page_id=15992"
+  },
+  "modified": "2026-07-27T14:49:52",
+  "modified_gmt": "2026-07-27T14:49:52",
+  "slug": "alumni",
+  "status": "publish",
+  "type": "page",
+  "link": "https://mgm-school.nbtksa.in/alumni/",
+  "title": {
+    "rendered": "Alumni"
+  },
+  "content": {
+    "rendered": "\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"15992\" class=\"elementor elementor-15992\" data-elementor-post-type=\"page\">\n\t\t\t\t<div class=\"elementor-element elementor-element-5273ec4 e-flex e-con-boxed e-con e-parent\" data-id=\"5273ec4\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t<div class=\"elementor-element elementor-element-70902a8 e-con-full e-flex e-con e-child\" data-id=\"70902a8\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t<div class=\"elementor-element elementor-element-9167be2 elementor-widget elementor-widget-text-editor\" data-id=\"9167be2\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t\t\t\t\t\tAlumni Association of M.G.M. Model School is very active. It holds its annual meeting on December 24th every year in the school auditorium. The chief objective of the association is to keep in touch with our former students and solicit their sincere co-operation and suggestions to pool ideas for the upliftment of the school as a Centre of Excellence. The Alumni Association has a record of the present status and whereabouts of a majority of the students who have already passed out from the school. Once in a while the students of a same batch meet in the school and conduct a get together. Such reunions are helpful to the school as they conduct useful programmes like career guidance, social work, workshops etc.\n\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-041c336 elementor-align-center elementor-widget elementor-widget-button\" data-id=\"041c336\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"button.default\">\n\t\t\t\t\t\t\t\t\t\t<a class=\"elementor-button elementor-button-link elementor-size-sm\" href=\"https://forms.gle/t8gUMSj7oQhYYyY67\">\n\t\t\t\t\t\t<span class=\"elementor-button-content-wrapper\">\n\t\t\t\t\t\t\t\t\t<span class=\"elementor-button-text\">Alumni Registration</span>\n\t\t\t\t\t</span>\n\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t",
+    "protected": false
+  },
+  "excerpt": {
+    "rendered": "<p>Alumni Association of M.G.M. Model School is very active. It holds its annual meeting on December 24th every year in [&hellip;]</p>\n",
+    "protected": false
+  },
+  "author": 1,
+  "featured_media": 0,
+  "parent": 0,
+  "menu_order": 0,
+  "comment_status": "closed",
+  "ping_status": "closed",
+  "template": "elementor_header_footer",
+  "meta": {
+    "footnotes": ""
+  },
+  "class_list": [
+    "post-15992",
+    "page",
+    "type-page",
+    "status-publish",
+    "hentry"
+  ],
+  "_links": {
+    "self": [
+      {
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/pages/15992",
+        "targetHints": {
+          "allow": [
+            "GET"
+          ]
+        }
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/pages"
+      }
+    ],
+    "about": [
+      {
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/types/page"
+      }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/users/1"
+      }
+    ],
+    "replies": [
+      {
+        "embeddable": true,
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/comments?post=15992"
+      }
+    ],
+    "version-history": [
+      {
+        "count": 5,
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/pages/15992/revisions"
+      }
+    ],
+    "predecessor-version": [
+      {
+        "id": 15997,
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/pages/15992/revisions/15997"
+      }
+    ],
+    "wp:attachment": [
+      {
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/media?parent=15992"
+      }
+    ],
+    "curies": [
+      {
+        "name": "wp",
+        "href": "https://api.w.org/{rel}",
+        "templated": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "id": 16004,
+  "date": "2026-07-27T15:01:43",
+  "date_gmt": "2026-07-27T15:01:43",
+  "guid": {
+    "rendered": "https://mgm-school.nbtksa.in/?page_id=16004"
+  },
+  "modified": "2026-07-27T15:04:26",
+  "modified_gmt": "2026-07-27T15:04:26",
+  "slug": "attendance",
+  "status": "publish",
+  "type": "page",
+  "link": "https://mgm-school.nbtksa.in/attendance/",
+  "title": {
+    "rendered": "Attendance"
+  },
+  "content": {
+    "rendered": "\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"16004\" class=\"elementor elementor-16004\" data-elementor-post-type=\"page\">\n\t\t\t\t<div class=\"elementor-element elementor-element-5273ec4 e-flex e-con-boxed e-con e-parent\" data-id=\"5273ec4\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t<div class=\"elementor-element elementor-element-70902a8 e-con-full e-flex e-con e-child\" data-id=\"70902a8\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t<div class=\"elementor-element elementor-element-7fc1657 elementor-widget elementor-widget-image\" data-id=\"7fc1657\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image.default\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img fetchpriority=\"high\" decoding=\"async\" width=\"640\" height=\"427\" src=\"https://mgm-school.nbtksa.in/wp-content/uploads/2026/07/16628.jpg\" class=\"attachment-large size-large wp-image-16006\" alt=\"\" />\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t<h2 data-interaction-id=\"cad7f5b\" class=\"e-cad7f5b-4376cff e-heading-base e-default-h2\">Attendance</h2>\n\t\t\t\t<div class=\"elementor-element elementor-element-b9851de elementor-widget elementor-widget-text-editor\" data-id=\"b9851de\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t\t\t\t\t\tEvery student must have compulsory 75% attendance in an academic session.\nMedical certificate or other necessary documents must be produced to the school\nauthorities for the leave already availed Leave shall be granted only when it is\nabsolutely necessary or on medical grounds. Leave should be marked on the\nstipulated page in the Diary. Student shall not be allowed to attend the class\nwithout leave application on the day he/she presents himself/herself after leave.\nStudents with perfect attendance (100%) will be honoured with certificates on the\nConvocation day\t\t\t\t\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-3a448bf elementor-widget elementor-widget-spacer\" data-id=\"3a448bf\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"spacer.default\">\n\t\t\t\t\t\t\t<div class=\"elementor-spacer\">\n\t\t\t<div class=\"elementor-spacer-inner\"></div>\n\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t",
+    "protected": false
+  },
+  "excerpt": {
+    "rendered": "<p>Attendance Every student must have compulsory 75% attendance in an academic session. Medical certificate or other necessary documents must be [&hellip;]</p>\n",
+    "protected": false
+  },
+  "author": 1,
+  "featured_media": 0,
+  "parent": 0,
+  "menu_order": 0,
+  "comment_status": "closed",
+  "ping_status": "closed",
+  "template": "elementor_header_footer",
+  "meta": {
+    "footnotes": ""
+  },
+  "class_list": [
+    "post-16004",
+    "page",
+    "type-page",
+    "status-publish",
+    "hentry"
+  ],
+  "_links": {
+    "self": [
+      {
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/pages/16004",
+        "targetHints": {
+          "allow": [
+            "GET"
+          ]
+        }
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/pages"
+      }
+    ],
+    "about": [
+      {
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/types/page"
+      }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/users/1"
+      }
+    ],
+    "replies": [
+      {
+        "embeddable": true,
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/comments?post=16004"
+      }
+    ],
+    "version-history": [
+      {
+        "count": 7,
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/pages/16004/revisions"
+      }
+    ],
+    "predecessor-version": [
+      {
+        "id": 16012,
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/pages/16004/revisions/16012"
+      }
+    ],
+    "wp:attachment": [
+      {
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/media?parent=16004"
+      }
+    ],
+    "curies": [
+      {
+        "name": "wp",
+        "href": "https://api.w.org/{rel}",
+        "templated": true
+      }
+    ]
+  }
+}

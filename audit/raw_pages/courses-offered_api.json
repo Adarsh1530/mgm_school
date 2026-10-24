@@ -1,0 +1,100 @@
+{
+  "id": 15930,
+  "date": "2026-07-17T18:43:51",
+  "date_gmt": "2026-07-17T18:43:51",
+  "guid": {
+    "rendered": "https://mgm-school.nbtksa.in/?page_id=15930"
+  },
+  "modified": "2026-07-17T19:04:19",
+  "modified_gmt": "2026-07-17T19:04:19",
+  "slug": "courses-offered",
+  "status": "publish",
+  "type": "page",
+  "link": "https://mgm-school.nbtksa.in/courses-offered/",
+  "title": {
+    "rendered": "Courses Offered"
+  },
+  "content": {
+    "rendered": "\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"15930\" class=\"elementor elementor-15930\" data-elementor-post-type=\"page\">\n\t\t\t\t<div class=\"elementor-element elementor-element-5273ec4 e-flex e-con-boxed e-con e-parent\" data-id=\"5273ec4\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t<div class=\"elementor-element elementor-element-9167be2 elementor-widget elementor-widget-text-editor\" data-id=\"9167be2\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t\t\t\t\t\t<p>Here is the same content with only minor corrections for punctuation and consistency:</p><blockquote><p>Our school, following the NCERT syllabus, prepares students for the All India Secondary School Examination (AISSE) and the Senior School Certificate Examination (SSCE) conducted by the Central Board of Secondary Education (CBSE).</p><p>The medium of instruction is English, and the curriculum includes:</p></blockquote>\t\t\t\t\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-2519f18 elementor-widget elementor-widget-shortcode\" data-id=\"2519f18\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"shortcode.default\">\n\t\t\t\t\t\t\t<div class=\"elementor-shortcode\"><div id=\"footable_parent_15963\"\n         class=\" footable_parent ninja_table_wrapper loading_ninja_table wp_table_data_press_parent semantic_ui \">\n                <table data-ninja_table_instance=\"ninja_table_instance_0\" data-footable_id=\"15963\" data-filter-delay=\"1000\" aria-label=\"Course Offered\"            id=\"footable_15963\"\n           data-unique_identifier=\"ninja_table_unique_id_4187408312_15963\"\n           class=\" foo-table ninja_footable foo_table_15963 ninja_table_unique_id_4187408312_15963 ui table ninja_search_right nt_type_ajax_table selectable striped vertical_centered footable-paging-right\">\n                <colgroup>\n                            <col class=\"ninja_column_0 \">\n                            <col class=\"ninja_column_1 \">\n                    </colgroup>\n            </table>\n    \n    \n    \n</div>\n</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t<div class=\"elementor-element elementor-element-7a9cfb86 e-con-full e-flex e-con e-parent\" data-id=\"7a9cfb86\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t<div class=\"elementor-element elementor-element-28b505f6 e-flex e-con-boxed e-con e-child\" data-id=\"28b505f6\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t<div class=\"elementor-element elementor-element-6ec5c1f7 e-con-full e-flex e-con e-child\" data-id=\"6ec5c1f7\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t<div class=\"elementor-element elementor-element-538ddc0f elementor-absolute elementor-widget elementor-widget-image\" data-id=\"538ddc0f\" data-element_type=\"widget\" data-e-type=\"widget\" data-settings=\"{&quot;_position&quot;:&quot;absolute&quot;}\" data-widget_type=\"image.default\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img fetchpriority=\"high\" decoding=\"async\" width=\"360\" height=\"528\" src=\"https://mgm-school.nbtksa.in/wp-content/uploads/2024/09/about-thumb-2.png\" class=\"attachment-full size-full wp-image-10615\" alt=\"\" />\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t<div class=\"elementor-element elementor-element-3ca1776d e-con-full tp-about-exprience e-flex e-con e-child\" data-id=\"3ca1776d\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;position&quot;:&quot;absolute&quot;}\">\n\t\t\t\t<div class=\"elementor-element elementor-element-542d6aaf elementor-widget elementor-widget-counter\" data-id=\"542d6aaf\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"counter.default\">\n\t\t\t\t\t\t\t<div class=\"elementor-counter\">\n\t\t\t\t\t\t<div class=\"elementor-counter-number-wrapper\">\n\t\t\t\t<span class=\"elementor-counter-number-prefix\"></span>\n\t\t\t\t<span class=\"elementor-counter-number\" data-duration=\"2000\" data-to-value=\"41\" data-from-value=\"0\" data-delimiter=\",\">0</span>\n\t\t\t\t<span class=\"elementor-counter-number-suffix\"></span>\n\t\t\t</div>\n\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-e6b1673 elementor-widget elementor-widget-heading\" data-id=\"e6b1673\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<p class=\"elementor-heading-title elementor-size-default\">Years of <br> Experience</p>\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-58dfa03b elementor-absolute elementor-hidden-tablet elementor-hidden-mobile_extra elementor-hidden-mobile elementor-widget elementor-widget-image\" data-id=\"58dfa03b\" data-element_type=\"widget\" data-e-type=\"widget\" data-settings=\"{&quot;_position&quot;:&quot;absolute&quot;}\" data-widget_type=\"image.default\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img decoding=\"async\" width=\"180\" height=\"223\" src=\"https://mgm-school.nbtksa.in/wp-content/uploads/2024/09/about-shape-1.png\" class=\"attachment-full size-full wp-image-10616\" alt=\"\" />\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-2a29dd9a elementor-absolute elementor-hidden-tablet elementor-hidden-mobile_extra elementor-hidden-mobile elementor-widget elementor-widget-image\" data-id=\"2a29dd9a\" data-element_type=\"widget\" data-e-type=\"widget\" data-settings=\"{&quot;_position&quot;:&quot;absolute&quot;}\" data-widget_type=\"image.default\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img decoding=\"async\" width=\"23\" height=\"70\" src=\"https://mgm-school.nbtksa.in/wp-content/uploads/2024/09/about-shape-2.png\" class=\"attachment-full size-full wp-image-10617\" alt=\"\" />\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-755f4090 elementor-widget elementor-widget-image\" data-id=\"755f4090\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image.default\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img loading=\"lazy\" decoding=\"async\" width=\"316\" height=\"500\" src=\"https://mgm-school.nbtksa.in/wp-content/uploads/2024/09/about-thumb-1-2.jpg\" class=\"attachment-full size-full wp-image-10618\" alt=\"\" />\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t<div class=\"elementor-element elementor-element-62e6efe6 e-con-full e-flex e-con e-child\" data-id=\"62e6efe6\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t<div class=\"elementor-element elementor-element-1a493e38 elementor-widget elementor-widget-tp-heading\" data-id=\"1a493e38\" data-element_type=\"widget\" data-e-type=\"widget\" data-settings=\"{&quot;tp_anima_type&quot;:&quot;fadeInRight&quot;}\" data-widget_type=\"tp-heading.default\">\n\t\t\t\t<div class=\"elementor-widget-container\">\n\t\t\t\t\t\r\n\t\t\r\n\t\t\t<div class=\"tp-section tp-el-section mb-40 align-box wow fadeInRight\" data-wow-duration=\"1.3s\" data-wow-delay=\"0.3s\">\r\n\r\n\t\t\t\t\r\n\t\t\t\t<h3 class=\"tp-section-title tp-el-acadia-title tp-el-title\">Academic Calendar &amp; Facilities </h3>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t<div class=\"elementor-element elementor-element-3c8b83e4 e-con-full e-flex e-con e-child\" data-id=\"3c8b83e4\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t<div class=\"elementor-element elementor-element-2ac1aa7 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list\" data-id=\"2ac1aa7\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"icon-list.default\">\n\t\t\t\t\t\t\t<ul class=\"elementor-icon-list-items\">\n\t\t\t\t\t\t\t<li class=\"elementor-icon-list-item\">\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"elementor-icon-list-icon\">\n\t\t\t\t\t\t\t<svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-check\" viewBox=\"0 0 512 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z\"></path></svg>\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t\t<span class=\"elementor-icon-list-text\">Week-long breaks during Onam and Christmas, summer vacation in April-May and restricted holidays on public holidays only.</span>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t<li class=\"elementor-icon-list-item\">\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"elementor-icon-list-icon\">\n\t\t\t\t\t\t\t<svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-check\" viewBox=\"0 0 512 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z\"></path></svg>\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t\t<span class=\"elementor-icon-list-text\">Smart classrooms with state-of-the-art technology.</span>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t<li class=\"elementor-icon-list-item\">\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"elementor-icon-list-icon\">\n\t\t\t\t\t\t\t<svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-check\" viewBox=\"0 0 512 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z\"></path></svg>\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t\t<span class=\"elementor-icon-list-text\">Internet browsing facilities for enhanced learning.</span>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t<li class=\"elementor-icon-list-item\">\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"elementor-icon-list-icon\">\n\t\t\t\t\t\t\t<svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-check\" viewBox=\"0 0 512 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z\"></path></svg>\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t\t<span class=\"elementor-icon-list-text\">Well-stocked libraries: one in the Kindergarten section and three digital libraries in Primary, Secondary and Senior Secondary sections.</span>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t<li class=\"elementor-icon-list-item\">\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"elementor-icon-list-icon\">\n\t\t\t\t\t\t\t<svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-check\" viewBox=\"0 0 512 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z\"></path></svg>\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t\t<span class=\"elementor-icon-list-text\">Practical learning tools: 3D Maths Zone, Globe and over 10 labs.</span>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t",
+    "protected": false
+  },
+  "excerpt": {
+    "rendered": "<p>Here is the same content with only minor corrections for punctuation and consistency: Our school, following the NCERT syllabus, prepares [&hellip;]</p>\n",
+    "protected": false
+  },
+  "author": 1,
+  "featured_media": 0,
+  "parent": 0,
+  "menu_order": 0,
+  "comment_status": "closed",
+  "ping_status": "closed",
+  "template": "elementor_header_footer",
+  "meta": {
+    "footnotes": ""
+  },
+  "class_list": [
+    "post-15930",
+    "page",
+    "type-page",
+    "status-publish",
+    "hentry"
+  ],
+  "_links": {
+    "self": [
+      {
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/pages/15930",
+        "targetHints": {
+          "allow": [
+            "GET"
+          ]
+        }
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/pages"
+      }
+    ],
+    "about": [
+      {
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/types/page"
+      }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/users/1"
+      }
+    ],
+    "replies": [
+      {
+        "embeddable": true,
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/comments?post=15930"
+      }
+    ],
+    "version-history": [
+      {
+        "count": 13,
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/pages/15930/revisions"
+      }
+    ],
+    "predecessor-version": [
+      {
+        "id": 15977,
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/pages/15930/revisions/15977"
+      }
+    ],
+    "wp:attachment": [
+      {
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/media?parent=15930"
+      }
+    ],
+    "curies": [
+      {
+        "name": "wp",
+        "href": "https://api.w.org/{rel}",
+        "templated": true
+      }
+    ]
+  }
+}

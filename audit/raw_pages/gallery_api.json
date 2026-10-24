@@ -1,0 +1,100 @@
+{
+  "id": 15937,
+  "date": "2026-07-17T16:51:23",
+  "date_gmt": "2026-07-17T16:51:23",
+  "guid": {
+    "rendered": "https://mgm-school.nbtksa.in/?page_id=15937"
+  },
+  "modified": "2026-07-17T17:10:23",
+  "modified_gmt": "2026-07-17T17:10:23",
+  "slug": "gallery",
+  "status": "publish",
+  "type": "page",
+  "link": "https://mgm-school.nbtksa.in/gallery/",
+  "title": {
+    "rendered": "Gallery"
+  },
+  "content": {
+    "rendered": "\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"15937\" class=\"elementor elementor-15937\" data-elementor-post-type=\"page\">\n\t\t\t\t<div class=\"elementor-element elementor-element-48d4b16 e-con-full e-flex e-con e-parent\" data-id=\"48d4b16\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t<div class=\"elementor-element elementor-element-b420351 e-flex e-con-boxed e-con e-child\" data-id=\"b420351\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t<div class=\"elementor-element elementor-element-08aa68c elementor-widget elementor-widget-tp-heading\" data-id=\"08aa68c\" data-element_type=\"widget\" data-e-type=\"widget\" data-settings=\"{&quot;tp_anima_type&quot;:&quot;fadeInUp&quot;}\" data-widget_type=\"tp-heading.default\">\n\t\t\t\t<div class=\"elementor-widget-container\">\n\t\t\t\t\t\r\n\t\t\r\n\t\t\t<div class=\"tp-section tp-el-section align-box mb-40 wow fadeInUp\" data-wow-duration=\"1.5s\" data-wow-delay=\"0.3s\">\r\n\r\n\t\t\t\t\r\n\t\t\t\t<h2 class=\"tp-section-3-title tp-el-span-image  tp-el-acadia-title tp-hero-2-title tp-el-title\">Gallery </h2>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t<div class=\"elementor-element elementor-element-b24a816 e-con e-atomic-element e-flexbox-base e-default-div e-5dbd71f \" data-id=\"b24a816\" data-element_type=\"e-flexbox\" data-e-type=\"e-flexbox\" data-interaction-id=\"b24a816\">\n    \t\t<div class=\"elementor-element elementor-element-5a1b72d elementor-widget elementor-widget-gallery\" data-id=\"5a1b72d\" data-element_type=\"widget\" data-e-type=\"widget\" data-settings=\"{&quot;lazyload&quot;:&quot;yes&quot;,&quot;gallery_layout&quot;:&quot;grid&quot;,&quot;columns&quot;:4,&quot;columns_tablet&quot;:2,&quot;columns_mobile&quot;:1,&quot;gap&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:10,&quot;sizes&quot;:[]},&quot;gap_widescreen&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;gap_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:10,&quot;sizes&quot;:[]},&quot;gap_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:10,&quot;sizes&quot;:[]},&quot;gap_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:10,&quot;sizes&quot;:[]},&quot;gap_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:10,&quot;sizes&quot;:[]},&quot;gap_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:10,&quot;sizes&quot;:[]},&quot;link_to&quot;:&quot;file&quot;,&quot;aspect_ratio&quot;:&quot;3:2&quot;,&quot;overlay_background&quot;:&quot;yes&quot;,&quot;content_hover_animation&quot;:&quot;fade-in&quot;}\" data-widget_type=\"gallery.default\">\n\t\t\t\t\t\t\t<div class=\"elementor-gallery__container\">\n\t\t\t\t\t\t\t<a class=\"e-gallery-item elementor-gallery-item elementor-animated-content\" href=\"https://mgm-school.nbtksa.in/wp-content/uploads/2026/07/1752478940.jpeg\">\n\t\t\t\t\t<div class=\"e-gallery-image elementor-gallery-item__image\" data-thumbnail=\"https://mgm-school.nbtksa.in/wp-content/uploads/2026/07/1752478940.jpeg\" data-width=\"300\" data-height=\"300\" aria-label=\"\" role=\"img\" ></div>\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"elementor-gallery-item__overlay\"></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t<a class=\"e-gallery-item elementor-gallery-item elementor-animated-content\" href=\"https://mgm-school.nbtksa.in/wp-content/uploads/2026/07/1756461341.jpg\">\n\t\t\t\t\t<div class=\"e-gallery-image elementor-gallery-item__image\" data-thumbnail=\"https://mgm-school.nbtksa.in/wp-content/uploads/2026/07/1756461341.jpg\" data-width=\"300\" data-height=\"225\" aria-label=\"\" role=\"img\" ></div>\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"elementor-gallery-item__overlay\"></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t<a class=\"e-gallery-item elementor-gallery-item elementor-animated-content\" href=\"https://mgm-school.nbtksa.in/wp-content/uploads/2026/07/1776764248.jpg\">\n\t\t\t\t\t<div class=\"e-gallery-image elementor-gallery-item__image\" data-thumbnail=\"https://mgm-school.nbtksa.in/wp-content/uploads/2026/07/1776764248.jpg\" data-width=\"300\" data-height=\"158\" aria-label=\"\" role=\"img\" ></div>\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"elementor-gallery-item__overlay\"></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t<a class=\"e-gallery-item elementor-gallery-item elementor-animated-content\" href=\"https://mgm-school.nbtksa.in/wp-content/uploads/2026/07/1733377596.jpg\">\n\t\t\t\t\t<div class=\"e-gallery-image elementor-gallery-item__image\" data-thumbnail=\"https://mgm-school.nbtksa.in/wp-content/uploads/2026/07/1733377596.jpg\" data-width=\"300\" data-height=\"225\" aria-label=\"\" role=\"img\" ></div>\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"elementor-gallery-item__overlay\"></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t<a class=\"e-gallery-item elementor-gallery-item elementor-animated-content\" href=\"https://mgm-school.nbtksa.in/wp-content/uploads/2026/07/1733387135.jpg\">\n\t\t\t\t\t<div class=\"e-gallery-image elementor-gallery-item__image\" data-thumbnail=\"https://mgm-school.nbtksa.in/wp-content/uploads/2026/07/1733387135.jpg\" data-width=\"300\" data-height=\"169\" aria-label=\"\" role=\"img\" ></div>\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"elementor-gallery-item__overlay\"></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t<a class=\"e-gallery-item elementor-gallery-item elementor-animated-content\" href=\"https://mgm-school.nbtksa.in/wp-content/uploads/2026/07/1733374738.jpg\">\n\t\t\t\t\t<div class=\"e-gallery-image elementor-gallery-item__image\" data-thumbnail=\"https://mgm-school.nbtksa.in/wp-content/uploads/2026/07/1733374738.jpg\" data-width=\"300\" data-height=\"200\" aria-label=\"\" role=\"img\" ></div>\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"elementor-gallery-item__overlay\"></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t<a class=\"e-gallery-item elementor-gallery-item elementor-animated-content\" href=\"https://mgm-school.nbtksa.in/wp-content/uploads/2026/07/1741692636.jpeg\">\n\t\t\t\t\t<div class=\"e-gallery-image elementor-gallery-item__image\" data-thumbnail=\"https://mgm-school.nbtksa.in/wp-content/uploads/2026/07/1741692636.jpeg\" data-width=\"300\" data-height=\"300\" aria-label=\"\" role=\"img\" ></div>\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"elementor-gallery-item__overlay\"></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t<a class=\"e-gallery-item elementor-gallery-item elementor-animated-content\" href=\"https://mgm-school.nbtksa.in/wp-content/uploads/2026/07/1741692913.jpg\">\n\t\t\t\t\t<div class=\"e-gallery-image elementor-gallery-item__image\" data-thumbnail=\"https://mgm-school.nbtksa.in/wp-content/uploads/2026/07/1741692913.jpg\" data-width=\"300\" data-height=\"300\" aria-label=\"\" role=\"img\" ></div>\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"elementor-gallery-item__overlay\"></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t<a class=\"e-gallery-item elementor-gallery-item elementor-animated-content\" href=\"https://mgm-school.nbtksa.in/wp-content/uploads/2026/07/1741693092.jpg\">\n\t\t\t\t\t<div class=\"e-gallery-image elementor-gallery-item__image\" data-thumbnail=\"https://mgm-school.nbtksa.in/wp-content/uploads/2026/07/1741693092.jpg\" data-width=\"300\" data-height=\"300\" aria-label=\"\" role=\"img\" ></div>\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"elementor-gallery-item__overlay\"></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t<a class=\"e-gallery-item elementor-gallery-item elementor-animated-content\" href=\"https://mgm-school.nbtksa.in/wp-content/uploads/2026/07/1741693179.jpg\">\n\t\t\t\t\t<div class=\"e-gallery-image elementor-gallery-item__image\" data-thumbnail=\"https://mgm-school.nbtksa.in/wp-content/uploads/2026/07/1741693179.jpg\" data-width=\"300\" data-height=\"300\" aria-label=\"\" role=\"img\" ></div>\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"elementor-gallery-item__overlay\"></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t<a class=\"e-gallery-item elementor-gallery-item elementor-animated-content\" href=\"https://mgm-school.nbtksa.in/wp-content/uploads/2026/07/1751285591.jpeg\">\n\t\t\t\t\t<div class=\"e-gallery-image elementor-gallery-item__image\" data-thumbnail=\"https://mgm-school.nbtksa.in/wp-content/uploads/2026/07/1751285591.jpeg\" data-width=\"300\" data-height=\"213\" aria-label=\"\" role=\"img\" ></div>\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"elementor-gallery-item__overlay\"></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t<a class=\"e-gallery-item elementor-gallery-item elementor-animated-content\" href=\"https://mgm-school.nbtksa.in/wp-content/uploads/2026/07/1751285627.jpeg\">\n\t\t\t\t\t<div class=\"e-gallery-image elementor-gallery-item__image\" data-thumbnail=\"https://mgm-school.nbtksa.in/wp-content/uploads/2026/07/1751285627.jpeg\" data-width=\"300\" data-height=\"181\" aria-label=\"\" role=\"img\" ></div>\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"elementor-gallery-item__overlay\"></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\n</div>\n\t\t</div>\n\t\t",
+    "protected": false
+  },
+  "excerpt": {
+    "rendered": "<p>Gallery</p>\n",
+    "protected": false
+  },
+  "author": 1,
+  "featured_media": 0,
+  "parent": 0,
+  "menu_order": 0,
+  "comment_status": "closed",
+  "ping_status": "closed",
+  "template": "elementor_header_footer",
+  "meta": {
+    "footnotes": ""
+  },
+  "class_list": [
+    "post-15937",
+    "page",
+    "type-page",
+    "status-publish",
+    "hentry"
+  ],
+  "_links": {
+    "self": [
+      {
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/pages/15937",
+        "targetHints": {
+          "allow": [
+            "GET"
+          ]
+        }
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/pages"
+      }
+    ],
+    "about": [
+      {
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/types/page"
+      }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/users/1"
+      }
+    ],
+    "replies": [
+      {
+        "embeddable": true,
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/comments?post=15937"
+      }
+    ],
+    "version-history": [
+      {
+        "count": 4,
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/pages/15937/revisions"
+      }
+    ],
+    "predecessor-version": [
+      {
+        "id": 15953,
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/pages/15937/revisions/15953"
+      }
+    ],
+    "wp:attachment": [
+      {
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/media?parent=15937"
+      }
+    ],
+    "curies": [
+      {
+        "name": "wp",
+        "href": "https://api.w.org/{rel}",
+        "templated": true
+      }
+    ]
+  }
+}

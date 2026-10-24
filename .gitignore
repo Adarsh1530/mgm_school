@@ -1,0 +1,25 @@
+# Dependencies
+/node_modules/
+
+# Environment and local configurations
+.env
+.env.local
+.env.*.local
+*.log
+
+# Temporary test screenshots & scrapers
+/test_results/
+/tools/screenshots_audit/
+/tools/*.png
+/tools/*.jpg
+/tools/*.jpeg
+/tools/ranijai*
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.tmp
+*.bak

@@ -1,0 +1,100 @@
+{
+  "id": 16013,
+  "date": "2026-07-27T15:09:04",
+  "date_gmt": "2026-07-27T15:09:04",
+  "guid": {
+    "rendered": "https://mgm-school.nbtksa.in/?page_id=16013"
+  },
+  "modified": "2026-07-27T15:10:41",
+  "modified_gmt": "2026-07-27T15:10:41",
+  "slug": "ncc",
+  "status": "publish",
+  "type": "page",
+  "link": "https://mgm-school.nbtksa.in/ncc/",
+  "title": {
+    "rendered": "NCC"
+  },
+  "content": {
+    "rendered": "\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"16013\" class=\"elementor elementor-16013\" data-elementor-post-type=\"page\">\n\t\t\t\t<div class=\"elementor-element elementor-element-5273ec4 e-flex e-con-boxed e-con e-parent\" data-id=\"5273ec4\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t<div class=\"elementor-element elementor-element-70902a8 e-con-full e-flex e-con e-child\" data-id=\"70902a8\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t<div class=\"elementor-element elementor-element-7fc1657 elementor-widget elementor-widget-image\" data-id=\"7fc1657\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image.default\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img fetchpriority=\"high\" decoding=\"async\" width=\"640\" height=\"232\" src=\"https://mgm-school.nbtksa.in/wp-content/uploads/2026/07/1733737592.jpg\" class=\"attachment-large size-large wp-image-16015\" alt=\"\" />\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t<h2 data-interaction-id=\"cad7f5b\" class=\"e-cad7f5b-4376cff e-heading-base e-default-h2\"><strong><u>NCC (National Cadet Corps) @ MGM</u></strong></h2>\n\t\t\t\t<div class=\"elementor-element elementor-element-b9851de elementor-widget elementor-widget-text-editor\" data-id=\"b9851de\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t\t\t\t\t\t<p>National Cadet Corps (NCC) is the biggest youth organization functioning under the Ministry of Defence, Government of India. It inculcates discipline and sense of unity and patriotism in youth and trains in defense preparedness.</p><p>MGM Model School has started NCC unit, ‘Kerala Lakshyadeep Group One Kerala Battalion’ on 7th July 2022 with NCC cadets from the junior wing of class VIII. It functions as a self-financing scheme with 2 years of service. After completing 2 years of service in the National Cadet Corps (NCC), cadets are awarded a certificate. This certificate is a recognition of their dedication, hard work, and commitment to the NCC. It can also be beneficial for their future careers, as it demonstrates their leadership skills, discipline, and sense of responsibility.</p><p>Students are given training on Fridays from 3 PM to 5:30 PM with basic military parades, small arms training, drills, community service. Cadets also participate in camps and expeditions, developing leadership skills and a sense of patriotism. The Associate NCC Officer of MGM is Mr. Binu Kumar C.</p>\t\t\t\t\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-3a448bf elementor-widget elementor-widget-spacer\" data-id=\"3a448bf\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"spacer.default\">\n\t\t\t\t\t\t\t<div class=\"elementor-spacer\">\n\t\t\t<div class=\"elementor-spacer-inner\"></div>\n\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t",
+    "protected": false
+  },
+  "excerpt": {
+    "rendered": "<p>NCC (National Cadet Corps) @ MGM National Cadet Corps (NCC) is the biggest youth organization functioning under the Ministry of [&hellip;]</p>\n",
+    "protected": false
+  },
+  "author": 1,
+  "featured_media": 0,
+  "parent": 0,
+  "menu_order": 0,
+  "comment_status": "closed",
+  "ping_status": "closed",
+  "template": "elementor_header_footer",
+  "meta": {
+    "footnotes": ""
+  },
+  "class_list": [
+    "post-16013",
+    "page",
+    "type-page",
+    "status-publish",
+    "hentry"
+  ],
+  "_links": {
+    "self": [
+      {
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/pages/16013",
+        "targetHints": {
+          "allow": [
+            "GET"
+          ]
+        }
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/pages"
+      }
+    ],
+    "about": [
+      {
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/types/page"
+      }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/users/1"
+      }
+    ],
+    "replies": [
+      {
+        "embeddable": true,
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/comments?post=16013"
+      }
+    ],
+    "version-history": [
+      {
+        "count": 4,
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/pages/16013/revisions"
+      }
+    ],
+    "predecessor-version": [
+      {
+        "id": 16018,
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/pages/16013/revisions/16018"
+      }
+    ],
+    "wp:attachment": [
+      {
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/media?parent=16013"
+      }
+    ],
+    "curies": [
+      {
+        "name": "wp",
+        "href": "https://api.w.org/{rel}",
+        "templated": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,207 @@
+.tp-el-content span {
+    font-weight: 500;
+    color: var(--tp-heading-primary);
+}
+
+div.tp-sticky-image {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 120px;
+}
+
+.tp-event-4-item .tp-event-inner-user img+img,
+.tp-event-inner-content .tp-event-inner-user img+img {
+    margin-left: -15px;
+}
+
+.etn-event-organizers .etn-social a {
+    background: transparent;
+    font-size: 15px;
+    color: #5b5d63;
+    width: 0;
+    height: 0;
+    margin: 0 15px;
+    border: none;
+}
+
+.etn-event-organizers .etn-social a:hover {
+    border: none;
+}
+
+.etn-event-search-wrapper .input-group {
+    height: 60%;
+}
+
+.tp-event-details-breadcrumb-content .alert.alert-danger {
+    display: inline-block;
+}
+
+.tp-header-user-profile-thumb {
+    flex: 0 0 40px;
+}
+
+.tp-event-inner-content .tp-event-4-info {
+    justify-content: start !important;
+    gap: 0;
+}
+
+/* new */
+
+.tp-blog-details-thumb img {
+    width: 100%;
+}
+
+.tp-blog-full-width-thumb img {
+    width: 100%;
+    height: 800px;
+    object-fit: cover;
+}
+
+
+@media only screen and (min-width: 1366px) and (max-width: 1577px) {
+    .tp-hero-custom .elementor-element-c2c130a {
+        padding-left: 55px;
+        padding-right: 115px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .tp-hero-custom .tp-course-item {
+        position: relative;
+        right: 88px;
+    }
+}
+
+.tp-feature-chef-shape {
+    width: 90px;
+}
+
+.tutor-lms ul li label::after {
+    display: none;
+}
+
+.tutor-lms ul.tutor-list li label {
+    padding-left: 0;
+}
+
+.tp-grid-widget-checkbox ul li label::before {
+    left: 4px;
+}
+
+.tp-contact-input-remeber.login .tutor-form-check-input {
+    display: none;
+}
+
+.tutor-login-form-wrapper .tp-login-input button.show-password-input {
+    display: none;
+}
+
+.tp-courses-chef-shape {
+	width: inherit !important;
+}
+
+.tp-hero-7-ptb.tp-hero-2-bg.fix.pb-110.tp-el-section {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.tp-classes-yoga-price, .tp-courses-chef-price {
+	width: 80px !important;
+	height: 80px !important;
+	font-size: 14px !important;
+	line-height: 1 !important;
+	display: flex !important;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 5px;
+}
+
+@media only screen and (max-width: 767px) {
+    .tp-postbox-comment ul .children {
+        margin: 0 !important;
+    }
+}
+
+figure img,
+figure svg {
+    width: auto !important;
+}
+
+.tp-about-exprience {
+    display: inline-block;
+    position: absolute;
+    right: -40px;
+    bottom: 80px;
+    padding: 7px 36px 20px 24px;
+    border-radius: 6px;
+    border: 1px solid rgba(1, 15, 28, 0.1);
+    background: rgba(246, 244, 238, 0.6);
+    backdrop-filter: blur(10px);
+    min-width: 224px;
+}
+
+.tp-course-5-price .list-item-price del {
+    color: #3d3d3d;
+}
+
+.stm_lms_instructor_courses__single--meta .star-rating::before,
+.stm-lms-user_rating .star-rating.star-rating__big::before {
+    display: none;
+}
+
+.tp-breadcrumb__area .tp-breadcrumb__bg {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* WooCommerce theme class additions */
+.tp-woo-breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.tp-woo-breadcrumb a {
+    color: var(--tp-theme-primary);
+}
+
+.tp-woo-breadcrumb a:hover {
+    color: var(--tp-theme-secondary);
+}
+
+.tp-woo-form-login {
+    background: var(--tp-common-white);
+    border: 1px solid #E6E8F0;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.tp-woo-form-login .woocommerce-form__label {
+    display: block;
+    font-size: 15px;
+    font-weight: 400;
+    color: #303651;
+    margin-bottom: 10px;
+}
+
+.tp-woo-form-login .woocommerce-form__input {
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #E6E8F0;
+    background: var(--tp-common-white);
+    box-shadow: 0px 1px 1px 0px rgba(48, 54, 81, 0.06);
+    transition: all 0.3s 0s ease-out;
+}
+
+.tp-woo-form-login .woocommerce-form__input:focus {
+    border-color: var(--tp-theme-7);
+    box-shadow: 0px 0px 0px 3px rgba(65, 95, 251, 0.2);
+    outline: none;
+}

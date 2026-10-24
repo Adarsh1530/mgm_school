@@ -1,0 +1,100 @@
+{
+  "id": 15908,
+  "date": "2026-07-13T11:50:07",
+  "date_gmt": "2026-07-13T11:50:07",
+  "guid": {
+    "rendered": "https://mgm-school.nbtksa.in/?page_id=15908"
+  },
+  "modified": "2026-07-13T11:51:27",
+  "modified_gmt": "2026-07-13T11:51:27",
+  "slug": "our-mission",
+  "status": "publish",
+  "type": "page",
+  "link": "https://mgm-school.nbtksa.in/our-mission/",
+  "title": {
+    "rendered": "Our Mission"
+  },
+  "content": {
+    "rendered": "\t\t<div data-elementor-type=\"wp-post\" data-elementor-id=\"15908\" class=\"elementor elementor-15908\" data-elementor-post-type=\"page\">\n\t\t\t\t<div class=\"elementor-element elementor-element-9302a56 e-con e-atomic-element e-flexbox-base e-default-div e-5b8e314 \" data-id=\"9302a56\" data-element_type=\"e-flexbox\" data-e-type=\"e-flexbox\" data-interaction-id=\"9302a56\">\n    <div class=\"elementor-element elementor-element-6eda635 e-flex e-con-boxed e-con e-parent\" data-id=\"6eda635\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t<div class=\"elementor-element elementor-element-2b43918 elementor-widget elementor-widget-text-editor\" data-id=\"2b43918\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t\t\t\t\t\t<p>WE AIM TO INSTIL IN EACH CHILD A SENSE OF INQUISITIVENESS, URGE FOR EXPERIMENTATION, OBSERVATION &amp; SYNTHESIS. EVERY CHILD IS ENCOURAGED TO INCULCATE THE VALUES OF CITIZENRY. WE ARE COMMITTED TO PROVIDE A POSITIVE LEARNING ENVIRONMENT TO BUILD A COMMUNITY OF CRITICAL THINKERS THAT ADVOCATES MENTAL TRANSFORMATION CREATING WISDOM AND HEALTHY BEHAVIOUR</p>\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\n</div>\n\t\t</div>\n\t\t",
+    "protected": false
+  },
+  "excerpt": {
+    "rendered": "<p>WE AIM TO INSTIL IN EACH CHILD A SENSE OF INQUISITIVENESS, URGE FOR EXPERIMENTATION, OBSERVATION &amp; SYNTHESIS. EVERY CHILD IS [&hellip;]</p>\n",
+    "protected": false
+  },
+  "author": 1,
+  "featured_media": 0,
+  "parent": 0,
+  "menu_order": 0,
+  "comment_status": "closed",
+  "ping_status": "closed",
+  "template": "",
+  "meta": {
+    "footnotes": ""
+  },
+  "class_list": [
+    "post-15908",
+    "page",
+    "type-page",
+    "status-publish",
+    "hentry"
+  ],
+  "_links": {
+    "self": [
+      {
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/pages/15908",
+        "targetHints": {
+          "allow": [
+            "GET"
+          ]
+        }
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/pages"
+      }
+    ],
+    "about": [
+      {
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/types/page"
+      }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/users/1"
+      }
+    ],
+    "replies": [
+      {
+        "embeddable": true,
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/comments?post=15908"
+      }
+    ],
+    "version-history": [
+      {
+        "count": 4,
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/pages/15908/revisions"
+      }
+    ],
+    "predecessor-version": [
+      {
+        "id": 15912,
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/pages/15908/revisions/15912"
+      }
+    ],
+    "wp:attachment": [
+      {
+        "href": "https://mgm-school.nbtksa.in/wp-json/wp/v2/media?parent=15908"
+      }
+    ],
+    "curies": [
+      {
+        "name": "wp",
+        "href": "https://api.w.org/{rel}",
+        "templated": true
+      }
+    ]
+  }
+}

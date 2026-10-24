@@ -1,0 +1,42 @@
+{
+  "/wp-json/wp/v2/menus": {
+    "status": 401,
+    "data": {
+      "code": "rest_cannot_view",
+      "message": "Sorry, you are not allowed to view menus.",
+      "data": {
+        "status": 401
+      }
+    }
+  },
+  "/wp-json/wp/v2/menu-items?per_page=100": {
+    "status": 401,
+    "data": {
+      "code": "rest_cannot_view",
+      "message": "Sorry, you are not allowed to view menu items.",
+      "data": {
+        "status": 401
+      }
+    }
+  },
+  "/wp-json/menus/v1/menus": {
+    "status": 404,
+    "data": {
+      "code": "rest_no_route",
+      "message": "No route was found matching the URL and request method.",
+      "data": {
+        "status": 404
+      }
+    }
+  },
+  "/wp-json/wp-api-menus/v2/menus": {
+    "status": 404,
+    "data": {
+      "code": "rest_no_route",
+      "message": "No route was found matching the URL and request method.",
+      "data": {
+        "status": 404
+      }
+    }
+  }
+}
