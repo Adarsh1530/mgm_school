@@ -15,24 +15,29 @@ class Database {
                 PDO::ATTR_EMULATE_PREPARES   => false,
             ];
 
-            // 1. Try MySQL if DB_HOST is set and reachable
+            $isVercel = isset($_ENV['VERCEL']) || getenv('VERCEL') || (isset($_SERVER['HTTP_HOST']) && strpos($_SERVER['HTTP_HOST'], 'vercel.app') !== false);
+
+            // 1. Only attempt MySQL if explicitly requested and NOT running in standalone serverless
             $mysqlHost = defined('DB_HOST') ? DB_HOST : '127.0.0.1';
             $mysqlPort = defined('DB_PORT') ? DB_PORT : '3306';
             $mysqlDb   = defined('DB_NAME') ? DB_NAME : 'mgm_school';
             $mysqlUser = defined('DB_USER') ? DB_USER : 'root';
-            $mysqlPass = defined('DB_PASS') ? DB_PASS : '';
+            $mysqlPass = defined('DB_PASS') !== false ? getenv('DB_PASS') : '';
             $mysqlCharset = defined('DB_CHARSET') ? DB_CHARSET : 'utf8mb4';
 
-            // Only attempt MySQL if not running in standalone serverless / zero-db mode
-            if ($mysqlHost !== 'none' && !getenv('FORCE_SQLITE')) {
-                try {
-                    $dsn = "mysql:host={$mysqlHost};port={$mysqlPort};dbname={$mysqlDb};charset={$mysqlCharset}";
-                    $mysqlOptions = $options;
-                    $mysqlOptions[PDO::ATTR_TIMEOUT] = 2; // Fast timeout so serverless doesn't stall
-                    self::$instance = new PDO($dsn, $mysqlUser, $mysqlPass, $mysqlOptions);
-                    return self::$instance;
-                } catch (Throwable $e) {
-                    error_log("MySQL connection unavailable (" . $e->getMessage() . "). Falling back to embedded SQLite.");
+            $hasExplicitDbHost = !empty(getenv('DB_HOST')) && getenv('DB_HOST') !== '127.0.0.1' && getenv('DB_HOST') !== 'localhost';
+
+            if (!$isVercel || $hasExplicitDbHost) {
+                if ($mysqlHost !== 'none' && !getenv('FORCE_SQLITE')) {
+                    try {
+                        $dsn = "mysql:host={$mysqlHost};port={$mysqlPort};dbname={$mysqlDb};charset={$mysqlCharset}";
+                        $mysqlOptions = $options;
+                        $mysqlOptions[PDO::ATTR_TIMEOUT] = 2; // Fast timeout so serverless doesn't stall
+                        self::$instance = new PDO($dsn, $mysqlUser, $mysqlPass, $mysqlOptions);
+                        return self::$instance;
+                    } catch (Throwable $e) {
+                        error_log("MySQL connection unavailable (" . $e->getMessage() . "). Falling back to embedded SQLite.");
+                    }
                 }
             }
 
@@ -40,7 +45,7 @@ class Database {
             $sqlitePath = __DIR__ . '/../database/mgm_school.sqlite';
             // In serverless environments (e.g. Vercel), project files are read-only.
             // Copy to /tmp if running in serverless to ensure write & journal locks work cleanly.
-            if (isset($_ENV['VERCEL']) || getenv('VERCEL')) {
+            if ($isVercel) {
                 $tmpSqlite = '/tmp/mgm_school.sqlite';
                 if (!file_exists($tmpSqlite) && file_exists($sqlitePath)) {
                     @copy($sqlitePath, $tmpSqlite);

@@ -4,16 +4,24 @@
  * MGM Model School Recreation Project
  */
 
-// Error reporting for development
+// Error reporting
 error_reporting(E_ALL);
-ini_set('display_errors', 0);
-ini_set('log_errors', 1);
+if (isset($_SERVER['HTTP_HOST']) && strpos($_SERVER['HTTP_HOST'], 'vercel.app') !== false) {
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+} else {
+    ini_set('display_errors', 0);
+    ini_set('log_errors', 1);
+}
 
 // Start secure session if not started
 if (session_status() === PHP_SESSION_NONE) {
+    if (is_dir('/tmp') && is_writable('/tmp')) {
+        @ini_set('session.save_path', '/tmp');
+    }
     ini_set('session.cookie_httponly', 1);
     ini_set('session.use_only_cookies', 1);
-    session_start();
+    @session_start();
 }
 
 // Database Credentials
@@ -25,10 +33,14 @@ define('DB_PASS', getenv('DB_PASS') !== false ? getenv('DB_PASS') : '');
 define('DB_CHARSET', 'utf8mb4');
 
 // Dynamic Base URL Detection
-$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || (isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == 443)) ? "https://" : "http://";
+$isHttps = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+    || (isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == 443)
+    || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https');
+
+$protocol = $isHttps ? "https://" : "http://";
 $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
 
-if (php_sapi_name() === 'cli') {
+if (php_sapi_name() === 'cli' && empty($_SERVER['HTTP_HOST'])) {
     $basePath = '/MGM SCHOOL';
 } else {
     $scriptDir = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? ''));
