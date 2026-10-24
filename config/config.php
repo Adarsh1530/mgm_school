@@ -14,14 +14,16 @@ if (isset($_SERVER['HTTP_HOST']) && strpos($_SERVER['HTTP_HOST'], 'vercel.app') 
     ini_set('log_errors', 1);
 }
 
-// Start secure session if not started
-if (session_status() === PHP_SESSION_NONE) {
-    if (is_dir('/tmp') && is_writable('/tmp')) {
-        @ini_set('session.save_path', '/tmp');
+// Start secure session ONLY for admin area
+if (isset($_SERVER['REQUEST_URI']) && strpos($_SERVER['REQUEST_URI'], '/admin') !== false) {
+    if (session_status() === PHP_SESSION_NONE) {
+        if (is_dir('/tmp') && is_writable('/tmp')) {
+            @ini_set('session.save_path', '/tmp');
+        }
+        @ini_set('session.cookie_httponly', 1);
+        @ini_set('session.use_only_cookies', 1);
+        @session_start();
     }
-    ini_set('session.cookie_httponly', 1);
-    ini_set('session.use_only_cookies', 1);
-    @session_start();
 }
 
 // Database Credentials
