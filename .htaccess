@@ -1,24 +1,22 @@
-# Apache URL Rewrite Configuration
-# MGM Model School Recreation Project
+DirectoryIndex index.html index.php
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
+    RewriteBase /
 
-    # Prevent directory listing
-    Options -Indexes
-
-    # Exclude admin directory and physical files/folders
+    # Exclude physical files and directories
     RewriteCond %{REQUEST_FILENAME} -f [OR]
     RewriteCond %{REQUEST_FILENAME} -d
     RewriteRule ^ - [L]
 
-    # Rewrite all clean URLs to index.php
-    RewriteRule ^(.*)$ index.php?route=$1 [QSA,L]
-</IfModule>
+    # Clean URL fallback for pre-rendered .html pages
+    RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+    RewriteRule ^([^/]+)/?$ $1.html [L]
 
-# Security Headers
-<IfModule mod_headers.c>
-    Header set X-Content-Type-Options "nosniff"
-    Header set X-Frame-Options "SAMEORIGIN"
-    Header set X-XSS-Protection "1; mode=block"
+    # Clean URL fallback for subfolder index.html
+    RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
+    RewriteRule ^([^/]+)/?$ $1/index.html [L]
+
+    # Fallback to index.php
+    RewriteRule ^(.*)$ index.php [L]
 </IfModule>
