@@ -15,6 +15,11 @@
 /tools/*.jpeg
 /tools/ranijai*
 
+# Deployment scripts with credentials
+deploy_infinityfree.php
+test_*.php
+scratch_*.php
+
 # OS / Editor files
 .DS_Store
 Thumbs.db
