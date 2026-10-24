@@ -36,9 +36,12 @@ if (php_sapi_name() === 'cli') {
     if ($basePath !== '' && $basePath[0] !== '/') {
         $basePath = '/' . $basePath;
     }
-    // If accessed inside /admin, adjust base path
+    // If accessed inside /admin or /api (Vercel serverless entry), adjust base path
     if (substr($basePath, -6) === '/admin') {
         $basePath = substr($basePath, 0, -6);
+    }
+    if (substr($basePath, -4) === '/api') {
+        $basePath = substr($basePath, 0, -4);
     }
 }
 

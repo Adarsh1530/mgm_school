@@ -38,6 +38,17 @@ class Database {
 
             // 2. Seamless Fallback: Embedded SQLite Database (No external server needed)
             $sqlitePath = __DIR__ . '/../database/mgm_school.sqlite';
+            // In serverless environments (e.g. Vercel), project files are read-only.
+            // Copy to /tmp if running in serverless to ensure write & journal locks work cleanly.
+            if (isset($_ENV['VERCEL']) || getenv('VERCEL')) {
+                $tmpSqlite = '/tmp/mgm_school.sqlite';
+                if (!file_exists($tmpSqlite) && file_exists($sqlitePath)) {
+                    @copy($sqlitePath, $tmpSqlite);
+                }
+                if (file_exists($tmpSqlite)) {
+                    $sqlitePath = $tmpSqlite;
+                }
+            }
             if (file_exists($sqlitePath)) {
                 try {
                     self::$instance = new PDO("sqlite:" . $sqlitePath, null, null, $options);
