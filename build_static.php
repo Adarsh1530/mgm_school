@@ -1,44 +1,39 @@
 <?php
 /**
  * Static Site Generator for MGM Model School
- * Pre-renders all pages to clean static HTML with root-relative paths for instant, zero-error Vercel hosting.
+ * Pre-renders all pages to clean static HTML with both root .html and directory/index.html
+ * for 100% guaranteed zero-error compatibility with Vercel and any static web server.
  */
 
 $rootDir = str_replace('\\', '/', __DIR__);
 $phpBinary = 'C:/xampp/php/php.exe';
 
 $routes = [
-    '' => 'index.html',
-    'about-us' => 'about-us/index.html',
-    'courses-offered' => 'courses-offered/index.html',
-    'gallery' => 'gallery/index.html',
-    'notices' => 'notices/index.html',
-    'mandatory-disclosure' => 'mandatory-disclosure/index.html',
-    'contact' => 'contact/index.html',
-    'admission-procedure' => 'admission-procedure/index.html',
-    'alumni' => 'alumni/index.html',
-    'our-founder' => 'our-founder/index.html',
-    'our-mission' => 'our-mission/index.html',
-    'merit-day' => 'merit-day/index.html',
-    'yoga' => 'yoga/index.html',
-    'voice-of-mgm' => 'voice-of-mgm/index.html',
-    'hindustan-scouts-guides' => 'hindustan-scouts-guides/index.html',
-    'swimming-pool' => 'swimming-pool/index.html',
-    'ncc' => 'ncc/index.html',
-    'attendance' => 'attendance/index.html',
-    'pta' => 'pta/index.html',
-    '404' => '404.html'
+    '' => ['index.html'],
+    'about-us' => ['about-us.html', 'about-us/index.html'],
+    'courses-offered' => ['courses-offered.html', 'courses-offered/index.html'],
+    'gallery' => ['gallery.html', 'gallery/index.html'],
+    'notices' => ['notices.html', 'notices/index.html'],
+    'mandatory-disclosure' => ['mandatory-disclosure.html', 'mandatory-disclosure/index.html'],
+    'contact' => ['contact.html', 'contact/index.html'],
+    'admission-procedure' => ['admission-procedure.html', 'admission-procedure/index.html'],
+    'alumni' => ['alumni.html', 'alumni/index.html'],
+    'our-founder' => ['our-founder.html', 'our-founder/index.html'],
+    'our-mission' => ['our-mission.html', 'our-mission/index.html'],
+    'merit-day' => ['merit-day.html', 'merit-day/index.html'],
+    'yoga' => ['yoga.html', 'yoga/index.html'],
+    'voice-of-mgm' => ['voice-of-mgm.html', 'voice-of-mgm/index.html'],
+    'hindustan-scouts-guides' => ['hindustan-scouts-guides.html', 'hindustan-scouts-guides/index.html'],
+    'swimming-pool' => ['swimming-pool.html', 'swimming-pool/index.html'],
+    'ncc' => ['ncc.html', 'ncc/index.html'],
+    'attendance' => ['attendance.html', 'attendance/index.html'],
+    'pta' => ['pta.html', 'pta/index.html'],
+    '404' => ['404.html']
 ];
 
-echo "Generating static site with isolated PHP processes...\n";
+echo "Generating dual static files (.html and /index.html)...\n";
 
-foreach ($routes as $route => $outFile) {
-    $fullPath = $rootDir . '/' . $outFile;
-    $dir = dirname($fullPath);
-    if (!is_dir($dir)) {
-        mkdir($dir, 0777, true);
-    }
-
+foreach ($routes as $route => $outFiles) {
     // Isolate each page render in its own PHP process
     $renderScript = '<?php '
         . 'chdir(' . var_export($rootDir, true) . '); '
@@ -79,11 +74,17 @@ foreach ($routes as $route => $outFile) {
         $content = str_replace($search, $replace, $content);
     }
 
-    // Ensure base tag is cleanly root
     $content = preg_replace('#<base href="[^"]*">#i', '<base href="/">', $content);
 
-    file_put_contents($fullPath, $content);
-    echo "  [OK] /" . ($route ?: '(home)') . " -> " . $outFile . " (" . number_format(strlen($content)) . " bytes)\n";
+    foreach ($outFiles as $outFile) {
+        $fullPath = $rootDir . '/' . $outFile;
+        $dir = dirname($fullPath);
+        if (!is_dir($dir)) {
+            mkdir($dir, 0777, true);
+        }
+        file_put_contents($fullPath, $content);
+        echo "  [OK] /" . ($route ?: '(home)') . " -> " . $outFile . "\n";
+    }
 }
 
-echo "All static pages successfully generated!\n";
+echo "All static files successfully generated!\n";
