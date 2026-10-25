@@ -11,7 +11,10 @@ $wpId = 1119;
 
 require_once __DIR__ . '/../templates/header.php';
 
-$homeHtml = file_get_contents(__DIR__ . '/../audit/homepage_clean_extracted.html');
+$homeHtmlPath = file_exists(__DIR__ . '/homepage_clean_extracted.html')
+    ? __DIR__ . '/homepage_clean_extracted.html'
+    : __DIR__ . '/../audit/homepage_clean_extracted.html';
+$homeHtml = file_exists($homeHtmlPath) ? file_get_contents($homeHtmlPath) : '';
 
 // Define Innovation Centre & Robotics Lab Section with Autoplay Video
 $innovationSection = <<<'HTML'
