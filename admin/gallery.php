@@ -24,7 +24,7 @@ function normalize_gallery_order(PDO $db): void {
     }
 }
 
-// Handle Actions (Add, Reorder, Move Step, Delete)
+// Handle Actions (Add, Edit, Reorder, Move Step, Delete)
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!verify_csrf($_POST['csrf_token'] ?? '')) {
         set_flash('error', 'CSRF verification failed.');
@@ -73,13 +73,83 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit;
         }
 
+        // Edit Photo
+        if ($action === 'edit') {
+            $id = (int)($_POST['id'] ?? 0);
+            $title = trim($_POST['title'] ?? '');
+            $category = trim($_POST['category'] ?? 'Events');
+            $caption = trim($_POST['caption'] ?? '');
+            $newPos = (int)($_POST['position'] ?? 0);
+
+            if ($id > 0 && !empty($title)) {
+                $current = $db->query("SELECT * FROM gallery WHERE id = {$id}")->fetch();
+                if ($current) {
+                    $imagePath = $current['image_path'];
+
+                    // Handle photo replacement if provided
+                    if (!empty($_FILES['photo']['name'])) {
+                        $file = $_FILES['photo'];
+                        $ext = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
+                        $allowed = ['jpg', 'jpeg', 'png', 'webp'];
+
+                        if (!in_array($ext, $allowed)) {
+                            set_flash('error', 'Only JPG, PNG, and WebP images are allowed.');
+                            header("Location: " . ADMIN_URL . "/gallery.php?edit={$id}");
+                            exit;
+                        } elseif ($file['size'] > 15 * 1024 * 1024) {
+                            set_flash('error', 'Image size exceeds 15MB limit.');
+                            header("Location: " . ADMIN_URL . "/gallery.php?edit={$id}");
+                            exit;
+                        } else {
+                            $cleanName = time() . '_' . preg_replace('/[^a-zA-Z0-9_\.-]/', '_', $file['name']);
+                            $targetPath = IMAGES_DIR . '/' . $cleanName;
+                            if (move_uploaded_file($file['tmp_name'], $targetPath)) {
+                                $imagePath = 'assets/images/' . $cleanName;
+                            }
+                        }
+                    }
+
+                    // Update core details
+                    $upd = $db->prepare("UPDATE gallery SET title = :t, category = :cat, caption = :cap, image_path = :img WHERE id = :id");
+                    $upd->execute([
+                        ':t'   => $title,
+                        ':cat' => $category,
+                        ':cap' => $caption,
+                        ':img' => $imagePath,
+                        ':id'  => $id
+                    ]);
+
+                    // If position changed, shift others accordingly
+                    normalize_gallery_order($db);
+                    $totalPhotos = (int)$db->query("SELECT COUNT(*) FROM gallery")->fetchColumn();
+                    $oldPos = (int)$current['sort_order'];
+
+                    if ($newPos > 0 && $newPos !== $oldPos) {
+                        if ($newPos > $totalPhotos) $newPos = $totalPhotos;
+                        if ($newPos < 1) $newPos = 1;
+
+                        if ($newPos > $oldPos) {
+                            $db->exec("UPDATE gallery SET sort_order = sort_order - 1 WHERE sort_order > {$oldPos} AND sort_order <= {$newPos}");
+                        } else {
+                            $db->exec("UPDATE gallery SET sort_order = sort_order + 1 WHERE sort_order >= {$newPos} AND sort_order < {$oldPos}");
+                        }
+                        $db->exec("UPDATE gallery SET sort_order = {$newPos} WHERE id = {$id}");
+                        normalize_gallery_order($db);
+                    }
+
+                    set_flash('success', "Photo '{$title}' updated successfully.");
+                }
+            }
+            header("Location: " . ADMIN_URL . "/gallery.php");
+            exit;
+        }
+
         // Direct Rank Reordering (e.g. 1st position to 6th position, others shift smoothly)
         if ($action === 'reorder') {
             $id = (int)($_POST['id'] ?? 0);
             $newPos = (int)($_POST['new_position'] ?? 0);
 
             if ($id > 0 && $newPos > 0) {
-                // First ensure positions are clean 1..N
                 normalize_gallery_order($db);
 
                 $current = $db->query("SELECT * FROM gallery WHERE id = {$id}")->fetch();
@@ -102,10 +172,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         // Place target at newPos
                         $db->exec("UPDATE gallery SET sort_order = {$newPos} WHERE id = {$id}");
 
-                        // Re-normalize to guarantee perfect sequential order
                         normalize_gallery_order($db);
 
-                        set_flash('success', "Photo '{$current['title']}' moved from position #{$oldPos} to #{$newPos}. Other photos shifted accordingly.");
+                        set_flash('success', "Photo '{$current['title']}' moved from position {$oldPos} to {$newPos}. Other photos shifted accordingly.");
                     }
                 }
             }
@@ -156,8 +225,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// Initial normalization if needed so consecutive ranks always show
+// Initial normalization
 normalize_gallery_order($db);
+
+// Check if in edit mode
+$editPhoto = null;
+if (isset($_GET['edit'])) {
+    $editId = (int)$_GET['edit'];
+    $editPhoto = $db->query("SELECT * FROM gallery WHERE id = {$editId}")->fetch();
+}
 
 $photos = $db->query("SELECT * FROM gallery ORDER BY sort_order ASC, id ASC")->fetchAll();
 $totalCount = count($photos);
@@ -167,45 +243,87 @@ require_once __DIR__ . '/header.php';
 
 <div class="row g-4">
   
-  <!-- Left Column: Add Photo Form -->
+  <!-- Left Column: Add / Edit Photo Form -->
   <div class="col-lg-4">
     <div class="bg-white p-4 rounded-3 border shadow-sm">
-      <h5 class="fw-bold text-dark mb-3"><i class="fa-solid fa-plus-circle me-1 text-danger"></i> Add Gallery Image</h5>
+      <h5 class="fw-bold text-dark mb-3">
+        <?php if ($editPhoto): ?>
+          <i class="fa-solid fa-pen-to-square me-1 text-primary"></i> Edit Gallery Image
+        <?php else: ?>
+          <i class="fa-solid fa-plus-circle me-1 text-danger"></i> Add Gallery Image
+        <?php endif; ?>
+      </h5>
 
       <form method="POST" action="" enctype="multipart/form-data">
-        <input type="hidden" name="action" value="add">
+        <input type="hidden" name="action" value="<?= $editPhoto ? 'edit' : 'add' ?>">
+        <?php if ($editPhoto): ?>
+          <input type="hidden" name="id" value="<?= $editPhoto['id'] ?>">
+        <?php endif; ?>
         <input type="hidden" name="csrf_token" value="<?= csrf_token() ?>">
 
         <div class="mb-3">
           <label class="form-label fw-semibold small">Photo Title *</label>
-          <input type="text" name="title" class="form-control" placeholder="e.g. Annual Sports Day & Aquatic Meet" required>
+          <input type="text" name="title" class="form-control" value="<?= e($editPhoto['title'] ?? '') ?>" placeholder="e.g. Annual Sports Day & Aquatic Meet" required>
         </div>
 
         <div class="mb-3">
           <label class="form-label fw-semibold small">Category</label>
           <select name="category" class="form-select">
-            <option value="Events">School Events</option>
-            <option value="Academics">Academics & Labs</option>
-            <option value="Sports">Sports & Swimming</option>
-            <option value="Campus">Campus Infrastructure</option>
-            <option value="Arts">Cultural & Arts</option>
+            <?php 
+            $cats = ['Events' => 'School Events', 'Academics' => 'Academics & Labs', 'Sports' => 'Sports & Swimming', 'Campus' => 'Campus Infrastructure', 'Arts' => 'Cultural & Arts'];
+            foreach ($cats as $cVal => $cLabel):
+            ?>
+              <option value="<?= $cVal ?>" <?= ($editPhoto['category'] ?? '') === $cVal ? 'selected' : '' ?>><?= $cLabel ?></option>
+            <?php endforeach; ?>
           </select>
         </div>
 
         <div class="mb-3">
           <label class="form-label fw-semibold small">Caption / Description</label>
-          <input type="text" name="caption" class="form-control" placeholder="Brief description...">
+          <input type="text" name="caption" class="form-control" value="<?= e($editPhoto['caption'] ?? '') ?>" placeholder="Brief description...">
         </div>
+
+        <?php if ($editPhoto): ?>
+          <div class="mb-3">
+            <label class="form-label fw-semibold small">Position / Order</label>
+            <select name="position" class="form-select">
+              <?php for ($i = 1; $i <= $totalCount; $i++): ?>
+                <option value="<?= $i ?>" <?= $editPhoto['sort_order'] == $i ? 'selected' : '' ?>>
+                  <?= $i ?>
+                </option>
+              <?php endfor; ?>
+            </select>
+            <div class="form-text small">Other photos will shift automatically to maintain sequence.</div>
+          </div>
+        <?php endif; ?>
 
         <div class="mb-4">
-          <label class="form-label fw-semibold small">Upload Image *</label>
-          <input type="file" name="photo" class="form-control" accept="image/*" required>
+          <label class="form-label fw-semibold small">
+            <?= $editPhoto ? 'Replace Image (Optional)' : 'Upload Image *' ?>
+          </label>
+          <input type="file" name="photo" class="form-control" accept="image/*" <?= $editPhoto ? '' : 'required' ?>>
           <div class="form-text small">Accepted formats: JPG, PNG, WebP (Max 15MB)</div>
+
+          <?php if ($editPhoto): ?>
+            <div class="d-flex align-items-center gap-2 mt-2 p-2 border rounded bg-light">
+              <img src="<?= asset_url($editPhoto['image_path']) ?>" alt="Current" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px;">
+              <div class="small">
+                <div class="fw-semibold text-dark text-truncate" style="max-width: 170px;"><?= basename($editPhoto['image_path']) ?></div>
+                <a href="<?= asset_url($editPhoto['image_path']) ?>" target="_blank" class="text-primary text-decoration-none">View Full Image</a>
+              </div>
+            </div>
+          <?php endif; ?>
         </div>
 
-        <button type="submit" class="btn-admin-primary w-100 py-2">
-          <i class="fa-solid fa-upload me-1"></i> Upload to Gallery
-        </button>
+        <div class="d-flex gap-2">
+          <button type="submit" class="btn-admin-primary flex-grow-1 py-2">
+            <i class="fa-solid <?= $editPhoto ? 'fa-floppy-disk' : 'fa-upload' ?> me-1"></i>
+            <?= $editPhoto ? 'Save Changes' : 'Upload to Gallery' ?>
+          </button>
+          <?php if ($editPhoto): ?>
+            <a href="<?= ADMIN_URL ?>/gallery.php" class="btn btn-outline-secondary py-2">Cancel</a>
+          <?php endif; ?>
+        </div>
       </form>
     </div>
   </div>
@@ -231,23 +349,23 @@ require_once __DIR__ . '/header.php';
               <th style="width: 70px;">Thumb</th>
               <th>Photo Title & Info</th>
               <th>Category</th>
-              <th class="text-end" style="width: 110px;">Actions</th>
+              <th class="text-end" style="width: 130px;">Actions</th>
             </tr>
           </thead>
           <tbody>
             <?php foreach ($photos as $idx => $p): ?>
-              <tr>
+              <tr class="<?= ($editPhoto && $editPhoto['id'] == $p['id']) ? 'table-warning' : '' ?>">
                 <td>
                   <div class="d-flex align-items-center gap-1">
-                    <!-- Direct Position Reorder Form -->
+                    <!-- Direct Position Reorder Form (Numbers Only, no #) -->
                     <form method="POST" action="" class="d-inline-flex align-items-center gap-1">
                       <input type="hidden" name="action" value="reorder">
                       <input type="hidden" name="id" value="<?= $p['id'] ?>">
                       <input type="hidden" name="csrf_token" value="<?= csrf_token() ?>">
-                      <select name="new_position" class="form-select form-select-sm py-1 px-2 fw-bold text-dark" style="width: 68px;" onchange="this.form.submit()">
+                      <select name="new_position" class="form-select form-select-sm py-1 px-2 fw-bold text-dark" style="width: 60px;" onchange="this.form.submit()">
                         <?php for ($i = 1; $i <= $totalCount; $i++): ?>
                           <option value="<?= $i ?>" <?= $p['sort_order'] == $i ? 'selected' : '' ?>>
-                            #<?= $i ?>
+                            <?= $i ?>
                           </option>
                         <?php endfor; ?>
                       </select>
@@ -293,6 +411,9 @@ require_once __DIR__ . '/header.php';
                 <td class="text-end">
                   <a href="<?= asset_url($p['image_path']) ?>" target="_blank" class="btn btn-sm btn-outline-secondary me-1" title="View Full Image">
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                  <a href="<?= ADMIN_URL ?>/gallery.php?edit=<?= $p['id'] ?>" class="btn btn-sm btn-outline-primary me-1" title="Edit Photo">
+                    <i class="fa-solid fa-pen-to-square"></i>
                   </a>
                   <form method="POST" action="" style="display: inline-block;" onsubmit="return confirm('Are you sure you want to delete this photo?');">
                     <input type="hidden" name="action" value="delete">
