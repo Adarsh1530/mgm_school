@@ -16,12 +16,11 @@
 /tools/ranijai*
 
 # Deployment scripts with credentials
-deploy_*.php
+deploy_infinityfree.php
 test_*.php
 scratch_*.php
 cpanel_*.php
 cpanel_*.json
-*cookie*.txt
 import_cpanel_db.php
 create_cpanel_archive.php
 cpanel_unzip_helper.php
