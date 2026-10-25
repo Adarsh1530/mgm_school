@@ -1,7 +1,7 @@
 <?php
 /**
  * Admin Panel Header
- * MGM Model School Recreation Project
+ * MGM Model School Management Portal
  */
 require_once __DIR__ . '/../config/config.php';
 require_once __DIR__ . '/../includes/auth.php';
@@ -33,13 +33,14 @@ $activePage = $activePage ?? 'dashboard';
   <style>
     :root {
       --admin-primary: #AB0C2F;
+      --admin-primary-dark: #8c0926;
       --admin-dark: #12141A;
       --admin-sidebar: #1A1D24;
       --admin-border: #E5E7EB;
     }
     body {
       font-family: 'DM Sans', sans-serif;
-      background-color: #F3F4F6;
+      background-color: #F8F9FA;
       color: #374151;
       margin: 0;
       min-height: 100vh;
@@ -55,49 +56,56 @@ $activePage = $activePage ?? 'dashboard';
       flex-direction: column;
     }
     .admin-brand {
-      padding: 20px 24px;
+      padding: 18px 22px;
       border-bottom: 1px solid rgba(255,255,255,0.08);
       display: flex;
       align-items: center;
       gap: 12px;
     }
     .admin-brand img {
-      max-height: 40px;
-      filter: brightness(0) invert(1);
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      background: #ffffff;
+      border-radius: 50%;
+      padding: 3px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.25);
     }
     .admin-brand span {
       color: #ffffff;
       font-weight: 700;
       font-size: 16px;
+      letter-spacing: 0.3px;
     }
     .admin-menu {
       list-style: none;
-      padding: 16px 12px;
+      padding: 18px 12px;
       margin: 0;
       flex-grow: 1;
     }
     .admin-menu li {
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
     .admin-menu a {
       color: #9CA3AF;
       text-decoration: none;
-      padding: 11px 16px;
+      padding: 12px 16px;
       border-radius: 8px;
       display: flex;
       align-items: center;
       gap: 12px;
       font-weight: 500;
-      font-size: 14px;
+      font-size: 14.5px;
       transition: all 0.2s;
     }
-    .admin-menu a:hover,
-    .admin-menu li.active a {
+    .admin-menu a:hover {
       background-color: rgba(171, 12, 47, 0.15);
       color: #ffffff;
     }
     .admin-menu li.active a {
       background-color: var(--admin-primary);
+      color: #ffffff;
+      box-shadow: 0 4px 10px rgba(171, 12, 47, 0.3);
     }
     .admin-content-wrap {
       flex-grow: 1;
@@ -123,10 +131,11 @@ $activePage = $activePage ?? 'dashboard';
       border: 1px solid var(--admin-border);
       padding: 22px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.02);
-      transition: transform 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
     .card-metric:hover {
       transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
     }
     .btn-admin-primary {
       background-color: var(--admin-primary);
@@ -138,7 +147,7 @@ $activePage = $activePage ?? 'dashboard';
       transition: background 0.2s;
     }
     .btn-admin-primary:hover {
-      background-color: #8c0926;
+      background-color: var(--admin-primary-dark);
       color: #ffffff;
     }
     .table-admin {
@@ -154,10 +163,10 @@ $activePage = $activePage ?? 'dashboard';
   <!-- Admin Sidebar -->
   <aside class="admin-sidebar">
     <div class="admin-brand">
-      <img src="<?= asset_url('images/new-mgm-logo.png') ?>" alt="MGM Crest" style="background: #ffffff; border-radius: 50%; padding: 2px;">
+      <img src="<?= asset_url('images/new-mgm-logo.png') ?>" alt="MGM Crest">
       <div>
         <span>MGM School</span>
-        <div style="font-size: 11px; color: #6B7280;">Admin Portal</div>
+        <div style="font-size: 11px; color: #9CA3AF;">Admin Portal</div>
       </div>
     </div>
 
@@ -165,26 +174,14 @@ $activePage = $activePage ?? 'dashboard';
       <li class="<?= $activePage === 'dashboard' ? 'active' : '' ?>">
         <a href="<?= ADMIN_URL ?>/"><i class="fa-solid fa-gauge"></i> Dashboard</a>
       </li>
-      <li class="<?= $activePage === 'pages' ? 'active' : '' ?>">
-        <a href="<?= ADMIN_URL ?>/pages.php"><i class="fa-solid fa-file-lines"></i> Manage Pages</a>
+      <li class="<?= $activePage === 'notices' ? 'active' : '' ?>">
+        <a href="<?= ADMIN_URL ?>/notices.php"><i class="fa-solid fa-bullhorn"></i> Notice Management</a>
       </li>
       <li class="<?= $activePage === 'disclosures' ? 'active' : '' ?>">
         <a href="<?= ADMIN_URL ?>/disclosures.php"><i class="fa-solid fa-file-pdf"></i> Mandatory Disclosures</a>
       </li>
       <li class="<?= $activePage === 'gallery' ? 'active' : '' ?>">
         <a href="<?= ADMIN_URL ?>/gallery.php"><i class="fa-solid fa-images"></i> Gallery Management</a>
-      </li>
-      <li class="<?= $activePage === 'courses' ? 'active' : '' ?>">
-        <a href="<?= ADMIN_URL ?>/courses.php"><i class="fa-solid fa-graduation-cap"></i> Courses & Subjects</a>
-      </li>
-      <li class="<?= $activePage === 'admissions' ? 'active' : '' ?>">
-        <a href="<?= ADMIN_URL ?>/admissions.php"><i class="fa-solid fa-inbox"></i> Enquiries & Admissions</a>
-      </li>
-      <li class="<?= $activePage === 'settings' ? 'active' : '' ?>">
-        <a href="<?= ADMIN_URL ?>/settings.php"><i class="fa-solid fa-sliders"></i> School Settings</a>
-      </li>
-      <li class="<?= $activePage === 'audit_logs' ? 'active' : '' ?>">
-        <a href="<?= ADMIN_URL ?>/audit_logs.php"><i class="fa-solid fa-clipboard-list"></i> Audit Logs</a>
       </li>
     </ul>
 

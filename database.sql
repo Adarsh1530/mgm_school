@@ -331,6 +331,6 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `users` VALUES
-('1', 'admin', 'admin@mgmschool.edu', '$2y$10$UPbmy4f.5XRzoOuYdzuE8ueYVmbtHyUhr4v9ypKygnBkjl1qAg30K', 'admin', '2026-10-21 23:28:40', '2026-10-21 23:28:40');
+('1', 'admin', 'admin@mgmschool.edu', '$2y$10$HcCEyfCBhsugDTL/HIMHx.IIydf9lGMVIGrz7gPke2ATBwvjOGcCW', 'admin', '2026-10-21 23:28:40', '2026-10-21 23:28:40');
 
 SET FOREIGN_KEY_CHECKS=1;
