@@ -314,7 +314,13 @@ INSERT INTO `site_settings` VALUES
 ('15', 'copyright_text', '© 2026 All rights reserved. MGM Model School Design & Developed By DigitalEdenzIndia.'),
 ('16', 'facebook_url', 'https://facebook.com/'),
 ('17', 'youtube_url', 'https://youtube.com/'),
-('18', 'whatsapp_url', 'https://wa.me/918891509590');
+('18', 'whatsapp_url', 'https://wa.me/918891509590'),
+('19', 'popup_active', '1'),
+('20', 'popup_title', 'Admissions Open 2025-2026'),
+('21', 'popup_image_url', 'assets/images/Untitled-design-4.png'),
+('22', 'popup_redirect_url', 'admission-procedure/'),
+('23', 'popup_delay', '800'),
+('24', 'popup_mode', 'session');
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (

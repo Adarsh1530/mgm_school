@@ -19,16 +19,19 @@ $activeNoticesCount = (int)$db->query("SELECT COUNT(*) FROM notices WHERE is_act
 $disclosuresCount = (int)$db->query("SELECT COUNT(*) FROM mandatory_disclosures")->fetchColumn();
 $galleryCount = (int)$db->query("SELECT COUNT(*) FROM gallery")->fetchColumn();
 
+// Popup setting
+$popupActive = (int)$db->query("SELECT setting_value FROM site_settings WHERE setting_key = 'popup_active'")->fetchColumn();
+
 require_once __DIR__ . '/header.php';
 ?>
 
 <!-- Statistics Metric Cards -->
 <div class="row g-4 mb-4">
-  <div class="col-xl-4 col-md-4">
+  <div class="col-xl-3 col-md-6">
     <div class="card-metric">
       <div class="d-flex justify-content-between align-items-center">
         <div>
-          <div class="text-muted small fw-semibold text-uppercase">School Notices & Circulars</div>
+          <div class="text-muted small fw-semibold text-uppercase">School Notices</div>
           <h2 class="fw-bold my-1 text-dark"><?= $noticesCount ?></h2>
           <div class="text-muted small mb-2"><span class="badge bg-success bg-opacity-10 text-success fw-bold"><?= $activeNoticesCount ?> Active</span></div>
           <a href="<?= ADMIN_URL ?>/notices.php" class="text-danger small fw-bold">Manage Notices &rarr;</a>
@@ -40,7 +43,7 @@ require_once __DIR__ . '/header.php';
     </div>
   </div>
 
-  <div class="col-xl-4 col-md-4">
+  <div class="col-xl-3 col-md-6">
     <div class="card-metric">
       <div class="d-flex justify-content-between align-items-center">
         <div>
@@ -56,7 +59,7 @@ require_once __DIR__ . '/header.php';
     </div>
   </div>
 
-  <div class="col-xl-4 col-md-4">
+  <div class="col-xl-3 col-md-6">
     <div class="card-metric">
       <div class="d-flex justify-content-between align-items-center">
         <div>
@@ -67,6 +70,26 @@ require_once __DIR__ . '/header.php';
         </div>
         <div class="bg-primary bg-opacity-10 text-primary p-3 rounded-circle">
           <i class="fa-solid fa-images fa-2x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xl-3 col-md-6">
+    <div class="card-metric">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <div class="text-muted small fw-semibold text-uppercase">Popup Announcement</div>
+          <h2 class="fw-bold my-1 text-dark"><?= $popupActive ? 'Active' : 'Off' ?></h2>
+          <div class="text-muted small mb-2">
+            <span class="badge <?= $popupActive ? 'bg-success bg-opacity-10 text-success' : 'bg-secondary bg-opacity-10 text-secondary' ?> fw-bold">
+              <?= $popupActive ? 'Live on Site' : 'Disabled' ?>
+            </span>
+          </div>
+          <a href="<?= ADMIN_URL ?>/popup.php" class="text-danger small fw-bold">Manage Popup &rarr;</a>
+        </div>
+        <div class="bg-warning bg-opacity-10 text-warning p-3 rounded-circle">
+          <i class="fa-solid fa-window-restore fa-2x" style="color: #d97706;"></i>
         </div>
       </div>
     </div>

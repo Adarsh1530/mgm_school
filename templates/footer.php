@@ -93,5 +93,6 @@
   <script src="<?= asset_url('js/bootstrap.bundle.min.js') ?>"></script>
   <script src="<?= asset_url('js/swiper-bundle.min.js') ?>"></script>
   <script src="<?= asset_url('js/main.js') ?>"></script>
+  <script src="<?= asset_url('js/quick-access-popup.js') ?>"></script>
 </body>
 </html>

@@ -320,3 +320,16 @@ function initAutoplayVideos() {
     });
   });
 }
+
+
+// Auto-load Quick Access Panel & Entrance Popup Engine if not already present
+(function() {
+  if (!document.getElementById('mgmQuickAccessScript')) {
+    const qaScript = document.createElement('script');
+    qaScript.id = 'mgmQuickAccessScript';
+    const baseTag = document.querySelector('base');
+    const originUrl = (baseTag && baseTag.href) ? baseTag.href.replace(/\/+$/, '') + '/' : (window.location.origin + '/');
+    qaScript.src = originUrl + 'assets/js/quick-access-popup.js';
+    document.head.appendChild(qaScript);
+  }
+})();
