@@ -125,17 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Swiper Slider Initializations
   if (typeof Swiper !== 'undefined') {
     if (document.querySelector('.tp-slider-active')) {
-      new Swiper('.tp-slider-active', {
-        slidesPerView: 1,
-        spaceBetween: 0,
-        loop: true,
-        effect: 'fade',
-        fadeEffect: { crossFade: true },
-        autoplay: { delay: 6000, disableOnInteraction: false },
-        speed: 1000,
-        touchReleaseOnEdges: true,
-        passiveListeners: true
-      });
+      var heroEl = document.querySelector('.tp-slider-active'); var heroCount = heroEl ? heroEl.querySelectorAll('.swiper-slide').length : 0; new Swiper('.tp-slider-active', { slidesPerView: 1, spaceBetween: 0, loop: heroCount > 1, effect: 'fade', fadeEffect: { crossFade: true }, autoplay: heroCount > 1 ? { delay: 6000, disableOnInteraction: false } : false, speed: 1000, touchReleaseOnEdges: true, passiveListeners: true });
     }
 
     if (document.querySelector('.tp-program-active')) {
