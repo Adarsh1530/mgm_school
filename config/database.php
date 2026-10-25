@@ -18,11 +18,11 @@ class Database {
             $isVercel = isset($_ENV['VERCEL']) || getenv('VERCEL') || (isset($_SERVER['HTTP_HOST']) && strpos($_SERVER['HTTP_HOST'], 'vercel.app') !== false);
 
             // 1. Only attempt MySQL if explicitly requested and NOT running in standalone serverless
-            $mysqlHost = defined('DB_HOST') ? DB_HOST : '127.0.0.1';
-            $mysqlPort = defined('DB_PORT') ? DB_PORT : '3306';
-            $mysqlDb   = defined('DB_NAME') ? DB_NAME : 'mgm_school';
-            $mysqlUser = defined('DB_USER') ? DB_USER : 'root';
-            $mysqlPass = defined('DB_PASS') !== false ? getenv('DB_PASS') : '';
+            $mysqlHost = defined('DB_HOST') ? DB_HOST : (getenv('DB_HOST') ?: '127.0.0.1');
+            $mysqlPort = defined('DB_PORT') ? DB_PORT : (getenv('DB_PORT') ?: '3306');
+            $mysqlDb   = defined('DB_NAME') ? DB_NAME : (getenv('DB_NAME') ?: 'mgm_school');
+            $mysqlUser = defined('DB_USER') ? DB_USER : (getenv('DB_USER') ?: 'root');
+            $mysqlPass = defined('DB_PASS') ? DB_PASS : (getenv('DB_PASS') !== false ? getenv('DB_PASS') : '');
             $mysqlCharset = defined('DB_CHARSET') ? DB_CHARSET : 'utf8mb4';
 
             $hasExplicitDbHost = !empty(getenv('DB_HOST')) && getenv('DB_HOST') !== '127.0.0.1' && getenv('DB_HOST') !== 'localhost';

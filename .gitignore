@@ -19,6 +19,14 @@
 deploy_infinityfree.php
 test_*.php
 scratch_*.php
+cpanel_*.php
+cpanel_*.json
+import_cpanel_db.php
+create_cpanel_archive.php
+cpanel_unzip_helper.php
+cpanel_cookies.txt
+*.zip
+config/db_credentials.php
 
 # OS / Editor files
 .DS_Store

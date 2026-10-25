@@ -27,12 +27,16 @@ if (isset($_SERVER['REQUEST_URI']) && strpos($_SERVER['REQUEST_URI'], '/admin') 
 }
 
 // Database Credentials
-define('DB_HOST', getenv('DB_HOST') ?: '127.0.0.1');
-define('DB_PORT', getenv('DB_PORT') ?: '3306');
-define('DB_NAME', getenv('DB_NAME') ?: 'mgm_school');
-define('DB_USER', getenv('DB_USER') ?: 'root');
-define('DB_PASS', getenv('DB_PASS') !== false ? getenv('DB_PASS') : '');
-define('DB_CHARSET', 'utf8mb4');
+if (file_exists(__DIR__ . '/db_credentials.php')) {
+    require_once __DIR__ . '/db_credentials.php';
+}
+
+if (!defined('DB_HOST')) define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
+if (!defined('DB_PORT')) define('DB_PORT', getenv('DB_PORT') ?: '3306');
+if (!defined('DB_NAME')) define('DB_NAME', getenv('DB_NAME') ?: 'mgm_school');
+if (!defined('DB_USER')) define('DB_USER', getenv('DB_USER') ?: 'root');
+if (!defined('DB_PASS')) define('DB_PASS', getenv('DB_PASS') !== false ? getenv('DB_PASS') : '');
+if (!defined('DB_CHARSET')) define('DB_CHARSET', 'utf8mb4');
 
 // Dynamic Base URL Detection
 $isHttps = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
