@@ -955,12 +955,10 @@
     <!-- Panel Header -->
     <div class="mgm-quick-header">
       <div class="d-flex align-items-center gap-2">
-        <div class="mgm-quick-header-icon">
-          <i class="fa-solid fa-link"></i>
-        </div>
-        <div>
-          <h6 class="mgm-quick-title mb-0">Quick Links</h6>
-          <small class="mgm-quick-sub">Important Information</small>
+        <img src="https://mgmmodelschool.edu.in/./assets/images/new-mgm-logo.png" alt="MGM School Logo" class="mgm-quick-logo">
+        <div class="mgm-quick-brand-wrap">
+          <div class="mgm-quick-school-name">MGM Model School</div>
+          <small class="mgm-quick-school-loc">Ayiroor, Varkala</small>
         </div>
       </div>
       <button type="button" id="mgmQuickLinksClose" class="mgm-quick-close" aria-label="Close Quick Links">
@@ -1108,28 +1106,33 @@
   justify-content: space-between;
 }
 
-.mgm-quick-header-icon {
-  width: 34px;
-  height: 34px;
-  background: rgba(255, 255, 255, 0.18);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  color: #ffffff;
+.mgm-quick-logo {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  background: #ffffff;
+  border-radius: 50%;
+  padding: 2px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
 }
 
-.mgm-quick-title {
-  font-size: 15px;
+.mgm-quick-brand-wrap {
+  line-height: 1.25;
+}
+
+.mgm-quick-school-name {
+  font-size: 14.5px;
   font-weight: 700;
   color: #ffffff;
   letter-spacing: 0.2px;
 }
 
-.mgm-quick-sub {
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.8);
+.mgm-quick-school-loc {
+  font-size: 10.5px;
+  color: rgba(255, 255, 255, 0.85);
+  display: block;
+  letter-spacing: 0.3px;
 }
 
 .mgm-quick-close {

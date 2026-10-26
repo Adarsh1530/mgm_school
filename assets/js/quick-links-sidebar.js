@@ -20,10 +20,10 @@
         '<div class="mgm-quick-panel">' +
           '<div class="mgm-quick-header">' +
             '<div class="d-flex align-items-center gap-2">' +
-              '<div class="mgm-quick-header-icon"><i class="fa-solid fa-link"></i></div>' +
-              '<div>' +
-                '<h6 class="mgm-quick-title mb-0">Quick Links</h6>' +
-                '<small class="mgm-quick-sub">Important Information</small>' +
+              '<img src="/assets/images/new-mgm-logo.png" alt="MGM School Logo" class="mgm-quick-logo">' +
+              '<div class="mgm-quick-brand-wrap">' +
+                '<div class="mgm-quick-school-name">MGM Model School</div>' +
+                '<small class="mgm-quick-school-loc">Ayiroor, Varkala</small>' +
               '</div>' +
             '</div>' +
             '<button type="button" id="mgmQuickLinksClose" class="mgm-quick-close" aria-label="Close Quick Links">' +
