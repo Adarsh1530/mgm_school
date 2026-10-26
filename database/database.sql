@@ -623,7 +623,7 @@ INSERT INTO `site_settings` VALUES
 ('12', 'email_secondary', 'mgmmodelschool@rediffmail.com'),
 ('13', 'logo_path', 'assets/images/new-mgm-logo.png'),
 ('14', 'breadcrumb_bg', 'assets/images/breadcrumb-bg.jpg'),
-('15', 'copyright_text', '© 2026 All rights reserved. MGM Model School Design & Developed By DigitalEdenzIndia.'),
+('15', 'copyright_text', '© 2026 All rights reserved. MGM Model School  & Developed By SparkIT Techno Solutions Pvt Ltd.'),
 ('16', 'facebook_url', 'https://facebook.com/'),
 ('17', 'youtube_url', 'https://youtube.com/'),
 ('18', 'whatsapp_url', 'https://wa.me/918891509590'),

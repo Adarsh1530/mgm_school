@@ -80,7 +80,7 @@
         <div class="row align-items-center">
           <div class="col-12">
             <p class="mb-0 text-dark fw-semibold" style="color: #000000 !important;">
-              <?= get_setting('copyright_text', '© 2026 All rights reserved. MGM Model School Design & Developed By DigitalEdenzIndia.') ?>
+              <?= get_setting('copyright_text', '© 2026 All rights reserved. MGM Model School  & Developed By SparkIT Techno Solutions Pvt Ltd.') ?>
             </p>
           </div>
         </div>
