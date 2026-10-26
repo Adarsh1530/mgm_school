@@ -39,12 +39,14 @@ if (!defined('DB_PASS')) define('DB_PASS', getenv('DB_PASS') !== false ? getenv(
 if (!defined('DB_CHARSET')) define('DB_CHARSET', 'utf8mb4');
 
 // Dynamic Base URL Detection
+$host = $_SERVER['HTTP_HOST'] ?? 'localhost';
 $isHttps = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
     || (isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == 443)
-    || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https');
+    || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https')
+    || (isset($_SERVER['HTTP_CF_VISITOR']) && strpos($_SERVER['HTTP_CF_VISITOR'], 'https') !== false)
+    || (strpos($host, 'mgmmodelschool.edu.in') !== false);
 
 $protocol = $isHttps ? "https://" : "http://";
-$host = $_SERVER['HTTP_HOST'] ?? 'localhost';
 
 if (php_sapi_name() === 'cli-server') {
     $basePath = '';
