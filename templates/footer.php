@@ -89,6 +89,9 @@
     </div>
   </footer>
 
+  <!-- Image Popup Notification -->
+  <?php require_once __DIR__ . '/popup.php'; ?>
+
   <!-- Scripts -->
   <script src="<?= asset_url('js/bootstrap.bundle.min.js') ?>"></script>
   <script src="<?= asset_url('js/swiper-bundle.min.js') ?>"></script>

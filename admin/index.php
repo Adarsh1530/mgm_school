@@ -1,6 +1,6 @@
 <?php
 /**
- * Admin Dashboard
+ * Admin Dashboard View
  * MGM Model School Management Portal
  */
 require_once __DIR__ . '/../config/config.php';
@@ -13,22 +13,25 @@ $adminTitle = 'Dashboard Overview';
 
 $db = getDB();
 
-// Gather statistics
+// Fast Metric Counts
 $noticesCount = (int)$db->query("SELECT COUNT(*) FROM notices")->fetchColumn();
 $activeNoticesCount = (int)$db->query("SELECT COUNT(*) FROM notices WHERE is_active = 1")->fetchColumn();
 $disclosuresCount = (int)$db->query("SELECT COUNT(*) FROM mandatory_disclosures")->fetchColumn();
 $galleryCount = (int)$db->query("SELECT COUNT(*) FROM gallery")->fetchColumn();
+
+// Popup Notification Status
+$popupActive = (get_setting('popup_enabled', '0') === '1' && !empty(get_setting('popup_image_url', '')));
 
 require_once __DIR__ . '/header.php';
 ?>
 
 <!-- Statistics Metric Cards -->
 <div class="row g-4 mb-4">
-  <div class="col-xl-4 col-md-4">
+  <div class="col-xl-3 col-md-6">
     <div class="card-metric">
       <div class="d-flex justify-content-between align-items-center">
         <div>
-          <div class="text-muted small fw-semibold text-uppercase">School Notices & Circulars</div>
+          <div class="text-muted small fw-semibold text-uppercase">School Notices</div>
           <h2 class="fw-bold my-1 text-dark"><?= $noticesCount ?></h2>
           <div class="text-muted small mb-2"><span class="badge bg-success bg-opacity-10 text-success fw-bold"><?= $activeNoticesCount ?> Active</span></div>
           <a href="<?= ADMIN_URL ?>/notices.php" class="text-danger small fw-bold">Manage Notices &rarr;</a>
@@ -40,11 +43,11 @@ require_once __DIR__ . '/header.php';
     </div>
   </div>
 
-  <div class="col-xl-4 col-md-4">
+  <div class="col-xl-3 col-md-6">
     <div class="card-metric">
       <div class="d-flex justify-content-between align-items-center">
         <div>
-          <div class="text-muted small fw-semibold text-uppercase">Mandatory Disclosures</div>
+          <div class="text-muted small fw-semibold text-uppercase">Disclosures</div>
           <h2 class="fw-bold my-1 text-dark"><?= $disclosuresCount ?></h2>
           <div class="text-muted small mb-2"><span class="badge bg-secondary bg-opacity-10 text-secondary fw-bold">CBSE Documents</span></div>
           <a href="<?= ADMIN_URL ?>/disclosures.php" class="text-danger small fw-bold">Manage Documents &rarr;</a>
@@ -56,7 +59,7 @@ require_once __DIR__ . '/header.php';
     </div>
   </div>
 
-  <div class="col-xl-4 col-md-4">
+  <div class="col-xl-3 col-md-6">
     <div class="card-metric">
       <div class="d-flex justify-content-between align-items-center">
         <div>
@@ -67,6 +70,28 @@ require_once __DIR__ . '/header.php';
         </div>
         <div class="bg-primary bg-opacity-10 text-primary p-3 rounded-circle">
           <i class="fa-solid fa-images fa-2x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xl-3 col-md-6">
+    <div class="card-metric">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <div class="text-muted small fw-semibold text-uppercase">Popup Notification</div>
+          <h2 class="fw-bold my-1 text-dark"><?= $popupActive ? 'ON' : 'OFF' ?></h2>
+          <div class="text-muted small mb-2">
+            <?php if ($popupActive): ?>
+              <span class="badge bg-success bg-opacity-10 text-success fw-bold">Active &amp; Live</span>
+            <?php else: ?>
+              <span class="badge bg-secondary bg-opacity-10 text-secondary fw-bold">Disabled</span>
+            <?php endif; ?>
+          </div>
+          <a href="<?= ADMIN_URL ?>/popup.php" class="text-danger small fw-bold">Configure Popup &rarr;</a>
+        </div>
+        <div class="bg-warning bg-opacity-10 text-warning p-3 rounded-circle">
+          <i class="fa-solid fa-window-restore fa-2x" style="color: #F59E0B;"></i>
         </div>
       </div>
     </div>

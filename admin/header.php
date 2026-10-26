@@ -183,6 +183,9 @@ $activePage = $activePage ?? 'dashboard';
       <li class="<?= $activePage === 'gallery' ? 'active' : '' ?>">
         <a href="<?= ADMIN_URL ?>/gallery.php"><i class="fa-solid fa-images"></i> Gallery Management</a>
       </li>
+      <li class="<?= $activePage === 'popup' ? 'active' : '' ?>">
+        <a href="<?= ADMIN_URL ?>/popup.php"><i class="fa-solid fa-window-restore"></i> Popup Notification</a>
+      </li>
     </ul>
 
     <div class="p-3 border-top border-secondary">

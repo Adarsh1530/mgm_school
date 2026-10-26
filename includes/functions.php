@@ -91,6 +91,60 @@ function get_setting(string $key, string $default = ''): string {
     return $settingsCache[$key] ?? $default;
 }
 
+/**
+ * Update or insert a site setting
+ */
+function set_setting(string $key, string $value): bool {
+    try {
+        $db = getDB();
+        $stmt = $db->prepare("SELECT COUNT(*) FROM site_settings WHERE setting_key = ?");
+        $stmt->execute([$key]);
+        if ($stmt->fetchColumn() > 0) {
+            $upd = $db->prepare("UPDATE site_settings SET setting_value = ? WHERE setting_key = ?");
+            return $upd->execute([$value, $key]);
+        } else {
+            $ins = $db->prepare("INSERT INTO site_settings (setting_key, setting_value) VALUES (?, ?)");
+            return $ins->execute([$key, $value]);
+        }
+    } catch (Throwable $e) {
+        error_log("set_setting error: " . $e->getMessage());
+        return false;
+    }
+}
+
+/**
+ * Get active image popup notification if enabled and within date range
+ */
+function get_popup_notification(): ?array {
+    $enabled = get_setting('popup_enabled', '0');
+    $imageUrl = get_setting('popup_image_url', '');
+
+    if ($enabled !== '1' || empty($imageUrl)) {
+        return null;
+    }
+
+    $today = date('Y-m-d');
+    $startDate = get_setting('popup_start_date', '');
+    $endDate = get_setting('popup_end_date', '');
+
+    if (!empty($startDate) && $today < $startDate) {
+        return null;
+    }
+
+    if (!empty($endDate) && $today > $endDate) {
+        return null;
+    }
+
+    return [
+        'enabled'    => true,
+        'image_url'  => $imageUrl,
+        'title'      => get_setting('popup_title', 'Special Announcement'),
+        'link_url'   => get_setting('popup_link_url', ''),
+        'start_date' => $startDate,
+        'end_date'   => $endDate,
+    ];
+}
+
 function get_navigation_tree(): array {
     static $tree = null;
     if ($tree !== null) return $tree;
