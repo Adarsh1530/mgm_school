@@ -1,7 +1,7 @@
 <?php
 /**
  * Our Mission View
- * MGM Model School Recreation Project - Enhanced UI/UX with Official School Vision & Mission
+ * MGM Model School Recreation Project - Official School Vision & Mission
  */
 require_once __DIR__ . '/../config/config.php';
 
@@ -10,7 +10,7 @@ $page = get_page_by_slug($currentSlug);
 
 $pageTitle = $page['title'] ?? "Our Mission";
 $breadcrumbTitle = $page['breadcrumb_title'] ?? $pageTitle;
-$metaDescription = $page['meta_description'] ?? "Our Vision and Mission at MGM Model School, Ayiroor, Varkala.";
+$metaDescription = $page['meta_description'] ?? "Official Vision and Mission of MGM Model School, Ayiroor, Varkala.";
 $wpId = 15908;
 
 require_once __DIR__ . '/../templates/header.php';
@@ -37,20 +37,20 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
             <div style="width: 52px; height: 52px; border-radius: 12px; background: rgba(171,12,47,0.1); color: var(--tp-theme-primary, #ab0c2f); display: flex; align-items: center; justify-content: center; font-size: 22px;">
               <i class="fa-solid fa-eye"></i>
             </div>
-            <h3 class="mb-0 fw-bold" style="font-size: 24px; color: #141B2B;">Our Vision</h3>
+            <h3 class="mb-0 fw-bold" style="font-size: 24px; color: #141B2B;">School Vision</h3>
           </div>
-          <p class="text-secondary leading-relaxed" style="font-size: 16px; line-height: 1.8;">
-            To be a beacon of transformative school education that empowers every student to realize their fullest intellectual, ethical, and creative potential. We aspire to build compassionate global citizens grounded in rich cultural values and equipped with modern technological capabilities.
+          <p class="text-secondary leading-relaxed fw-medium" style="font-size: 16px; line-height: 1.85;">
+            To make our school a centre of excellence that shapes confident, adaptable and research-oriented global citizens with strong communication skills and deep Indian values, empowering them to lead with courage, integrity, empathy and responsibility.
           </p>
           <ul class="list-unstyled mt-4 mb-0">
             <li class="d-flex align-items-center gap-2 mb-2 text-muted">
-              <i class="fa-solid fa-circle-check text-success"></i> Academic distinction through innovative pedagogy
+              <i class="fa-solid fa-circle-check text-success"></i> Centre of excellence for confident &amp; adaptable learners
             </li>
             <li class="d-flex align-items-center gap-2 mb-2 text-muted">
-              <i class="fa-solid fa-circle-check text-success"></i> Holistic personality development and sports excellence
+              <i class="fa-solid fa-circle-check text-success"></i> Research-oriented global citizenship &amp; strong communication
             </li>
             <li class="d-flex align-items-center gap-2 text-muted">
-              <i class="fa-solid fa-circle-check text-success"></i> Environmental stewardship and social responsibility
+              <i class="fa-solid fa-circle-check text-success"></i> Rooted in courage, integrity, empathy and responsibility
             </li>
           </ul>
         </div>
@@ -63,20 +63,20 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
             <div style="width: 52px; height: 52px; border-radius: 12px; background: rgba(37,99,235,0.1); color: #2563EB; display: flex; align-items: center; justify-content: center; font-size: 22px;">
               <i class="fa-solid fa-bullseye"></i>
             </div>
-            <h3 class="mb-0 fw-bold" style="font-size: 24px; color: #141B2B;">Our Mission</h3>
+            <h3 class="mb-0 fw-bold" style="font-size: 24px; color: #141B2B;">School Mission</h3>
           </div>
-          <p class="text-secondary leading-relaxed" style="font-size: 16px; line-height: 1.8;">
-            We aim to instil in each child a sense of inquisitiveness, urge for experimentation, observation, and synthesis. Every child is encouraged to inculcate the values of citizenry. We are committed to provide a positive learning environment to build a community of critical thinkers that advocates mental transformation creating wisdom and healthy behaviour.
+          <p class="text-secondary leading-relaxed fw-medium" style="font-size: 16px; line-height: 1.85;">
+            To nurture children with utmost care, giving equal opportunity, providing creative and critical learning, computational thinking rooted in Indian culture and values; to inspire them to become empathetic and confident thinkers, responsible citizens and future leaders.
           </p>
           <ul class="list-unstyled mt-4 mb-0">
             <li class="d-flex align-items-center gap-2 mb-2 text-muted">
-              <i class="fa-solid fa-circle-check text-primary"></i> Inspiring curiosity, observation, and scientific inquiry
+              <i class="fa-solid fa-circle-check text-primary"></i> Utmost care, equal opportunity &amp; positive environment
             </li>
             <li class="d-flex align-items-center gap-2 mb-2 text-muted">
-              <i class="fa-solid fa-circle-check text-primary"></i> Fostering critical thinking and character building
+              <i class="fa-solid fa-circle-check text-primary"></i> Creative, critical learning &amp; computational thinking
             </li>
             <li class="d-flex align-items-center gap-2 text-muted">
-              <i class="fa-solid fa-circle-check text-primary"></i> Nurturing mental wisdom and healthy community habits
+              <i class="fa-solid fa-circle-check text-primary"></i> Empathetic thinkers, responsible citizens &amp; future leaders
             </li>
           </ul>
         </div>

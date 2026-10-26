@@ -100,9 +100,9 @@ $innovationSection = <<<'HTML'
           </div>
           <div class="card-body p-4">
             <h4 class="card-title fw-bold text-dark mb-2">6th National Water Award 2024</h4>
-            <p class="text-secondary small mb-3">Conferred with <strong>Special Mention &ndash; Best School/College Category</strong> at Vigyan Bhawan, New Delhi in the august presence of Hon'ble President of India Smt. Droupadi Murmu. Principal Dr. Pooja S received the award from Union Minister Shri C. R. Paatil for our campus rainwater harvesting system and 36 conservation pits replenishing the groundwater table.</p>
+            <p class="text-secondary small mb-3">MGM Model School, Ayiroor, Varkala has been conferred with a <strong>Special Mention &ndash; Best School/College Category</strong> at the 6th National Water Awards 2024 by the Ministry of Jal Shakti, Government of India. Selected from 751 schools and colleges across India, the honour was presented at Vigyan Bhawan, New Delhi on 18th November 2025 in the august presence of Hon'ble President of India Smt. Droupadi Murmu. Principal Dr. Pooja S received the award from Hon'ble Union Minister Shri C. R. Paatil for our campus Rainwater Harvesting system and 36 conservation pits replenishing the groundwater table.</p>
             <div class="d-flex align-items-center gap-2 text-muted small">
-              <i class="fa-solid fa-trophy text-warning"></i> Selected from 751 schools &amp; colleges across India
+              <i class="fa-solid fa-trophy text-warning"></i> Selected from 751 schools &amp; colleges across India &bull; Vigyan Bhawan, New Delhi (18 Nov 2025)
             </div>
           </div>
         </div>
@@ -115,9 +115,9 @@ $innovationSection = <<<'HTML'
           </div>
           <div class="card-body p-4">
             <h4 class="card-title fw-bold text-dark mb-2">Dr. Sarvepalli Radhakrishnan National Principal Award 2025</h4>
-            <p class="text-secondary small mb-3">Conferred upon Principal <strong>Dr. Pooja S</strong> by Dr. Subramanyam Sharma, grandson of Bharat Ratna Dr. S. Radhakrishnan, at the Grand Conclave in Hyderabad, celebrating visionary leadership, empowering 21st-century learners, and transformative pedagogy.</p>
+            <p class="text-secondary small mb-3">Conferred upon Principal <strong>Dr. Pooja S</strong> by Dr. Subramanyam Sharma, grandson of Bharat Ratna Dr. S. Radhakrishnan (former President of India), at the Grand Conclave held on 22nd August 2025 at Neo Convention, Janwada, Hyderabad. This esteemed national honour recognizes her visionary leadership, exceptional contributions to empowering 21st-century learners, transformative pedagogy, and elevating MGM Model School to new heights of excellence.</p>
             <div class="d-flex align-items-center gap-2 text-muted small">
-              <i class="fa-solid fa-medal text-danger"></i> Dedicated Leadership &bull; 43 Years of Academic Excellence
+              <i class="fa-solid fa-medal text-danger"></i> Grand Conclave, Neo Convention, Hyderabad (22 Aug 2025) &bull; Visionary Leadership
             </div>
           </div>
         </div>
