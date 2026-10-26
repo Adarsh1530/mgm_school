@@ -1,7 +1,7 @@
 <?php
 /**
  * Gallery View
- * MGM Model School - Exact BVB Manvila Layout & Functional Structure
+ * MGM Model School - 3x3 Grid Layout | Hover Event Dates | Circular Search | Event-Specific Sub-Images
  */
 require_once __DIR__ . '/../config/config.php';
 
@@ -13,10 +13,10 @@ $breadcrumbTitle = "Gallery";
 $metaDescription = "Explore authentic photographic memories reflecting academic rigor, vibrant cultural fests, sports milestones, and campus life at MGM Model School.";
 $wpId = 15937;
 
-// Fetch all active gallery images
+// Fetch all active gallery events
 $db = getDB();
-$stmt = $db->query("SELECT * FROM gallery WHERE is_active = 1 ORDER BY sort_order ASC, id ASC");
-$galleryItems = $stmt->fetchAll();
+$stmt = $db->query("SELECT * FROM gallery WHERE is_active = 1 ORDER BY sort_order ASC, id DESC");
+$galleryItems = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Extract unique categories preserving order
 $categories = [];
@@ -40,15 +40,12 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
       <p class="section-subtitle">Click on any photograph to view high-resolution details in the lightbox viewer.</p>
     </div>
 
-    <!-- Keyword Search Option (Exact BVB Manvila Layout) -->
-    <div class="gallery-search-container">
-      <div class="gallery-search-box">
-        <svg class="gallery-search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-        <input type="text" id="gallerySearchInput" class="gallery-search-input" placeholder="Search photos by keywords (e.g. sports, robotics, water award, principal, science...)" autocomplete="off" aria-label="Search gallery images by keyword">
-        <button type="button" id="gallerySearchClear" class="gallery-search-clear" aria-label="Clear search" title="Clear search" style="display: none;">
+    <!-- Clean Circular-Style Search Field (No Rectangular Border, Centered Alignment) -->
+    <div class="gallery-search-outer">
+      <div class="gallery-circular-search">
+        <i class="fa-solid fa-magnifying-glass search-circ-icon"></i>
+        <input type="text" id="gallerySearchInput" class="search-circ-input" placeholder="Search events by title, keyword, or date..." autocomplete="off" aria-label="Search gallery images by keyword">
+        <button type="button" id="gallerySearchClear" class="search-circ-clear" aria-label="Clear search" title="Clear search" style="display: none;">
           &times;
         </button>
       </div>
@@ -67,7 +64,7 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
       <?php endforeach; ?>
     </div>
 
-    <!-- Empty State Container when no images match (Exact BVB Manvila Layout) -->
+    <!-- Empty State Container when no images match -->
     <div id="galleryNoResults" class="gallery-no-results" style="display: none;">
       <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
         <circle cx="11" cy="11" r="8"></circle>
@@ -79,12 +76,26 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
       <button type="button" class="btn btn-primary btn-pill btn-sm btn-clear-search">Show All Photos</button>
     </div>
 
-    <!-- Gallery Grid (Exact BVB Manvila Layout) -->
+    <!-- Gallery Grid (Strict 3x3 Grid Layout) -->
     <div class="gallery-grid" id="publicGalleryGrid">
       <?php foreach ($galleryItems as $idx => $item): 
         $catSlug = strtolower(preg_replace('/[^a-zA-Z0-9]/', '-', $item['category'] ?? 'general'));
         $catLabel = $item['category'] ?? 'Campus';
         $itemImg = asset_url($item['image_path']);
+        $subtitle = $item['subtitle'] ?? $item['caption'] ?? '';
+        $eventDate = !empty($item['event_date']) ? $item['event_date'] : date('F d, Y', strtotime($item['created_at']));
+
+        // Parse sub-images
+        $rawSub = !empty($item['sub_images']) ? json_decode($item['sub_images'], true) : [];
+        $subUrls = [];
+        if (is_array($rawSub)) {
+            foreach ($rawSub as $subPath) {
+                if (!empty($subPath)) {
+                    $subUrls[] = asset_url($subPath);
+                }
+            }
+        }
+        $subCount = count($subUrls);
       ?>
         <div class="gallery-item" 
              data-id="<?= $item['id'] ?>"
@@ -92,32 +103,46 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
              data-category="<?= e($catSlug) ?>"
              data-category-label="<?= e($catLabel) ?>"
              data-title="<?= e($item['title']) ?>"
-             data-caption="<?= e($item['caption'] ?? '') ?>"
-             data-img="<?= $itemImg ?>">
+             data-subtitle="<?= e($subtitle) ?>"
+             data-date="<?= e($eventDate) ?>"
+             data-main-img="<?= $itemImg ?>"
+             data-sub-images='<?= json_encode($subUrls) ?>'>
+          
           <img src="<?= $itemImg ?>" alt="<?= e($item['title']) ?>" loading="lazy">
+          
           <div class="gallery-overlay">
-            <span class="gallery-overlay-badge"><?= strtoupper(e($catLabel)) ?></span>
+            <div class="gallery-overlay-top">
+              <span class="gallery-overlay-badge"><?= strtoupper(e($catLabel)) ?></span>
+              <?php if ($subCount > 0): ?>
+                <span class="gallery-overlay-subcount">
+                  <i class="fa-solid fa-images"></i> <?= $subCount + 1 ?> PHOTOS
+                </span>
+              <?php endif; ?>
+            </div>
+
             <span class="gallery-overlay-title"><?= e($item['title']) ?></span>
-            <?php if (!empty($item['caption'])): ?>
-              <span class="gallery-overlay-subtitle"><?= e($item['caption']) ?></span>
+            
+            <?php if (!empty($subtitle)): ?>
+              <span class="gallery-overlay-subtitle"><?= e($subtitle) ?></span>
             <?php endif; ?>
+
+            <!-- Exact Event Date Revealed On Image Hover -->
+            <div class="gallery-event-date">
+              <i class="fa-regular fa-calendar-days"></i> <?= strtoupper(e($eventDate)) ?>
+            </div>
           </div>
-          <div class="gallery-zoom-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              <line x1="11" y1="8" x2="11" y2="14"></line>
-              <line x1="8" y1="11" x2="14" y2="11"></line>
-            </svg>
-          </div>
+
         </div>
       <?php endforeach; ?>
     </div>
 
+    <!-- 3x3 Pagination Controls Container -->
+    <div class="gallery-pagination" id="galleryPagination"></div>
+
   </div>
 </div>
 
-<!-- Lightbox Modal Component (Exact BVB Manvila Layout with Related Thumbnails Strip) -->
+<!-- Lightbox Modal Component (Strict Event-Specific Sub-Images Only) -->
 <div class="lightbox-modal" id="gallery-lightbox" role="dialog" aria-modal="true" aria-label="Photo Lightbox Viewer">
   <div class="lightbox-dialog">
     <button type="button" class="lightbox-close" aria-label="Close Lightbox" id="lightboxClose">&times;</button>
@@ -137,14 +162,18 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
     </div>
 
     <div class="lightbox-info">
-      <div class="lightbox-caption" id="lightboxCaption"></div>
+      <div class="lightbox-caption-group">
+        <div class="lightbox-event-date-pill" id="lightboxEventDate"></div>
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+        <div class="lightbox-subcaption" id="lightboxSubCaption"></div>
+      </div>
       <div class="lightbox-counter" id="lightboxCounter"></div>
     </div>
 
-    <!-- Related Thumbnails Below Main Image for Easy Navigation -->
+    <!-- Event-Specific Sub-Images Strip (Never Mixes Images From Other Events) -->
     <div class="lightbox-thumbs-container" id="lightboxThumbsSection">
       <div class="lightbox-thumbs-header">
-        <span class="lightbox-thumbs-label"><i class="fa-solid fa-images me-1"></i> <span id="lightboxThumbsHeading">Related Photos</span></span>
+        <span class="lightbox-thumbs-label"><i class="fa-solid fa-images me-1"></i> <span id="lightboxThumbsHeading">Event Photos</span></span>
         <span class="lightbox-thumbs-counter" id="lightboxThumbsCount"></span>
       </div>
       <div class="lightbox-thumbs-scroll-wrap">

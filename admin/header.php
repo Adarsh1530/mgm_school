@@ -181,7 +181,7 @@ $activePage = $activePage ?? 'dashboard';
         <a href="<?= ADMIN_URL ?>/disclosures.php"><i class="fa-solid fa-file-pdf"></i> Mandatory Disclosures</a>
       </li>
       <li class="<?= $activePage === 'gallery' ? 'active' : '' ?>">
-        <a href="<?= ADMIN_URL ?>/gallery.php"><i class="fa-solid fa-images"></i> Gallery Management</a>
+        <a href="<?= ADMIN_URL ?>/gallery.php"><i class="fa-solid fa-images"></i> Image & Gallery Upload</a>
       </li>
       <li class="<?= $activePage === 'popup' ? 'active' : '' ?>">
         <a href="<?= ADMIN_URL ?>/popup.php"><i class="fa-solid fa-window-restore"></i> Popup Notification</a>
