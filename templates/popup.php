@@ -30,23 +30,13 @@ $popupLink = $popupData['link_url'] ?? '';
     <!-- Modal Content Body -->
     <div class="mgm-popup-body">
       <?php if (!empty($popupLink)): ?>
-        <a href="<?= e($popupLink) ?>" class="mgm-popup-link" title="<?= e($popupTitle) ?>">
+        <a href="<?= e($popupLink) ?>" class="mgm-popup-link" title="<?= e($popupTitle) ?>" style="display: block; cursor: pointer;">
           <img src="<?= e($popupImage) ?>" alt="<?= e($popupTitle) ?>" class="mgm-popup-img" loading="eager">
         </a>
       <?php else: ?>
         <img src="<?= e($popupImage) ?>" alt="<?= e($popupTitle) ?>" class="mgm-popup-img" loading="eager">
       <?php endif; ?>
     </div>
-
-    <!-- Optional Action Button Bar -->
-    <?php if (!empty($popupLink)): ?>
-      <div class="mgm-popup-action-bar">
-        <a href="<?= e($popupLink) ?>" class="btn btn-sm btn-danger px-4 py-2 rounded-pill fw-bold shadow-sm">
-          <span><?= !empty($popupTitle) ? e($popupTitle) : 'View Details' ?></span>
-          <i class="fa-solid fa-arrow-right ms-1"></i>
-        </a>
-      </div>
-    <?php endif; ?>
   </div>
 </div>
 
@@ -127,9 +117,6 @@ $popupLink = $popupData['link_url'] ?? '';
   max-height: 80vh;
   object-fit: contain;
   display: block;
-}
-.mgm-popup-action-bar {
-  margin-top: 14px;
 }
 @media (max-width: 576px) {
   .mgm-popup-overlay {

@@ -52,13 +52,6 @@
 
         innerHtml += '</div>';
 
-        if (linkUrl) {
-          innerHtml += '<div class="mgm-popup-action-bar">' +
-            '<a href="' + linkUrl + '" class="btn btn-sm btn-danger px-4 py-2 rounded-pill fw-bold shadow-sm">' +
-            '<span>' + title + '</span> <i class="fa-solid fa-arrow-right ms-1"></i>' +
-            '</a></div>';
-        }
-
         innerHtml += '</div>';
         overlay.innerHTML = innerHtml;
         document.body.appendChild(overlay);
