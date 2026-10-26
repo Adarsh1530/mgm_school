@@ -1,7 +1,7 @@
 <?php
 /**
  * Gallery View
- * MGM Model School - 3x3 Grid Layout | Hover Event Dates | Circular Search | Event-Specific Sub-Images
+ * MGM Model School - 3x3 Grid Layout | Single Page | Hover-Only Details | Clean Borderless Lightbox
  */
 require_once __DIR__ . '/../config/config.php';
 
@@ -52,7 +52,7 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
       <div id="gallerySearchMeta" class="gallery-search-meta"></div>
     </div>
 
-    <!-- Category Filter Buttons (Exact BVB Manvila Layout) -->
+    <!-- Category Filter Buttons (Events identified only through selected filter) -->
     <div class="gallery-filters" id="galleryFilterBtns">
       <button type="button" class="filter-btn active" data-filter="all">ALL</button>
       <?php foreach ($categories as $cat): 
@@ -76,7 +76,7 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
       <button type="button" class="btn btn-primary btn-pill btn-sm btn-clear-search">Show All Photos</button>
     </div>
 
-    <!-- Gallery Grid (Strict 3x3 Grid Layout) -->
+    <!-- Gallery Grid (Clean 3x3 Grid Layout, All Images on a Single Page Without Pagination) -->
     <div class="gallery-grid" id="publicGalleryGrid">
       <?php foreach ($galleryItems as $idx => $item): 
         $catSlug = strtolower(preg_replace('/[^a-zA-Z0-9]/', '-', $item['category'] ?? 'general'));
@@ -95,7 +95,6 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
                 }
             }
         }
-        $subCount = count($subUrls);
       ?>
         <div class="gallery-item" 
              data-id="<?= $item['id'] ?>"
@@ -110,39 +109,25 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
           
           <img src="<?= $itemImg ?>" alt="<?= e($item['title']) ?>" loading="lazy">
           
+          <!-- Hover Overlay: HIDDEN BY DEFAULT, SHOWN ONLY ON HOVER -->
           <div class="gallery-overlay">
-            <div class="gallery-overlay-top">
-              <span class="gallery-overlay-badge"><?= strtoupper(e($catLabel)) ?></span>
-              <?php if ($subCount > 0): ?>
-                <span class="gallery-overlay-subcount">
-                  <i class="fa-solid fa-images"></i> <?= $subCount + 1 ?> PHOTOS
-                </span>
-              <?php endif; ?>
+            <div class="gallery-overlay-date">
+              <i class="fa-regular fa-calendar-days"></i> <?= strtoupper(e($eventDate)) ?>
             </div>
-
             <span class="gallery-overlay-title"><?= e($item['title']) ?></span>
-            
             <?php if (!empty($subtitle)): ?>
               <span class="gallery-overlay-subtitle"><?= e($subtitle) ?></span>
             <?php endif; ?>
-
-            <!-- Exact Event Date Revealed On Image Hover -->
-            <div class="gallery-event-date">
-              <i class="fa-regular fa-calendar-days"></i> <?= strtoupper(e($eventDate)) ?>
-            </div>
           </div>
 
         </div>
       <?php endforeach; ?>
     </div>
 
-    <!-- 3x3 Pagination Controls Container -->
-    <div class="gallery-pagination" id="galleryPagination"></div>
-
   </div>
 </div>
 
-<!-- Lightbox Modal Component (Strict Event-Specific Sub-Images Only) -->
+<!-- Lightbox Modal Component (Clean, Borderless, Frameless, No Package Box) -->
 <div class="lightbox-modal" id="gallery-lightbox" role="dialog" aria-modal="true" aria-label="Photo Lightbox Viewer">
   <div class="lightbox-dialog">
     <button type="button" class="lightbox-close" aria-label="Close Lightbox" id="lightboxClose">&times;</button>
@@ -161,30 +146,15 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
       </button>
     </div>
 
-    <div class="lightbox-info">
-      <div class="lightbox-caption-group">
-        <div class="lightbox-event-date-pill" id="lightboxEventDate"></div>
-        <div class="lightbox-caption" id="lightboxCaption"></div>
-        <div class="lightbox-subcaption" id="lightboxSubCaption"></div>
-      </div>
-      <div class="lightbox-counter" id="lightboxCounter"></div>
-    </div>
-
-    <!-- Event-Specific Sub-Images Strip (Never Mixes Images From Other Events) -->
-    <div class="lightbox-thumbs-container" id="lightboxThumbsSection">
-      <div class="lightbox-thumbs-header">
-        <span class="lightbox-thumbs-label"><i class="fa-solid fa-images me-1"></i> <span id="lightboxThumbsHeading">Event Photos</span></span>
-        <span class="lightbox-thumbs-counter" id="lightboxThumbsCount"></span>
-      </div>
-      <div class="lightbox-thumbs-scroll-wrap">
-        <button type="button" class="lightbox-thumb-scroll-btn thumb-scroll-prev" id="thumbScrollPrev" aria-label="Scroll thumbnails left">
-          <i class="fa-solid fa-angle-left"></i>
-        </button>
-        <div class="lightbox-thumbs-track" id="lightboxThumbsTrack"></div>
-        <button type="button" class="lightbox-thumb-scroll-btn thumb-scroll-next" id="thumbScrollNext" aria-label="Scroll thumbnails right">
-          <i class="fa-solid fa-angle-right"></i>
-        </button>
-      </div>
+    <!-- Event-Specific Sub-Images (Borderless, Frameless, Free-Floating Strip) -->
+    <div class="lightbox-thumbs-wrap" id="lightboxThumbsSection" style="display: none;">
+      <button type="button" class="lightbox-thumb-scroll-btn thumb-scroll-prev" id="thumbScrollPrev" aria-label="Scroll left">
+        <i class="fa-solid fa-angle-left"></i>
+      </button>
+      <div class="lightbox-thumbs-track" id="lightboxThumbsTrack"></div>
+      <button type="button" class="lightbox-thumb-scroll-btn thumb-scroll-next" id="thumbScrollNext" aria-label="Scroll right">
+        <i class="fa-solid fa-angle-right"></i>
+      </button>
     </div>
 
   </div>

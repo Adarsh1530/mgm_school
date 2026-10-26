@@ -1,6 +1,6 @@
 /**
  * MGM Model School - Interactive Gallery & Lightbox Engine
- * 3x3 Grid Layout | Hover Event Dates | Circular Search | Event-Specific Sub-Images
+ * Single Page 3x3 Grid Layout | Hover-Only Details | Clean Borderless Lightbox
  */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -10,27 +10,24 @@ document.addEventListener('DOMContentLoaded', function () {
   const noResultsBox = document.getElementById('galleryNoResults');
   const filterBtns = document.querySelectorAll('#galleryFilterBtns .filter-btn');
   const galleryGrid = document.getElementById('publicGalleryGrid');
-  const paginationContainer = document.getElementById('galleryPagination');
 
   if (!galleryGrid) return;
 
   const allItems = Array.from(galleryGrid.querySelectorAll('.gallery-item'));
   if (!allItems.length) return;
 
-  const ITEMS_PER_PAGE = 9; // Strict 3x3 grid layout (3 columns x 3 rows)
   let activeFilter = 'all';
   let searchQuery = '';
-  let currentPage = 1;
-  let matchingItems = [...allItems];
 
   // -------------------------------------------------------------
-  // 1. FILTERING, SEARCH & 3x3 PAGINATION ENGINE
+  // 1. FILTERING & SEARCH ENGINE (ALL IMAGES ON A SINGLE PAGE)
   // -------------------------------------------------------------
 
-  function filterItems() {
+  function applyFilter() {
+    let visibleCount = 0;
     const tokens = searchQuery.split(/\s+/).filter(t => t.length > 0);
 
-    matchingItems = allItems.filter(item => {
+    allItems.forEach(item => {
       const category = (item.getAttribute('data-category') || 'all').toLowerCase();
       const title = (item.getAttribute('data-title') || '').toLowerCase();
       const subtitle = (item.getAttribute('data-subtitle') || '').toLowerCase();
@@ -47,30 +44,8 @@ document.addEventListener('DOMContentLoaded', function () {
       // Check keyword search match (all tokens must match)
       const matchesSearch = tokens.length === 0 || tokens.every(token => fullSearchableText.includes(token));
 
-      return matchesCategory && matchesSearch;
-    });
-
-    currentPage = 1;
-    renderPage();
-  }
-
-  function renderPage() {
-    const totalItems = matchingItems.length;
-    const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE) || 1;
-
-    if (currentPage > totalPages) currentPage = totalPages;
-    if (currentPage < 1) currentPage = 1;
-
-    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-    const endIndex = startIndex + ITEMS_PER_PAGE;
-
-    // Show/hide gallery items
-    allItems.forEach(item => {
-      const isMatch = matchingItems.includes(item);
-      const matchIndex = matchingItems.indexOf(item);
-      const isVisibleOnPage = isMatch && (matchIndex >= startIndex && matchIndex < endIndex);
-
-      if (isVisibleOnPage) {
+      if (matchesCategory && matchesSearch) {
+        visibleCount++;
         item.classList.remove('hidden');
         item.style.display = '';
         setTimeout(() => {
@@ -88,91 +63,24 @@ document.addEventListener('DOMContentLoaded', function () {
     // Update search metadata & no-results state
     if (searchMeta) {
       if (searchQuery) {
-        searchMeta.textContent = `Found ${totalItems} events matching "${searchQuery}"`;
+        searchMeta.textContent = `Showing ${visibleCount} of ${allItems.length} photos matching "${searchQuery}"`;
       } else if (activeFilter !== 'all') {
         const activeBtn = document.querySelector('#galleryFilterBtns .filter-btn.active');
-        const catName = activeBtn ? activeBtn.textContent.trim() : activeFilter;
-        searchMeta.textContent = `Showing ${totalItems} events in ${catName}`;
+        const catName = activeBtn ? activeBtn.textContent.trim() : activeFilter.toUpperCase();
+        searchMeta.textContent = `Showing ${visibleCount} photos in ${catName}`;
       } else {
         searchMeta.textContent = '';
       }
     }
 
     if (noResultsBox) {
-      if (totalItems === 0) {
+      if (visibleCount === 0 && allItems.length > 0) {
         noResultsBox.style.display = 'block';
         const querySpan = noResultsBox.querySelector('.no-results-query');
         if (querySpan) querySpan.textContent = searchQuery || activeFilter;
       } else {
         noResultsBox.style.display = 'none';
       }
-    }
-
-    renderPaginationControls(totalPages);
-  }
-
-  function renderPaginationControls(totalPages) {
-    if (!paginationContainer) return;
-    paginationContainer.innerHTML = '';
-
-    if (totalPages <= 1) {
-      paginationContainer.style.display = 'none';
-      return;
-    }
-    paginationContainer.style.display = 'flex';
-
-    // Previous Button
-    const prevBtn = document.createElement('button');
-    prevBtn.type = 'button';
-    prevBtn.className = 'gallery-page-btn' + (currentPage === 1 ? ' disabled' : '');
-    prevBtn.innerHTML = '<i class="fa-solid fa-angle-left"></i>';
-    prevBtn.setAttribute('aria-label', 'Previous page');
-    prevBtn.addEventListener('click', () => {
-      if (currentPage > 1) {
-        currentPage--;
-        renderPage();
-        scrollToGallery();
-      }
-    });
-    paginationContainer.appendChild(prevBtn);
-
-    // Page Numbers
-    for (let p = 1; p <= totalPages; p++) {
-      const pageBtn = document.createElement('button');
-      pageBtn.type = 'button';
-      pageBtn.className = 'gallery-page-btn' + (p === currentPage ? ' active' : '');
-      pageBtn.textContent = p;
-      pageBtn.setAttribute('aria-label', `Page ${p}`);
-      pageBtn.addEventListener('click', () => {
-        if (currentPage !== p) {
-          currentPage = p;
-          renderPage();
-          scrollToGallery();
-        }
-      });
-      paginationContainer.appendChild(pageBtn);
-    }
-
-    // Next Button
-    const nextBtn = document.createElement('button');
-    nextBtn.type = 'button';
-    nextBtn.className = 'gallery-page-btn' + (currentPage === totalPages ? ' disabled' : '');
-    nextBtn.innerHTML = '<i class="fa-solid fa-angle-right"></i>';
-    nextBtn.setAttribute('aria-label', 'Next page');
-    nextBtn.addEventListener('click', () => {
-      if (currentPage < totalPages) {
-        currentPage++;
-        renderPage();
-        scrollToGallery();
-      }
-    });
-    paginationContainer.appendChild(nextBtn);
-  }
-
-  function scrollToGallery() {
-    const header = document.querySelector('.section-header');
-    if (header) {
-      header.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 
@@ -182,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
       filterBtns.forEach(b => b.classList.remove('active'));
       this.classList.add('active');
       activeFilter = (this.getAttribute('data-filter') || 'all').toLowerCase();
-      filterItems();
+      applyFilter();
     });
   });
 
@@ -193,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (searchClearBtn) {
         searchClearBtn.style.display = searchQuery ? 'flex' : 'none';
       }
-      filterItems();
+      applyFilter();
     });
   }
 
@@ -206,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       searchQuery = '';
       searchClearBtn.style.display = 'none';
-      filterItems();
+      applyFilter();
     });
   }
 
@@ -222,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (allBtn) allBtn.classList.add('active');
       activeFilter = 'all';
 
-      filterItems();
+      applyFilter();
     }
   });
 
@@ -246,38 +154,29 @@ document.addEventListener('DOMContentLoaded', function () {
     if (searchClearBtn) searchClearBtn.style.display = 'flex';
   }
 
-  filterItems();
+  applyFilter();
 
   // -------------------------------------------------------------
-  // 2. EVENT-SPECIFIC LIGHTBOX ENGINE
-  // Displays ONLY sub-images belonging to the selected event
-  // Never mixes images from other events!
+  // 2. CLEAN BORDERLESS LIGHTBOX (ONLY SUB-IMAGES OF THIS EVENT)
+  // No Package Box, No Frames, No Borders, Floating Images Only
   // -------------------------------------------------------------
   const lightbox = document.getElementById('gallery-lightbox');
   if (!lightbox) return;
 
   const lightboxImg = document.getElementById('lightboxImg');
-  const lightboxCaption = document.getElementById('lightboxCaption');
-  const lightboxSubCaption = document.getElementById('lightboxSubCaption');
-  const lightboxEventDate = document.getElementById('lightboxEventDate');
-  const lightboxCounter = document.getElementById('lightboxCounter');
   const lightboxClose = document.getElementById('lightboxClose');
   const lightboxPrev = document.getElementById('lightboxPrev');
   const lightboxNext = document.getElementById('lightboxNext');
+  const lightboxThumbsSection = document.getElementById('lightboxThumbsSection');
   const lightboxThumbsTrack = document.getElementById('lightboxThumbsTrack');
-  const lightboxThumbsHeading = document.getElementById('lightboxThumbsHeading');
-  const lightboxThumbsCount = document.getElementById('lightboxThumbsCount');
   const thumbScrollPrev = document.getElementById('thumbScrollPrev');
   const thumbScrollNext = document.getElementById('thumbScrollNext');
 
-  let currentEventPhotos = []; // Photos strictly belonging to this event
+  let currentEventPhotos = [];
   let currentEventPhotoIndex = 0;
-  let currentEventMeta = {};
 
   function openLightboxForEvent(itemElement) {
-    const title = itemElement.getAttribute('data-title') || 'School Event';
-    const subtitle = itemElement.getAttribute('data-subtitle') || '';
-    const date = itemElement.getAttribute('data-date') || '';
+    const title = itemElement.getAttribute('data-title') || 'Gallery Photo';
     const mainImg = itemElement.getAttribute('data-main-img') || (itemElement.querySelector('img') ? itemElement.querySelector('img').src : '');
     
     // Parse sub-images
@@ -291,68 +190,60 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
 
-    currentEventMeta = { title, subtitle, date };
-
-    // Build the photo list: Main Image is #1, followed by its sub-images
-    currentEventPhotos = [
-      { url: mainImg, label: 'Main Highlight' }
-    ];
+    // Build the photo list: Main Image is first, followed by sub-images
+    currentEventPhotos = [mainImg];
 
     if (Array.isArray(subImgs)) {
-      subImgs.forEach((imgUrl, i) => {
-        if (imgUrl && imgUrl !== mainImg) {
-          currentEventPhotos.push({
-            url: imgUrl,
-            label: `Photo ${i + 1}`
-          });
+      subImgs.forEach(imgUrl => {
+        if (imgUrl && imgUrl !== mainImg && !currentEventPhotos.includes(imgUrl)) {
+          currentEventPhotos.push(imgUrl);
         }
       });
     }
 
     currentEventPhotoIndex = 0;
-    populateEventThumbnails();
-    renderLightboxSlide(currentEventPhotoIndex);
+    populateEventThumbnails(title);
+    renderLightboxSlide(currentEventPhotoIndex, title);
 
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
 
-  function populateEventThumbnails() {
-    if (!lightboxThumbsTrack) return;
+  function populateEventThumbnails(title) {
+    if (!lightboxThumbsSection || !lightboxThumbsTrack) return;
+
+    if (currentEventPhotos.length <= 1) {
+      lightboxThumbsSection.style.display = 'none';
+      lightboxThumbsTrack.innerHTML = '';
+      return;
+    }
+
+    lightboxThumbsSection.style.display = 'flex';
     lightboxThumbsTrack.innerHTML = '';
 
-    const total = currentEventPhotos.length;
-    if (lightboxThumbsCount) {
-      lightboxThumbsCount.textContent = `${total} ${total === 1 ? 'photo' : 'photos'} in event`;
-    }
-
-    if (lightboxThumbsHeading) {
-      lightboxThumbsHeading.textContent = `${currentEventMeta.title} Package`;
-    }
-
-    currentEventPhotos.forEach((photo, idx) => {
+    currentEventPhotos.forEach((photoUrl, idx) => {
       const thumbBtn = document.createElement('div');
       thumbBtn.className = 'lightbox-thumb-item' + (idx === currentEventPhotoIndex ? ' active' : '');
       thumbBtn.setAttribute('data-index', idx);
-      thumbBtn.setAttribute('title', `${currentEventMeta.title} - ${photo.label}`);
+      thumbBtn.setAttribute('title', `${title} - Image ${idx + 1}`);
 
       const thumbImg = document.createElement('img');
-      thumbImg.src = photo.url;
-      thumbImg.alt = `${currentEventMeta.title} thumbnail ${idx + 1}`;
+      thumbImg.src = photoUrl;
+      thumbImg.alt = `${title} thumb ${idx + 1}`;
       thumbImg.loading = 'lazy';
 
       thumbBtn.appendChild(thumbImg);
 
       thumbBtn.addEventListener('click', function (e) {
         e.stopPropagation();
-        renderLightboxSlide(idx);
+        renderLightboxSlide(idx, title);
       });
 
       lightboxThumbsTrack.appendChild(thumbBtn);
     });
   }
 
-  function renderLightboxSlide(index) {
+  function renderLightboxSlide(index, title) {
     if (!currentEventPhotos.length) return;
 
     if (index < 0) {
@@ -362,40 +253,16 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     currentEventPhotoIndex = index;
-    const currentPhoto = currentEventPhotos[index];
+    const currentPhotoUrl = currentEventPhotos[index];
 
     // Fade transition for main photo
     if (lightboxImg) {
       lightboxImg.style.opacity = '0.3';
-      lightboxImg.src = currentPhoto.url;
-      lightboxImg.alt = `${currentEventMeta.title} - ${currentPhoto.label}`;
+      lightboxImg.src = currentPhotoUrl;
+      lightboxImg.alt = title || 'Gallery Image';
       lightboxImg.onload = function () {
         lightboxImg.style.opacity = '1';
       };
-    }
-
-    // Set Captions
-    if (lightboxCaption) {
-      lightboxCaption.textContent = currentEventMeta.title;
-    }
-
-    if (lightboxSubCaption) {
-      lightboxSubCaption.textContent = currentEventMeta.subtitle || '';
-      lightboxSubCaption.style.display = currentEventMeta.subtitle ? 'block' : 'none';
-    }
-
-    if (lightboxEventDate) {
-      if (currentEventMeta.date) {
-        lightboxEventDate.innerHTML = `<i class="fa-regular fa-calendar-days"></i> ${currentEventMeta.date.toUpperCase()}`;
-        lightboxEventDate.style.display = 'inline-flex';
-      } else {
-        lightboxEventDate.style.display = 'none';
-      }
-    }
-
-    // Counter within this event
-    if (lightboxCounter) {
-      lightboxCounter.textContent = `${index + 1} / ${currentEventPhotos.length}`;
     }
 
     // Highlight active thumbnail and scroll into view
@@ -410,6 +277,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
     }
+
+    // Hide navigation arrows if only 1 photo in event
+    const hasMultiple = currentEventPhotos.length > 1;
+    if (lightboxPrev) lightboxPrev.style.display = hasMultiple ? 'flex' : 'none';
+    if (lightboxNext) lightboxNext.style.display = hasMultiple ? 'flex' : 'none';
   }
 
   function closeLightbox() {
