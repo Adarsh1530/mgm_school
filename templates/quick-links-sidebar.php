@@ -9,9 +9,6 @@
   
   <!-- Edge Toggle Handle (Peeking Tab) -->
   <button type="button" id="mgmQuickLinksHandle" class="mgm-quick-handle" aria-label="Toggle Quick Links">
-    <span class="mgm-quick-handle-icon">
-      <i class="fa-solid fa-bolt"></i>
-    </span>
     <span class="mgm-quick-handle-text">QUICK LINKS</span>
     <i class="fa-solid fa-chevron-left mgm-handle-arrow"></i>
   </button>
@@ -27,56 +24,33 @@
           <small class="mgm-quick-school-loc">Ayiroor, Varkala</small>
         </div>
       </div>
-      <button type="button" id="mgmQuickLinksClose" class="mgm-quick-close" aria-label="Close Quick Links">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
     </div>
 
     <!-- Links List -->
     <ul class="mgm-quick-list">
       <li>
         <a href="<?= url('/notices/') ?>" class="mgm-quick-item">
-          <span class="mgm-quick-item-icon bg-notice">
-            <i class="fa-solid fa-bullhorn"></i>
-          </span>
           <span class="mgm-quick-item-text">Notices</span>
-          <i class="fa-solid fa-angle-right mgm-quick-item-arrow"></i>
         </a>
       </li>
       <li>
         <a href="<?= url('/mandatory-disclosure/') ?>" class="mgm-quick-item">
-          <span class="mgm-quick-item-icon bg-disclosure">
-            <i class="fa-solid fa-file-shield"></i>
-          </span>
           <span class="mgm-quick-item-text">Mandatory Disclosure</span>
-          <i class="fa-solid fa-angle-right mgm-quick-item-arrow"></i>
         </a>
       </li>
       <li>
         <a href="<?= url('/courses-offered/') ?>" class="mgm-quick-item">
-          <span class="mgm-quick-item-icon bg-courses">
-            <i class="fa-solid fa-book-open-reader"></i>
-          </span>
           <span class="mgm-quick-item-text">Courses Offered</span>
-          <i class="fa-solid fa-angle-right mgm-quick-item-arrow"></i>
         </a>
       </li>
       <li>
         <a href="<?= url('/admission-procedure/') ?>" class="mgm-quick-item">
-          <span class="mgm-quick-item-icon bg-admission">
-            <i class="fa-solid fa-user-graduate"></i>
-          </span>
           <span class="mgm-quick-item-text">Admission Procedure</span>
-          <i class="fa-solid fa-angle-right mgm-quick-item-arrow"></i>
         </a>
       </li>
       <li>
         <a href="<?= url('/attendance/') ?>" class="mgm-quick-item">
-          <span class="mgm-quick-item-icon bg-attendance">
-            <i class="fa-solid fa-clipboard-user"></i>
-          </span>
           <span class="mgm-quick-item-text">Attendance</span>
-          <i class="fa-solid fa-angle-right mgm-quick-item-arrow"></i>
         </a>
       </li>
     </ul>
@@ -126,9 +100,11 @@
   background: #8b0724;
 }
 
-.mgm-quick-handle-icon {
-  font-size: 15px;
-  color: #ffeb3b;
+.mgm-quick-handle-icon,
+.mgm-quick-close,
+.mgm-quick-item-icon,
+.mgm-quick-item-arrow {
+  display: none !important;
 }
 
 .mgm-quick-handle-text {

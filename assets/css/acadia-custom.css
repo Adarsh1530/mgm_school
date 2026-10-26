@@ -256,9 +256,11 @@ figure svg {
   background: #8b0724;
 }
 
-.mgm-quick-handle-icon {
-  font-size: 15px;
-  color: #ffeb3b;
+.mgm-quick-handle-icon,
+.mgm-quick-close,
+.mgm-quick-item-icon,
+.mgm-quick-item-arrow {
+  display: none !important;
 }
 
 .mgm-quick-handle-text {
