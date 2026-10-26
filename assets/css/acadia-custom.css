@@ -205,3 +205,9 @@ figure svg {
     box-shadow: 0px 0px 0px 3px rgba(65, 95, 251, 0.2);
     outline: none;
 }
+
+
+/* Remove breadcrumb icon link button across the entire site */
+.tp-breadcrumb__list {
+    display: none !important;
+}
