@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photo Gallery – MGM School</title>
-    <meta name="description" content="Explore the vibrant campus life, academic excellence, modern infrastructure, and student achievements at MGM Model School.">
-  <base href="https://mgmmodelschool.edu.in/./">
-  <link rel="canonical" href="https://mgmmodelschool.edu.in/./gallery/">
+    <meta name="description" content="Explore authentic photographic memories reflecting academic rigor, vibrant cultural fests, sports milestones, and campus life at MGM Model School.">
+  <base href="https://mgmmodelschool.edu.in/">
+  <link rel="canonical" href="https://mgmmodelschool.edu.in/gallery/">
   
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/assets/images/new-mgm-logo.png">
@@ -411,26 +411,24 @@
   </div>
 </div>
 
-<div class="mgm-gallery-page py-5" style="background: #FAF8F5;">
+<div class="gallery-section-wrapper">
   <div class="container custom-container-larg">
     
-    <!-- Gallery Catalog Header -->
-    <div class="mgm-gallery-header text-center mb-4 pb-2">
-      <span class="mgm-gallery-sub-badge">CAMPUS ARCHIVES &amp; VISUAL MEMORIES</span>
-      <h2 class="mgm-gallery-main-title mt-2 mb-2">Photo Gallery</h2>
-      <p class="mgm-gallery-main-desc mx-auto text-muted" style="max-width: 650px; font-size: 15px;">
-        Explore our vibrant campus life, modern facilities, cultural festivities, and student achievements at MGM Model School.
-      </p>
+    <!-- Section Header (Exact BVB Manvila Layout) -->
+    <div class="section-header text-center">
+      <span class="section-badge">MOMENTS AT MGM</span>
+      <h2 class="section-title">EXPLORE OUR VISUAL STORIES</h2>
+      <p class="section-subtitle">Click on any photograph to view high-resolution details in the lightbox viewer.</p>
     </div>
 
-    <!-- Keyword Search Box (BVB Manvila layout & structure) -->
+    <!-- Keyword Search Option (Exact BVB Manvila Layout) -->
     <div class="gallery-search-container">
       <div class="gallery-search-box">
         <svg class="gallery-search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
-        <input type="text" id="gallerySearchInput" class="gallery-search-input" placeholder="Search photos by keywords (e.g. sports, robotics, water award, principal, campus...)" autocomplete="off" aria-label="Search gallery images by keyword">
+        <input type="text" id="gallerySearchInput" class="gallery-search-input" placeholder="Search photos by keywords (e.g. sports, robotics, water award, principal, science...)" autocomplete="off" aria-label="Search gallery images by keyword">
         <button type="button" id="gallerySearchClear" class="gallery-search-clear" aria-label="Clear search" title="Clear search" style="display: none;">
           &times;
         </button>
@@ -438,57 +436,46 @@
       <div id="gallerySearchMeta" class="gallery-search-meta"></div>
     </div>
 
-    <!-- Category Filter Buttons (BVB Manvila layout & structure) -->
+    <!-- Category Filter Buttons (Exact BVB Manvila Layout) -->
     <div class="gallery-filters" id="galleryFilterBtns">
-      <button type="button" class="filter-btn active" data-filter="all">ALL (26)</button>
+      <button type="button" class="filter-btn active" data-filter="all">ALL</button>
               <button type="button" class="filter-btn" data-filter="events">
-          EVENTS (3)
-        </button>
+          EVENTS        </button>
               <button type="button" class="filter-btn" data-filter="academics">
-          ACADEMICS (3)
-        </button>
+          ACADEMICS        </button>
               <button type="button" class="filter-btn" data-filter="sports">
-          SPORTS (3)
-        </button>
+          SPORTS        </button>
               <button type="button" class="filter-btn" data-filter="culture">
-          CULTURE (1)
-        </button>
+          CULTURE        </button>
               <button type="button" class="filter-btn" data-filter="celebrations">
-          CELEBRATIONS (1)
-        </button>
+          CELEBRATIONS        </button>
               <button type="button" class="filter-btn" data-filter="campus">
-          CAMPUS (4)
-        </button>
+          CAMPUS        </button>
               <button type="button" class="filter-btn" data-filter="infrastructure">
-          INFRASTRUCTURE (3)
-        </button>
+          INFRASTRUCTURE        </button>
               <button type="button" class="filter-btn" data-filter="wellness">
-          WELLNESS (1)
-        </button>
+          WELLNESS        </button>
               <button type="button" class="filter-btn" data-filter="arts">
-          ARTS (1)
-        </button>
+          ARTS        </button>
               <button type="button" class="filter-btn" data-filter="achievements">
-          ACHIEVEMENTS (4)
-        </button>
+          ACHIEVEMENTS        </button>
               <button type="button" class="filter-btn" data-filter="activities">
-          ACTIVITIES (2)
-        </button>
+          ACTIVITIES        </button>
           </div>
 
-    <!-- Empty State / No Results Box -->
+    <!-- Empty State Container when no images match (Exact BVB Manvila Layout) -->
     <div id="galleryNoResults" class="gallery-no-results" style="display: none;">
-      <div class="gallery-no-results-icon">
-        <i class="fa-solid fa-images"></i>
-      </div>
-      <h4 class="fw-bold text-dark mt-2 mb-1">No Matching Photos Found</h4>
-      <p class="text-muted small mb-3">No images match "<span class="no-results-query fw-bold text-danger"></span>". Try another keyword or reset the filter.</p>
-      <button type="button" class="btn btn-sm btn-outline-danger rounded-pill px-4 btn-clear-search">
-        <i class="fa-solid fa-rotate-left me-1"></i> Clear Search &amp; View All
-      </button>
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        <line x1="8" y1="11" x2="14" y2="11"></line>
+      </svg>
+      <h4>No matching photos found</h4>
+      <p>We couldn't find any photos matching "<span class="no-results-query"></span>". Try another keyword or browse all categories.</p>
+      <button type="button" class="btn btn-primary btn-pill btn-sm btn-clear-search">Show All Photos</button>
     </div>
 
-    <!-- Gallery Grid (BVB Manvila layout & structure) -->
+    <!-- Gallery Grid (Exact BVB Manvila Layout) -->
     <div class="gallery-grid" id="publicGalleryGrid">
               <div class="gallery-item" 
              data-id="1"
@@ -498,16 +485,19 @@
              data-title="Annual Day Celebrations"
              data-caption="Students performing traditional art on stage"
              data-img="/assets/images/1752478940.jpeg">
-          <div class="gallery-item-inner">
-            <img src="/assets/images/1752478940.jpeg" alt="Annual Day Celebrations" loading="lazy" class="gallery-img">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-badge">EVENTS</span>
-              <h5 class="gallery-overlay-title">Annual Day Celebrations</h5>
-                              <p class="gallery-overlay-subtitle">Students performing traditional art on stage</p>
-                          </div>
-            <div class="gallery-zoom-icon">
-              <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
-            </div>
+          <img src="/assets/images/1752478940.jpeg" alt="Annual Day Celebrations" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-badge">EVENTS</span>
+            <span class="gallery-overlay-title">Annual Day Celebrations</span>
+                          <span class="gallery-overlay-subtitle">Students performing traditional art on stage</span>
+                      </div>
+          <div class="gallery-zoom-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
           </div>
         </div>
               <div class="gallery-item" 
@@ -518,16 +508,19 @@
              data-title="Science &amp; Robotics Exhibition"
              data-caption="STEM innovation and practical experiments"
              data-img="/assets/images/1756461341.jpg">
-          <div class="gallery-item-inner">
-            <img src="/assets/images/1756461341.jpg" alt="Science &amp; Robotics Exhibition" loading="lazy" class="gallery-img">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-badge">ACADEMICS</span>
-              <h5 class="gallery-overlay-title">Science &amp; Robotics Exhibition</h5>
-                              <p class="gallery-overlay-subtitle">STEM innovation and practical experiments</p>
-                          </div>
-            <div class="gallery-zoom-icon">
-              <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
-            </div>
+          <img src="/assets/images/1756461341.jpg" alt="Science &amp; Robotics Exhibition" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-badge">ACADEMICS</span>
+            <span class="gallery-overlay-title">Science &amp; Robotics Exhibition</span>
+                          <span class="gallery-overlay-subtitle">STEM innovation and practical experiments</span>
+                      </div>
+          <div class="gallery-zoom-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
           </div>
         </div>
               <div class="gallery-item" 
@@ -538,16 +531,19 @@
              data-title="Sports Meet &amp; Athletic Track"
              data-caption="Inter-house athletic competitions"
              data-img="/assets/images/1776764248.jpg">
-          <div class="gallery-item-inner">
-            <img src="/assets/images/1776764248.jpg" alt="Sports Meet &amp; Athletic Track" loading="lazy" class="gallery-img">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-badge">SPORTS</span>
-              <h5 class="gallery-overlay-title">Sports Meet &amp; Athletic Track</h5>
-                              <p class="gallery-overlay-subtitle">Inter-house athletic competitions</p>
-                          </div>
-            <div class="gallery-zoom-icon">
-              <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
-            </div>
+          <img src="/assets/images/1776764248.jpg" alt="Sports Meet &amp; Athletic Track" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-badge">SPORTS</span>
+            <span class="gallery-overlay-title">Sports Meet &amp; Athletic Track</span>
+                          <span class="gallery-overlay-subtitle">Inter-house athletic competitions</span>
+                      </div>
+          <div class="gallery-zoom-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
           </div>
         </div>
               <div class="gallery-item" 
@@ -558,16 +554,19 @@
              data-title="Cultural Dance Performance"
              data-caption="Classical dance presentation during youth festival"
              data-img="/assets/images/1733377596.jpg">
-          <div class="gallery-item-inner">
-            <img src="/assets/images/1733377596.jpg" alt="Cultural Dance Performance" loading="lazy" class="gallery-img">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-badge">CULTURE</span>
-              <h5 class="gallery-overlay-title">Cultural Dance Performance</h5>
-                              <p class="gallery-overlay-subtitle">Classical dance presentation during youth festival</p>
-                          </div>
-            <div class="gallery-zoom-icon">
-              <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
-            </div>
+          <img src="/assets/images/1733377596.jpg" alt="Cultural Dance Performance" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-badge">CULTURE</span>
+            <span class="gallery-overlay-title">Cultural Dance Performance</span>
+                          <span class="gallery-overlay-subtitle">Classical dance presentation during youth festival</span>
+                      </div>
+          <div class="gallery-zoom-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
           </div>
         </div>
               <div class="gallery-item" 
@@ -578,16 +577,19 @@
              data-title="Independence Day Parade"
              data-caption="School band and scout troop ceremonial march"
              data-img="/assets/images/1733387135.jpg">
-          <div class="gallery-item-inner">
-            <img src="/assets/images/1733387135.jpg" alt="Independence Day Parade" loading="lazy" class="gallery-img">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-badge">CELEBRATIONS</span>
-              <h5 class="gallery-overlay-title">Independence Day Parade</h5>
-                              <p class="gallery-overlay-subtitle">School band and scout troop ceremonial march</p>
-                          </div>
-            <div class="gallery-zoom-icon">
-              <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
-            </div>
+          <img src="/assets/images/1733387135.jpg" alt="Independence Day Parade" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-badge">CELEBRATIONS</span>
+            <span class="gallery-overlay-title">Independence Day Parade</span>
+                          <span class="gallery-overlay-subtitle">School band and scout troop ceremonial march</span>
+                      </div>
+          <div class="gallery-zoom-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
           </div>
         </div>
               <div class="gallery-item" 
@@ -598,16 +600,19 @@
              data-title="Campus Architecture &amp; Gardens"
              data-caption="Serene and lush green school campus at Ayiroor"
              data-img="/assets/images/1733374738.jpg">
-          <div class="gallery-item-inner">
-            <img src="/assets/images/1733374738.jpg" alt="Campus Architecture &amp; Gardens" loading="lazy" class="gallery-img">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-badge">CAMPUS</span>
-              <h5 class="gallery-overlay-title">Campus Architecture &amp; Gardens</h5>
-                              <p class="gallery-overlay-subtitle">Serene and lush green school campus at Ayiroor</p>
-                          </div>
-            <div class="gallery-zoom-icon">
-              <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
-            </div>
+          <img src="/assets/images/1733374738.jpg" alt="Campus Architecture &amp; Gardens" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-badge">CAMPUS</span>
+            <span class="gallery-overlay-title">Campus Architecture &amp; Gardens</span>
+                          <span class="gallery-overlay-subtitle">Serene and lush green school campus at Ayiroor</span>
+                      </div>
+          <div class="gallery-zoom-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
           </div>
         </div>
               <div class="gallery-item" 
@@ -618,16 +623,19 @@
              data-title="Smart Classrooms"
              data-caption="Digital teaching technology in interactive learning"
              data-img="/assets/images/1741692636.jpeg">
-          <div class="gallery-item-inner">
-            <img src="/assets/images/1741692636.jpeg" alt="Smart Classrooms" loading="lazy" class="gallery-img">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-badge">INFRASTRUCTURE</span>
-              <h5 class="gallery-overlay-title">Smart Classrooms</h5>
-                              <p class="gallery-overlay-subtitle">Digital teaching technology in interactive learning</p>
-                          </div>
-            <div class="gallery-zoom-icon">
-              <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
-            </div>
+          <img src="/assets/images/1741692636.jpeg" alt="Smart Classrooms" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-badge">INFRASTRUCTURE</span>
+            <span class="gallery-overlay-title">Smart Classrooms</span>
+                          <span class="gallery-overlay-subtitle">Digital teaching technology in interactive learning</span>
+                      </div>
+          <div class="gallery-zoom-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
           </div>
         </div>
               <div class="gallery-item" 
@@ -638,16 +646,19 @@
              data-title="Library &amp; Reading Room"
              data-caption="Extensive collection of books and quiet study zone"
              data-img="/assets/images/1741692913.jpg">
-          <div class="gallery-item-inner">
-            <img src="/assets/images/1741692913.jpg" alt="Library &amp; Reading Room" loading="lazy" class="gallery-img">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-badge">ACADEMICS</span>
-              <h5 class="gallery-overlay-title">Library &amp; Reading Room</h5>
-                              <p class="gallery-overlay-subtitle">Extensive collection of books and quiet study zone</p>
-                          </div>
-            <div class="gallery-zoom-icon">
-              <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
-            </div>
+          <img src="/assets/images/1741692913.jpg" alt="Library &amp; Reading Room" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-badge">ACADEMICS</span>
+            <span class="gallery-overlay-title">Library &amp; Reading Room</span>
+                          <span class="gallery-overlay-subtitle">Extensive collection of books and quiet study zone</span>
+                      </div>
+          <div class="gallery-zoom-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
           </div>
         </div>
               <div class="gallery-item" 
@@ -658,16 +669,19 @@
              data-title="Yoga &amp; Wellness Assembly"
              data-caption="Morning mindfulness and wellness session"
              data-img="/assets/images/1741693092.jpg">
-          <div class="gallery-item-inner">
-            <img src="/assets/images/1741693092.jpg" alt="Yoga &amp; Wellness Assembly" loading="lazy" class="gallery-img">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-badge">WELLNESS</span>
-              <h5 class="gallery-overlay-title">Yoga &amp; Wellness Assembly</h5>
-                              <p class="gallery-overlay-subtitle">Morning mindfulness and wellness session</p>
-                          </div>
-            <div class="gallery-zoom-icon">
-              <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
-            </div>
+          <img src="/assets/images/1741693092.jpg" alt="Yoga &amp; Wellness Assembly" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-badge">WELLNESS</span>
+            <span class="gallery-overlay-title">Yoga &amp; Wellness Assembly</span>
+                          <span class="gallery-overlay-subtitle">Morning mindfulness and wellness session</span>
+                      </div>
+          <div class="gallery-zoom-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
           </div>
         </div>
               <div class="gallery-item" 
@@ -678,16 +692,19 @@
              data-title="Swimming Pool Training"
              data-caption="Professional aquatic coaching for students"
              data-img="/assets/images/1741693179.jpg">
-          <div class="gallery-item-inner">
-            <img src="/assets/images/1741693179.jpg" alt="Swimming Pool Training" loading="lazy" class="gallery-img">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-badge">SPORTS</span>
-              <h5 class="gallery-overlay-title">Swimming Pool Training</h5>
-                              <p class="gallery-overlay-subtitle">Professional aquatic coaching for students</p>
-                          </div>
-            <div class="gallery-zoom-icon">
-              <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
-            </div>
+          <img src="/assets/images/1741693179.jpg" alt="Swimming Pool Training" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-badge">SPORTS</span>
+            <span class="gallery-overlay-title">Swimming Pool Training</span>
+                          <span class="gallery-overlay-subtitle">Professional aquatic coaching for students</span>
+                      </div>
+          <div class="gallery-zoom-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
           </div>
         </div>
               <div class="gallery-item" 
@@ -698,16 +715,19 @@
              data-title="Art &amp; Painting Workshop"
              data-caption="Fostering aesthetic expression and creativity"
              data-img="/assets/images/1751285591.jpeg">
-          <div class="gallery-item-inner">
-            <img src="/assets/images/1751285591.jpeg" alt="Art &amp; Painting Workshop" loading="lazy" class="gallery-img">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-badge">ARTS</span>
-              <h5 class="gallery-overlay-title">Art &amp; Painting Workshop</h5>
-                              <p class="gallery-overlay-subtitle">Fostering aesthetic expression and creativity</p>
-                          </div>
-            <div class="gallery-zoom-icon">
-              <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
-            </div>
+          <img src="/assets/images/1751285591.jpeg" alt="Art &amp; Painting Workshop" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-badge">ARTS</span>
+            <span class="gallery-overlay-title">Art &amp; Painting Workshop</span>
+                          <span class="gallery-overlay-subtitle">Fostering aesthetic expression and creativity</span>
+                      </div>
+          <div class="gallery-zoom-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
           </div>
         </div>
               <div class="gallery-item" 
@@ -718,16 +738,19 @@
              data-title="Merit Day &amp; Graduation"
              data-caption="Recognizing top academic achievers and scholars"
              data-img="/assets/images/1751285627.jpeg">
-          <div class="gallery-item-inner">
-            <img src="/assets/images/1751285627.jpeg" alt="Merit Day &amp; Graduation" loading="lazy" class="gallery-img">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-badge">ACHIEVEMENTS</span>
-              <h5 class="gallery-overlay-title">Merit Day &amp; Graduation</h5>
-                              <p class="gallery-overlay-subtitle">Recognizing top academic achievers and scholars</p>
-                          </div>
-            <div class="gallery-zoom-icon">
-              <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
-            </div>
+          <img src="/assets/images/1751285627.jpeg" alt="Merit Day &amp; Graduation" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-badge">ACHIEVEMENTS</span>
+            <span class="gallery-overlay-title">Merit Day &amp; Graduation</span>
+                          <span class="gallery-overlay-subtitle">Recognizing top academic achievers and scholars</span>
+                      </div>
+          <div class="gallery-zoom-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
           </div>
         </div>
               <div class="gallery-item" 
@@ -738,16 +761,19 @@
              data-title="6th National Water Award 2024"
              data-caption="Presented at Vigyan Bhawan, New Delhi in the august presence of Hon&#039;ble President of India Smt. Droupadi Murmu."
              data-img="/assets/images/water-award-2024.jpeg">
-          <div class="gallery-item-inner">
-            <img src="/assets/images/water-award-2024.jpeg" alt="6th National Water Award 2024" loading="lazy" class="gallery-img">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-badge">ACHIEVEMENTS</span>
-              <h5 class="gallery-overlay-title">6th National Water Award 2024</h5>
-                              <p class="gallery-overlay-subtitle">Presented at Vigyan Bhawan, New Delhi in the august presence of Hon&#039;ble President of India Smt. Droupadi Murmu.</p>
-                          </div>
-            <div class="gallery-zoom-icon">
-              <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
-            </div>
+          <img src="/assets/images/water-award-2024.jpeg" alt="6th National Water Award 2024" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-badge">ACHIEVEMENTS</span>
+            <span class="gallery-overlay-title">6th National Water Award 2024</span>
+                          <span class="gallery-overlay-subtitle">Presented at Vigyan Bhawan, New Delhi in the august presence of Hon&#039;ble President of India Smt. Droupadi Murmu.</span>
+                      </div>
+          <div class="gallery-zoom-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
           </div>
         </div>
               <div class="gallery-item" 
@@ -758,16 +784,19 @@
              data-title="National Principal Award 2025"
              data-caption="Dr. Sarvepalli Radhakrishnan National Principal Award conferred upon Principal Dr. Pooja S."
              data-img="/assets/images/national-principal-award-2025.jpeg">
-          <div class="gallery-item-inner">
-            <img src="/assets/images/national-principal-award-2025.jpeg" alt="National Principal Award 2025" loading="lazy" class="gallery-img">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-badge">ACHIEVEMENTS</span>
-              <h5 class="gallery-overlay-title">National Principal Award 2025</h5>
-                              <p class="gallery-overlay-subtitle">Dr. Sarvepalli Radhakrishnan National Principal Award conferred upon Principal Dr. Pooja S.</p>
-                          </div>
-            <div class="gallery-zoom-icon">
-              <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
-            </div>
+          <img src="/assets/images/national-principal-award-2025.jpeg" alt="National Principal Award 2025" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-badge">ACHIEVEMENTS</span>
+            <span class="gallery-overlay-title">National Principal Award 2025</span>
+                          <span class="gallery-overlay-subtitle">Dr. Sarvepalli Radhakrishnan National Principal Award conferred upon Principal Dr. Pooja S.</span>
+                      </div>
+          <div class="gallery-zoom-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
           </div>
         </div>
               <div class="gallery-item" 
@@ -778,16 +807,19 @@
              data-title="Investiture Ceremony &amp; Student Council"
              data-caption="Time-honoured tradition selecting Head Boy, Head Girl and student leaders."
              data-img="/assets/images/investiture-ceremony.jpeg">
-          <div class="gallery-item-inner">
-            <img src="/assets/images/investiture-ceremony.jpeg" alt="Investiture Ceremony &amp; Student Council" loading="lazy" class="gallery-img">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-badge">EVENTS</span>
-              <h5 class="gallery-overlay-title">Investiture Ceremony &amp; Student Council</h5>
-                              <p class="gallery-overlay-subtitle">Time-honoured tradition selecting Head Boy, Head Girl and student leaders.</p>
-                          </div>
-            <div class="gallery-zoom-icon">
-              <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
-            </div>
+          <img src="/assets/images/investiture-ceremony.jpeg" alt="Investiture Ceremony &amp; Student Council" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-badge">EVENTS</span>
+            <span class="gallery-overlay-title">Investiture Ceremony &amp; Student Council</span>
+                          <span class="gallery-overlay-subtitle">Time-honoured tradition selecting Head Boy, Head Girl and student leaders.</span>
+                      </div>
+          <div class="gallery-zoom-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
           </div>
         </div>
               <div class="gallery-item" 
@@ -798,16 +830,19 @@
              data-title="Annual Convocation Day"
              data-caption="Grand convocation ceremony marking milestone in student academic journeys."
              data-img="/assets/images/convocation-day.jpeg">
-          <div class="gallery-item-inner">
-            <img src="/assets/images/convocation-day.jpeg" alt="Annual Convocation Day" loading="lazy" class="gallery-img">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-badge">EVENTS</span>
-              <h5 class="gallery-overlay-title">Annual Convocation Day</h5>
-                              <p class="gallery-overlay-subtitle">Grand convocation ceremony marking milestone in student academic journeys.</p>
-                          </div>
-            <div class="gallery-zoom-icon">
-              <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
-            </div>
+          <img src="/assets/images/convocation-day.jpeg" alt="Annual Convocation Day" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-badge">EVENTS</span>
+            <span class="gallery-overlay-title">Annual Convocation Day</span>
+                          <span class="gallery-overlay-subtitle">Grand convocation ceremony marking milestone in student academic journeys.</span>
+                      </div>
+          <div class="gallery-zoom-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
           </div>
         </div>
               <div class="gallery-item" 
@@ -818,16 +853,19 @@
              data-title="Academic Toppers Day Celebration"
              data-caption="Honoring academic excellence of AISSCE &amp; AISSE top scorers with certificates."
              data-img="/assets/images/toppers-day-1.jpeg">
-          <div class="gallery-item-inner">
-            <img src="/assets/images/toppers-day-1.jpeg" alt="Academic Toppers Day Celebration" loading="lazy" class="gallery-img">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-badge">ACHIEVEMENTS</span>
-              <h5 class="gallery-overlay-title">Academic Toppers Day Celebration</h5>
-                              <p class="gallery-overlay-subtitle">Honoring academic excellence of AISSCE &amp; AISSE top scorers with certificates.</p>
-                          </div>
-            <div class="gallery-zoom-icon">
-              <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
-            </div>
+          <img src="/assets/images/toppers-day-1.jpeg" alt="Academic Toppers Day Celebration" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-badge">ACHIEVEMENTS</span>
+            <span class="gallery-overlay-title">Academic Toppers Day Celebration</span>
+                          <span class="gallery-overlay-subtitle">Honoring academic excellence of AISSCE &amp; AISSE top scorers with certificates.</span>
+                      </div>
+          <div class="gallery-zoom-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
           </div>
         </div>
               <div class="gallery-item" 
@@ -838,16 +876,19 @@
              data-title="Outdoor 3D Maths Zone"
              data-caption="Experiential geometry park featuring large 3D models with Euler&#039;s formulas and surface area properties."
              data-img="/assets/images/maths-zone-3d.jpeg">
-          <div class="gallery-item-inner">
-            <img src="/assets/images/maths-zone-3d.jpeg" alt="Outdoor 3D Maths Zone" loading="lazy" class="gallery-img">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-badge">CAMPUS</span>
-              <h5 class="gallery-overlay-title">Outdoor 3D Maths Zone</h5>
-                              <p class="gallery-overlay-subtitle">Experiential geometry park featuring large 3D models with Euler&#039;s formulas and surface area properties.</p>
-                          </div>
-            <div class="gallery-zoom-icon">
-              <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
-            </div>
+          <img src="/assets/images/maths-zone-3d.jpeg" alt="Outdoor 3D Maths Zone" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-badge">CAMPUS</span>
+            <span class="gallery-overlay-title">Outdoor 3D Maths Zone</span>
+                          <span class="gallery-overlay-subtitle">Experiential geometry park featuring large 3D models with Euler&#039;s formulas and surface area properties.</span>
+                      </div>
+          <div class="gallery-zoom-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
           </div>
         </div>
               <div class="gallery-item" 
@@ -858,16 +899,19 @@
              data-title="OMNIS - The MGM AI Robot"
              data-caption="AI-powered interactive learning companion and KG Innovation Hub (NOVA)."
              data-img="/assets/images/omnis-robot.jpeg">
-          <div class="gallery-item-inner">
-            <img src="/assets/images/omnis-robot.jpeg" alt="OMNIS - The MGM AI Robot" loading="lazy" class="gallery-img">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-badge">INFRASTRUCTURE</span>
-              <h5 class="gallery-overlay-title">OMNIS - The MGM AI Robot</h5>
-                              <p class="gallery-overlay-subtitle">AI-powered interactive learning companion and KG Innovation Hub (NOVA).</p>
-                          </div>
-            <div class="gallery-zoom-icon">
-              <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
-            </div>
+          <img src="/assets/images/omnis-robot.jpeg" alt="OMNIS - The MGM AI Robot" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-badge">INFRASTRUCTURE</span>
+            <span class="gallery-overlay-title">OMNIS - The MGM AI Robot</span>
+                          <span class="gallery-overlay-subtitle">AI-powered interactive learning companion and KG Innovation Hub (NOVA).</span>
+                      </div>
+          <div class="gallery-zoom-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
           </div>
         </div>
               <div class="gallery-item" 
@@ -878,16 +922,19 @@
              data-title="Polyhouse - Aksharammuttathe Krishithottam"
              data-caption="Hi-Tech organic vegetable garden fostering agricultural culture among students."
              data-img="/assets/images/polyhouse-garden.jpeg">
-          <div class="gallery-item-inner">
-            <img src="/assets/images/polyhouse-garden.jpeg" alt="Polyhouse - Aksharammuttathe Krishithottam" loading="lazy" class="gallery-img">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-badge">CAMPUS</span>
-              <h5 class="gallery-overlay-title">Polyhouse - Aksharammuttathe Krishithottam</h5>
-                              <p class="gallery-overlay-subtitle">Hi-Tech organic vegetable garden fostering agricultural culture among students.</p>
-                          </div>
-            <div class="gallery-zoom-icon">
-              <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
-            </div>
+          <img src="/assets/images/polyhouse-garden.jpeg" alt="Polyhouse - Aksharammuttathe Krishithottam" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-badge">CAMPUS</span>
+            <span class="gallery-overlay-title">Polyhouse - Aksharammuttathe Krishithottam</span>
+                          <span class="gallery-overlay-subtitle">Hi-Tech organic vegetable garden fostering agricultural culture among students.</span>
+                      </div>
+          <div class="gallery-zoom-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
           </div>
         </div>
               <div class="gallery-item" 
@@ -898,16 +945,19 @@
              data-title="Digital Library &amp; Research Centre"
              data-caption="One of three well-stocked digital libraries catering to primary, secondary and senior secondary students."
              data-img="/assets/images/libraries-1.jpeg">
-          <div class="gallery-item-inner">
-            <img src="/assets/images/libraries-1.jpeg" alt="Digital Library &amp; Research Centre" loading="lazy" class="gallery-img">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-badge">ACADEMICS</span>
-              <h5 class="gallery-overlay-title">Digital Library &amp; Research Centre</h5>
-                              <p class="gallery-overlay-subtitle">One of three well-stocked digital libraries catering to primary, secondary and senior secondary students.</p>
-                          </div>
-            <div class="gallery-zoom-icon">
-              <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
-            </div>
+          <img src="/assets/images/libraries-1.jpeg" alt="Digital Library &amp; Research Centre" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-badge">ACADEMICS</span>
+            <span class="gallery-overlay-title">Digital Library &amp; Research Centre</span>
+                          <span class="gallery-overlay-subtitle">One of three well-stocked digital libraries catering to primary, secondary and senior secondary students.</span>
+                      </div>
+          <div class="gallery-zoom-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
           </div>
         </div>
               <div class="gallery-item" 
@@ -918,16 +968,19 @@
              data-title="Butterfly Garden &amp; Kids Zone"
              data-caption="Vibrant eco-garden and playful haven crafted for tiny tots to engage with nature."
              data-img="/assets/images/butterfly-garden-1.jpeg">
-          <div class="gallery-item-inner">
-            <img src="/assets/images/butterfly-garden-1.jpeg" alt="Butterfly Garden &amp; Kids Zone" loading="lazy" class="gallery-img">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-badge">CAMPUS</span>
-              <h5 class="gallery-overlay-title">Butterfly Garden &amp; Kids Zone</h5>
-                              <p class="gallery-overlay-subtitle">Vibrant eco-garden and playful haven crafted for tiny tots to engage with nature.</p>
-                          </div>
-            <div class="gallery-zoom-icon">
-              <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
-            </div>
+          <img src="/assets/images/butterfly-garden-1.jpeg" alt="Butterfly Garden &amp; Kids Zone" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-badge">CAMPUS</span>
+            <span class="gallery-overlay-title">Butterfly Garden &amp; Kids Zone</span>
+                          <span class="gallery-overlay-subtitle">Vibrant eco-garden and playful haven crafted for tiny tots to engage with nature.</span>
+                      </div>
+          <div class="gallery-zoom-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
           </div>
         </div>
               <div class="gallery-item" 
@@ -938,16 +991,19 @@
              data-title="Swimming Pool Complex"
              data-caption="State-of-the-art dual pool facility with certified coaches and safety standards."
              data-img="/assets/images/swimming-pool-facility-1.jpeg">
-          <div class="gallery-item-inner">
-            <img src="/assets/images/swimming-pool-facility-1.jpeg" alt="Swimming Pool Complex" loading="lazy" class="gallery-img">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-badge">SPORTS</span>
-              <h5 class="gallery-overlay-title">Swimming Pool Complex</h5>
-                              <p class="gallery-overlay-subtitle">State-of-the-art dual pool facility with certified coaches and safety standards.</p>
-                          </div>
-            <div class="gallery-zoom-icon">
-              <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
-            </div>
+          <img src="/assets/images/swimming-pool-facility-1.jpeg" alt="Swimming Pool Complex" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-badge">SPORTS</span>
+            <span class="gallery-overlay-title">Swimming Pool Complex</span>
+                          <span class="gallery-overlay-subtitle">State-of-the-art dual pool facility with certified coaches and safety standards.</span>
+                      </div>
+          <div class="gallery-zoom-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
           </div>
         </div>
               <div class="gallery-item" 
@@ -958,16 +1014,19 @@
              data-title="1 Kerala Battalion NCC Cadets"
              data-caption="Self-financing 4-year scheme under Associate NCC Officer Retd. Subedar Major Rajesh S."
              data-img="/assets/images/ncc-unit-1.jpeg">
-          <div class="gallery-item-inner">
-            <img src="/assets/images/ncc-unit-1.jpeg" alt="1 Kerala Battalion NCC Cadets" loading="lazy" class="gallery-img">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-badge">ACTIVITIES</span>
-              <h5 class="gallery-overlay-title">1 Kerala Battalion NCC Cadets</h5>
-                              <p class="gallery-overlay-subtitle">Self-financing 4-year scheme under Associate NCC Officer Retd. Subedar Major Rajesh S.</p>
-                          </div>
-            <div class="gallery-zoom-icon">
-              <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
-            </div>
+          <img src="/assets/images/ncc-unit-1.jpeg" alt="1 Kerala Battalion NCC Cadets" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-badge">ACTIVITIES</span>
+            <span class="gallery-overlay-title">1 Kerala Battalion NCC Cadets</span>
+                          <span class="gallery-overlay-subtitle">Self-financing 4-year scheme under Associate NCC Officer Retd. Subedar Major Rajesh S.</span>
+                      </div>
+          <div class="gallery-zoom-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
           </div>
         </div>
               <div class="gallery-item" 
@@ -978,16 +1037,19 @@
              data-title="Hindustan Scouts &amp; Guides Troop"
              data-caption="104 active cadets with 45 Rajyapuraskar Governor&#039;s Award winners led by Scout Master Pravin S R."
              data-img="/assets/images/scouts-and-guides.jpeg">
-          <div class="gallery-item-inner">
-            <img src="/assets/images/scouts-and-guides.jpeg" alt="Hindustan Scouts &amp; Guides Troop" loading="lazy" class="gallery-img">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-badge">ACTIVITIES</span>
-              <h5 class="gallery-overlay-title">Hindustan Scouts &amp; Guides Troop</h5>
-                              <p class="gallery-overlay-subtitle">104 active cadets with 45 Rajyapuraskar Governor&#039;s Award winners led by Scout Master Pravin S R.</p>
-                          </div>
-            <div class="gallery-zoom-icon">
-              <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
-            </div>
+          <img src="/assets/images/scouts-and-guides.jpeg" alt="Hindustan Scouts &amp; Guides Troop" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-badge">ACTIVITIES</span>
+            <span class="gallery-overlay-title">Hindustan Scouts &amp; Guides Troop</span>
+                          <span class="gallery-overlay-subtitle">104 active cadets with 45 Rajyapuraskar Governor&#039;s Award winners led by Scout Master Pravin S R.</span>
+                      </div>
+          <div class="gallery-zoom-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
           </div>
         </div>
               <div class="gallery-item" 
@@ -998,16 +1060,19 @@
              data-title="Campus Dining &amp; Canteen"
              data-caption="Spacious and hygienic school canteen serving fresh nutritious meals daily."
              data-img="/assets/images/school-canteen.jpeg">
-          <div class="gallery-item-inner">
-            <img src="/assets/images/school-canteen.jpeg" alt="Campus Dining &amp; Canteen" loading="lazy" class="gallery-img">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-badge">INFRASTRUCTURE</span>
-              <h5 class="gallery-overlay-title">Campus Dining &amp; Canteen</h5>
-                              <p class="gallery-overlay-subtitle">Spacious and hygienic school canteen serving fresh nutritious meals daily.</p>
-                          </div>
-            <div class="gallery-zoom-icon">
-              <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
-            </div>
+          <img src="/assets/images/school-canteen.jpeg" alt="Campus Dining &amp; Canteen" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-badge">INFRASTRUCTURE</span>
+            <span class="gallery-overlay-title">Campus Dining &amp; Canteen</span>
+                          <span class="gallery-overlay-subtitle">Spacious and hygienic school canteen serving fresh nutritious meals daily.</span>
+                      </div>
+          <div class="gallery-zoom-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
           </div>
         </div>
           </div>
@@ -1015,18 +1080,14 @@
   </div>
 </div>
 
-<!-- Lightbox Modal Component with Main Image & Related Thumbnails (BVB Manvila layout & structure) -->
+<!-- Lightbox Modal Component (Exact BVB Manvila Layout with Related Thumbnails Strip) -->
 <div class="lightbox-modal" id="gallery-lightbox" role="dialog" aria-modal="true" aria-label="Photo Lightbox Viewer">
   <div class="lightbox-dialog">
-    <!-- Close button -->
-    <button type="button" class="lightbox-close" aria-label="Close Lightbox" id="lightboxClose">
-      &times;
-    </button>
-
-    <!-- Main Image Stage with Next & Prev Buttons -->
+    <button type="button" class="lightbox-close" aria-label="Close Lightbox" id="lightboxClose">&times;</button>
+    
     <div class="lightbox-stage">
       <button type="button" class="lightbox-nav lightbox-prev" aria-label="Previous image" id="lightboxPrev">
-        <i class="fa-solid fa-chevron-left"></i>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
       </button>
 
       <div class="lightbox-img-wrap">
@@ -1034,20 +1095,13 @@
       </div>
 
       <button type="button" class="lightbox-nav lightbox-next" aria-label="Next image" id="lightboxNext">
-        <i class="fa-solid fa-chevron-right"></i>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
       </button>
     </div>
 
-    <!-- Lightbox Caption & Counter -->
     <div class="lightbox-info">
-      <div class="lightbox-text-wrap">
-        <div class="d-flex align-items-center gap-2 mb-1">
-          <span class="lightbox-cat-badge" id="lightboxCatBadge"></span>
-          <span class="lightbox-counter" id="lightboxCounter"></span>
-        </div>
-        <h5 class="lightbox-title mb-1 text-white" id="lightboxTitle"></h5>
-        <p class="lightbox-caption mb-0 text-white-50 small" id="lightboxCaption"></p>
-      </div>
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+      <div class="lightbox-counter" id="lightboxCounter"></div>
     </div>
 
     <!-- Related Thumbnails Below Main Image for Easy Navigation -->
@@ -1060,9 +1114,7 @@
         <button type="button" class="lightbox-thumb-scroll-btn thumb-scroll-prev" id="thumbScrollPrev" aria-label="Scroll thumbnails left">
           <i class="fa-solid fa-angle-left"></i>
         </button>
-        <div class="lightbox-thumbs-track" id="lightboxThumbsTrack">
-          <!-- Dynamically populated thumbnail elements -->
-        </div>
+        <div class="lightbox-thumbs-track" id="lightboxThumbsTrack"></div>
         <button type="button" class="lightbox-thumb-scroll-btn thumb-scroll-next" id="thumbScrollNext" aria-label="Scroll thumbnails right">
           <i class="fa-solid fa-angle-right"></i>
         </button>

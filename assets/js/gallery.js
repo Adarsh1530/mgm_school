@@ -1,7 +1,6 @@
 /**
  * MGM Model School - Interactive Gallery & Lightbox Engine
- * Keyword Search, Category Filtering, and Popup Lightbox with Related Thumbnails Strip
- * Designed for MGM Model School with inspired BVB Manvila layout & functionality
+ * Exact Layout & Functionality of BVB Manvila Gallery
  */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -137,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Check URL parameters (e.g. ?search=sports or ?category=campus)
+  // Check URL parameters
   const urlParams = new URLSearchParams(window.location.search);
   const initialSearch = urlParams.get('search') || urlParams.get('q');
   const initialCat = urlParams.get('category') || urlParams.get('cat');
@@ -160,15 +159,13 @@ document.addEventListener('DOMContentLoaded', function () {
   applyFilter();
 
   // -------------------------------------------------------------
-  // 2. LIGHTBOX ENGINE WITH RELATED THUMBNAILS NAVIGATION
+  // 2. BVB LIGHTBOX ENGINE WITH RELATED THUMBNAILS NAVIGATION
   // -------------------------------------------------------------
   const lightbox = document.getElementById('gallery-lightbox');
   if (!lightbox) return;
 
   const lightboxImg = document.getElementById('lightboxImg');
-  const lightboxTitle = document.getElementById('lightboxTitle');
   const lightboxCaption = document.getElementById('lightboxCaption');
-  const lightboxCatBadge = document.getElementById('lightboxCatBadge');
   const lightboxCounter = document.getElementById('lightboxCounter');
   const lightboxClose = document.getElementById('lightboxClose');
   const lightboxPrev = document.getElementById('lightboxPrev');
@@ -191,7 +188,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const currentItem = currentItemsList[currentIndex];
     const imgSrc = currentItem.getAttribute('data-img') || (currentItem.querySelector('img') ? currentItem.querySelector('img').src : '');
     const title = currentItem.getAttribute('data-title') || 'Gallery Photo';
-    const categoryLabel = currentItem.getAttribute('data-category-label') || 'Campus';
     const caption = currentItem.getAttribute('data-caption') || '';
 
     // Main Image with smooth fade
@@ -202,14 +198,14 @@ document.addEventListener('DOMContentLoaded', function () {
       lightboxImg.style.opacity = '1';
     };
 
-    // Metadata
-    if (lightboxTitle) lightboxTitle.textContent = title;
+    // BVB Style Caption: Title + Caption
     if (lightboxCaption) {
-      lightboxCaption.textContent = caption;
-      lightboxCaption.style.display = caption ? 'block' : 'none';
+      lightboxCaption.textContent = title + (caption ? ' — ' + caption : '');
     }
-    if (lightboxCatBadge) lightboxCatBadge.textContent = categoryLabel.toUpperCase();
-    if (lightboxCounter) lightboxCounter.textContent = `${currentIndex + 1} of ${currentItemsList.length}`;
+    // BVB Style Counter: 1 / 26
+    if (lightboxCounter) {
+      lightboxCounter.textContent = `${currentIndex + 1} / ${currentItemsList.length}`;
+    }
 
     // Highlight active thumbnail and scroll into view
     if (lightboxThumbsTrack) {
@@ -261,7 +257,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function openLightbox(itemElement) {
-    // Determine active items list (respecting currently visible filtered items)
     const visible = getVisibleItems();
     currentItemsList = visible.length ? visible : allItems;
 
@@ -315,7 +310,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Backdrop click to close (when clicking outside the dialog)
+  // Backdrop click to close
   lightbox.addEventListener('click', function (e) {
     if (e.target === lightbox) {
       closeLightbox();
@@ -342,17 +337,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     stage.addEventListener('touchend', function (e) {
       touchEndX = e.changedTouches[0].screenX;
-      handleSwipe();
+      if (touchEndX < touchStartX - 50) nextSlide();
+      if (touchEndX > touchStartX + 50) prevSlide();
     }, { passive: true });
-  }
-
-  function handleSwipe() {
-    const swipeThreshold = 50;
-    if (touchEndX < touchStartX - swipeThreshold) {
-      nextSlide();
-    }
-    if (touchEndX > touchStartX + swipeThreshold) {
-      prevSlide();
-    }
   }
 });
