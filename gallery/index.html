@@ -569,29 +569,39 @@
   </div>
 </div>
 
-<div class="gallery-section-wrapper">
+<!-- BVB Manvila Exact Gallery Section Layout & Alignment -->
+<section class="bvb-gallery-section bg-white py-5">
   <div class="container custom-container-larg">
-    
-    <!-- Section Header (Exact BVB Manvila Layout) -->
-    <div class="section-header text-center">
-      <span class="section-badge">MOMENTS AT MGM</span>
-      <h2 class="section-title">EXPLORE OUR VISUAL STORIES</h2>
-      <p class="section-subtitle">Click on any photograph to view high-resolution details in the lightbox viewer.</p>
+
+    <!-- Section Header (Clean, Balanced Typography) -->
+    <div class="section-header text-center mb-4">
+      <span class="section-badge text-uppercase fw-bold" style="color: var(--tp-theme-primary, #ab0c2f); font-size: 12px; letter-spacing: 1.5px; display: inline-block; margin-bottom: 0.5rem;">
+        MOMENTS AT MGM
+      </span>
+      <h2 class="section-title fw-bold text-dark mb-2" style="font-size: clamp(26px, 3.5vw, 36px); letter-spacing: -0.5px;">
+        EXPLORE OUR VISUAL STORIES
+      </h2>
+      <p class="section-subtitle text-muted mx-auto mb-0" style="max-width: 650px; font-size: 15px; line-height: 1.6;">
+        Click on any photograph to view high-resolution details in the lightbox viewer.
+      </p>
     </div>
 
-    <!-- Clean Circular-Style Search Field (No Rectangular Border, Centered Alignment) -->
-    <div class="gallery-search-outer">
-      <div class="gallery-circular-search">
-        <i class="fa-solid fa-magnifying-glass search-circ-icon"></i>
-        <input type="text" id="gallerySearchInput" class="search-circ-input" placeholder="Search events by title, keyword, or date..." autocomplete="off" aria-label="Search gallery images by keyword">
-        <button type="button" id="gallerySearchClear" class="search-circ-clear" aria-label="Clear search" title="Clear search" style="display: none;">
+    <!-- Keyword Search Box (Sleek Centered Pill Style from BVB Manvila) -->
+    <div class="gallery-search-container">
+      <div class="gallery-search-box">
+        <svg class="gallery-search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="gallerySearchInput" class="gallery-search-input" placeholder="Search photos by keywords (e.g. sports, arts, investiture, science...)" autocomplete="off" aria-label="Search gallery images by keyword">
+        <button type="button" id="gallerySearchClear" class="gallery-search-clear" aria-label="Clear search" title="Clear search" style="display: none;">
           &times;
         </button>
       </div>
       <div id="gallerySearchMeta" class="gallery-search-meta"></div>
     </div>
 
-    <!-- Category Filter Buttons (Events identified only through selected filter) -->
+    <!-- Category Filter Pills (Exact BVB Manvila Alignment & Styling) -->
     <div class="gallery-filters" id="galleryFilterBtns">
       <button type="button" class="filter-btn active" data-filter="all">ALL</button>
               <button type="button" class="filter-btn" data-filter="events">
@@ -623,33 +633,42 @@
         <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         <line x1="8" y1="11" x2="14" y2="11"></line>
       </svg>
-      <h4>No matching photos found</h4>
-      <p>We couldn't find any photos matching "<span class="no-results-query"></span>". Try another keyword or browse all categories.</p>
-      <button type="button" class="btn btn-primary btn-pill btn-sm btn-clear-search">Show All Photos</button>
+      <h4 class="fw-bold mt-3 mb-2">No matching photos found</h4>
+      <p class="text-muted mb-3">We couldn't find any photos matching "<span class="no-results-query"></span>". Try another keyword or browse all categories.</p>
+      <button type="button" class="btn btn-outline-danger btn-sm rounded-pill px-4 btn-clear-search">Show All Photos</button>
     </div>
 
-    <!-- Gallery Grid (Clean 3x3 Grid Layout, All Images on a Single Page Without Pagination) -->
+    <!-- Gallery Grid (Exact BVB Manvila 3-Column Layout, 16:11 Aspect Ratio, Top-Right Zoom Button) -->
     <div class="gallery-grid" id="publicGalleryGrid">
               <div class="gallery-item" 
              data-id="1"
              data-index="0"
              data-category="events"
              data-category-label="Events"
-             data-title="Annual Day Celebrations"
+             data-title="Annual Day &amp; Ceremonial Assemblies"
              data-subtitle="Grand Cultural Extravaganza &amp; Theatrical Performances"
              data-date="December 22, 2025"
-             data-main-img="/assets/images/1752478940.jpeg"
+             data-main-img="/assets/images/convocation-day.jpeg"
              data-sub-images='["https:\/\/mgmmodelschool.edu.in\/assets\/images\/1733377596.jpg","https:\/\/mgmmodelschool.edu.in\/assets\/images\/1750242359.jpeg","https:\/\/mgmmodelschool.edu.in\/assets\/images\/1750242382.jpeg","https:\/\/mgmmodelschool.edu.in\/assets\/images\/1750233709.jpeg"]'>
           
-          <img src="/assets/images/1752478940.jpeg" alt="Annual Day Celebrations" loading="lazy">
+          <img src="/assets/images/convocation-day.jpeg" alt="Annual Day &amp; Ceremonial Assemblies" loading="lazy">
           
-          <!-- Hover Overlay: HIDDEN BY DEFAULT, SHOWN ONLY ON HOVER -->
+          <!-- Hover Overlay (Exact BVB Manvila Gradient with Gold Badge & White Typography) -->
           <div class="gallery-overlay">
-            <div class="gallery-overlay-date">
-              <i class="fa-regular fa-calendar-days"></i> DECEMBER 22, 2025            </div>
-            <span class="gallery-overlay-title">Annual Day Celebrations</span>
+            <span class="gallery-overlay-badge">EVENTS</span>
+            <span class="gallery-overlay-title">Annual Day &amp; Ceremonial Assemblies</span>
                           <span class="gallery-overlay-subtitle">Grand Cultural Extravaganza &amp; Theatrical Performances</span>
                       </div>
+
+          <!-- BVB Manvila Floating Top-Right Zoom Icon Button -->
+          <div class="gallery-zoom-icon" aria-label="Zoom photograph">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+          </div>
 
         </div>
               <div class="gallery-item" 
@@ -665,13 +684,22 @@
           
           <img src="/assets/images/1756461341.jpg" alt="Science &amp; Robotics Exhibition" loading="lazy">
           
-          <!-- Hover Overlay: HIDDEN BY DEFAULT, SHOWN ONLY ON HOVER -->
+          <!-- Hover Overlay (Exact BVB Manvila Gradient with Gold Badge & White Typography) -->
           <div class="gallery-overlay">
-            <div class="gallery-overlay-date">
-              <i class="fa-regular fa-calendar-days"></i> NOVEMBER 14, 2025            </div>
+            <span class="gallery-overlay-badge">ACADEMICS</span>
             <span class="gallery-overlay-title">Science &amp; Robotics Exhibition</span>
                           <span class="gallery-overlay-subtitle">STEM Innovation, Working Models &amp; Practical Experiments</span>
                       </div>
+
+          <!-- BVB Manvila Floating Top-Right Zoom Icon Button -->
+          <div class="gallery-zoom-icon" aria-label="Zoom photograph">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+          </div>
 
         </div>
               <div class="gallery-item" 
@@ -679,21 +707,30 @@
              data-index="2"
              data-category="sports"
              data-category-label="Sports"
-             data-title="Sports Meet &amp; Athletic Track"
+             data-title="Ceremonial Band Troop &amp; Sports Parade"
              data-subtitle="Inter-House Track &amp; Field Championships and March Past"
              data-date="January 18, 2026"
-             data-main-img="/assets/images/1776764248.jpg"
+             data-main-img="/assets/images/school-band-troop.jpeg"
              data-sub-images='["https:\/\/mgmmodelschool.edu.in\/assets\/images\/1750242719.jpeg","https:\/\/mgmmodelschool.edu.in\/assets\/images\/1750242752.jpeg","https:\/\/mgmmodelschool.edu.in\/assets\/images\/1750242779.jpeg","https:\/\/mgmmodelschool.edu.in\/assets\/images\/1750242823.jpeg"]'>
           
-          <img src="/assets/images/1776764248.jpg" alt="Sports Meet &amp; Athletic Track" loading="lazy">
+          <img src="/assets/images/school-band-troop.jpeg" alt="Ceremonial Band Troop &amp; Sports Parade" loading="lazy">
           
-          <!-- Hover Overlay: HIDDEN BY DEFAULT, SHOWN ONLY ON HOVER -->
+          <!-- Hover Overlay (Exact BVB Manvila Gradient with Gold Badge & White Typography) -->
           <div class="gallery-overlay">
-            <div class="gallery-overlay-date">
-              <i class="fa-regular fa-calendar-days"></i> JANUARY 18, 2026            </div>
-            <span class="gallery-overlay-title">Sports Meet &amp; Athletic Track</span>
+            <span class="gallery-overlay-badge">SPORTS</span>
+            <span class="gallery-overlay-title">Ceremonial Band Troop &amp; Sports Parade</span>
                           <span class="gallery-overlay-subtitle">Inter-House Track &amp; Field Championships and March Past</span>
                       </div>
+
+          <!-- BVB Manvila Floating Top-Right Zoom Icon Button -->
+          <div class="gallery-zoom-icon" aria-label="Zoom photograph">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+          </div>
 
         </div>
               <div class="gallery-item" 
@@ -709,13 +746,22 @@
           
           <img src="/assets/images/1733377596.jpg" alt="Cultural Dance Performance" loading="lazy">
           
-          <!-- Hover Overlay: HIDDEN BY DEFAULT, SHOWN ONLY ON HOVER -->
+          <!-- Hover Overlay (Exact BVB Manvila Gradient with Gold Badge & White Typography) -->
           <div class="gallery-overlay">
-            <div class="gallery-overlay-date">
-              <i class="fa-regular fa-calendar-days"></i> NOVEMBER 28, 2025            </div>
+            <span class="gallery-overlay-badge">CULTURE</span>
             <span class="gallery-overlay-title">Cultural Dance Performance</span>
                           <span class="gallery-overlay-subtitle">Classical Bharatanatyam, Mohiniyattam and Folk Traditions</span>
                       </div>
+
+          <!-- BVB Manvila Floating Top-Right Zoom Icon Button -->
+          <div class="gallery-zoom-icon" aria-label="Zoom photograph">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+          </div>
 
         </div>
               <div class="gallery-item" 
@@ -731,13 +777,22 @@
           
           <img src="/assets/images/1733387135.jpg" alt="Independence Day Parade" loading="lazy">
           
-          <!-- Hover Overlay: HIDDEN BY DEFAULT, SHOWN ONLY ON HOVER -->
+          <!-- Hover Overlay (Exact BVB Manvila Gradient with Gold Badge & White Typography) -->
           <div class="gallery-overlay">
-            <div class="gallery-overlay-date">
-              <i class="fa-regular fa-calendar-days"></i> AUGUST 15, 2025            </div>
+            <span class="gallery-overlay-badge">CELEBRATIONS</span>
             <span class="gallery-overlay-title">Independence Day Parade</span>
                           <span class="gallery-overlay-subtitle">Flag Hoisting, Brass Band Display &amp; Cadets Guard of Honour</span>
                       </div>
+
+          <!-- BVB Manvila Floating Top-Right Zoom Icon Button -->
+          <div class="gallery-zoom-icon" aria-label="Zoom photograph">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+          </div>
 
         </div>
               <div class="gallery-item" 
@@ -753,13 +808,22 @@
           
           <img src="/assets/images/1733374738.jpg" alt="Campus Architecture &amp; Gardens" loading="lazy">
           
-          <!-- Hover Overlay: HIDDEN BY DEFAULT, SHOWN ONLY ON HOVER -->
+          <!-- Hover Overlay (Exact BVB Manvila Gradient with Gold Badge & White Typography) -->
           <div class="gallery-overlay">
-            <div class="gallery-overlay-date">
-              <i class="fa-regular fa-calendar-days"></i> JUNE 5, 2025            </div>
+            <span class="gallery-overlay-badge">CAMPUS</span>
             <span class="gallery-overlay-title">Campus Architecture &amp; Gardens</span>
                           <span class="gallery-overlay-subtitle">Modern Eco-Friendly Academic Infrastructure at Ayiroor, Varkala</span>
                       </div>
+
+          <!-- BVB Manvila Floating Top-Right Zoom Icon Button -->
+          <div class="gallery-zoom-icon" aria-label="Zoom photograph">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+          </div>
 
         </div>
               <div class="gallery-item" 
@@ -775,13 +839,22 @@
           
           <img src="/assets/images/1741692636.jpeg" alt="Smart Classrooms" loading="lazy">
           
-          <!-- Hover Overlay: HIDDEN BY DEFAULT, SHOWN ONLY ON HOVER -->
+          <!-- Hover Overlay (Exact BVB Manvila Gradient with Gold Badge & White Typography) -->
           <div class="gallery-overlay">
-            <div class="gallery-overlay-date">
-              <i class="fa-regular fa-calendar-days"></i> JULY 12, 2025            </div>
+            <span class="gallery-overlay-badge">INFRASTRUCTURE</span>
             <span class="gallery-overlay-title">Smart Classrooms</span>
                           <span class="gallery-overlay-subtitle">Next-Gen Multimedia Learning with Interactive Flat Panels</span>
                       </div>
+
+          <!-- BVB Manvila Floating Top-Right Zoom Icon Button -->
+          <div class="gallery-zoom-icon" aria-label="Zoom photograph">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+          </div>
 
         </div>
               <div class="gallery-item" 
@@ -797,13 +870,22 @@
           
           <img src="/assets/images/1741692913.jpg" alt="Library &amp; Reading Room" loading="lazy">
           
-          <!-- Hover Overlay: HIDDEN BY DEFAULT, SHOWN ONLY ON HOVER -->
+          <!-- Hover Overlay (Exact BVB Manvila Gradient with Gold Badge & White Typography) -->
           <div class="gallery-overlay">
-            <div class="gallery-overlay-date">
-              <i class="fa-regular fa-calendar-days"></i> SEPTEMBER 8, 2025            </div>
+            <span class="gallery-overlay-badge">ACADEMICS</span>
             <span class="gallery-overlay-title">Library &amp; Reading Room</span>
                           <span class="gallery-overlay-subtitle">Extensive Literary Repository &amp; Modern Quiet Research Zone</span>
                       </div>
+
+          <!-- BVB Manvila Floating Top-Right Zoom Icon Button -->
+          <div class="gallery-zoom-icon" aria-label="Zoom photograph">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+          </div>
 
         </div>
               <div class="gallery-item" 
@@ -819,13 +901,22 @@
           
           <img src="/assets/images/1741693092.jpg" alt="Yoga &amp; Wellness Assembly" loading="lazy">
           
-          <!-- Hover Overlay: HIDDEN BY DEFAULT, SHOWN ONLY ON HOVER -->
+          <!-- Hover Overlay (Exact BVB Manvila Gradient with Gold Badge & White Typography) -->
           <div class="gallery-overlay">
-            <div class="gallery-overlay-date">
-              <i class="fa-regular fa-calendar-days"></i> JUNE 21, 2025            </div>
+            <span class="gallery-overlay-badge">WELLNESS</span>
             <span class="gallery-overlay-title">Yoga &amp; Wellness Assembly</span>
                           <span class="gallery-overlay-subtitle">Holistic Mental Well-being, Asanas and Daily Meditation</span>
                       </div>
+
+          <!-- BVB Manvila Floating Top-Right Zoom Icon Button -->
+          <div class="gallery-zoom-icon" aria-label="Zoom photograph">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+          </div>
 
         </div>
               <div class="gallery-item" 
@@ -841,13 +932,22 @@
           
           <img src="/assets/images/1741693179.jpg" alt="Swimming Pool Training" loading="lazy">
           
-          <!-- Hover Overlay: HIDDEN BY DEFAULT, SHOWN ONLY ON HOVER -->
+          <!-- Hover Overlay (Exact BVB Manvila Gradient with Gold Badge & White Typography) -->
           <div class="gallery-overlay">
-            <div class="gallery-overlay-date">
-              <i class="fa-regular fa-calendar-days"></i> OCTOBER 10, 2025            </div>
+            <span class="gallery-overlay-badge">SPORTS</span>
             <span class="gallery-overlay-title">Swimming Pool Training</span>
                           <span class="gallery-overlay-subtitle">Professional Water Safety &amp; Stroke Training with Certified Coaches</span>
                       </div>
+
+          <!-- BVB Manvila Floating Top-Right Zoom Icon Button -->
+          <div class="gallery-zoom-icon" aria-label="Zoom photograph">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+          </div>
 
         </div>
               <div class="gallery-item" 
@@ -863,13 +963,22 @@
           
           <img src="/assets/images/1751285591.jpeg" alt="Art &amp; Painting Workshop" loading="lazy">
           
-          <!-- Hover Overlay: HIDDEN BY DEFAULT, SHOWN ONLY ON HOVER -->
+          <!-- Hover Overlay (Exact BVB Manvila Gradient with Gold Badge & White Typography) -->
           <div class="gallery-overlay">
-            <div class="gallery-overlay-date">
-              <i class="fa-regular fa-calendar-days"></i> AUGUST 29, 2025            </div>
+            <span class="gallery-overlay-badge">CULTURE</span>
             <span class="gallery-overlay-title">Art &amp; Painting Workshop</span>
                           <span class="gallery-overlay-subtitle">Exploring Acrylics, Watercolors, Pottery &amp; Fine Arts</span>
                       </div>
+
+          <!-- BVB Manvila Floating Top-Right Zoom Icon Button -->
+          <div class="gallery-zoom-icon" aria-label="Zoom photograph">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+          </div>
 
         </div>
               <div class="gallery-item" 
@@ -885,13 +994,22 @@
           
           <img src="/assets/images/1751285627.jpeg" alt="Merit Day &amp; Graduation" loading="lazy">
           
-          <!-- Hover Overlay: HIDDEN BY DEFAULT, SHOWN ONLY ON HOVER -->
+          <!-- Hover Overlay (Exact BVB Manvila Gradient with Gold Badge & White Typography) -->
           <div class="gallery-overlay">
-            <div class="gallery-overlay-date">
-              <i class="fa-regular fa-calendar-days"></i> MARCH 15, 2025            </div>
+            <span class="gallery-overlay-badge">ACHIEVEMENTS</span>
             <span class="gallery-overlay-title">Merit Day &amp; Graduation</span>
                           <span class="gallery-overlay-subtitle">Felicitation of Board Examination Top Rankers &amp; Scholar Medals</span>
                       </div>
+
+          <!-- BVB Manvila Floating Top-Right Zoom Icon Button -->
+          <div class="gallery-zoom-icon" aria-label="Zoom photograph">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+          </div>
 
         </div>
               <div class="gallery-item" 
@@ -907,13 +1025,22 @@
           
           <img src="/assets/images/water-award-2024.jpeg" alt="6th National Water Award 2024" loading="lazy">
           
-          <!-- Hover Overlay: HIDDEN BY DEFAULT, SHOWN ONLY ON HOVER -->
+          <!-- Hover Overlay (Exact BVB Manvila Gradient with Gold Badge & White Typography) -->
           <div class="gallery-overlay">
-            <div class="gallery-overlay-date">
-              <i class="fa-regular fa-calendar-days"></i> OCTOBER 22, 2024            </div>
+            <span class="gallery-overlay-badge">ACHIEVEMENTS</span>
             <span class="gallery-overlay-title">6th National Water Award 2024</span>
                           <span class="gallery-overlay-subtitle">Honoured at Vigyan Bhawan by Hon&#039;ble President of India Smt. Droupadi Murmu</span>
                       </div>
+
+          <!-- BVB Manvila Floating Top-Right Zoom Icon Button -->
+          <div class="gallery-zoom-icon" aria-label="Zoom photograph">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+          </div>
 
         </div>
               <div class="gallery-item" 
@@ -929,13 +1056,22 @@
           
           <img src="/assets/images/national-principal-award-2025.jpeg" alt="National Principal Award 2025" loading="lazy">
           
-          <!-- Hover Overlay: HIDDEN BY DEFAULT, SHOWN ONLY ON HOVER -->
+          <!-- Hover Overlay (Exact BVB Manvila Gradient with Gold Badge & White Typography) -->
           <div class="gallery-overlay">
-            <div class="gallery-overlay-date">
-              <i class="fa-regular fa-calendar-days"></i> SEPTEMBER 5, 2025            </div>
+            <span class="gallery-overlay-badge">ACHIEVEMENTS</span>
             <span class="gallery-overlay-title">National Principal Award 2025</span>
                           <span class="gallery-overlay-subtitle">Dr. Sarvepalli Radhakrishnan Award Conferred on Principal Dr. Pooja S.</span>
                       </div>
+
+          <!-- BVB Manvila Floating Top-Right Zoom Icon Button -->
+          <div class="gallery-zoom-icon" aria-label="Zoom photograph">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+          </div>
 
         </div>
               <div class="gallery-item" 
@@ -951,13 +1087,22 @@
           
           <img src="/assets/images/investiture-ceremony.jpeg" alt="Investiture Ceremony &amp; Student Council" loading="lazy">
           
-          <!-- Hover Overlay: HIDDEN BY DEFAULT, SHOWN ONLY ON HOVER -->
+          <!-- Hover Overlay (Exact BVB Manvila Gradient with Gold Badge & White Typography) -->
           <div class="gallery-overlay">
-            <div class="gallery-overlay-date">
-              <i class="fa-regular fa-calendar-days"></i> JULY 5, 2025            </div>
+            <span class="gallery-overlay-badge">EVENTS</span>
             <span class="gallery-overlay-title">Investiture Ceremony &amp; Student Council</span>
                           <span class="gallery-overlay-subtitle">Sash Bestowal, Leadership Oath &amp; Handing Over School Flag</span>
                       </div>
+
+          <!-- BVB Manvila Floating Top-Right Zoom Icon Button -->
+          <div class="gallery-zoom-icon" aria-label="Zoom photograph">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+          </div>
 
         </div>
               <div class="gallery-item" 
@@ -973,13 +1118,22 @@
           
           <img src="/assets/images/convocation-day.jpeg" alt="Annual Convocation Day" loading="lazy">
           
-          <!-- Hover Overlay: HIDDEN BY DEFAULT, SHOWN ONLY ON HOVER -->
+          <!-- Hover Overlay (Exact BVB Manvila Gradient with Gold Badge & White Typography) -->
           <div class="gallery-overlay">
-            <div class="gallery-overlay-date">
-              <i class="fa-regular fa-calendar-days"></i> MARCH 28, 2025            </div>
+            <span class="gallery-overlay-badge">EVENTS</span>
             <span class="gallery-overlay-title">Annual Convocation Day</span>
                           <span class="gallery-overlay-subtitle">Graduation Robes, Valedictory Speeches &amp; Milestone Citations</span>
                       </div>
+
+          <!-- BVB Manvila Floating Top-Right Zoom Icon Button -->
+          <div class="gallery-zoom-icon" aria-label="Zoom photograph">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+          </div>
 
         </div>
               <div class="gallery-item" 
@@ -995,13 +1149,22 @@
           
           <img src="/assets/images/toppers-day-1.jpeg" alt="Academic Toppers Day Celebration" loading="lazy">
           
-          <!-- Hover Overlay: HIDDEN BY DEFAULT, SHOWN ONLY ON HOVER -->
+          <!-- Hover Overlay (Exact BVB Manvila Gradient with Gold Badge & White Typography) -->
           <div class="gallery-overlay">
-            <div class="gallery-overlay-date">
-              <i class="fa-regular fa-calendar-days"></i> JUNE 18, 2025            </div>
+            <span class="gallery-overlay-badge">ACHIEVEMENTS</span>
             <span class="gallery-overlay-title">Academic Toppers Day Celebration</span>
                           <span class="gallery-overlay-subtitle">Honouring 100% Pass Rate &amp; Distinction Achievers in AISSCE / AISSE</span>
                       </div>
+
+          <!-- BVB Manvila Floating Top-Right Zoom Icon Button -->
+          <div class="gallery-zoom-icon" aria-label="Zoom photograph">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+          </div>
 
         </div>
               <div class="gallery-item" 
@@ -1017,13 +1180,22 @@
           
           <img src="/assets/images/maths-zone-3d.jpeg" alt="Outdoor 3D Maths Zone" loading="lazy">
           
-          <!-- Hover Overlay: HIDDEN BY DEFAULT, SHOWN ONLY ON HOVER -->
+          <!-- Hover Overlay (Exact BVB Manvila Gradient with Gold Badge & White Typography) -->
           <div class="gallery-overlay">
-            <div class="gallery-overlay-date">
-              <i class="fa-regular fa-calendar-days"></i> JULY 20, 2025            </div>
+            <span class="gallery-overlay-badge">CAMPUS</span>
             <span class="gallery-overlay-title">Outdoor 3D Maths Zone</span>
                           <span class="gallery-overlay-subtitle">Open-Air Geometric Sculpture Park Demonstrating Euler&#039;s Polyhedral Laws</span>
                       </div>
+
+          <!-- BVB Manvila Floating Top-Right Zoom Icon Button -->
+          <div class="gallery-zoom-icon" aria-label="Zoom photograph">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+          </div>
 
         </div>
               <div class="gallery-item" 
@@ -1039,13 +1211,22 @@
           
           <img src="/assets/images/omnis-robot.jpeg" alt="OMNIS - The MGM AI Robot" loading="lazy">
           
-          <!-- Hover Overlay: HIDDEN BY DEFAULT, SHOWN ONLY ON HOVER -->
+          <!-- Hover Overlay (Exact BVB Manvila Gradient with Gold Badge & White Typography) -->
           <div class="gallery-overlay">
-            <div class="gallery-overlay-date">
-              <i class="fa-regular fa-calendar-days"></i> NOVEMBER 1, 2025            </div>
+            <span class="gallery-overlay-badge">INFRASTRUCTURE</span>
             <span class="gallery-overlay-title">OMNIS - The MGM AI Robot</span>
                           <span class="gallery-overlay-subtitle">Autonomous Humanoid Companion at NOVA KG Innovation Lab</span>
                       </div>
+
+          <!-- BVB Manvila Floating Top-Right Zoom Icon Button -->
+          <div class="gallery-zoom-icon" aria-label="Zoom photograph">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+          </div>
 
         </div>
               <div class="gallery-item" 
@@ -1061,13 +1242,22 @@
           
           <img src="/assets/images/polyhouse-garden.jpeg" alt="Polyhouse - Aksharammuttathe Krishithottam" loading="lazy">
           
-          <!-- Hover Overlay: HIDDEN BY DEFAULT, SHOWN ONLY ON HOVER -->
+          <!-- Hover Overlay (Exact BVB Manvila Gradient with Gold Badge & White Typography) -->
           <div class="gallery-overlay">
-            <div class="gallery-overlay-date">
-              <i class="fa-regular fa-calendar-days"></i> OCTOBER 2, 2025            </div>
+            <span class="gallery-overlay-badge">CAMPUS</span>
             <span class="gallery-overlay-title">Polyhouse - Aksharammuttathe Krishithottam</span>
                           <span class="gallery-overlay-subtitle">Organic Farming, Drip Irrigation &amp; Agri-Culture Life Skill Initiative</span>
                       </div>
+
+          <!-- BVB Manvila Floating Top-Right Zoom Icon Button -->
+          <div class="gallery-zoom-icon" aria-label="Zoom photograph">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+          </div>
 
         </div>
               <div class="gallery-item" 
@@ -1083,13 +1273,22 @@
           
           <img src="/assets/images/libraries-1.jpeg" alt="Digital Library &amp; Research Centre" loading="lazy">
           
-          <!-- Hover Overlay: HIDDEN BY DEFAULT, SHOWN ONLY ON HOVER -->
+          <!-- Hover Overlay (Exact BVB Manvila Gradient with Gold Badge & White Typography) -->
           <div class="gallery-overlay">
-            <div class="gallery-overlay-date">
-              <i class="fa-regular fa-calendar-days"></i> AUGUST 10, 2025            </div>
+            <span class="gallery-overlay-badge">ACADEMICS</span>
             <span class="gallery-overlay-title">Digital Library &amp; Research Centre</span>
                           <span class="gallery-overlay-subtitle">High-Speed Workstations, Digital Archives &amp; Academic Journal Access</span>
                       </div>
+
+          <!-- BVB Manvila Floating Top-Right Zoom Icon Button -->
+          <div class="gallery-zoom-icon" aria-label="Zoom photograph">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+          </div>
 
         </div>
               <div class="gallery-item" 
@@ -1105,13 +1304,22 @@
           
           <img src="/assets/images/butterfly-garden-1.jpeg" alt="Butterfly Garden &amp; Kids Zone" loading="lazy">
           
-          <!-- Hover Overlay: HIDDEN BY DEFAULT, SHOWN ONLY ON HOVER -->
+          <!-- Hover Overlay (Exact BVB Manvila Gradient with Gold Badge & White Typography) -->
           <div class="gallery-overlay">
-            <div class="gallery-overlay-date">
-              <i class="fa-regular fa-calendar-days"></i> SEPTEMBER 16, 2025            </div>
+            <span class="gallery-overlay-badge">CAMPUS</span>
             <span class="gallery-overlay-title">Butterfly Garden &amp; Kids Zone</span>
                           <span class="gallery-overlay-subtitle">Biodiversity Pollinator Sanctuary and Child-Safe Play Habitat</span>
                       </div>
+
+          <!-- BVB Manvila Floating Top-Right Zoom Icon Button -->
+          <div class="gallery-zoom-icon" aria-label="Zoom photograph">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+          </div>
 
         </div>
               <div class="gallery-item" 
@@ -1127,13 +1335,22 @@
           
           <img src="/assets/images/swimming-pool-facility-1.jpeg" alt="Swimming Pool Complex" loading="lazy">
           
-          <!-- Hover Overlay: HIDDEN BY DEFAULT, SHOWN ONLY ON HOVER -->
+          <!-- Hover Overlay (Exact BVB Manvila Gradient with Gold Badge & White Typography) -->
           <div class="gallery-overlay">
-            <div class="gallery-overlay-date">
-              <i class="fa-regular fa-calendar-days"></i> OCTOBER 12, 2025            </div>
+            <span class="gallery-overlay-badge">SPORTS</span>
             <span class="gallery-overlay-title">Swimming Pool Complex</span>
                           <span class="gallery-overlay-subtitle">Dual Water Pools with Automated Filtration &amp; Certified Lifeguards</span>
                       </div>
+
+          <!-- BVB Manvila Floating Top-Right Zoom Icon Button -->
+          <div class="gallery-zoom-icon" aria-label="Zoom photograph">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+          </div>
 
         </div>
               <div class="gallery-item" 
@@ -1149,13 +1366,22 @@
           
           <img src="/assets/images/ncc-unit-1.jpeg" alt="1 Kerala Battalion NCC Cadets" loading="lazy">
           
-          <!-- Hover Overlay: HIDDEN BY DEFAULT, SHOWN ONLY ON HOVER -->
+          <!-- Hover Overlay (Exact BVB Manvila Gradient with Gold Badge & White Typography) -->
           <div class="gallery-overlay">
-            <div class="gallery-overlay-date">
-              <i class="fa-regular fa-calendar-days"></i> NOVEMBER 26, 2025            </div>
+            <span class="gallery-overlay-badge">ACTIVITIES</span>
             <span class="gallery-overlay-title">1 Kerala Battalion NCC Cadets</span>
                           <span class="gallery-overlay-subtitle">Drill Parades, Weapon Training, National Integration Camps &amp; Discipline</span>
                       </div>
+
+          <!-- BVB Manvila Floating Top-Right Zoom Icon Button -->
+          <div class="gallery-zoom-icon" aria-label="Zoom photograph">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+          </div>
 
         </div>
               <div class="gallery-item" 
@@ -1171,13 +1397,22 @@
           
           <img src="/assets/images/scouts-and-guides.jpeg" alt="Hindustan Scouts &amp; Guides Troop" loading="lazy">
           
-          <!-- Hover Overlay: HIDDEN BY DEFAULT, SHOWN ONLY ON HOVER -->
+          <!-- Hover Overlay (Exact BVB Manvila Gradient with Gold Badge & White Typography) -->
           <div class="gallery-overlay">
-            <div class="gallery-overlay-date">
-              <i class="fa-regular fa-calendar-days"></i> NOVEMBER 7, 2025            </div>
+            <span class="gallery-overlay-badge">ACTIVITIES</span>
             <span class="gallery-overlay-title">Hindustan Scouts &amp; Guides Troop</span>
                           <span class="gallery-overlay-subtitle">Governor&#039;s Rajyapuraskar Award Winners &amp; Community Service Pioneers</span>
                       </div>
+
+          <!-- BVB Manvila Floating Top-Right Zoom Icon Button -->
+          <div class="gallery-zoom-icon" aria-label="Zoom photograph">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+          </div>
 
         </div>
               <div class="gallery-item" 
@@ -1193,21 +1428,30 @@
           
           <img src="/assets/images/school-canteen.jpeg" alt="Campus Dining &amp; Canteen" loading="lazy">
           
-          <!-- Hover Overlay: HIDDEN BY DEFAULT, SHOWN ONLY ON HOVER -->
+          <!-- Hover Overlay (Exact BVB Manvila Gradient with Gold Badge & White Typography) -->
           <div class="gallery-overlay">
-            <div class="gallery-overlay-date">
-              <i class="fa-regular fa-calendar-days"></i> JUNE 1, 2025            </div>
+            <span class="gallery-overlay-badge">INFRASTRUCTURE</span>
             <span class="gallery-overlay-title">Campus Dining &amp; Canteen</span>
                           <span class="gallery-overlay-subtitle">Wholesome FSSAI-Compliant Meal Preparation &amp; Steam Cooking Facility</span>
                       </div>
+
+          <!-- BVB Manvila Floating Top-Right Zoom Icon Button -->
+          <div class="gallery-zoom-icon" aria-label="Zoom photograph">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+          </div>
 
         </div>
           </div>
 
   </div>
-</div>
+</section>
 
-<!-- Lightbox Modal Component (Clean, Borderless, Frameless, No Package Box) -->
+<!-- Lightbox Modal Component (Clean, Borderless, Frameless) -->
 <div class="lightbox-modal" id="gallery-lightbox" role="dialog" aria-modal="true" aria-label="Photo Lightbox Viewer">
   <div class="lightbox-dialog">
     <button type="button" class="lightbox-close" aria-label="Close Lightbox" id="lightboxClose">&times;</button>
@@ -1226,7 +1470,7 @@
       </button>
     </div>
 
-    <!-- Event-Specific Sub-Images (Borderless, Frameless, Free-Floating Strip) -->
+    <!-- Event-Specific Sub-Images Strip -->
     <div class="lightbox-thumbs-wrap" id="lightboxThumbsSection" style="display: none;">
       <button type="button" class="lightbox-thumb-scroll-btn thumb-scroll-prev" id="thumbScrollPrev" aria-label="Scroll left">
         <i class="fa-solid fa-angle-left"></i>
@@ -1239,6 +1483,399 @@
 
   </div>
 </div>
+
+<!-- Embedded BVB Manvila Exact CSS Rules -->
+<style>
+/* BVB Manvila Layout & Alignment System */
+.bvb-gallery-section {
+  background-color: #FFFFFF;
+}
+
+.gallery-search-container {
+  max-width: 580px;
+  margin: 0 auto 1.75rem auto;
+  position: relative;
+  width: 100%;
+}
+
+.gallery-search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 9999px;
+  padding: 0.35rem 0.5rem 0.35rem 1.25rem;
+  box-shadow: 0 4px 15px rgba(6, 43, 92, 0.05);
+  transition: all 0.25s ease;
+}
+
+.gallery-search-box:focus-within {
+  border-color: #0B4EA2;
+  box-shadow: 0 6px 20px rgba(11, 78, 162, 0.15);
+}
+
+.gallery-search-icon {
+  color: #94A3B8;
+  flex-shrink: 0;
+  margin-right: 0.75rem;
+  transition: color 0.2s ease;
+}
+
+.gallery-search-box:focus-within .gallery-search-icon {
+  color: #0B4EA2;
+}
+
+.gallery-search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: #0B1329;
+  padding: 0.5rem 0;
+}
+
+.gallery-search-input::placeholder {
+  color: #94A3B8;
+}
+
+.gallery-search-clear {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: #E2E8F0;
+  color: #64748B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-right: 4px;
+}
+
+.gallery-search-clear:hover {
+  background: #CBD5E1;
+  color: #0F172A;
+}
+
+.gallery-search-meta {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #64748B;
+  margin-top: 0.5rem;
+}
+
+/* Category Filter Buttons */
+.gallery-filters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.filter-btn {
+  background-color: #FFFFFF;
+  color: #475569;
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  border: 1px solid #E2E8F0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.filter-btn:hover {
+  background-color: #F8FAFC;
+  border-color: #CBD5E1;
+  color: #0F172A;
+}
+
+.filter-btn.active {
+  background-color: #0B4EA2 !important;
+  color: #FFFFFF !important;
+  border-color: #0B4EA2 !important;
+  box-shadow: 0 4px 10px rgba(11, 78, 162, 0.25);
+}
+
+/* 3-Column Gallery Grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+@media (max-width: 991px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+/* Gallery Item with Exact 16:11 Aspect Ratio */
+.gallery-item {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  aspect-ratio: 16 / 11;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+
+.gallery-item.hidden {
+  display: none !important;
+}
+
+.gallery-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16);
+  border-color: #0B4EA2;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background-color: #F1F5F9;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+/* BVB Manvila Floating Top-Right Zoom Button */
+.gallery-zoom-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(11, 78, 162, 0.85);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.gallery-item:hover .gallery-zoom-icon {
+  transform: scale(1.1);
+  background: #0B4EA2;
+}
+
+/* Hover Overlay: Dark Gradient, Gold Badge, Clean Typography */
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(6, 43, 92, 0.92) 0%, rgba(6, 43, 92, 0.4) 55%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  color: #FFFFFF;
+  z-index: 1;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-overlay-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #F59E0B;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.gallery-overlay-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.3;
+  display: block;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-overlay-subtitle {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.35;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+/* Lightbox Styling */
+.lightbox-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background-color: rgba(4, 27, 59, 0.94);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  padding: 1.5rem;
+}
+
+.lightbox-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-dialog {
+  position: relative;
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -45px;
+  right: 0;
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
+  font-size: 36px;
+  cursor: pointer;
+  line-height: 1;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.lightbox-close:hover {
+  transform: scale(1.15);
+  color: #F59E0B;
+}
+
+.lightbox-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.lightbox-img-wrap {
+  max-width: 100%;
+  max-height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 75vh;
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  object-fit: contain;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lightbox-nav:hover {
+  background: #0B4EA2;
+  color: #FFFFFF;
+}
+
+.lightbox-prev {
+  left: -60px;
+}
+
+.lightbox-next {
+  right: -60px;
+}
+
+@media (max-width: 1200px) {
+  .lightbox-prev { left: 10px; }
+  .lightbox-next { right: 10px; }
+}
+
+.lightbox-thumbs-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 1.5rem;
+  max-width: 90%;
+  overflow: hidden;
+}
+
+.lightbox-thumbs-track {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 4px;
+}
+
+.lightbox-thumb-img {
+  width: 68px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 6px;
+  opacity: 0.6;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.lightbox-thumb-img:hover, .lightbox-thumb-img.active {
+  opacity: 1;
+  border-color: #0B4EA2;
+}
+</style>
 
 <script src="/assets/js/gallery.js"></script>
 
