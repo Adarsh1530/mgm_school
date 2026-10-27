@@ -36,6 +36,8 @@ pages = [
     ('admission-procedure', 'admission-procedure.html', 'admission-procedure'),
     ('attendance', 'attendance.html', 'attendance'),
     ('yoga', 'yoga.html', 'yoga'),
+    ('club-and-house-activities', 'club-and-house-activities.html', 'club-and-house-activities'),
+    ('club-house-activities', 'club-house-activities.html', 'club-house-activities'),
     ('merit-day', 'merit-day.html', 'merit-day'),
     ('pta', 'pta.html', 'pta'),
     ('alumni', 'alumni.html', 'alumni'),
