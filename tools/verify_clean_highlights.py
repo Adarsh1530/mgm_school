@@ -19,6 +19,8 @@ checks = [
     ("/mandatory-disclosure/", "assets/images/fee-structure-2026-27.png"),
     ("/mandatory-disclosure/", "assets/images/student-strength-2026-27.png"),
     ("/mandatory-disclosure/", "assets/images/smc-list-2026-27.jpg"),
+    ("/mandatory-disclosure/", "assets/images/download-image.png"),
+    ("/mandatory-disclosure/", "assets/images/download-pdf.png"),
     ("/highlights/", "assets/images/school-band-troop.jpeg"),
     ("/highlights/", "assets/images/gdc-clean.jpeg"),
     ("/highlights/", "assets/images/voice-of-mgm-clean.jpeg"),
