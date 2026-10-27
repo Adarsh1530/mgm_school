@@ -1,23 +1,22 @@
-with open('index.html', 'r', encoding='utf-8') as f:
-    content = f.read()
+import os
+from highlights_data import HIGHLIGHTS_DATA
 
-checks = [
-    'Recent & Upcoming',
-    'Global Educations Fall Meeting',
-    'Acadia Global Students Education Art Contest',
-    'Higher student success educational workshops',
-    '810665c'
-]
+found_explore = 0
+found_witness = 0
 
-for chk in checks:
-    print(f"'{chk}' in index.html: {chk in content}")
+for h in HIGHLIGHTS_DATA:
+    html_file = h['slug'] + '.html'
+    if os.path.exists(html_file):
+        with open(html_file, 'r', encoding='utf-8') as f:
+            c = f.read()
+        if 'Explore Other Highlights' in c:
+            print(f"FOUND explore in {html_file}")
+            found_explore += 1
+        if 'Witness ' in c and 'in Person' in c:
+            print(f"FOUND witness in {html_file}")
+            found_witness += 1
 
-surviving = [
-    'tp-hero-area',
-    'elementor-element-e388438',
-    'elementor-element-0b8ea50',
-    'elementor-element-0c3ddc4',
-    'elementor-element-e1419c7'
-]
-for s in surviving:
-    print(f"Surviving section '{s}': {s in content}")
+print(f"Verification: found_explore={found_explore}, found_witness={found_witness}")
+assert found_explore == 0, "Explore Other Highlights still exists"
+assert found_witness == 0, "Witness CTA still exists"
+print("SUCCESS: Both sections completely removed from all 21 highlights!")

@@ -117,10 +117,9 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
         </div>
       </div>
 
-      <!-- Right Column: Factsheet & Gallery -->
+      <!-- Right Column: Factsheet -->
       <div class="col-lg-5">
-        <!-- Quick Factsheet Card -->
-        <div class="card border-0 shadow-sm rounded-4 p-4 p-md-4 bg-white mb-4">
+        <div class="card border-0 shadow-sm rounded-4 p-4 p-md-4 bg-white h-100">
           <h5 class="fw-bold text-dark mb-3 d-flex align-items-center gap-2">
             <i class="fa-solid fa-list-check text-danger"></i> Facility Highlights at a Glance
           </h5>
@@ -141,68 +140,6 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
               <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Operational Hours</span>
               <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Open Throughout All School Working Hours</strong>
             </div>
-          </div>
-        </div>
-
-        <!-- Related Highlights Links -->
-        <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
-          <h5 class="fw-bold text-dark mb-3 d-flex align-items-center gap-2">
-            <i class="fa-solid fa-compass text-primary"></i> Explore Other Highlights
-          </h5>
-          <div class="d-flex flex-column gap-2">
-            <a href="<?= rtrim(BASE_URL, '/') ?>/swimming-pool/" class="d-flex align-items-center gap-3 p-2 rounded-3 text-decoration-none border bg-light text-dark hover-shadow transition">
-              <img src="<?= rtrim(BASE_URL, '/') ?>/assets/images/swimming-pool-1.jpeg" alt="Swimming Pool" class="rounded-2" style="width: 50px; height: 50px; object-fit: cover;">
-              <div class="flex-grow-1">
-                <strong class="d-block small">Swimming Pool</strong>
-                <span class="text-muted" style="font-size: 11px;">Student Well-being & Facilities</span>
-              </div>
-              <i class="fa-solid fa-chevron-right text-muted small me-2"></i>
-            </a>
-            <a href="<?= rtrim(BASE_URL, '/') ?>/twenty-twenty-method/" class="d-flex align-items-center gap-3 p-2 rounded-3 text-decoration-none border bg-light text-dark hover-shadow transition">
-              <img src="<?= rtrim(BASE_URL, '/') ?>/assets/images/1741692636.jpeg" alt="20-20 Method of Teaching" class="rounded-2" style="width: 50px; height: 50px; object-fit: cover;">
-              <div class="flex-grow-1">
-                <strong class="d-block small">20-20 Method of Teaching</strong>
-                <span class="text-muted" style="font-size: 11px;">Academic & Innovation</span>
-              </div>
-              <i class="fa-solid fa-chevron-right text-muted small me-2"></i>
-            </a>
-            <a href="<?= rtrim(BASE_URL, '/') ?>/libraries-at-mgm/" class="d-flex align-items-center gap-3 p-2 rounded-3 text-decoration-none border bg-light text-dark hover-shadow transition">
-              <img src="<?= rtrim(BASE_URL, '/') ?>/assets/images/libraries-1.jpeg" alt="Libraries at MGM" class="rounded-2" style="width: 50px; height: 50px; object-fit: cover;">
-              <div class="flex-grow-1">
-                <strong class="d-block small">Libraries at MGM</strong>
-                <span class="text-muted" style="font-size: 11px;">Academic & Innovation</span>
-              </div>
-              <i class="fa-solid fa-chevron-right text-muted small me-2"></i>
-            </a>
-          </div>
-          <div class="mt-3 pt-3 border-top text-center">
-            <a href="<?= rtrim(BASE_URL, '/') ?>/highlights/" class="fw-bold text-danger text-decoration-none small">
-              View All 21 Campus Highlights <i class="fa-solid fa-arrow-right ms-1"></i>
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Interactive CTA Section -->
-    <div class="card border-0 rounded-4 p-4 p-md-5 text-white position-relative overflow-hidden" style="background: linear-gradient(135deg, #141B2B 0%, #2A1724 50%, #800000 100%);">
-      <div class="row align-items-center position-relative" style="z-index: 2;">
-        <div class="col-lg-8">
-          <span class="badge bg-danger mb-2 px-3 py-1">Experience MGM Model School</span>
-          <h3 class="fw-bold text-white mb-2">Witness Happiness Room in Person</h3>
-          <p class="text-light mb-0" style="opacity: 0.9; font-size: 15px;">
-            Book a guided campus tour or schedule an interactive counseling consultation to explore our comprehensive infrastructure and academic opportunities.
-          </p>
-        </div>
-        <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
-          <div class="d-flex flex-wrap gap-2 justify-content-lg-end">
-            <a href="<?= rtrim(BASE_URL, '/') ?>/contact/" class="btn btn-light rounded-pill px-4 py-2 fw-bold text-dark shadow-sm">
-              Contact Admissions
-            </a>
-            <a href="<?= rtrim(BASE_URL, '/') ?>/admission-procedure/" class="btn btn-outline-light rounded-pill px-4 py-2 fw-bold">
-              Admission Details
-            </a>
           </div>
         </div>
       </div>
