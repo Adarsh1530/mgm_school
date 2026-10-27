@@ -187,10 +187,20 @@ $tickerSection = <<<HTML
 </div>
 HTML;
 
-// Inject Ticker before the 4 service cards container
-$targetServices = '<div class="elementor-element elementor-element-e388438 e-con-full e-flex e-con e-parent e-lazyloaded"';
-if (strpos($renderedHome, $targetServices) !== false) {
-    $renderedHome = str_replace($targetServices, $tickerSection . "\n" . $targetServices, $renderedHome);
+// Inject Ticker before the About Us container
+$targetAbout = '<div class="elementor-element elementor-element-0b8ea50 e-con-full e-flex e-con e-parent"';
+if (strpos($renderedHome, $targetAbout) !== false) {
+    $renderedHome = str_replace($targetAbout, $tickerSection . "\n" . $targetAbout, $renderedHome);
+} else {
+    // Fallback if target container attribute varies
+    $fallbackTarget = 'data-id="0b8ea50"';
+    $targetPos = strpos($renderedHome, $fallbackTarget);
+    if ($targetPos !== false) {
+        $divStart = strrpos(substr($renderedHome, 0, $targetPos), '<div');
+        if ($divStart !== false) {
+            $renderedHome = substr($renderedHome, 0, $divStart) . $tickerSection . "\n" . substr($renderedHome, $divStart);
+        }
+    }
 }
 ?>
 
