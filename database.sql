@@ -168,7 +168,7 @@ INSERT INTO `mandatory_disclosures` VALUES
 ('4', 'CBSE Results (From 2019)', '1750226704411-cbse-results-from-2019.pdf', 'assets/docs/1750226704411-cbse-results-from-2019.pdf', '42 KB', '4', '1', '2026-10-21 23:28:40'),
 ('5', 'BUILDING SAFETY CERTIFICATE', '1733383672169-BUILDING-SAFETY-CERTIFICATE.pdf', 'assets/docs/1733383672169-BUILDING-SAFETY-CERTIFICATE.pdf', '62 KB', '5', '1', '2026-10-21 23:28:40'),
 ('6', 'FIRE SAFETY CERTIFICATE', '1733383617275-FIRE-SAFETY-CERTIFICATE.pdf', 'assets/docs/1733383617275-FIRE-SAFETY-CERTIFICATE.pdf', '51 KB', '6', '1', '2026-10-21 23:28:40'),
-('7', 'SMC LIST', '1751885656740-smc-new.pdf', 'assets/docs/1751885656740-smc-new.pdf', '153 KB', '7', '1', '2026-10-21 23:28:40'),
+('7', 'SMC LIST', 'smc-list-2026-27.jpg', 'assets/images/smc-list-2026-27.jpg', '256 KB', '7', '1', '2026-10-21 23:28:40'),
 ('8', 'RECOGNITION LETTER', '1733383474258-RECOGNITION-LETTER.pdf', 'assets/docs/1733383474258-RECOGNITION-LETTER.pdf', '458 KB', '8', '1', '2026-10-21 23:28:40'),
 ('9', 'Trust Certificate', '1733383394165-Trust-Certificate.pdf', 'assets/docs/1733383394165-Trust-Certificate.pdf', '432 KB', '9', '1', '2026-10-21 23:28:40'),
 ('10', 'Vehicle Fitness Certificate', 'Vehicle-Fitness-Certificate-2026.pdf', 'assets/docs/Vehicle-Fitness-Certificate-2026.pdf', '138 KB', '10', '1', '2026-10-21 23:28:40'),
