@@ -1008,18 +1008,20 @@ a:hover {
 .mgm-video-container {
   position: relative;
   width: 100%;
+  max-width: 960px;
+  margin: 25px auto;
+  aspect-ratio: 16 / 9;
   border-radius: 14px;
   overflow: hidden;
   background-color: #0b1120;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
-  margin: 25px 0;
 }
 
 .mgm-video-container video {
   display: block;
   width: 100%;
-  height: auto;
-  max-height: 540px;
+  height: 100%;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: 14px;
   background-color: #000;

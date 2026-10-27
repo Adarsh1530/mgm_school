@@ -86,7 +86,7 @@ $address = get_setting('school_address', 'MGM Model School, Ayiroor, Varkala 695
   <?php endif; ?>
 
   <!-- Custom Refined Enhancements -->
-  <link rel="stylesheet" href="<?= asset_url('css/custom.css') ?>">
+  <link rel="stylesheet" href="<?= asset_url('css/custom.css') ?>?v=20261027_ratio">
 </head>
 <body class="wp-singular page page-id-<?= $wpId ?? '0' ?> wp-embed-responsive wp-theme-acadia theme-acadia elementor-default elementor-template-full-width elementor-kit-15695 elementor-page elementor-page-<?= $wpId ?? '0' ?>" id="body">
 
