@@ -23,6 +23,7 @@ $highlights = json_decode(<<<'JSON'
     "icon": "fa-solid fa-person-swimming",
     "url": "/swimming-pool/",
     "has_dedicated_page": true,
+    "video": "assets/videos/swimming-pool.mp4",
     "summary": "Our state-of-the-art swimming pool complex has been a vibrant part of our campus for the last three years, enhancing the physical fitness and holistic development of our students.",
     "details": "Our facility features two pools, including a pool exclusively for children below 8 years. Designed and constructed with the highest safety standards, the pools are managed by well-trained and qualified coaches who ensure expert guidance and constant supervision.",
     "bullets": [
@@ -161,6 +162,7 @@ $highlights = json_decode(<<<'JSON'
     "icon": "fa-solid fa-tree",
     "url": "/vriksha-chikitsa/",
     "has_dedicated_page": true,
+    "video": "assets/videos/vriksha-chikitsa.mp4",
     "summary": "In the year 2024, MGM Model School, Ayiroor, Varkala took a unique step towards environmental conservation by organizing a \"Vriksha Chikitsa\" \u2013 Traditional Ayurvedic Tree Treatment project in our campus.",
     "details": "The program was led by renowned tree healer and environmental activist Shri. K. Binu, popularly known as Vriksha Vaidyan or 'Tree Doctor'. The Kerala-based Tree Doctor enlightened our students about the meticulous process involved in the preparation of Ayurvedic medicines for healing injured trees. As part of this green initiative, we invited Shri. Binu and his team to treat and rejuvenate our beloved jackfruit tree, aged over 40 years, standing tall in our campus. The ancient Ayurvedic healing ritual gave our children a rare and inspiring lesson on compassion, conservation and co-existing with nature.",
     "bullets": [
@@ -207,6 +209,7 @@ $highlights = json_decode(<<<'JSON'
     "icon": "fa-solid fa-flask-vial",
     "url": "/innovation-centre/",
     "has_dedicated_page": true,
+    "video": "assets/videos/innovation-centre.mp4",
     "summary": "Mahatma Gandhi Memorial Model School has introduced a state-of-the-art Innovation Centre equipped with world-class amenities. The centre was inaugurated by the Hon'ble Governor of Kerala, Shri Arif Mohammed Khan.",
     "details": "Packed with cutting-edge technology and brilliant minds, the lab also offers 3D Printing, VR Experience and much more.",
     "bullets": [
@@ -345,6 +348,7 @@ $highlights = json_decode(<<<'JSON'
     "icon": "fa-solid fa-cube",
     "url": "/3d-max-zone/",
     "has_dedicated_page": true,
+    "video": "assets/videos/3d-max-zone.mp4",
     "summary": "Our outdoor 3D Maths Zone turns abstract concepts into a hands-on experience. At MGM Model School, we believe learning is best when it can be seen, touched and experienced. Set within the school campus, this interactive zone features large, vividly coloured 3D models of solid shapes including Triangular Pyramid, Square Pyramid, Pentagonal Pyramid, Hexagonal Pyramid, Cubes, Rectangular Prisms, Frustum of a Cone, Cones and more.",
     "details": "Each model is mounted on a pedestal that clearly displays its properties \u2013 Faces, Vertices, Edges, and the Euler's formula (F+V-E), along with Lateral Surface Area, Total Surface Area and Volume \u2013 making learning spontaneous and engaging. Instead of just memorizing formulas from a textbook, students walk through geometry, observe, count and correlate. It fosters spatial intelligence, logical reasoning and a genuine love for Mathematics from the foundational years.",
     "bullets": [
@@ -391,6 +395,7 @@ $highlights = json_decode(<<<'JSON'
     "icon": "fa-solid fa-microchip",
     "url": "/nova-ai-hub/",
     "has_dedicated_page": true,
+    "video": "assets/videos/nova-ai-hub.mp4",
     "summary": "NOVA is our KG Innovation Lab, where our youngest learners explore technology through fun and hands-on activities. The lab features Cubelets for building small robots, block-based coding to introduce programming in a simple and engaging way, and MIKO \u2013 a student-friendly robot that interacts with children and supports their learning.",
     "details": "NOVA encourages students to explore, create and experiment, while developing creativity, logical thinking and problem-solving skills from an early age.",
     "bullets": [
@@ -663,6 +668,12 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
               <span class="highlight-order-num">
                 #<?= sprintf('%02d', $h['order']) ?>
               </span>
+
+              <?php if (!empty($h['video'])): ?>
+                <span class="highlight-video-badge position-absolute" style="bottom: 12px; right: 12px; background: rgba(171, 12, 47, 0.9); color: #fff; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 9999px; backdrop-filter: blur(4px); box-shadow: 0 2px 8px rgba(0,0,0,0.2); pointer-events: none; z-index: 2;">
+                  <i class="fa-solid fa-play me-1" style="font-size: 9px;"></i> Video Tour
+                </span>
+              <?php endif; ?>
             </div>
 
             <!-- Card Body -->

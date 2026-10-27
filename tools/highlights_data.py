@@ -616,8 +616,8 @@ HIGHLIGHTS_DATA = [
         'icon': 'fa-solid fa-cube',
         'image': 'assets/images/maths-zone-3d.jpeg',
         'gallery': ['assets/images/maths-zone-3d.jpeg', 'assets/images/maths-zone.jpeg'],
-        'video': None,
-        'video_poster': None,
+        'video': 'assets/videos/3d-max-zone.mp4',
+        'video_poster': 'assets/images/maths-zone-3d.jpeg',
         'lead': 'Specialised mathematics and spatial reasoning lab equipped with tangible geometric solids, coordinate frames, and 3D manipulative models.',
         'overview': 'Abstract mathematical theorems can intimidate students when restricted to two-dimensional blackboards. The 3D Max Zone at MGM Model School demystifies mathematics through tangible, tactile inquiry. Featuring three-dimensional polyhedral structures, coordinate plane projectors, geometric dissection puzzles, and algebraic kits, the lab turns complex formulas into intuitive physical realities.',
         'pillars': [
