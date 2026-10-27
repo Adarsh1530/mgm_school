@@ -65,6 +65,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  // Close mobile offcanvas when any submenu link is clicked
+  const offcanvasLinks = document.querySelectorAll('.offcanvas-submenu a');
+  offcanvasLinks.forEach(function (link) {
+    link.addEventListener('click', function () {
+      closeOffcanvas();
+    });
+  });
+
   // Gallery Lightbox Modal
   const galleryImgs = document.querySelectorAll('.e-gallery-image, .gallery-card img, .elementor-widget-image img, .e-con-inner img');
   let lightboxModal = document.querySelector('.lightbox-modal');

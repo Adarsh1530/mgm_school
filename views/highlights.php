@@ -241,7 +241,7 @@ $highlights = json_decode(<<<'JSON'
   {
     "id": "gdc",
     "order": 10,
-    "title": "GDC",
+    "title": "GDC (Guidance & Development Cell)",
     "category_key": "facilities",
     "category_name": "Student Well-being & Facilities",
     "image": "assets/images/1750242752.jpeg",
@@ -632,6 +632,7 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
         $keywords = strtolower($h['title'] . ' ' . $h['summary'] . ' ' . $h['category_name'] . ' ' . implode(' ', $h['tags']));
       ?>
         <div class="col-lg-4 col-md-6 highlight-card-col" 
+             id="<?= e($h['id']) ?>-col"
              data-category="<?= e($h['category_key']) ?>" 
              data-keywords="<?= e($keywords) ?>">
           
@@ -675,25 +676,25 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
 
               <!-- Action Footer -->
               <div class="highlight-card-actions">
+                <button type="button" 
+                        class="highlight-btn-primary btn-open-detail" 
+                        data-title="<?= e($h['title']) ?>"
+                        data-category="<?= e($h['category_name']) ?>"
+                        data-image="<?= asset_url(ltrim($h['image'], 'assets/')) ?>"
+                        data-details="<?= e($h['details']) ?>"
+                        data-bullets="<?= e(json_encode($h['bullets'])) ?>">
+                  Quick Overview <i class="fa-solid fa-circle-info ms-1"></i>
+                </button>
+
                 <?php if ($h['has_dedicated_page']): ?>
-                  <a href="<?= e(url($h['url'])) ?>" class="highlight-btn-primary">
-                    Explore Page <i class="fa-solid fa-arrow-right ms-1"></i>
+                  <a href="<?= e(url($h['url'])) ?>" class="highlight-btn-action text-danger fw-bold" title="View Dedicated Page">
+                    Full Page <i class="fa-solid fa-arrow-right ms-1"></i>
                   </a>
                 <?php else: ?>
-                  <button type="button" 
-                          class="highlight-btn-primary btn-open-detail" 
-                          data-title="<?= e($h['title']) ?>"
-                          data-category="<?= e($h['category_name']) ?>"
-                          data-image="<?= asset_url(ltrim($h['image'], 'assets/')) ?>"
-                          data-details="<?= e($h['details']) ?>"
-                          data-bullets="<?= e(json_encode($h['bullets'])) ?>">
-                    Quick Overview <i class="fa-solid fa-circle-info ms-1"></i>
-                  </button>
+                  <a href="#<?= e($h['id']) ?>" class="highlight-btn-action" title="Copy Direct Link to Highlight" onclick="navigator.clipboard.writeText(window.location.origin + window.location.pathname + '#<?= e($h['id']) ?>'); alert('Link copied to clipboard!'); return false;">
+                    <i class="fa-solid fa-share-nodes"></i>
+                  </a>
                 <?php endif; ?>
-
-                <a href="#<?= e($h['id']) ?>" class="highlight-btn-action" title="Copy Direct Link to Highlight" onclick="navigator.clipboard.writeText(window.location.origin + window.location.pathname + '#<?= e($h['id']) ?>'); alert('Link copied to clipboard!'); return false;">
-                  <i class="fa-solid fa-share-nodes"></i>
-                </a>
               </div>
 
             </div>
@@ -881,16 +882,93 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // URL Hash Navigation Smooth Scroll
-  if (window.location.hash) {
-    const targetId = window.location.hash.substring(1);
-    const targetEl = document.getElementById(targetId);
-    if (targetEl) {
-      setTimeout(() => {
-        targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }, 350);
+  // Bullet-Proof Navigation to Specific Highlight
+  function navigateToHighlight(hash, smooth = true) {
+    if (!hash) return;
+    const cleanId = hash.replace(/^#/, '');
+    if (!cleanId) return;
+
+    // Reset filters and search so target card is not hidden with d-none
+    if (activeCategory !== 'all' || activeSearch !== '') {
+      activeCategory = 'all';
+      activeSearch = '';
+      if (searchInput) searchInput.value = '';
+      if (clearBtn) clearBtn.style.display = 'none';
+      filterBtns.forEach(b => {
+        if (b.getAttribute('data-category') === 'all') {
+          b.classList.add('active');
+        } else {
+          b.classList.remove('active');
+        }
+      });
+      applyFilters();
     }
+
+    const targetEl = document.getElementById(cleanId);
+    if (!targetEl) return;
+
+    // Close offcanvas mobile drawer if opened
+    const offcanvasWrapper = document.querySelector('.offcanvas-wrapper');
+    const offcanvasOverlay = document.querySelector('.offcanvas-overlay');
+    if (offcanvasWrapper && offcanvasWrapper.classList.contains('active')) {
+      offcanvasWrapper.classList.remove('active');
+      if (offcanvasOverlay) offcanvasOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Scroll smoothly with offset for sticky header
+    setTimeout(() => {
+      const header = document.getElementById('header-sticky');
+      const headerHeight = header ? header.offsetHeight : 80;
+      const elementTop = targetEl.getBoundingClientRect().top + window.pageYOffset;
+      const targetScrollY = Math.max(0, elementTop - headerHeight - 25);
+
+      window.scrollTo({
+        top: targetScrollY,
+        behavior: smooth ? 'smooth' : 'auto'
+      });
+
+      // Target pulse glow animation
+      targetEl.classList.remove('highlight-active-target');
+      void targetEl.offsetWidth; // Force reflow
+      targetEl.classList.add('highlight-active-target');
+
+      setTimeout(() => {
+        targetEl.classList.remove('highlight-active-target');
+      }, 3000);
+    }, 150);
   }
+
+  // Handle hash on page load
+  if (window.location.hash) {
+    setTimeout(() => {
+      navigateToHighlight(window.location.hash, true);
+    }, 300);
+  }
+
+  // Handle hashchange event (clicking dropdown item while on /highlights/)
+  window.addEventListener('hashchange', function () {
+    navigateToHighlight(window.location.hash, true);
+  });
+
+  // Intercept click on any link on the page that points to a #highlight
+  document.addEventListener('click', function (e) {
+    const anchor = e.target.closest('a');
+    if (!anchor) return;
+    const href = anchor.getAttribute('href');
+    if (!href) return;
+
+    if (href.includes('#') && (href.startsWith('#') || href.includes('/highlights/#') || href.includes('highlights.html#'))) {
+      const hashPart = href.substring(href.indexOf('#'));
+      const targetId = hashPart.substring(1);
+      const targetEl = document.getElementById(targetId);
+      if (targetEl) {
+        e.preventDefault();
+        history.pushState(null, null, hashPart);
+        navigateToHighlight(hashPart, true);
+      }
+    }
+  });
 });
 </script>
 
