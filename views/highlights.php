@@ -252,7 +252,7 @@ $highlights = json_decode(<<<'JSON'
     "title": "Life Skills",
     "category_key": "skills",
     "category_name": "Skills & Cadet Corps",
-    "image": "assets/images/life-skills-clean.jpeg",
+    "image": "assets/images/life-skills-2026.jpeg",
     "icon": "fa-solid fa-lightbulb",
     "url": "/life-skills/",
     "has_dedicated_page": true,
