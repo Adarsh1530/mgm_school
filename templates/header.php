@@ -137,7 +137,7 @@ $address = get_setting('school_address', 'MGM Model School, Ayiroor, Varkala 695
                                 (!empty($currentSlug) && strpos($nav['url'], '/' . $currentSlug . '/') !== false);
                   ?>
                     <li class="<?= $hasChildren ? 'has-dropdown' : '' ?> <?= $isActive ? 'active' : '' ?>">
-                      <a href="<?= e(url($nav['url'])) ?>" <?= $hasChildren ? 'onclick="return false;"' : '' ?> class="nav-links">
+                      <a href="<?= e(url($nav['url'])) ?>" <?= ($hasChildren && ($nav['url'] === '#' || empty($nav['url']))) ? 'onclick="return false;"' : '' ?> class="nav-links">
                         <?= e($nav['label']) ?>
                         <?php if ($hasChildren): ?>
                           <i class="fa-solid fa-chevron-down ms-1" style="font-size: 10px;"></i>

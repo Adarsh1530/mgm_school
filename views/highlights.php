@@ -633,28 +633,34 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
     <div class="row g-4" id="highlightsGrid">
       <?php foreach ($highlights as $h): 
         $keywords = strtolower($h['title'] . ' ' . $h['summary'] . ' ' . $h['category_name'] . ' ' . implode(' ', $h['tags']));
+        $targetUrl = rtrim(BASE_URL, '/') . '/' . e($h['id']) . '/';
       ?>
         <div class="col-lg-4 col-md-6 highlight-card-col" 
              id="<?= e($h['id']) ?>-col"
              data-category="<?= e($h['category_key']) ?>" 
              data-keywords="<?= e($keywords) ?>">
           
-          <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white" id="<?= e($h['id']) ?>">
+          <div class="card highlight-card border-0 shadow-sm rounded-4 h-100 bg-white" 
+               id="<?= e($h['id']) ?>"
+               data-href="<?= $targetUrl ?>"
+               role="button"
+               tabindex="0"
+               aria-label="Explore <?= e($h['title']) ?>">
             
-            <!-- Thumbnail & Badges (Exact Natural Ratio, No Forced Crop) -->
-            <div class="position-relative" style="height: 240px; background: #f8fafc; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-              <a href="<?= rtrim(BASE_URL, '/') ?>/<?= e($h['id']) ?>/" class="d-flex align-items-center justify-content-center w-100 h-100 p-2">
+            <!-- Thumbnail & Category Tag (Exact Natural Ratio, Clean Edge-to-Edge Without Artificial Frames) -->
+            <div class="highlight-thumb-wrap position-relative">
+              <a href="<?= $targetUrl ?>" class="d-block w-100 text-decoration-none">
                 <img src="<?= asset_url(ltrim($h['image'], 'assets/')) ?>" 
                      alt="<?= e($h['title']) ?>" 
-                     style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; transition: transform 0.4s ease;"
+                     class="highlight-thumb-img"
                      loading="lazy">
               </a>
               
-              <span class="position-absolute top-0 start-0 m-3 badge bg-white text-dark shadow-sm px-3 py-1 rounded-pill small fw-bold">
+              <span class="highlight-category-tag">
                 <?= e($h['category_name']) ?>
               </span>
               
-              <span class="position-absolute top-0 end-0 m-3 badge bg-danger text-white shadow-sm px-2 py-1 rounded-pill small fw-bold">
+              <span class="highlight-order-num">
                 #<?= sprintf('%02d', $h['order']) ?>
               </span>
             </div>
@@ -663,7 +669,7 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
             <div class="card-body p-4 d-flex flex-column">
               <h3 class="fw-bold text-dark mb-2" style="font-size: 20px;">
                 <i class="<?= e($h['icon']) ?> text-danger me-2"></i>
-                <a href="<?= rtrim(BASE_URL, '/') ?>/<?= e($h['id']) ?>/" class="text-dark text-decoration-none">
+                <a href="<?= $targetUrl ?>" class="text-dark text-decoration-none highlight-title-link">
                   <span><?= e($h['title']) ?></span>
                 </a>
               </h3>
@@ -681,21 +687,13 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
                 <?php endforeach; ?>
               </div>
 
-              <!-- Action Footer -->
-              <div class="d-flex justify-content-between align-items-center pt-3 border-top mt-auto">
-                <button type="button" 
-                        class="btn btn-outline-secondary btn-sm rounded-pill px-3 btn-open-detail" 
-                        data-title="<?= e($h['title']) ?>"
-                        data-category="<?= e($h['category_name']) ?>"
-                        data-image="<?= asset_url(ltrim($h['image'], 'assets/')) ?>"
-                        data-details="<?= e($h['details']) ?>"
-                        data-bullets="<?= e(json_encode($h['bullets'])) ?>"
-                        data-slug="<?= e($h['id']) ?>">
-                  Quick Overview <i class="fa-solid fa-circle-info ms-1"></i>
-                </button>
-
-                <a href="<?= rtrim(BASE_URL, '/') ?>/<?= e($h['id']) ?>/" class="btn btn-danger btn-sm rounded-pill px-3 fw-bold" title="View Dedicated Page">
-                  Full Page <i class="fa-solid fa-arrow-right ms-1"></i>
+              <!-- Direct Navigation Full-Width Button -->
+              <div class="pt-3 border-top mt-auto">
+                <a href="<?= $targetUrl ?>" 
+                   class="btn btn-danger btn-sm rounded-pill px-4 py-2 fw-bold w-100 text-center shadow-sm highlight-btn-link" 
+                   title="Explore <?= e($h['title']) ?>"
+                   style="background: var(--tp-theme-primary, #ab0c2f); border-color: var(--tp-theme-primary, #ab0c2f);">
+                  Explore <?= e($h['title']) ?> <i class="fa-solid fa-arrow-right ms-2"></i>
                 </a>
               </div>
 
@@ -708,47 +706,6 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
 
   </div>
 
-</div>
-
-<!-- Interactive Detail Modal -->
-<div class="modal fade" id="highlightDetailModal" tabindex="-1" aria-labelledby="highlightModalTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content border-0 rounded-4 shadow-lg overflow-hidden">
-      
-      <div class="modal-header bg-light border-0 px-4 py-3 align-items-center">
-        <div>
-          <span class="badge bg-danger px-3 py-1 text-uppercase mb-1" id="highlightModalCategory" style="font-size: 11px; font-weight: 700;">
-            Category
-          </span>
-          <h4 class="modal-title fw-bold text-dark mb-0" id="highlightModalTitle">Highlight Title</h4>
-        </div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-
-      <div class="modal-body p-4">
-        <div class="row g-4">
-          <div class="col-md-5">
-            <div class="rounded-3 overflow-hidden shadow-sm p-2" style="height: 240px; background: #f8fafc; display: flex; align-items: center; justify-content: center;">
-              <img id="highlightModalImage" src="" alt="Highlight" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
-            </div>
-          </div>
-          <div class="col-md-7">
-            <p id="highlightModalDetails" class="text-secondary leading-relaxed mb-3" style="font-size: 15px; line-height: 1.8;"></p>
-            <h6 class="fw-bold text-dark mb-2">Key Highlights:</h6>
-            <div id="highlightModalBullets" class="d-flex flex-column gap-2 mb-3"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="modal-footer bg-light border-0 px-4 py-3 justify-content-between">
-        <button type="button" class="btn btn-outline-secondary rounded-pill px-4 btn-sm" data-bs-dismiss="modal">Close</button>
-        <a id="highlightModalFullPageBtn" href="#" class="btn btn-danger rounded-pill px-4 btn-sm fw-bold">
-          Explore Dedicated Page <i class="fa-solid fa-arrow-right ms-1"></i>
-        </a>
-      </div>
-
-    </div>
-  </div>
 </div>
 
 <script>
@@ -828,45 +785,28 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Quick Overview Modal
-  const modalEl = document.getElementById('highlightDetailModal');
-  if (modalEl && typeof bootstrap !== 'undefined') {
-    const modal = new bootstrap.Modal(modalEl);
-    document.querySelectorAll('.btn-open-detail').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        const title = this.getAttribute('data-title');
-        const cat = this.getAttribute('data-category');
-        const img = this.getAttribute('data-image');
-        const details = this.getAttribute('data-details');
-        const slug = this.getAttribute('data-slug');
-        let bullets = [];
-        try {
-          bullets = JSON.parse(this.getAttribute('data-bullets') || '[]');
-        } catch(e) {}
-
-        document.getElementById('highlightModalTitle').innerText = title;
-        document.getElementById('highlightModalCategory').innerText = cat;
-        document.getElementById('highlightModalImage').src = img;
-        document.getElementById('highlightModalDetails').innerText = details;
-
-        const bulletsWrap = document.getElementById('highlightModalBullets');
-        bulletsWrap.innerHTML = '';
-        bullets.forEach(function(b) {
-          const div = document.createElement('div');
-          div.className = 'd-flex align-items-start gap-2 small';
-          div.innerHTML = '<i class="fa-solid fa-circle-check text-success mt-1"></i><span>' + b + '</span>';
-          bulletsWrap.appendChild(div);
-        });
-
-        const fullPageBtn = document.getElementById('highlightModalFullPageBtn');
-        if (fullPageBtn && slug) {
-          fullPageBtn.href = '<?= rtrim(BASE_URL, '/') ?>/' + slug + '/';
-        }
-
-        modal.show();
-      });
+  // Make entire highlight card clickable for instant direct navigation to dedicated page
+  document.querySelectorAll('.highlight-card').forEach(function(card) {
+    card.addEventListener('click', function(e) {
+      // If user clicked an anchor or button inside, let natural event propagate
+      if (e.target.closest('a') || e.target.closest('button')) {
+        return;
+      }
+      const href = this.getAttribute('data-href');
+      if (href) {
+        window.location.href = href;
+      }
     });
-  }
+
+    card.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        const href = this.getAttribute('data-href');
+        if (href) {
+          window.location.href = href;
+        }
+      }
+    });
+  });
 
 });
 </script>

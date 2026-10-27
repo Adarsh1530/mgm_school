@@ -29,28 +29,36 @@ $innovationSection = <<<'HTML'
         
         <div class="row g-3 mb-4">
           <div class="col-sm-6">
-            <div class="p-3 rounded-3 h-100" style="background: #F8FAFC; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
-              <h6 class="fw-bold mb-1 text-dark"><i class="fa-solid fa-robot text-danger me-2"></i>OMNIS &ndash; The MGM Robot</h6>
-              <p class="text-muted small mb-0">Interactive AI-powered learning companion explaining complex concepts and making learning interactive.</p>
-            </div>
+            <a href="ominis/" class="text-decoration-none d-block h-100">
+              <div class="p-3 rounded-3 h-100 shadow-sm" style="background: #F8FAFC; border-left: 3px solid var(--tp-theme-primary, #ab0c2f); transition: transform 0.2s ease, box-shadow 0.2s ease;">
+                <h6 class="fw-bold mb-1 text-dark"><i class="fa-solid fa-robot text-danger me-2"></i>OMNIS &ndash; The MGM Robot <i class="fa-solid fa-arrow-right text-muted ms-1" style="font-size: 11px;"></i></h6>
+                <p class="text-muted small mb-0">Interactive AI-powered learning companion explaining complex concepts and making learning interactive.</p>
+              </div>
+            </a>
           </div>
           <div class="col-sm-6">
-            <div class="p-3 rounded-3 h-100" style="background: #F8FAFC; border-left: 3px solid #2563eb;">
-              <h6 class="fw-bold mb-1 text-dark"><i class="fa-solid fa-microchip text-primary me-2"></i>NOVA &ndash; The AI Hub</h6>
-              <p class="text-muted small mb-0">KG Innovation Lab with Cubelets, block-based coding, and MIKO student-friendly robot.</p>
-            </div>
+            <a href="nova-ai-hub/" class="text-decoration-none d-block h-100">
+              <div class="p-3 rounded-3 h-100 shadow-sm" style="background: #F8FAFC; border-left: 3px solid #2563eb; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+                <h6 class="fw-bold mb-1 text-dark"><i class="fa-solid fa-microchip text-primary me-2"></i>NOVA &ndash; The AI Hub <i class="fa-solid fa-arrow-right text-muted ms-1" style="font-size: 11px;"></i></h6>
+                <p class="text-muted small mb-0">KG Innovation Lab with Cubelets, block-based coding, and MIKO student-friendly robot.</p>
+              </div>
+            </a>
           </div>
           <div class="col-sm-6">
-            <div class="p-3 rounded-3 h-100" style="background: #F8FAFC; border-left: 3px solid #16a34a;">
-              <h6 class="fw-bold mb-1 text-dark"><i class="fa-solid fa-cube text-success me-2"></i>3D Printing &amp; Prototyping</h6>
-              <p class="text-muted small mb-0">Hands-on rapid prototyping allowing student engineering designs to materialize into physical models.</p>
-            </div>
+            <a href="3d-max-zone/" class="text-decoration-none d-block h-100">
+              <div class="p-3 rounded-3 h-100 shadow-sm" style="background: #F8FAFC; border-left: 3px solid #16a34a; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+                <h6 class="fw-bold mb-1 text-dark"><i class="fa-solid fa-cube text-success me-2"></i>3D Printing &amp; Prototyping <i class="fa-solid fa-arrow-right text-muted ms-1" style="font-size: 11px;"></i></h6>
+                <p class="text-muted small mb-0">Hands-on rapid prototyping allowing student engineering designs to materialize into physical models.</p>
+              </div>
+            </a>
           </div>
           <div class="col-sm-6">
-            <div class="p-3 rounded-3 h-100" style="background: #F8FAFC; border-left: 3px solid #d97706;">
-              <h6 class="fw-bold mb-1 text-dark"><i class="fa-solid fa-vr-cardboard text-warning me-2"></i>Virtual Reality (VR) Lab</h6>
-              <p class="text-muted small mb-0">Immersive experiential simulations across space astronomy, marine biology, and world geography.</p>
-            </div>
+            <a href="innovation-centre/" class="text-decoration-none d-block h-100">
+              <div class="p-3 rounded-3 h-100 shadow-sm" style="background: #F8FAFC; border-left: 3px solid #d97706; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+                <h6 class="fw-bold mb-1 text-dark"><i class="fa-solid fa-vr-cardboard text-warning me-2"></i>Virtual Reality (VR) Lab <i class="fa-solid fa-arrow-right text-muted ms-1" style="font-size: 11px;"></i></h6>
+                <p class="text-muted small mb-0">Immersive experiential simulations across space astronomy, marine biology, and world geography.</p>
+              </div>
+            </a>
           </div>
         </div>
 

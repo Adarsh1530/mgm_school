@@ -39,6 +39,13 @@
 
           <?php if ($hasChildren): ?>
             <ul class="offcanvas-submenu" style="display: none;">
+              <?php if (!empty($nav['url']) && $nav['url'] !== '#'): ?>
+                <li class="border-bottom pb-2 mb-2">
+                  <a href="<?= e(url($nav['url'])) ?>" class="fw-bold text-danger">
+                    <i class="fa-solid fa-table-cells-large me-1"></i> View All <?= e($nav['label']) ?> Hub
+                  </a>
+                </li>
+              <?php endif; ?>
               <?php foreach ($nav['children'] as $child): ?>
                 <li>
                   <a href="<?= e(url($child['url'])) ?>">
