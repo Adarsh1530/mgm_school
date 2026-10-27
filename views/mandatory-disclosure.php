@@ -83,6 +83,9 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
 .disclosure-doc-link:hover {
   opacity: 0.88;
 }
+.disclosure-doc-link img {
+  pointer-events: none;
+}
 .elementor-image-box-wrapper:hover .attachment-full {
   transform: translateY(-4px) scale(1.04);
   transition: transform 0.25s ease;
@@ -94,6 +97,10 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
 
 <script>
 function openDisclosureModal(imgSrc, title) {
+  // Suppress and close any general page lightbox modals if present
+  var generalLightbox = document.querySelector('.lightbox-modal');
+  if (generalLightbox) generalLightbox.classList.remove('active');
+
   var modal = document.getElementById('disclosureViewerModal');
   var img = document.getElementById('disclosureModalImg');
   var titleEl = document.getElementById('disclosureModalTitle');
@@ -113,15 +120,20 @@ function closeDisclosureModal() {
     modal.style.display = 'none';
     document.body.style.overflow = '';
   }
+  // Ensure general page lightbox modal is closed
+  var generalLightbox = document.querySelector('.lightbox-modal');
+  if (generalLightbox) generalLightbox.classList.remove('active');
 }
 
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.disclosure-doc-link').forEach(function(el) {
     el.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      if (e.stopImmediatePropagation) e.stopImmediatePropagation();
       var img = this.getAttribute('data-doc-img');
       var title = this.getAttribute('data-doc-title') || 'Document Viewer';
       if (img) {
-        e.preventDefault();
         openDisclosureModal(img, title);
       }
     });

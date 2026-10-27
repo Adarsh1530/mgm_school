@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Gallery Lightbox Modal
-  const galleryImgs = document.querySelectorAll('.e-gallery-image, .gallery-card img, .elementor-widget-image img, .e-con-inner img');
+  const galleryImgs = document.querySelectorAll('.e-gallery-image, .gallery-card img, .elementor-widget-image:not(.elementor-widget-image-box) img, .mgm-gallery-item img');
   let lightboxModal = document.querySelector('.lightbox-modal');
 
   if (galleryImgs.length > 0 && !lightboxModal) {
@@ -109,10 +109,25 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   galleryImgs.forEach(function (img) {
-    // Only bind if inside page body and not header/footer logo
-    if (img.closest('.header-area') || img.closest('.tp-footer-area') || img.closest('.offcanvas-wrapper')) return;
+    // Only bind if inside genuine gallery context and never for icons, logos, disclosures, or widgets
+    if (
+      img.closest('.header-area') || 
+      img.closest('.tp-footer-area') || 
+      img.closest('.offcanvas-wrapper') ||
+      img.closest('.elementor-widget-image-box') ||
+      img.closest('.disclosure-doc-link') ||
+      img.closest('#disclosureViewerModal') ||
+      img.src.includes('download-') ||
+      img.src.includes('icon') ||
+      img.src.includes('logo') ||
+      img.classList.contains('header-logo-img') ||
+      img.classList.contains('footer-logo-img')
+    ) {
+      return;
+    }
     img.style.cursor = 'pointer';
-    img.addEventListener('click', function () {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
       openLightbox(this.src, this.alt);
     });
   });
