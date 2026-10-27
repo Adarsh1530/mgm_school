@@ -43,7 +43,7 @@ $highlights = json_decode(<<<'JSON'
     "title": "20-20 Method of Teaching",
     "category_key": "academic",
     "category_name": "Academic & Innovation",
-    "image": "assets/images/1741692636.jpeg",
+    "image": "assets/images/twenty-twenty-method.jpeg",
     "icon": "fa-solid fa-chalkboard-user",
     "url": "/twenty-twenty-method/",
     "has_dedicated_page": true,

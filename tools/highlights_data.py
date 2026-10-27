@@ -55,7 +55,7 @@ HIGHLIGHTS_DATA = [
         'category_name': 'Academic & Innovation',
         'badge': 'Signature Pedagogical Framework',
         'icon': 'fa-solid fa-chalkboard-user',
-        'image': 'assets/images/1741692636.jpeg',
+        'image': 'assets/images/twenty-twenty-method.jpeg',
         'gallery': ['assets/images/1741692636.jpeg'],
         'video': None,
         'video_poster': None,
