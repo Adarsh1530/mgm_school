@@ -1,14 +1,15 @@
 <?php
 /**
- * Libraries at MGM Model School View
- * MGM Model School Campus Highlights
+ * Libraries @ MGM View
+ * Exact Content from Official School Highlights
+ * MGM Model School Recreation Project
  */
 require_once __DIR__ . '/../config/config.php';
 
 $currentSlug = "libraries-at-mgm";
-$pageTitle = "Libraries at MGM";
-$breadcrumbTitle = "Libraries at MGM";
-$metaDescription = "Expansive library ecosystem offering over 10,000 literary masterpieces, scientific journals, encyclopedia collections, and quiet reading alcoves fostering lifelong inquiry.";
+$pageTitle = "Libraries @ MGM";
+$breadcrumbTitle = "Libraries @ MGM";
+$metaDescription = "MGM Model School houses three well-stocked libraries catering to Primary, Secondary and Higher Secondary sections - fostering a love for reading, learning, and inquiry from an early age. Our Secondary Library is digitalized, giving students seamless access to e-books, reference materials and digital learning resources, while still preserving the joy of traditional reading.";
 
 require_once __DIR__ . '/../templates/header.php';
 require_once __DIR__ . '/../templates/breadcrumb.php';
@@ -34,13 +35,16 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
         <div class="col-lg-8">
           <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill mb-3" style="background: rgba(171, 12, 47, 0.08); color: var(--tp-theme-primary, #ab0c2f);">
             <i class="fa-solid fa-star"></i>
-            <span class="fw-bold small">Knowledge & Literary Sanctuary</span>
+            <span class="fw-bold small">Knowledge & Reading Sanctuary</span>
           </div>
-          <h1 class="fw-bold text-dark mb-3" style="font-size: clamp(28px, 4vw, 42px); line-height: 1.25;">
-            Libraries at MGM Model School
+          <h1 class="fw-bold text-dark mb-2" style="font-size: clamp(28px, 4vw, 42px); line-height: 1.25;">
+            Libraries @ MGM
           </h1>
+          <h5 class="text-danger fw-semibold mb-3" style="font-size: 18px;">
+            Where Curiosity Takes Flight and Knowledge Finds Its True Meaning
+          </h5>
           <p class="text-secondary mb-0 leading-relaxed" style="font-size: 17px; line-height: 1.8;">
-            Expansive library ecosystem offering over 10,000 literary masterpieces, scientific journals, encyclopedia collections, and quiet reading alcoves fostering lifelong inquiry.
+            MGM Model School houses three well-stocked libraries catering to Primary, Secondary and Higher Secondary sections - fostering a love for reading, learning, and inquiry from an early age. Our Secondary Library is digitalized, giving students seamless access to e-books, reference materials and digital learning resources, while still preserving the joy of traditional reading.
           </p>
         </div>
         <div class="col-lg-4 text-lg-end">
@@ -54,64 +58,46 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
     <!-- Featured High-Resolution Showcase Image -->
     <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-5 bg-white">
       <div class="position-relative" style="max-height: 520px; overflow: hidden;">
-        <img src="<?= rtrim(BASE_URL, '/') ?>/assets/images/libraries-1.jpeg" alt="Libraries at MGM" class="w-100 h-100" style="object-fit: cover; min-height: 380px; max-height: 520px;">
+        <img src="<?= rtrim(BASE_URL, '/') ?>/assets/images/libraries-1.jpeg" alt="Libraries @ MGM" class="w-100 h-100" style="object-fit: cover; min-height: 380px; max-height: 520px;">
         <div class="position-absolute bottom-0 start-0 w-100 p-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
-          <span class="badge bg-danger px-3 py-2 rounded-pill fw-bold"><i class="fa-solid fa-book-open-reader me-1"></i> Libraries at MGM</span>
+          <span class="badge bg-danger px-3 py-2 rounded-pill fw-bold"><i class="fa-solid fa-book-open-reader me-1"></i> Libraries @ MGM</span>
         </div>
       </div>
     </div>
 
-    <!-- In-Depth Overview & Key Pillars -->
+    <!-- In-Depth Content & Factsheet -->
     <div class="row g-4 mb-5">
-      <!-- Left Column: Detailed Overview -->
+      <!-- Left Column: Exact Content from Document -->
       <div class="col-lg-7">
         <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white h-100">
-          <h3 class="fw-bold text-dark mb-3 d-flex align-items-center gap-2">
+          <h3 class="fw-bold text-dark mb-4 d-flex align-items-center gap-2">
             <span style="width: 8px; height: 28px; background: var(--tp-theme-primary, #ab0c2f); border-radius: 4px; display: inline-block;"></span>
-            Educational Vision &amp; Facility Overview
+            About Libraries @ MGM
           </h3>
           <p class="text-secondary leading-relaxed mb-4" style="font-size: 16px; line-height: 1.85;">
-            The libraries at MGM Model School are vibrant knowledge sanctuaries designed to kindle a love for reading and independent scholarship. Spanning literature, science, history, competitive examination guides, and world periodicals, our library catalog satisfies readers of every grade. Air-conditioned reading alcoves and digital research terminals ensure an inspiring environment for study.
+            MGM Model School houses three well-stocked libraries catering to Primary, Secondary and Higher Secondary sections - fostering a love for reading, learning, and inquiry from an early age. Our Secondary Library is digitalized, giving students seamless access to e-books, reference materials and digital learning resources, while still preserving the joy of traditional reading.
+          </p>
+          <p class="text-secondary leading-relaxed mb-4" style="font-size: 16px; line-height: 1.85;">
+            We believe a library is where curiosity takes flight and knowledge finds its true meaning.
           </p>
 
-          <!-- Core Pillars Grid -->
-          <h4 class="fw-bold text-dark mb-3 mt-4" style="font-size: 20px;">Key Features &amp; Student Advantages</h4>
-          <div class="row g-3">
-            <div class="col-md-6">
-              <div class="p-3 rounded-4 h-100 border bg-light">
-                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
-                  <i class="fa-solid fa-book-bookmark fs-5"></i>
-                  <h6 class="fw-bold text-dark mb-0">10,000+ Curated Volumes</h6>
-                </div>
-                <p class="text-muted small mb-0" style="line-height: 1.6;">Extensive collection spanning classic literature, contemporary bestsellers, scientific encyclopedias, and regional vernacular publications.</p>
-              </div>
+          <h4 class="fw-bold text-dark mb-3 mt-4" style="font-size: 20px;">Key Highlights &amp; Features</h4>
+          <div class="d-flex flex-column gap-2 mb-2">
+            <div class="d-flex align-items-start gap-2 p-2 rounded-2 bg-light">
+              <i class="fa-solid fa-circle-check text-success mt-1"></i>
+              <span class="text-dark fw-medium small" style="line-height: 1.6;">Three well-stocked libraries dedicated to Primary, Secondary & Higher Secondary</span>
             </div>
-            <div class="col-md-6">
-              <div class="p-3 rounded-4 h-100 border bg-light">
-                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
-                  <i class="fa-solid fa-laptop fs-5"></i>
-                  <h6 class="fw-bold text-dark mb-0">Digital E-Library Terminals</h6>
-                </div>
-                <p class="text-muted small mb-0" style="line-height: 1.6;">Equipped with networked computers giving students access to verified educational repositories, scholarly journals, and digital archives.</p>
-              </div>
+            <div class="d-flex align-items-start gap-2 p-2 rounded-2 bg-light">
+              <i class="fa-solid fa-circle-check text-success mt-1"></i>
+              <span class="text-dark fw-medium small" style="line-height: 1.6;">Digitalized Secondary Library with e-books and online reference archives</span>
             </div>
-            <div class="col-md-6">
-              <div class="p-3 rounded-4 h-100 border bg-light">
-                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
-                  <i class="fa-solid fa-child-reaching fs-5"></i>
-                  <h6 class="fw-bold text-dark mb-0">Junior Storybook Alcove</h6>
-                </div>
-                <p class="text-muted small mb-0" style="line-height: 1.6;">Dedicated primary section filled with colorful picture books, pop-up volumes, and phonics readers that turn little learners into enthusiastic readers.</p>
-              </div>
+            <div class="d-flex align-items-start gap-2 p-2 rounded-2 bg-light">
+              <i class="fa-solid fa-circle-check text-success mt-1"></i>
+              <span class="text-dark fw-medium small" style="line-height: 1.6;">Preserves the timeless joy of traditional reading alongside digital resources</span>
             </div>
-            <div class="col-md-6">
-              <div class="p-3 rounded-4 h-100 border bg-light">
-                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
-                  <i class="fa-solid fa-graduation-cap fs-5"></i>
-                  <h6 class="fw-bold text-dark mb-0">Competitive Exam Repository</h6>
-                </div>
-                <p class="text-muted small mb-0" style="line-height: 1.6;">Comprehensive foundation and preparation resources for JEE, NEET, CUET, NDA, Olympiads, and national talent searches.</p>
-              </div>
+            <div class="d-flex align-items-start gap-2 p-2 rounded-2 bg-light">
+              <i class="fa-solid fa-circle-check text-success mt-1"></i>
+              <span class="text-dark fw-medium small" style="line-height: 1.6;">Fosters lifelong habits of inquiry, intellectual exploration and scholarship</span>
             </div>
           </div>
         </div>
@@ -125,20 +111,20 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
           </h5>
           <div class="d-flex flex-column gap-3">
             <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
-              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Book Inventory</span>
-              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">10,000+ Titles Across All Disciplines</strong>
+              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Number of Libraries</span>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">3 Libraries (Primary, Secondary & Higher Secondary)</strong>
             </div>
             <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
-              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Periodicals & Journals</span>
-              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">40+ National & Regional Publications</strong>
+              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Digitalization</span>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Digital Secondary Library with E-Books & Reference DB</strong>
             </div>
             <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
-              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Seating Capacity</span>
-              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">120+ Scholars in Quiet Study Zones</strong>
+              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Target Sections</span>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Primary, Secondary & Higher Secondary Students</strong>
             </div>
             <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
-              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Digital Access</span>
-              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">E-Library Terminals with High-Speed Internet</strong>
+              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Atmosphere</span>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Inspiring, Quiet Scholarly Environment</strong>
             </div>
           </div>
         </div>

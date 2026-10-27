@@ -1,14 +1,15 @@
 <?php
 /**
- * National Cadet Corps (NCC &ndash; Army Wing) View
- * MGM Model School Campus Highlights
+ * NCC (National Cadet Corps) View
+ * Exact Content from Official School Highlights
+ * MGM Model School Recreation Project
  */
 require_once __DIR__ . '/../config/config.php';
 
 $currentSlug = "ncc";
-$pageTitle = "NCC";
-$breadcrumbTitle = "NCC";
-$metaDescription = "Premier Junior Division National Cadet Corps wing instilling patriotism, military discipline, leadership character, physical endurance, and selfless service.";
+$pageTitle = "NCC (National Cadet Corps)";
+$breadcrumbTitle = "NCC (National Cadet Corps)";
+$metaDescription = "MGM Model School launched its NCC unit - '1 Kerala Battalion, Kerala Lakshadweep Group' on 7th July 2022 with cadets from the Junior Wing (Class VIII).";
 
 require_once __DIR__ . '/../templates/header.php';
 require_once __DIR__ . '/../templates/breadcrumb.php';
@@ -34,13 +35,16 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
         <div class="col-lg-8">
           <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill mb-3" style="background: rgba(171, 12, 47, 0.08); color: var(--tp-theme-primary, #ab0c2f);">
             <i class="fa-solid fa-star"></i>
-            <span class="fw-bold small">Patriotism, Character & Military Discipline</span>
+            <span class="fw-bold small">Discipline, Leadership & Patriotism</span>
           </div>
-          <h1 class="fw-bold text-dark mb-3" style="font-size: clamp(28px, 4vw, 42px); line-height: 1.25;">
-            National Cadet Corps (NCC &ndash; Army Wing)
+          <h1 class="fw-bold text-dark mb-2" style="font-size: clamp(28px, 4vw, 42px); line-height: 1.25;">
+            NCC (National Cadet Corps)
           </h1>
+          <h5 class="text-danger fw-semibold mb-3" style="font-size: 18px;">
+            1 Kerala Battalion, Kerala Lakshadweep Group
+          </h5>
           <p class="text-secondary mb-0 leading-relaxed" style="font-size: 17px; line-height: 1.8;">
-            Premier Junior Division National Cadet Corps wing instilling patriotism, military discipline, leadership character, physical endurance, and selfless service.
+            MGM Model School launched its NCC unit - '1 Kerala Battalion, Kerala Lakshadweep Group' on 7th July 2022 with cadets from the Junior Wing (Class VIII).
           </p>
         </div>
         <div class="col-lg-4 text-lg-end">
@@ -54,64 +58,53 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
     <!-- Featured High-Resolution Showcase Image -->
     <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-5 bg-white">
       <div class="position-relative" style="max-height: 520px; overflow: hidden;">
-        <img src="<?= rtrim(BASE_URL, '/') ?>/assets/images/ncc-unit-1.jpeg" alt="NCC" class="w-100 h-100" style="object-fit: cover; min-height: 380px; max-height: 520px;">
+        <img src="<?= rtrim(BASE_URL, '/') ?>/assets/images/ncc-unit-1.jpeg" alt="NCC (National Cadet Corps)" class="w-100 h-100" style="object-fit: cover; min-height: 380px; max-height: 520px;">
         <div class="position-absolute bottom-0 start-0 w-100 p-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
-          <span class="badge bg-danger px-3 py-2 rounded-pill fw-bold"><i class="fa-solid fa-person-military-pointing me-1"></i> NCC</span>
+          <span class="badge bg-danger px-3 py-2 rounded-pill fw-bold"><i class="fa-solid fa-person-military-pointing me-1"></i> NCC (National Cadet Corps)</span>
         </div>
       </div>
     </div>
 
-    <!-- In-Depth Overview & Key Pillars -->
+    <!-- In-Depth Content & Factsheet -->
     <div class="row g-4 mb-5">
-      <!-- Left Column: Detailed Overview -->
+      <!-- Left Column: Exact Content from Document -->
       <div class="col-lg-7">
         <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white h-100">
-          <h3 class="fw-bold text-dark mb-3 d-flex align-items-center gap-2">
+          <h3 class="fw-bold text-dark mb-4 d-flex align-items-center gap-2">
             <span style="width: 8px; height: 28px; background: var(--tp-theme-primary, #ab0c2f); border-radius: 4px; display: inline-block;"></span>
-            Educational Vision &amp; Facility Overview
+            About NCC (National Cadet Corps)
           </h3>
           <p class="text-secondary leading-relaxed mb-4" style="font-size: 16px; line-height: 1.85;">
-            The National Cadet Corps (NCC) Army Wing at MGM Model School operates under 1 Kerala Battalion, nurturing patriotic, courageous, and disciplined leaders of tomorrow. Under the guidance of our Associate NCC Officer Retd. Subedar Major Rajesh S, cadets undergo systematic rifle drills, physical obstacle courses, map reading, and national integration camps, building indomitable character and teamwork.
+            MGM Model School launched its NCC unit - '1 Kerala Battalion, Kerala Lakshadweep Group' on 7th July 2022 with cadets from the Junior Wing (Class VIII).
+          </p>
+          <p class="text-secondary leading-relaxed mb-4" style="font-size: 16px; line-height: 1.85;">
+            Functioning as a self-financing scheme with 4 years of service, the unit provides comprehensive training every Friday from 3:00 PM to 5:30 PM including basic military parades, small arms training, drills and community service. Cadets also participate in camps and expeditions that develop leadership, resilience and a deep sense of patriotism.
+          </p>
+          <p class="text-secondary leading-relaxed mb-4" style="font-size: 16px; line-height: 1.85;">
+            On successful completion of 2 years, cadets are awarded the NCC Certificate - a recognition of their dedication and discipline, which adds significant value to their future academic and career pursuits. The Associate NCC Officer is Retd. Subedar Major Mr. Rajesh S.
           </p>
 
-          <!-- Core Pillars Grid -->
-          <h4 class="fw-bold text-dark mb-3 mt-4" style="font-size: 20px;">Key Features &amp; Student Advantages</h4>
-          <div class="row g-3">
-            <div class="col-md-6">
-              <div class="p-3 rounded-4 h-100 border bg-light">
-                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
-                  <i class="fa-solid fa-person-military-rifle fs-5"></i>
-                  <h6 class="fw-bold text-dark mb-0">1 Kerala Battalion Army Wing</h6>
-                </div>
-                <p class="text-muted small mb-0" style="line-height: 1.6;">Officially affiliated Junior Division unit adhering strictly to Indian Army training protocols, ceremonial drills, and discipline.</p>
-              </div>
+          <h4 class="fw-bold text-dark mb-3 mt-4" style="font-size: 20px;">Key Highlights &amp; Features</h4>
+          <div class="d-flex flex-column gap-2 mb-2">
+            <div class="d-flex align-items-start gap-2 p-2 rounded-2 bg-light">
+              <i class="fa-solid fa-circle-check text-success mt-1"></i>
+              <span class="text-dark fw-medium small" style="line-height: 1.6;">Launched on 7th July 2022 under 1 Kerala Battalion, Kerala Lakshadweep Group</span>
             </div>
-            <div class="col-md-6">
-              <div class="p-3 rounded-4 h-100 border bg-light">
-                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
-                  <i class="fa-solid fa-tents fs-5"></i>
-                  <h6 class="fw-bold text-dark mb-0">Combined Annual Training Camps</h6>
-                </div>
-                <p class="text-muted small mb-0" style="line-height: 1.6;">Cadets represent the school in rigorous outdoor camps (CATC), firing simulations, obstacle courses, and national integration expeditions.</p>
-              </div>
+            <div class="d-flex align-items-start gap-2 p-2 rounded-2 bg-light">
+              <i class="fa-solid fa-circle-check text-success mt-1"></i>
+              <span class="text-dark fw-medium small" style="line-height: 1.6;">Weekly training every Friday from 3:00 PM to 5:30 PM</span>
             </div>
-            <div class="col-md-6">
-              <div class="p-3 rounded-4 h-100 border bg-light">
-                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
-                  <i class="fa-solid fa-hand-holding-hand fs-5"></i>
-                  <h6 class="fw-bold text-dark mb-0">Community Leadership & Service</h6>
-                </div>
-                <p class="text-muted small mb-0" style="line-height: 1.6;">Pioneering blood donation drives, coastal clean-up expeditions, road safety awareness, and disaster relief preparedness rallies.</p>
-              </div>
+            <div class="d-flex align-items-start gap-2 p-2 rounded-2 bg-light">
+              <i class="fa-solid fa-circle-check text-success mt-1"></i>
+              <span class="text-dark fw-medium small" style="line-height: 1.6;">Curriculum includes basic military parades, drills, small arms training & community service</span>
             </div>
-            <div class="col-md-6">
-              <div class="p-3 rounded-4 h-100 border bg-light">
-                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
-                  <i class="fa-solid fa-medal fs-5"></i>
-                  <h6 class="fw-bold text-dark mb-0">Defense & Civil Service Gateway</h6>
-                </div>
-                <p class="text-muted small mb-0" style="line-height: 1.6;">Earns official NCC 'A' certification conferring valuable bonus weighting in NDA, CDS, defense forces, and collegiate admissions.</p>
-              </div>
+            <div class="d-flex align-items-start gap-2 p-2 rounded-2 bg-light">
+              <i class="fa-solid fa-circle-check text-success mt-1"></i>
+              <span class="text-dark fw-medium small" style="line-height: 1.6;">Awarded official NCC Certificate after 2 years of dedicated service</span>
+            </div>
+            <div class="d-flex align-items-start gap-2 p-2 rounded-2 bg-light">
+              <i class="fa-solid fa-circle-check text-success mt-1"></i>
+              <span class="text-dark fw-medium small" style="line-height: 1.6;">Led by Associate NCC Officer Retd. Subedar Major Mr. Rajesh S</span>
             </div>
           </div>
         </div>
@@ -125,20 +118,20 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
           </h5>
           <div class="d-flex flex-column gap-3">
             <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
-              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Unit Affiliation</span>
-              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">1 Kerala Battalion NCC (Army Wing)</strong>
+              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Battalion</span>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">1 Kerala Battalion, Kerala Lakshadweep Group</strong>
             </div>
             <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
-              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Active Cadets</span>
-              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">100+ Enrolled Cadets (Junior Division)</strong>
+              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Inception Date</span>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">7th July 2022 (Junior Wing, Class VIII)</strong>
             </div>
             <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
-              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Officer Lead</span>
-              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Retd. Subedar Major Rajesh S (Associate NCC Officer)</strong>
+              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Training Schedule</span>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Every Friday: 3:00 PM to 5:30 PM</strong>
             </div>
             <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
-              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Certification</span>
-              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Official NCC 'A' Certificate on Course Completion</strong>
+              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Associate NCC Officer</span>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Retd. Subedar Major Mr. Rajesh S</strong>
             </div>
           </div>
         </div>

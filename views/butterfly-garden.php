@@ -1,14 +1,15 @@
 <?php
 /**
- * Butterfly Garden & Kids Adventure Zone View
- * MGM Model School Campus Highlights
+ * Butterfly Garden & Kids Zone View
+ * Exact Content from Official School Highlights
+ * MGM Model School Recreation Project
  */
 require_once __DIR__ . '/../config/config.php';
 
 $currentSlug = "butterfly-garden";
-$pageTitle = "Butterfly Garden and Kids Zone";
-$breadcrumbTitle = "Butterfly Garden and Kids Zone";
-$metaDescription = "Captivating biodiversity garden attracting colorful butterflies amidst native nectar flora, coupled with a safe adventure playground for early learners.";
+$pageTitle = "Butterfly Garden & Kids Zone";
+$breadcrumbTitle = "Butterfly Garden & Kids Zone";
+$metaDescription = "Nestled in our vibrant Kids Zone, the Butterfly Garden is a little paradise crafted especially for our tiny tots. A colourful world filled with cheerful play equipment, blooming plants and fluttering butterflies, it is a treat to the eyes and a joy to the heart.";
 
 require_once __DIR__ . '/../templates/header.php';
 require_once __DIR__ . '/../templates/breadcrumb.php';
@@ -34,13 +35,16 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
         <div class="col-lg-8">
           <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill mb-3" style="background: rgba(171, 12, 47, 0.08); color: var(--tp-theme-primary, #ab0c2f);">
             <i class="fa-solid fa-star"></i>
-            <span class="fw-bold small">Biodiversity & Early Learning Sanctuary</span>
+            <span class="fw-bold small">Nature Discovery & Early Play</span>
           </div>
-          <h1 class="fw-bold text-dark mb-3" style="font-size: clamp(28px, 4vw, 42px); line-height: 1.25;">
-            Butterfly Garden & Kids Adventure Zone
+          <h1 class="fw-bold text-dark mb-2" style="font-size: clamp(28px, 4vw, 42px); line-height: 1.25;">
+            Butterfly Garden & Kids Zone
           </h1>
+          <h5 class="text-danger fw-semibold mb-3" style="font-size: 18px;">
+            A Little Paradise Crafted Especially for Our Tiny Tots
+          </h5>
           <p class="text-secondary mb-0 leading-relaxed" style="font-size: 17px; line-height: 1.8;">
-            Captivating biodiversity garden attracting colorful butterflies amidst native nectar flora, coupled with a safe adventure playground for early learners.
+            Nestled in our vibrant Kids Zone, the Butterfly Garden is a little paradise crafted especially for our tiny tots. A colourful world filled with cheerful play equipment, blooming plants and fluttering butterflies, it is a treat to the eyes and a joy to the heart.
           </p>
         </div>
         <div class="col-lg-4 text-lg-end">
@@ -54,64 +58,46 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
     <!-- Featured High-Resolution Showcase Image -->
     <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-5 bg-white">
       <div class="position-relative" style="max-height: 520px; overflow: hidden;">
-        <img src="<?= rtrim(BASE_URL, '/') ?>/assets/images/butterfly-garden-1.jpeg" alt="Butterfly Garden and Kids Zone" class="w-100 h-100" style="object-fit: cover; min-height: 380px; max-height: 520px;">
+        <img src="<?= rtrim(BASE_URL, '/') ?>/assets/images/butterfly-garden-1.jpeg" alt="Butterfly Garden & Kids Zone" class="w-100 h-100" style="object-fit: cover; min-height: 380px; max-height: 520px;">
         <div class="position-absolute bottom-0 start-0 w-100 p-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
-          <span class="badge bg-danger px-3 py-2 rounded-pill fw-bold"><i class="fa-solid fa-shapes me-1"></i> Butterfly Garden and Kids Zone</span>
+          <span class="badge bg-danger px-3 py-2 rounded-pill fw-bold"><i class="fa-solid fa-shapes me-1"></i> Butterfly Garden & Kids Zone</span>
         </div>
       </div>
     </div>
 
-    <!-- In-Depth Overview & Key Pillars -->
+    <!-- In-Depth Content & Factsheet -->
     <div class="row g-4 mb-5">
-      <!-- Left Column: Detailed Overview -->
+      <!-- Left Column: Exact Content from Document -->
       <div class="col-lg-7">
         <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white h-100">
-          <h3 class="fw-bold text-dark mb-3 d-flex align-items-center gap-2">
+          <h3 class="fw-bold text-dark mb-4 d-flex align-items-center gap-2">
             <span style="width: 8px; height: 28px; background: var(--tp-theme-primary, #ab0c2f); border-radius: 4px; display: inline-block;"></span>
-            Educational Vision &amp; Facility Overview
+            About Butterfly Garden & Kids Zone
           </h3>
           <p class="text-secondary leading-relaxed mb-4" style="font-size: 16px; line-height: 1.85;">
-            Combining environmental wonder with joyful outdoor play, the Butterfly Garden and Kids Zone at MGM Model School is a magical sanctuary for our youngest scholars. Planted with specialized nectar-rich shrubs and larval host plants, the garden attracts dozens of indigenous butterfly species. Adjoining the greenery is a safe, shock-absorbing playground equipped with modern motor-skill play apparatus.
+            Nestled in our vibrant Kids Zone, the Butterfly Garden is a little paradise crafted especially for our tiny tots. A colourful world filled with cheerful play equipment, blooming plants and fluttering butterflies, it is a treat to the eyes and a joy to the heart.
+          </p>
+          <p class="text-secondary leading-relaxed mb-4" style="font-size: 16px; line-height: 1.85;">
+            Here, children don't just play – they engage with nature, come close to it and learn to love it. Amidst laughter, swings and slides, our children experience pure enjoyment, freedom and the magic of early childhood, all in a safe, secure and stimulating environment.
           </p>
 
-          <!-- Core Pillars Grid -->
-          <h4 class="fw-bold text-dark mb-3 mt-4" style="font-size: 20px;">Key Features &amp; Student Advantages</h4>
-          <div class="row g-3">
-            <div class="col-md-6">
-              <div class="p-3 rounded-4 h-100 border bg-light">
-                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
-                  <i class="fa-solid fa-seedling fs-5"></i>
-                  <h6 class="fw-bold text-dark mb-0">Pollinator Habitat Ecosystem</h6>
-                </div>
-                <p class="text-muted small mb-0" style="line-height: 1.6;">Cultivated with native host plants like milkweed, marigold, and ixora supporting butterfly lifecycles from caterpillar to chrysalis.</p>
-              </div>
+          <h4 class="fw-bold text-dark mb-3 mt-4" style="font-size: 20px;">Key Highlights &amp; Features</h4>
+          <div class="d-flex flex-column gap-2 mb-2">
+            <div class="d-flex align-items-start gap-2 p-2 rounded-2 bg-light">
+              <i class="fa-solid fa-circle-check text-success mt-1"></i>
+              <span class="text-dark fw-medium small" style="line-height: 1.6;">Enchanting sanctuary with cheerful play equipment and blooming nectar flora</span>
             </div>
-            <div class="col-md-6">
-              <div class="p-3 rounded-4 h-100 border bg-light">
-                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
-                  <i class="fa-solid fa-child fs-5"></i>
-                  <h6 class="fw-bold text-dark mb-0">Safe Shock-Absorbing Play Turf</h6>
-                </div>
-                <p class="text-muted small mb-0" style="line-height: 1.6;">Equipped with certified soft-landing turf, ergonomic toddler swings, see-saws, and balance play structures.</p>
-              </div>
+            <div class="d-flex align-items-start gap-2 p-2 rounded-2 bg-light">
+              <i class="fa-solid fa-circle-check text-success mt-1"></i>
+              <span class="text-dark fw-medium small" style="line-height: 1.6;">Fluttering native butterflies providing joyful visual and sensory discovery</span>
             </div>
-            <div class="col-md-6">
-              <div class="p-3 rounded-4 h-100 border bg-light">
-                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
-                  <i class="fa-solid fa-magnifying-glass fs-5"></i>
-                  <h6 class="fw-bold text-dark mb-0">Experiential Outdoor Nature Walks</h6>
-                </div>
-                <p class="text-muted small mb-0" style="line-height: 1.6;">Kindergarten and primary teachers conduct guided nature walks where children observe metamorphism and insect pollination firsthand.</p>
-              </div>
+            <div class="d-flex align-items-start gap-2 p-2 rounded-2 bg-light">
+              <i class="fa-solid fa-circle-check text-success mt-1"></i>
+              <span class="text-dark fw-medium small" style="line-height: 1.6;">Encourages children to love and engage with nature through play</span>
             </div>
-            <div class="col-md-6">
-              <div class="p-3 rounded-4 h-100 border bg-light">
-                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
-                  <i class="fa-solid fa-shield-cat fs-5"></i>
-                  <h6 class="fw-bold text-dark mb-0">Secure Enclosed Perimeter</h6>
-                </div>
-                <p class="text-muted small mb-0" style="line-height: 1.6;">Dedicated child-safe fencing and continuous staff supervision ensuring little learners explore and play with complete safety.</p>
-              </div>
+            <div class="d-flex align-items-start gap-2 p-2 rounded-2 bg-light">
+              <i class="fa-solid fa-circle-check text-success mt-1"></i>
+              <span class="text-dark fw-medium small" style="line-height: 1.6;">Safe, secure and stimulating environment with swings and slides</span>
             </div>
           </div>
         </div>
@@ -125,20 +111,20 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
           </h5>
           <div class="d-flex flex-column gap-3">
             <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
-              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Target Groups</span>
-              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Kindergarten, Pre-Primary & Lower Primary Students</strong>
+              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Target Group</span>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Kindergarten & Early Childhood Scholars</strong>
             </div>
             <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
-              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Flora Diversity</span>
-              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">30+ Species of Native Butterfly Host & Nectar Plants</strong>
+              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Environment</span>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Safe, Secure, Stimulating Outdoor Paradise</strong>
             </div>
             <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
-              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Play Equipment</span>
-              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Ergonomic Swings, Slides, Climbing Arcs & Soft Turf</strong>
+              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Elements</span>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Play Equipment, Swings, Slides & Blooming Plants</strong>
             </div>
             <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
-              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Pedagogy Integration</span>
-              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Early Childhood Science & Outdoor Sensory Play</strong>
+              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Core Philosophy</span>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Pure Enjoyment, Freedom & Love for Nature</strong>
             </div>
           </div>
         </div>

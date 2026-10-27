@@ -1,14 +1,15 @@
 <?php
 /**
- * Student Counselling Centre View
- * MGM Model School Campus Highlights
+ * Counselling Centre View
+ * Exact Content from Official School Highlights
+ * MGM Model School Recreation Project
  */
 require_once __DIR__ . '/../config/config.php';
 
 $currentSlug = "counselling-centre";
 $pageTitle = "Counselling Centre";
 $breadcrumbTitle = "Counselling Centre";
-$metaDescription = "Safe, empathetic psychological guidance and emotional wellness sanctuary staffed by qualified counselors dedicated to student mental health and resilience.";
+$metaDescription = "The Counselling Centre at MGM Model School is a dedicated platform that coordinates student advocacy and promotes mental well-being. We believe that academic success is rooted in emotional well-being. The Centre focuses on providing both individual and group counselling in a safe, confidential, and supportive environment.";
 
 require_once __DIR__ . '/../templates/header.php';
 require_once __DIR__ . '/../templates/breadcrumb.php';
@@ -34,13 +35,16 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
         <div class="col-lg-8">
           <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill mb-3" style="background: rgba(171, 12, 47, 0.08); color: var(--tp-theme-primary, #ab0c2f);">
             <i class="fa-solid fa-star"></i>
-            <span class="fw-bold small">Student Mental Health & Emotional Wellness</span>
+            <span class="fw-bold small">Student Advocacy & Mental Well-being</span>
           </div>
-          <h1 class="fw-bold text-dark mb-3" style="font-size: clamp(28px, 4vw, 42px); line-height: 1.25;">
-            Student Counselling Centre
+          <h1 class="fw-bold text-dark mb-2" style="font-size: clamp(28px, 4vw, 42px); line-height: 1.25;">
+            Counselling Centre
           </h1>
+          <h5 class="text-danger fw-semibold mb-3" style="font-size: 18px;">
+            Nurturing Minds, Empowering Lives
+          </h5>
           <p class="text-secondary mb-0 leading-relaxed" style="font-size: 17px; line-height: 1.8;">
-            Safe, empathetic psychological guidance and emotional wellness sanctuary staffed by qualified counselors dedicated to student mental health and resilience.
+            The Counselling Centre at MGM Model School is a dedicated platform that coordinates student advocacy and promotes mental well-being. We believe that academic success is rooted in emotional well-being. The Centre focuses on providing both individual and group counselling in a safe, confidential, and supportive environment.
           </p>
         </div>
         <div class="col-lg-4 text-lg-end">
@@ -61,57 +65,42 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
       </div>
     </div>
 
-    <!-- In-Depth Overview & Key Pillars -->
+    <!-- In-Depth Content & Factsheet -->
     <div class="row g-4 mb-5">
-      <!-- Left Column: Detailed Overview -->
+      <!-- Left Column: Exact Content from Document -->
       <div class="col-lg-7">
         <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white h-100">
-          <h3 class="fw-bold text-dark mb-3 d-flex align-items-center gap-2">
+          <h3 class="fw-bold text-dark mb-4 d-flex align-items-center gap-2">
             <span style="width: 8px; height: 28px; background: var(--tp-theme-primary, #ab0c2f); border-radius: 4px; display: inline-block;"></span>
-            Educational Vision &amp; Facility Overview
+            About Counselling Centre
           </h3>
           <p class="text-secondary leading-relaxed mb-4" style="font-size: 16px; line-height: 1.85;">
-            Academic success and personal fulfillment flourish when students feel heard, valued, and emotionally secure. The Counselling Centre at MGM Model School offers a warm, strictly confidential space where children can share emotional concerns, academic stress, or family worries. Our licensed child psychologists work collaboratively with learners, teachers, and parents to cultivate resilience and joy.
+            The Counselling Centre at MGM Model School is a dedicated platform that coordinates student advocacy and promotes mental well-being. We believe that academic success is rooted in emotional well-being. The Centre focuses on providing both individual and group counselling in a safe, confidential, and supportive environment.
+          </p>
+          <p class="text-secondary leading-relaxed mb-4" style="font-size: 16px; line-height: 1.85;">
+            Our services include identifying and addressing issues such as lack of interest in studies, stress, anxiety, depression and interpersonal relationship challenges. Offering remedial and preventive support to enhance academic, personal and career development. Organizing various well-being activities, awareness programs and orientation classes for students, parents and teachers. Providing referral services to concerned experts for further support when required.
+          </p>
+          <p class="text-secondary leading-relaxed mb-4" style="font-size: 16px; line-height: 1.85;">
+            We also leverage the CBSE tele-counselling initiative 'MANODARPAN' (Ph: 8448440632) to ensure extended care and support for our students. Because at MGM, every mind matters.
           </p>
 
-          <!-- Core Pillars Grid -->
-          <h4 class="fw-bold text-dark mb-3 mt-4" style="font-size: 20px;">Key Features &amp; Student Advantages</h4>
-          <div class="row g-3">
-            <div class="col-md-6">
-              <div class="p-3 rounded-4 h-100 border bg-light">
-                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
-                  <i class="fa-solid fa-user-shield fs-5"></i>
-                  <h6 class="fw-bold text-dark mb-0">Strictly Confidential Space</h6>
-                </div>
-                <p class="text-muted small mb-0" style="line-height: 1.6;">Students can discuss feelings, friendship conflicts, and stress in a supportive environment free of judgment.</p>
-              </div>
+          <h4 class="fw-bold text-dark mb-3 mt-4" style="font-size: 20px;">Key Highlights &amp; Features</h4>
+          <div class="d-flex flex-column gap-2 mb-2">
+            <div class="d-flex align-items-start gap-2 p-2 rounded-2 bg-light">
+              <i class="fa-solid fa-circle-check text-success mt-1"></i>
+              <span class="text-dark fw-medium small" style="line-height: 1.6;">Individual and group counselling in a safe, confidential and supportive atmosphere</span>
             </div>
-            <div class="col-md-6">
-              <div class="p-3 rounded-4 h-100 border bg-light">
-                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
-                  <i class="fa-solid fa-feather-pointed fs-5"></i>
-                  <h6 class="fw-bold text-dark mb-0">Exam Stress Reduction</h6>
-                </div>
-                <p class="text-muted small mb-0" style="line-height: 1.6;">Targeted cognitive workshops teaching relaxation techniques, positive self-talk, and smart study time management.</p>
-              </div>
+            <div class="d-flex align-items-start gap-2 p-2 rounded-2 bg-light">
+              <i class="fa-solid fa-circle-check text-success mt-1"></i>
+              <span class="text-dark fw-medium small" style="line-height: 1.6;">Addresses academic stress, anxiety, depression and interpersonal challenges</span>
             </div>
-            <div class="col-md-6">
-              <div class="p-3 rounded-4 h-100 border bg-light">
-                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
-                  <i class="fa-solid fa-heart-circle-bolt fs-5"></i>
-                  <h6 class="fw-bold text-dark mb-0">Emotional Resilience Building</h6>
-                </div>
-                <p class="text-muted small mb-0" style="line-height: 1.6;">Equipping children with constructive coping mechanisms to navigate peer pressure, bullying, and emotional setbacks.</p>
-              </div>
+            <div class="d-flex align-items-start gap-2 p-2 rounded-2 bg-light">
+              <i class="fa-solid fa-circle-check text-success mt-1"></i>
+              <span class="text-dark fw-medium small" style="line-height: 1.6;">Conducts wellness programs, awareness seminars and orientations for students and parents</span>
             </div>
-            <div class="col-md-6">
-              <div class="p-3 rounded-4 h-100 border bg-light">
-                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
-                  <i class="fa-solid fa-people-arrows fs-5"></i>
-                  <h6 class="fw-bold text-dark mb-0">Parent-Child Mediation</h6>
-                </div>
-                <p class="text-muted small mb-0" style="line-height: 1.6;">Facilitating empathetic dialogue between parents and adolescents to bridge generational perspectives.</p>
-              </div>
+            <div class="d-flex align-items-start gap-2 p-2 rounded-2 bg-light">
+              <i class="fa-solid fa-circle-check text-success mt-1"></i>
+              <span class="text-dark fw-medium small" style="line-height: 1.6;">Integrated with CBSE MANODARPAN Tele-Counselling Helpline (Ph: 8448440632)</span>
             </div>
           </div>
         </div>
@@ -125,20 +114,20 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
           </h5>
           <div class="d-flex flex-column gap-3">
             <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
-              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Counselor Credentials</span>
-              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Certified Child & Adolescent Psychologists</strong>
-            </div>
-            <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
-              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Facility Standards</span>
-              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Private, Sound-Dampened Consultation Rooms</strong>
-            </div>
-            <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
-              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Availability</span>
-              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">All Working School Days & Scheduled Appointments</strong>
+              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Core Philosophy</span>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Nurturing Minds, Empowering Lives (Every Mind Matters)</strong>
             </div>
             <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
               <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Services</span>
-              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Individual Counseling, Group Circles & Parental Advisory</strong>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Individual & Group Counselling, Preventive Support</strong>
+            </div>
+            <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
+              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">CBSE Helpline</span>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">MANODARPAN Support (Ph: 8448440632)</strong>
+            </div>
+            <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
+              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Confidentiality</span>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">100% Safe, Empathetic & Confidential</strong>
             </div>
           </div>
         </div>

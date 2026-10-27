@@ -1,14 +1,15 @@
 <?php
 /**
- * Life Skills Education View
- * MGM Model School Campus Highlights
+ * Life Skills View
+ * Exact Content from Official School Highlights
+ * MGM Model School Recreation Project
  */
 require_once __DIR__ . '/../config/config.php';
 
 $currentSlug = "life-skills";
 $pageTitle = "Life Skills";
 $breadcrumbTitle = "Life Skills";
-$metaDescription = "Curriculum-integrated developmental framework focusing on critical thinking, ethical reasoning, financial literacy, communication, and emotional adaptability.";
+$metaDescription = "Life Skills Education at MGM focuses on cultivating crucial abilities for personal growth, meaningful relationships and future achievements.";
 
 require_once __DIR__ . '/../templates/header.php';
 require_once __DIR__ . '/../templates/breadcrumb.php';
@@ -34,13 +35,16 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
         <div class="col-lg-8">
           <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill mb-3" style="background: rgba(171, 12, 47, 0.08); color: var(--tp-theme-primary, #ab0c2f);">
             <i class="fa-solid fa-star"></i>
-            <span class="fw-bold small">21st Century Competency Framework</span>
+            <span class="fw-bold small">Personal Growth & Resilience</span>
           </div>
-          <h1 class="fw-bold text-dark mb-3" style="font-size: clamp(28px, 4vw, 42px); line-height: 1.25;">
-            Life Skills Education
+          <h1 class="fw-bold text-dark mb-2" style="font-size: clamp(28px, 4vw, 42px); line-height: 1.25;">
+            Life Skills
           </h1>
+          <h5 class="text-danger fw-semibold mb-3" style="font-size: 18px;">
+            Empowering Students to Navigate Challenges with Confidence
+          </h5>
           <p class="text-secondary mb-0 leading-relaxed" style="font-size: 17px; line-height: 1.8;">
-            Curriculum-integrated developmental framework focusing on critical thinking, ethical reasoning, financial literacy, communication, and emotional adaptability.
+            Life Skills Education at MGM focuses on cultivating crucial abilities for personal growth, meaningful relationships and future achievements.
           </p>
         </div>
         <div class="col-lg-4 text-lg-end">
@@ -61,57 +65,42 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
       </div>
     </div>
 
-    <!-- In-Depth Overview & Key Pillars -->
+    <!-- In-Depth Content & Factsheet -->
     <div class="row g-4 mb-5">
-      <!-- Left Column: Detailed Overview -->
+      <!-- Left Column: Exact Content from Document -->
       <div class="col-lg-7">
         <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white h-100">
-          <h3 class="fw-bold text-dark mb-3 d-flex align-items-center gap-2">
+          <h3 class="fw-bold text-dark mb-4 d-flex align-items-center gap-2">
             <span style="width: 8px; height: 28px; background: var(--tp-theme-primary, #ab0c2f); border-radius: 4px; display: inline-block;"></span>
-            Educational Vision &amp; Facility Overview
+            About Life Skills
           </h3>
           <p class="text-secondary leading-relaxed mb-4" style="font-size: 16px; line-height: 1.85;">
-            Education at MGM Model School extends far beyond memorizing textbooks. Our Life Skills program equips young individuals with practical, emotional, and social competencies essential for real-world independence. Aligned with CBSE and World Health Organization (WHO) benchmarks, our interactive curriculum empowers students to resolve conflicts, manage finances, practice empathy, and lead ethically.
+            Life Skills Education at MGM focuses on cultivating crucial abilities for personal growth, meaningful relationships and future achievements.
+          </p>
+          <p class="text-secondary leading-relaxed mb-4" style="font-size: 16px; line-height: 1.85;">
+            These sessions cover: Communication and Interpersonal Skills | Problem-solving and Decision-making | Emotional Intelligence and Self-awareness | Stress Management and Resilience | Goal-setting and Time Management.
+          </p>
+          <p class="text-secondary leading-relaxed mb-4" style="font-size: 16px; line-height: 1.85;">
+            These skills empower our students to navigate challenges with confidence, build strong character and evolve into well-rounded individuals.
           </p>
 
-          <!-- Core Pillars Grid -->
-          <h4 class="fw-bold text-dark mb-3 mt-4" style="font-size: 20px;">Key Features &amp; Student Advantages</h4>
-          <div class="row g-3">
-            <div class="col-md-6">
-              <div class="p-3 rounded-4 h-100 border bg-light">
-                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
-                  <i class="fa-solid fa-coins fs-5"></i>
-                  <h6 class="fw-bold text-dark mb-0">Practical Financial Literacy</h6>
-                </div>
-                <p class="text-muted small mb-0" style="line-height: 1.6;">Foundational understanding of budgeting, banking operations, the value of savings, and making responsible economic decisions.</p>
-              </div>
+          <h4 class="fw-bold text-dark mb-3 mt-4" style="font-size: 20px;">Key Highlights &amp; Features</h4>
+          <div class="d-flex flex-column gap-2 mb-2">
+            <div class="d-flex align-items-start gap-2 p-2 rounded-2 bg-light">
+              <i class="fa-solid fa-circle-check text-success mt-1"></i>
+              <span class="text-dark fw-medium small" style="line-height: 1.6;">Communication and Interpersonal Skills mastery</span>
             </div>
-            <div class="col-md-6">
-              <div class="p-3 rounded-4 h-100 border bg-light">
-                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
-                  <i class="fa-solid fa-scale-balanced fs-5"></i>
-                  <h6 class="fw-bold text-dark mb-0">Critical & Ethical Thinking</h6>
-                </div>
-                <p class="text-muted small mb-0" style="line-height: 1.6;">Analyzing moral dilemmas, identifying media biases, and forming balanced, reasoned perspectives grounded in human values.</p>
-              </div>
+            <div class="d-flex align-items-start gap-2 p-2 rounded-2 bg-light">
+              <i class="fa-solid fa-circle-check text-success mt-1"></i>
+              <span class="text-dark fw-medium small" style="line-height: 1.6;">Problem-solving and Decision-making capabilities</span>
             </div>
-            <div class="col-md-6">
-              <div class="p-3 rounded-4 h-100 border bg-light">
-                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
-                  <i class="fa-solid fa-shield-halved fs-5"></i>
-                  <h6 class="fw-bold text-dark mb-0">Cyber Safety & Digital Etiquette</h6>
-                </div>
-                <p class="text-muted small mb-0" style="line-height: 1.6;">Teaching students how to protect digital identity, recognize phishing/cyberbullying, and maintain a respectful digital footprint.</p>
-              </div>
+            <div class="d-flex align-items-start gap-2 p-2 rounded-2 bg-light">
+              <i class="fa-solid fa-circle-check text-success mt-1"></i>
+              <span class="text-dark fw-medium small" style="line-height: 1.6;">Emotional Intelligence and Self-awareness development</span>
             </div>
-            <div class="col-md-6">
-              <div class="p-3 rounded-4 h-100 border bg-light">
-                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
-                  <i class="fa-solid fa-person-chalkboard fs-5"></i>
-                  <h6 class="fw-bold text-dark mb-0">Effective Interpersonal Relations</h6>
-                </div>
-                <p class="text-muted small mb-0" style="line-height: 1.6;">Role-plays and teamwork simulations that cultivate active listening, assertiveness, and constructive conflict resolution.</p>
-              </div>
+            <div class="d-flex align-items-start gap-2 p-2 rounded-2 bg-light">
+              <i class="fa-solid fa-circle-check text-success mt-1"></i>
+              <span class="text-dark fw-medium small" style="line-height: 1.6;">Stress Management, Resilience, Goal-setting and Time Management</span>
             </div>
           </div>
         </div>
@@ -125,20 +114,20 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
           </h5>
           <div class="d-flex flex-column gap-3">
             <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
-              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Curriculum Standard</span>
-              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Aligned with WHO Life Skills & CBSE Guidelines</strong>
+              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Core Focus</span>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Personal Growth, Character Building & Relationships</strong>
             </div>
             <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
-              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Class Structure</span>
-              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Weekly Experiential Workshops & Group Debriefs</strong>
+              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Key Modules</span>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Communication, Emotional Intelligence & Problem-Solving</strong>
             </div>
             <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
-              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Key Competencies</span>
-              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Critical Thinking, Empathy, Communication & Money Smarts</strong>
+              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Well-being Areas</span>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Stress Management, Resilience & Time Management</strong>
             </div>
             <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
-              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Target Grades</span>
-              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Primary, Middle & Secondary Scholars</strong>
+              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Outcome</span>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Well-Rounded, Confident Individuals</strong>
             </div>
           </div>
         </div>

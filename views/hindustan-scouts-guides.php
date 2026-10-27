@@ -1,14 +1,15 @@
 <?php
 /**
- * Hindustan Scouts and Guides Troop View
- * MGM Model School Campus Highlights
+ * Hindustan Scouts & Guides View
+ * Exact Content from Official School Highlights
+ * MGM Model School Recreation Project
  */
 require_once __DIR__ . '/../config/config.php';
 
 $currentSlug = "hindustan-scouts-guides";
-$pageTitle = "Hindustan Scouts and Guides";
-$breadcrumbTitle = "Hindustan Scouts and Guides";
-$metaDescription = "Prestigious troop decorated with multiple Rajya Puraskar Governor Awards, mastering wilderness outdoor survival, civic duty, first-aid, and leadership.";
+$pageTitle = "Hindustan Scouts & Guides";
+$breadcrumbTitle = "Hindustan Scouts & Guides";
+$metaDescription = "MGM Model School, Ayiroor, Varkala is proud to be associated with Hindustan Scouts & Guides, Kerala since 2019. Led by our trained Scout Master Mr. Pravin S R, our troop of 104 active cadets is learning the true spirit of discipline, leadership and service to the nation.";
 
 require_once __DIR__ . '/../templates/header.php';
 require_once __DIR__ . '/../templates/breadcrumb.php';
@@ -34,13 +35,16 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
         <div class="col-lg-8">
           <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill mb-3" style="background: rgba(171, 12, 47, 0.08); color: var(--tp-theme-primary, #ab0c2f);">
             <i class="fa-solid fa-star"></i>
-            <span class="fw-bold small">State-Decorated Rajya Puraskar Troop</span>
+            <span class="fw-bold small">State-Decorated Rajyapuraskar Troop</span>
           </div>
-          <h1 class="fw-bold text-dark mb-3" style="font-size: clamp(28px, 4vw, 42px); line-height: 1.25;">
-            Hindustan Scouts and Guides Troop
+          <h1 class="fw-bold text-dark mb-2" style="font-size: clamp(28px, 4vw, 42px); line-height: 1.25;">
+            Hindustan Scouts & Guides
           </h1>
+          <h5 class="text-danger fw-semibold mb-3" style="font-size: 18px;">
+            Building Character, Nurturing Citizens
+          </h5>
           <p class="text-secondary mb-0 leading-relaxed" style="font-size: 17px; line-height: 1.8;">
-            Prestigious troop decorated with multiple Rajya Puraskar Governor Awards, mastering wilderness outdoor survival, civic duty, first-aid, and leadership.
+            MGM Model School, Ayiroor, Varkala is proud to be associated with Hindustan Scouts & Guides, Kerala since 2019. Led by our trained Scout Master Mr. Pravin S R, our troop of 104 active cadets is learning the true spirit of discipline, leadership and service to the nation.
           </p>
         </div>
         <div class="col-lg-4 text-lg-end">
@@ -54,64 +58,46 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
     <!-- Featured High-Resolution Showcase Image -->
     <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-5 bg-white">
       <div class="position-relative" style="max-height: 520px; overflow: hidden;">
-        <img src="<?= rtrim(BASE_URL, '/') ?>/assets/images/scouts-and-guides.jpeg" alt="Hindustan Scouts and Guides" class="w-100 h-100" style="object-fit: cover; min-height: 380px; max-height: 520px;">
+        <img src="<?= rtrim(BASE_URL, '/') ?>/assets/images/scouts-and-guides.jpeg" alt="Hindustan Scouts & Guides" class="w-100 h-100" style="object-fit: cover; min-height: 380px; max-height: 520px;">
         <div class="position-absolute bottom-0 start-0 w-100 p-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
-          <span class="badge bg-danger px-3 py-2 rounded-pill fw-bold"><i class="fa-solid fa-award me-1"></i> Hindustan Scouts and Guides</span>
+          <span class="badge bg-danger px-3 py-2 rounded-pill fw-bold"><i class="fa-solid fa-award me-1"></i> Hindustan Scouts & Guides</span>
         </div>
       </div>
     </div>
 
-    <!-- In-Depth Overview & Key Pillars -->
+    <!-- In-Depth Content & Factsheet -->
     <div class="row g-4 mb-5">
-      <!-- Left Column: Detailed Overview -->
+      <!-- Left Column: Exact Content from Document -->
       <div class="col-lg-7">
         <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white h-100">
-          <h3 class="fw-bold text-dark mb-3 d-flex align-items-center gap-2">
+          <h3 class="fw-bold text-dark mb-4 d-flex align-items-center gap-2">
             <span style="width: 8px; height: 28px; background: var(--tp-theme-primary, #ab0c2f); border-radius: 4px; display: inline-block;"></span>
-            Educational Vision &amp; Facility Overview
+            About Hindustan Scouts & Guides
           </h3>
           <p class="text-secondary leading-relaxed mb-4" style="font-size: 16px; line-height: 1.85;">
-            As part of our commitment to moral fortitude and selfless civic duty, MGM Model School has partnered with Hindustan Scouts and Guides Kerala since 2019. Led by certified Scout Master Mr. Pravin S R, our troop of 104 active cadets is celebrated as one of the state's most distinguished. Notably, 45 cadets have won the prestigious Rajyapuraskar (Governor's Award) across successive state rallies.
+            MGM Model School, Ayiroor, Varkala is proud to be associated with Hindustan Scouts & Guides, Kerala since 2019. Led by our trained Scout Master Mr. Pravin S R, our troop of 104 active cadets is learning the true spirit of discipline, leadership and service to the nation.
+          </p>
+          <p class="text-secondary leading-relaxed mb-4" style="font-size: 16px; line-height: 1.85;">
+            45 cadets have been awarded the prestigious Rajyapuraskar - The Governor's Award in the last seven years.
           </p>
 
-          <!-- Core Pillars Grid -->
-          <h4 class="fw-bold text-dark mb-3 mt-4" style="font-size: 20px;">Key Features &amp; Student Advantages</h4>
-          <div class="row g-3">
-            <div class="col-md-6">
-              <div class="p-3 rounded-4 h-100 border bg-light">
-                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
-                  <i class="fa-solid fa-trophy fs-5"></i>
-                  <h6 class="fw-bold text-dark mb-0">45 Rajyapuraskar Governor Awards</h6>
-                </div>
-                <p class="text-muted small mb-0" style="line-height: 1.6;">Honored by the Hon'ble Governor of Kerala for exemplary wilderness survival, civic leadership, and state jamboree performance.</p>
-              </div>
+          <h4 class="fw-bold text-dark mb-3 mt-4" style="font-size: 20px;">Key Highlights &amp; Features</h4>
+          <div class="d-flex flex-column gap-2 mb-2">
+            <div class="d-flex align-items-start gap-2 p-2 rounded-2 bg-light">
+              <i class="fa-solid fa-circle-check text-success mt-1"></i>
+              <span class="text-dark fw-medium small" style="line-height: 1.6;">Proud association with Hindustan Scouts & Guides, Kerala since 2019</span>
             </div>
-            <div class="col-md-6">
-              <div class="p-3 rounded-4 h-100 border bg-light">
-                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
-                  <i class="fa-solid fa-compass fs-5"></i>
-                  <h6 class="fw-bold text-dark mb-0">Wilderness Outdoor Survival</h6>
-                </div>
-                <p class="text-muted small mb-0" style="line-height: 1.6;">Mastery of pioneering knot-tying, tracking, compass navigation, bridge construction, and bivouac tent pitching.</p>
-              </div>
+            <div class="d-flex align-items-start gap-2 p-2 rounded-2 bg-light">
+              <i class="fa-solid fa-circle-check text-success mt-1"></i>
+              <span class="text-dark fw-medium small" style="line-height: 1.6;">104 active cadets mastering discipline, leadership and service to the nation</span>
             </div>
-            <div class="col-md-6">
-              <div class="p-3 rounded-4 h-100 border bg-light">
-                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
-                  <i class="fa-solid fa-kit-medical fs-5"></i>
-                  <h6 class="fw-bold text-dark mb-0">Emergency First Aid & Rescue</h6>
-                </div>
-                <p class="text-muted small mb-0" style="line-height: 1.6;">Comprehensive disaster response training: CPR, stretcher fabrication, bandaging, and community emergency management.</p>
-              </div>
+            <div class="d-flex align-items-start gap-2 p-2 rounded-2 bg-light">
+              <i class="fa-solid fa-circle-check text-success mt-1"></i>
+              <span class="text-dark fw-medium small" style="line-height: 1.6;">45 cadets honoured with the prestigious Rajyapuraskar (The Governor's Award)</span>
             </div>
-            <div class="col-md-6">
-              <div class="p-3 rounded-4 h-100 border bg-light">
-                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
-                  <i class="fa-solid fa-fire fs-5"></i>
-                  <h6 class="fw-bold text-dark mb-0">Campfire Brotherhood & Civic Duty</h6>
-                </div>
-                <p class="text-muted small mb-0" style="line-height: 1.6;">Instills the timeless Scout Law: trustworthiness, loyalty, courtesy, cleanliness, and dedication to God and country.</p>
-              </div>
+            <div class="d-flex align-items-start gap-2 p-2 rounded-2 bg-light">
+              <i class="fa-solid fa-circle-check text-success mt-1"></i>
+              <span class="text-dark fw-medium small" style="line-height: 1.6;">Led by certified Scout Master Mr. Pravin S R</span>
             </div>
           </div>
         </div>
@@ -125,20 +111,20 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
           </h5>
           <div class="d-flex flex-column gap-3">
             <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
-              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Active Membership</span>
-              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">104 Active Cadets (1 Troop, 1 Guide Co, 1 Rover-Ranger Unit)</strong>
+              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Active Cadets</span>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">104 Enrolled Scouts & Guides Cadets</strong>
             </div>
             <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
-              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Governor Laureates</span>
-              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">45 Prestigious Rajyapuraskar Award Winners</strong>
+              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Governor Awards</span>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">45 Rajyapuraskar Recipients in Last 7 Years</strong>
             </div>
             <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
-              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Scout Master Lead</span>
-              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Mr. Pravin S R (Certified Scout Master)</strong>
+              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Scout Master</span>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Mr. Pravin S R (Trained Scout Master)</strong>
             </div>
             <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
-              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">State Rallies</span>
-              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Consecutive Honors in 2019, 2022, 2023, and 2024</strong>
+              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Association Since</span>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Proudly Active Since 2019</strong>
             </div>
           </div>
         </div>

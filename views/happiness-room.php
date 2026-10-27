@@ -1,14 +1,15 @@
 <?php
 /**
- * Happiness Room &ndash; Rejuvenation Sanctuary View
- * MGM Model School Campus Highlights
+ * Happiness Room View
+ * Exact Content from Official School Highlights
+ * MGM Model School Recreation Project
  */
 require_once __DIR__ . '/../config/config.php';
 
 $currentSlug = "happiness-room";
 $pageTitle = "Happiness Room";
 $breadcrumbTitle = "Happiness Room";
-$metaDescription = "Serene emotional rejuvenation sanctuary designed with sensory calming corners, mindfulness meditation spaces, and creative expressive art therapy.";
+$metaDescription = "Pause. Create. Express. Shine.";
 
 require_once __DIR__ . '/../templates/header.php';
 require_once __DIR__ . '/../templates/breadcrumb.php';
@@ -34,13 +35,16 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
         <div class="col-lg-8">
           <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill mb-3" style="background: rgba(171, 12, 47, 0.08); color: var(--tp-theme-primary, #ab0c2f);">
             <i class="fa-solid fa-star"></i>
-            <span class="fw-bold small">Mindfulness & Emotional Sanctuary</span>
+            <span class="fw-bold small">Pause. Create. Express. Shine.</span>
           </div>
-          <h1 class="fw-bold text-dark mb-3" style="font-size: clamp(28px, 4vw, 42px); line-height: 1.25;">
-            Happiness Room &ndash; Rejuvenation Sanctuary
+          <h1 class="fw-bold text-dark mb-2" style="font-size: clamp(28px, 4vw, 42px); line-height: 1.25;">
+            Happiness Room
           </h1>
+          <h5 class="text-danger fw-semibold mb-3" style="font-size: 18px;">
+            Where Minds Relax, Creativity Blooms and Talents Shine
+          </h5>
           <p class="text-secondary mb-0 leading-relaxed" style="font-size: 17px; line-height: 1.8;">
-            Serene emotional rejuvenation sanctuary designed with sensory calming corners, mindfulness meditation spaces, and creative expressive art therapy.
+            Pause. Create. Express. Shine.
           </p>
         </div>
         <div class="col-lg-4 text-lg-end">
@@ -61,57 +65,45 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
       </div>
     </div>
 
-    <!-- In-Depth Overview & Key Pillars -->
+    <!-- In-Depth Content & Factsheet -->
     <div class="row g-4 mb-5">
-      <!-- Left Column: Detailed Overview -->
+      <!-- Left Column: Exact Content from Document -->
       <div class="col-lg-7">
         <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white h-100">
-          <h3 class="fw-bold text-dark mb-3 d-flex align-items-center gap-2">
+          <h3 class="fw-bold text-dark mb-4 d-flex align-items-center gap-2">
             <span style="width: 8px; height: 28px; background: var(--tp-theme-primary, #ab0c2f); border-radius: 4px; display: inline-block;"></span>
-            Educational Vision &amp; Facility Overview
+            About Happiness Room
           </h3>
           <p class="text-secondary leading-relaxed mb-4" style="font-size: 16px; line-height: 1.85;">
-            In today's fast-paced academic landscape, creating space for mental pause, emotional decompression, and genuine joy is essential. The "Happiness Room" at MGM Model School is a beautifully designed sanctuary created to alleviate stress, cultivate gratitude, and recharge student energy. Filled with comfortable beanbags, meditation mats, art therapy supplies, and soothing acoustics, it brings smiles back to young faces.
+            Pause. Create. Express. Shine.
+          </p>
+          <p class="text-secondary leading-relaxed mb-4" style="font-size: 16px; line-height: 1.85;">
+            At MGM Model School, the Happiness Room is a vibrant space designed to make free time more meaningful and joyful.
+          </p>
+          <p class="text-secondary leading-relaxed mb-4" style="font-size: 16px; line-height: 1.85;">
+            It is a welcoming haven where students can read, create, express themselves, discover their talents and unwind. With dedicated zones for reading, creativity and relaxation, it encourages every student to pause, explore their interests, and nurture their well-being.
+          </p>
+          <p class="text-secondary leading-relaxed mb-4" style="font-size: 16px; line-height: 1.85;">
+            A space to be yourself. A space to discover yourself.
           </p>
 
-          <!-- Core Pillars Grid -->
-          <h4 class="fw-bold text-dark mb-3 mt-4" style="font-size: 20px;">Key Features &amp; Student Advantages</h4>
-          <div class="row g-3">
-            <div class="col-md-6">
-              <div class="p-3 rounded-4 h-100 border bg-light">
-                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
-                  <i class="fa-solid fa-spa fs-5"></i>
-                  <h6 class="fw-bold text-dark mb-0">Sensory Relaxation Zones</h6>
-                </div>
-                <p class="text-muted small mb-0" style="line-height: 1.6;">Plush ergonomic seating, warm ambient natural lighting, and sound-absorbing acoustic design for quiet decompression.</p>
-              </div>
+          <h4 class="fw-bold text-dark mb-3 mt-4" style="font-size: 20px;">Key Highlights &amp; Features</h4>
+          <div class="d-flex flex-column gap-2 mb-2">
+            <div class="d-flex align-items-start gap-2 p-2 rounded-2 bg-light">
+              <i class="fa-solid fa-circle-check text-success mt-1"></i>
+              <span class="text-dark fw-medium small" style="line-height: 1.6;">Dedicated zones for reading, creative arts and sensory relaxation</span>
             </div>
-            <div class="col-md-6">
-              <div class="p-3 rounded-4 h-100 border bg-light">
-                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
-                  <i class="fa-solid fa-palette fs-5"></i>
-                  <h6 class="fw-bold text-dark mb-0">Expressive Art & Mandala Therapy</h6>
-                </div>
-                <p class="text-muted small mb-0" style="line-height: 1.6;">Non-evaluative creative painting, mandala coloring, clay molding, and expressive journaling to release bottled anxiety.</p>
-              </div>
+            <div class="d-flex align-items-start gap-2 p-2 rounded-2 bg-light">
+              <i class="fa-solid fa-circle-check text-success mt-1"></i>
+              <span class="text-dark fw-medium small" style="line-height: 1.6;">Designed to make free intervals meaningful, joyful and rejuvenating</span>
             </div>
-            <div class="col-md-6">
-              <div class="p-3 rounded-4 h-100 border bg-light">
-                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
-                  <i class="fa-solid fa-wind fs-5"></i>
-                  <h6 class="fw-bold text-dark mb-0">Guided Mindfulness & Breathing</h6>
-                </div>
-                <p class="text-muted small mb-0" style="line-height: 1.6;">Brief, guided breathwork and meditation sessions that reset elevated stress levels and restore focused clarity.</p>
-              </div>
+            <div class="d-flex align-items-start gap-2 p-2 rounded-2 bg-light">
+              <i class="fa-solid fa-circle-check text-success mt-1"></i>
+              <span class="text-dark fw-medium small" style="line-height: 1.6;">Encourages students to discover talents, express themselves and unwind</span>
             </div>
-            <div class="col-md-6">
-              <div class="p-3 rounded-4 h-100 border bg-light">
-                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
-                  <i class="fa-solid fa-face-laugh-beam fs-5"></i>
-                  <h6 class="fw-bold text-dark mb-0">Cultivating Joy & Gratitude</h6>
-                </div>
-                <p class="text-muted small mb-0" style="line-height: 1.6;">Interactive gratitude walls and positive affirmations reminding students that their self-worth transcends exam numbers.</p>
-              </div>
+            <div class="d-flex align-items-start gap-2 p-2 rounded-2 bg-light">
+              <i class="fa-solid fa-circle-check text-success mt-1"></i>
+              <span class="text-dark fw-medium small" style="line-height: 1.6;">A welcoming sanctuary: 'A space to be yourself. A space to discover yourself.'</span>
             </div>
           </div>
         </div>
@@ -125,20 +117,20 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
           </h5>
           <div class="d-flex flex-column gap-3">
             <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
-              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Room Ambience</span>
-              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Acoustic Sound-Dampening, Warm Light & Natural Greenery</strong>
+              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Motto</span>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Pause. Create. Express. Shine.</strong>
             </div>
             <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
-              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Activities Offered</span>
-              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Guided Breathwork, Art Therapy, Meditation & Calming Puzzles</strong>
+              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Dedicated Zones</span>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Reading Zone, Creativity Corner & Relaxation Space</strong>
             </div>
             <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
-              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Target Beneficiaries</span>
-              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">All Students & Faculty Members Seeking Recharge</strong>
+              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Purpose</span>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Mental Unwinding, Well-being & Talent Discovery</strong>
             </div>
             <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
-              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Operational Hours</span>
-              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Open Throughout All School Working Hours</strong>
+              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Philosophy</span>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">A Space to Be Yourself, A Space to Discover Yourself</strong>
             </div>
           </div>
         </div>

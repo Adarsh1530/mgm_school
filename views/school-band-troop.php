@@ -1,14 +1,15 @@
 <?php
 /**
- * Ceremonial School Band Troop View
- * MGM Model School Campus Highlights
+ * School Band Troop View
+ * Exact Content from Official School Highlights
+ * MGM Model School Recreation Project
  */
 require_once __DIR__ . '/../config/config.php';
 
 $currentSlug = "school-band-troop";
 $pageTitle = "School Band Troop";
 $breadcrumbTitle = "School Band Troop";
-$metaDescription = "Ceremonial marching brass and percussion band troop performing synchronized drills, patriotic anthems, and martial salutes with precision.";
+$metaDescription = "One band, one rhythm marching with courage and confidence. Our band troop of 25 boys & girls perform with precision, harmony, discipline & unwavering dedication.";
 
 require_once __DIR__ . '/../templates/header.php';
 require_once __DIR__ . '/../templates/breadcrumb.php';
@@ -34,13 +35,16 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
         <div class="col-lg-8">
           <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill mb-3" style="background: rgba(171, 12, 47, 0.08); color: var(--tp-theme-primary, #ab0c2f);">
             <i class="fa-solid fa-star"></i>
-            <span class="fw-bold small">Ceremonial Marching Brass & Percussion</span>
+            <span class="fw-bold small">Ceremonial Marching Ensemble</span>
           </div>
-          <h1 class="fw-bold text-dark mb-3" style="font-size: clamp(28px, 4vw, 42px); line-height: 1.25;">
-            Ceremonial School Band Troop
+          <h1 class="fw-bold text-dark mb-2" style="font-size: clamp(28px, 4vw, 42px); line-height: 1.25;">
+            School Band Troop
           </h1>
+          <h5 class="text-danger fw-semibold mb-3" style="font-size: 18px;">
+            One Band, One Rhythm Marching with Courage and Confidence
+          </h5>
           <p class="text-secondary mb-0 leading-relaxed" style="font-size: 17px; line-height: 1.8;">
-            Ceremonial marching brass and percussion band troop performing synchronized drills, patriotic anthems, and martial salutes with precision.
+            One band, one rhythm marching with courage and confidence. Our band troop of 25 boys & girls perform with precision, harmony, discipline & unwavering dedication.
           </p>
         </div>
         <div class="col-lg-4 text-lg-end">
@@ -61,57 +65,36 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
       </div>
     </div>
 
-    <!-- In-Depth Overview & Key Pillars -->
+    <!-- In-Depth Content & Factsheet -->
     <div class="row g-4 mb-5">
-      <!-- Left Column: Detailed Overview -->
+      <!-- Left Column: Exact Content from Document -->
       <div class="col-lg-7">
         <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white h-100">
-          <h3 class="fw-bold text-dark mb-3 d-flex align-items-center gap-2">
+          <h3 class="fw-bold text-dark mb-4 d-flex align-items-center gap-2">
             <span style="width: 8px; height: 28px; background: var(--tp-theme-primary, #ab0c2f); border-radius: 4px; display: inline-block;"></span>
-            Educational Vision &amp; Facility Overview
+            About School Band Troop
           </h3>
           <p class="text-secondary leading-relaxed mb-4" style="font-size: 16px; line-height: 1.85;">
-            The ceremonial drumbeat and brass fanfare of the MGM Model School Band Troop elevate every solemn campus assembly. Dressed in striking ceremonial regalia with embroidered sashes, our band members undergo rigorous rhythmic drill practice. The troop leads all school investitures, annual sports meets, Independence Day parades, and honors visiting state dignitaries with crisp martial salutes.
+            One band, one rhythm marching with courage and confidence. Our band troop of 25 boys & girls perform with precision, harmony, discipline & unwavering dedication.
           </p>
 
-          <!-- Core Pillars Grid -->
-          <h4 class="fw-bold text-dark mb-3 mt-4" style="font-size: 20px;">Key Features &amp; Student Advantages</h4>
-          <div class="row g-3">
-            <div class="col-md-6">
-              <div class="p-3 rounded-4 h-100 border bg-light">
-                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
-                  <i class="fa-solid fa-drum fs-5"></i>
-                  <h6 class="fw-bold text-dark mb-0">Marching Percussion & Brass Ensemble</h6>
-                </div>
-                <p class="text-muted small mb-0" style="line-height: 1.6;">Trained on bass drums, side snare drums, tenor drums, bugles, cymbals, and glockenspiel xylophones.</p>
-              </div>
+          <h4 class="fw-bold text-dark mb-3 mt-4" style="font-size: 20px;">Key Highlights &amp; Features</h4>
+          <div class="d-flex flex-column gap-2 mb-2">
+            <div class="d-flex align-items-start gap-2 p-2 rounded-2 bg-light">
+              <i class="fa-solid fa-circle-check text-success mt-1"></i>
+              <span class="text-dark fw-medium small" style="line-height: 1.6;">Troop of 25 dedicated boys & girls marching in synchronized harmony</span>
             </div>
-            <div class="col-md-6">
-              <div class="p-3 rounded-4 h-100 border bg-light">
-                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
-                  <i class="fa-solid fa-person-walking fs-5"></i>
-                  <h6 class="fw-bold text-dark mb-0">Synchronized Marching Drill Formations</h6>
-                </div>
-                <p class="text-muted small mb-0" style="line-height: 1.6;">Performing disciplined field manoeuvres, countermarches, and complex formation changes with impeccable spatial precision.</p>
-              </div>
+            <div class="d-flex align-items-start gap-2 p-2 rounded-2 bg-light">
+              <i class="fa-solid fa-circle-check text-success mt-1"></i>
+              <span class="text-dark fw-medium small" style="line-height: 1.6;">Crisp precision, musical discipline and martial cadence</span>
             </div>
-            <div class="col-md-6">
-              <div class="p-3 rounded-4 h-100 border bg-light">
-                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
-                  <i class="fa-solid fa-flag fs-5"></i>
-                  <h6 class="fw-bold text-dark mb-0">Ceremonial Honors for Dignitaries</h6>
-                </div>
-                <p class="text-muted small mb-0" style="line-height: 1.6;">Providing guard of honor fanfares and ceremonial national anthem salutes during gubernatorial and state visits.</p>
-              </div>
+            <div class="d-flex align-items-start gap-2 p-2 rounded-2 bg-light">
+              <i class="fa-solid fa-circle-check text-success mt-1"></i>
+              <span class="text-dark fw-medium small" style="line-height: 1.6;">Performs at all major ceremonial assemblies, sports meets & campus parades</span>
             </div>
-            <div class="col-md-6">
-              <div class="p-3 rounded-4 h-100 border bg-light">
-                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
-                  <i class="fa-solid fa-music fs-5"></i>
-                  <h6 class="fw-bold text-dark mb-0">Teamwork, Rhythm & Confidence</h6>
-                </div>
-                <p class="text-muted small mb-0" style="line-height: 1.6;">Fosters collective synchronization, musical ear training, leadership character, and unshakeable stage poise.</p>
-              </div>
+            <div class="d-flex align-items-start gap-2 p-2 rounded-2 bg-light">
+              <i class="fa-solid fa-circle-check text-success mt-1"></i>
+              <span class="text-dark fw-medium small" style="line-height: 1.6;">Instills collective rhythm, performance poise and team pride</span>
             </div>
           </div>
         </div>
@@ -125,20 +108,20 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
           </h5>
           <div class="d-flex flex-column gap-3">
             <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
-              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Instrumentation</span>
-              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Side Snare Drums, Bass Drums, Bugles, Cymbals & Glockenspiels</strong>
+              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Troop Strength</span>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">25 Boys & Girls Ensemble</strong>
             </div>
             <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
-              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Ceremonial Regalia</span>
-              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Official School Uniform with Epaulettes, Sashes & Plumes</strong>
+              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Motto</span>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">One Band, One Rhythm Marching with Courage</strong>
             </div>
             <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
-              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Key Performances</span>
-              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Investiture Ceremony, Annual Sports Meet, Independence Day</strong>
+              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Attributes</span>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Precision, Harmony, Discipline & Dedication</strong>
             </div>
             <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
-              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Student Leadership</span>
-              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Band Major & Section Captains Leading Formations</strong>
+              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Performances</span>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Ceremonial Parades, Sports Meets & Official Events</strong>
             </div>
           </div>
         </div>

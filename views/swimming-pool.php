@@ -1,14 +1,15 @@
 <?php
 /**
  * Swimming Pool Facility View
- * MGM Model School Campus Highlights
+ * Exact Content from Official School Highlights
+ * MGM Model School Recreation Project
  */
 require_once __DIR__ . '/../config/config.php';
 
 $currentSlug = "swimming-pool";
-$pageTitle = "Swimming Pool";
-$breadcrumbTitle = "Swimming Pool";
-$metaDescription = "World-class semi-Olympic swimming pool facility providing students with structured aquatic training, water safety certification, and competitive sports excellence.";
+$pageTitle = "Swimming Pool Facility";
+$breadcrumbTitle = "Swimming Pool Facility";
+$metaDescription = "Our state-of-the-art swimming pool complex has been a vibrant part of our campus for the last three years, enhancing the physical fitness and holistic development of our students.";
 
 require_once __DIR__ . '/../templates/header.php';
 require_once __DIR__ . '/../templates/breadcrumb.php';
@@ -34,13 +35,13 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
         <div class="col-lg-8">
           <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill mb-3" style="background: rgba(171, 12, 47, 0.08); color: var(--tp-theme-primary, #ab0c2f);">
             <i class="fa-solid fa-star"></i>
-            <span class="fw-bold small">Aquatic Excellence & Water Safety</span>
+            <span class="fw-bold small">Physical Fitness & Water Safety</span>
           </div>
-          <h1 class="fw-bold text-dark mb-3" style="font-size: clamp(28px, 4vw, 42px); line-height: 1.25;">
+          <h1 class="fw-bold text-dark mb-2" style="font-size: clamp(28px, 4vw, 42px); line-height: 1.25;">
             Swimming Pool Facility
           </h1>
           <p class="text-secondary mb-0 leading-relaxed" style="font-size: 17px; line-height: 1.8;">
-            World-class semi-Olympic swimming pool facility providing students with structured aquatic training, water safety certification, and competitive sports excellence.
+            Our state-of-the-art swimming pool complex has been a vibrant part of our campus for the last three years, enhancing the physical fitness and holistic development of our students.
           </p>
         </div>
         <div class="col-lg-4 text-lg-end">
@@ -51,12 +52,12 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
       </div>
     </div>
 
-    <!-- Featured Video Section -->
+    <!-- Featured Video Showcase -->
     <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-5 bg-dark">
       <div class="p-3 bg-dark border-bottom border-secondary d-flex align-items-center justify-content-between text-white flex-wrap gap-2">
         <div class="d-flex align-items-center gap-2">
           <span class="badge bg-danger px-2 py-1"><i class="fa-solid fa-circle-play me-1"></i> VIDEO SHOWCASE</span>
-          <strong class="text-white small text-uppercase" style="letter-spacing: 0.5px;">Swimming Pool in Action &bull; MGM Model School</strong>
+          <strong class="text-white small text-uppercase" style="letter-spacing: 0.5px;">Swimming Pool Facility &bull; MGM Model School</strong>
         </div>
         <span class="badge bg-light text-dark small"><i class="fa-solid fa-video me-1"></i> High Definition MP4</span>
       </div>
@@ -78,57 +79,39 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
       </div>
     </div>
 
-    <!-- In-Depth Overview & Key Pillars -->
+    <!-- In-Depth Content & Factsheet -->
     <div class="row g-4 mb-5">
-      <!-- Left Column: Detailed Overview -->
+      <!-- Left Column: Exact Content from Document -->
       <div class="col-lg-7">
         <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white h-100">
-          <h3 class="fw-bold text-dark mb-3 d-flex align-items-center gap-2">
+          <h3 class="fw-bold text-dark mb-4 d-flex align-items-center gap-2">
             <span style="width: 8px; height: 28px; background: var(--tp-theme-primary, #ab0c2f); border-radius: 4px; display: inline-block;"></span>
-            Educational Vision &amp; Facility Overview
+            About Swimming Pool Facility
           </h3>
           <p class="text-secondary leading-relaxed mb-4" style="font-size: 16px; line-height: 1.85;">
-            At MGM Model School, swimming is an integral pillar of physical development and life-saving skill mastery. Our semi-Olympic dual-pool facility offers clean, temperature-moderated waters maintained under rigorous hygiene protocols. Students from primary through senior secondary grades receive expert coaching under certified aquatic trainers and vigilant lifeguards.
+            Our state-of-the-art swimming pool complex has been a vibrant part of our campus for the last three years, enhancing the physical fitness and holistic development of our students.
+          </p>
+          <p class="text-secondary leading-relaxed mb-4" style="font-size: 16px; line-height: 1.85;">
+            Our facility features two pools, including a pool exclusively for children below 8 years. Designed and constructed with the highest safety standards, the pools are managed by well-trained and qualified coaches who ensure expert guidance and constant supervision.
           </p>
 
-          <!-- Core Pillars Grid -->
-          <h4 class="fw-bold text-dark mb-3 mt-4" style="font-size: 20px;">Key Features &amp; Student Advantages</h4>
-          <div class="row g-3">
-            <div class="col-md-6">
-              <div class="p-3 rounded-4 h-100 border bg-light">
-                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
-                  <i class="fa-solid fa-water fs-5"></i>
-                  <h6 class="fw-bold text-dark mb-0">Semi-Olympic Dimensions</h6>
-                </div>
-                <p class="text-muted small mb-0" style="line-height: 1.6;">Engineered to official specifications with dedicated racing lanes, starting blocks, and calibrated depths for junior and senior swimmers.</p>
-              </div>
+          <h4 class="fw-bold text-dark mb-3 mt-4" style="font-size: 20px;">Key Highlights &amp; Features</h4>
+          <div class="d-flex flex-column gap-2 mb-2">
+            <div class="d-flex align-items-start gap-2 p-2 rounded-2 bg-light">
+              <i class="fa-solid fa-circle-check text-success mt-1"></i>
+              <span class="text-dark fw-medium small" style="line-height: 1.6;">Two distinct pools including an exclusive shallow pool for children under 8 years</span>
             </div>
-            <div class="col-md-6">
-              <div class="p-3 rounded-4 h-100 border bg-light">
-                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
-                  <i class="fa-solid fa-life-ring fs-5"></i>
-                  <h6 class="fw-bold text-dark mb-0">Certified Aquatic Safety</h6>
-                </div>
-                <p class="text-muted small mb-0" style="line-height: 1.6;">Stationed certified lifeguards, life buoys, safety nets, and first-aid response systems ensure 100% student safety during all sessions.</p>
-              </div>
+            <div class="d-flex align-items-start gap-2 p-2 rounded-2 bg-light">
+              <i class="fa-solid fa-circle-check text-success mt-1"></i>
+              <span class="text-dark fw-medium small" style="line-height: 1.6;">Constructed strictly adhering to highest aquatic safety standards</span>
             </div>
-            <div class="col-md-6">
-              <div class="p-3 rounded-4 h-100 border bg-light">
-                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
-                  <i class="fa-solid fa-medal fs-5"></i>
-                  <h6 class="fw-bold text-dark mb-0">Competitive Sports Coaching</h6>
-                </div>
-                <p class="text-muted small mb-0" style="line-height: 1.6;">Specialized coaching batches preparing promising swimmers for CBSE South Zone, district, and state aquatic championships.</p>
-              </div>
+            <div class="d-flex align-items-start gap-2 p-2 rounded-2 bg-light">
+              <i class="fa-solid fa-circle-check text-success mt-1"></i>
+              <span class="text-dark fw-medium small" style="line-height: 1.6;">Supervised by well-trained and qualified professional coaches</span>
             </div>
-            <div class="col-md-6">
-              <div class="p-3 rounded-4 h-100 border bg-light">
-                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
-                  <i class="fa-solid fa-pump-soap fs-5"></i>
-                  <h6 class="fw-bold text-dark mb-0">Automated Continuous Filtration</h6>
-                </div>
-                <p class="text-muted small mb-0" style="line-height: 1.6;">Automated filtration and daily chemical balancing maintain pristine, crystal-clear water with strict pH and sanitization checks.</p>
-              </div>
+            <div class="d-flex align-items-start gap-2 p-2 rounded-2 bg-light">
+              <i class="fa-solid fa-circle-check text-success mt-1"></i>
+              <span class="text-dark fw-medium small" style="line-height: 1.6;">Enhances physical stamina, water safety skills and holistic development</span>
             </div>
           </div>
         </div>
@@ -142,20 +125,20 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
           </h5>
           <div class="d-flex flex-column gap-3">
             <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
-              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Facility Type</span>
-              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Semi-Olympic Dual Pool Complex</strong>
+              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Facility</span>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Dual-Pool Complex (Senior & Junior under 8)</strong>
+            </div>
+            <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
+              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Campus Presence</span>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Active for the Last 3+ Years</strong>
             </div>
             <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
               <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Supervision</span>
-              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Certified Lifeguards & Aquatic Coaches</strong>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Well-Trained & Qualified Coaches</strong>
             </div>
             <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
-              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Training Batches</span>
-              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Separate Sessions for Boys & Girls</strong>
-            </div>
-            <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
-              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Hygiene Protocol</span>
-              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Continuous Automated Filtration & Daily Testing</strong>
+              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Safety Standard</span>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Highest Aquatic Safety & Constant Monitoring</strong>
             </div>
           </div>
         </div>
