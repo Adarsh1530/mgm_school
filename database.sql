@@ -164,7 +164,7 @@ CREATE TABLE `mandatory_disclosures` (
 INSERT INTO `mandatory_disclosures` VALUES
 ('1', 'Saras 5.0', '1737025323273-SARAS-5.0.pdf', 'assets/docs/1737025323273-SARAS-5.0.pdf', '150 KB', '1', '1', '2026-10-21 23:28:40'),
 ('2', 'AFFILIATION', '1733382575212-AFFILIATION.pdf', 'assets/docs/1733382575212-AFFILIATION.pdf', '163 KB', '2', '1', '2026-10-21 23:28:40'),
-('3', 'FEE STRUCTURE', '1750226400981-SCHOOL-FEE-2025-26.pdf', 'assets/docs/1750226400981-SCHOOL-FEE-2025-26.pdf', '31 KB', '3', '1', '2026-10-21 23:28:40'),
+('3', 'FEE STRUCTURE', 'fee-structure-2026-27.png', 'assets/images/fee-structure-2026-27.png', '442 KB', '3', '1', '2026-10-27 12:00:00'),
 ('4', 'CBSE Results (From 2019)', '1750226704411-cbse-results-from-2019.pdf', 'assets/docs/1750226704411-cbse-results-from-2019.pdf', '42 KB', '4', '1', '2026-10-21 23:28:40'),
 ('5', 'BUILDING SAFETY CERTIFICATE', '1733383672169-BUILDING-SAFETY-CERTIFICATE.pdf', 'assets/docs/1733383672169-BUILDING-SAFETY-CERTIFICATE.pdf', '62 KB', '5', '1', '2026-10-21 23:28:40'),
 ('6', 'FIRE SAFETY CERTIFICATE', '1733383617275-FIRE-SAFETY-CERTIFICATE.pdf', 'assets/docs/1733383617275-FIRE-SAFETY-CERTIFICATE.pdf', '51 KB', '6', '1', '2026-10-21 23:28:40'),
