@@ -23,11 +23,12 @@ crop_amma = im_amma.crop((34, 34, 1566, 1566))
 crop_amma.save('assets/images/amma-school-clean.jpeg', quality=95)
 print(f"Amma school clean: {crop_amma.size}")
 
-# 4. Voice of MGM: 1750233709.jpeg
-# Original is 1600x1600. Pink heart border is ~33px.
-im_radio = Image.open('assets/images/1750233709.jpeg')
-crop_radio = im_radio.crop((34, 34, 1566, 1566))
+# 4. Voice of MGM: User provided studio photo (control room + broadcast booth)
+# Original user photo media_1793081358217_e0ff2c6a.png (759x761)
+im_radio = Image.open('C:/Users/KEERTHI ADARSH M P/.gemini/antigravity/brain/a8cc6e3b-cc2d-4829-b39e-c77bd21ddcac/.user_uploaded/media_1793081358217_e0ff2c6a.png')
+crop_radio = im_radio.crop((0, 0, 759, 759)).convert('RGB')
 crop_radio.save('assets/images/voice-of-mgm-clean.jpeg', quality=95)
+crop_radio.save('public/assets/images/voice-of-mgm-clean.jpeg', quality=95)
 print(f"Voice of MGM clean: {crop_radio.size}")
 
 # 5. Life Skills: 1751285591.jpeg
