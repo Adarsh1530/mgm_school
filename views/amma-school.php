@@ -52,7 +52,7 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
 
         <!-- Showcase Image (Exact Natural Ratio, No Cropping Frame) -->
     <div class="mb-5 text-center">
-      <img src="<?= rtrim(BASE_URL, '/') ?>/assets/images/1750242823.jpeg" 
+      <img src="<?= rtrim(BASE_URL, '/') ?>/assets/images/amma-school-clean.jpeg" 
            alt="Amma School" 
            class="img-fluid rounded-4 shadow-sm" 
            style="max-width: 100%; height: auto; max-height: 640px; object-fit: contain; display: inline-block;">

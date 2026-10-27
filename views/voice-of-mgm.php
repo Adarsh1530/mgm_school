@@ -52,7 +52,7 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
 
         <!-- Showcase Image (Exact Natural Ratio, No Cropping Frame) -->
     <div class="mb-5 text-center">
-      <img src="<?= rtrim(BASE_URL, '/') ?>/assets/images/1751285378.jpeg" 
+      <img src="<?= rtrim(BASE_URL, '/') ?>/assets/images/voice-of-mgm-clean.jpeg" 
            alt="Voice of MGM - Campus Radio Club" 
            class="img-fluid rounded-4 shadow-sm" 
            style="max-width: 100%; height: auto; max-height: 640px; object-fit: contain; display: inline-block;">
