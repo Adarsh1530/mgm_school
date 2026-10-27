@@ -50,26 +50,24 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
       </div>
     </div>
 
-    <!-- Featured Video Section -->
-    <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-5 bg-dark">
-      <div class="p-3 bg-dark border-bottom border-secondary d-flex align-items-center text-white">
-        <strong class="text-white small text-uppercase" style="letter-spacing: 0.5px;">Innovation Centre &bull; MGM Model School</strong>
-      </div>
-      <div class="p-2 p-md-4 text-center bg-black">
-        <video id="highlightVideo_innovation_centre" 
-               class="w-100 rounded-3 shadow" 
-               controls 
-               playsinline 
-               preload="metadata" 
-               poster="<?= rtrim(BASE_URL, '/') ?>/assets/images/1756461341.jpg"
-               style="max-height: 560px; object-fit: contain; background: #000;">
+        <!-- Featured Video Frame (Exact Homepage Video Frame) -->
+    <div class="mb-5">
+      <div class="mgm-video-container" data-video-wrapper>
+        <video class="mgm-autoplay-video" playsinline webkit-playsinline muted loop preload="none" poster="<?= rtrim(BASE_URL, '/') ?>/assets/images/omnis-robot.jpeg">
           <source src="<?= rtrim(BASE_URL, '/') ?>/assets/videos/innovation-centre.mp4" type="video/mp4">
           Your browser does not support HTML5 video.
         </video>
-      </div>
-      <div class="p-3 bg-white text-muted small border-top d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <span><i class="fa-solid fa-circle-info text-danger me-1"></i> Official demonstration &bull; MGM Model School, Ayiroor, Varkala</span>
-        <span class="badge bg-light text-secondary border">Academic Year 2025-2026</span>
+        <div class="mgm-video-controls-overlay">
+          <div class="mgm-video-btn-group">
+            <button type="button" class="mgm-video-ctrl-btn mgm-btn-mute" aria-label="Unmute Video">
+              <i class="fa-solid fa-volume-xmark"></i> <span class="mgm-btn-label">Unmute</span>
+            </button>
+          </div>
+          <div class="mgm-video-badge">
+            <span class="mgm-video-badge-dot"></span>
+            <span>INNOVATION CENTRE TOUR</span>
+          </div>
+        </div>
       </div>
     </div>
 
