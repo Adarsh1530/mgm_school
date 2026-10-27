@@ -4,16 +4,37 @@ import os
 pages = [
     ('', 'index.html', None),
     ('highlights', 'highlights.html', 'highlights'),
+    
+    # 21 Highlights Distinct Dedicated Pages
+    ('swimming-pool', 'swimming-pool.html', 'swimming-pool'),
+    ('twenty-twenty-method', 'twenty-twenty-method.html', 'twenty-twenty-method'),
+    ('libraries-at-mgm', 'libraries-at-mgm.html', 'libraries-at-mgm'),
+    ('poly-house', 'poly-house.html', 'poly-house'),
+    ('krishi-thottam', 'krishi-thottam.html', 'krishi-thottam'),
+    ('amma-school', 'amma-school.html', 'amma-school'),
+    ('vriksha-chikitsa', 'vriksha-chikitsa.html', 'vriksha-chikitsa'),
+    ('counselling-centre', 'counselling-centre.html', 'counselling-centre'),
+    ('innovation-centre', 'innovation-centre.html', 'innovation-centre'),
+    ('gdc', 'gdc.html', 'gdc'),
+    ('life-skills', 'life-skills.html', 'life-skills'),
+    ('voice-of-mgm', 'voice-of-mgm.html', 'voice-of-mgm'),
+    ('school-canteen', 'school-canteen.html', 'school-canteen'),
+    ('butterfly-garden', 'butterfly-garden.html', 'butterfly-garden'),
+    ('3d-max-zone', '3d-max-zone.html', '3d-max-zone'),
+    ('ominis', 'ominis.html', 'ominis'),
+    ('nova-ai-hub', 'nova-ai-hub.html', 'nova-ai-hub'),
+    ('ncc', 'ncc.html', 'ncc'),
+    ('hindustan-scouts-guides', 'hindustan-scouts-guides.html', 'hindustan-scouts-guides'),
+    ('school-band-troop', 'school-band-troop.html', 'school-band-troop'),
+    ('happiness-room', 'happiness-room.html', 'happiness-room'),
+
+    # Other Pages
     ('about-us', 'about-us.html', 'about-us'),
     ('our-founder', 'our-founder.html', 'our-founder'),
     ('our-mission', 'our-mission.html', 'our-mission'),
     ('courses-offered', 'courses-offered.html', 'courses-offered'),
     ('admission-procedure', 'admission-procedure.html', 'admission-procedure'),
     ('attendance', 'attendance.html', 'attendance'),
-    ('swimming-pool', 'swimming-pool.html', 'swimming-pool'),
-    ('voice-of-mgm', 'voice-of-mgm.html', 'voice-of-mgm'),
-    ('ncc', 'ncc.html', 'ncc'),
-    ('hindustan-scouts-guides', 'hindustan-scouts-guides.html', 'hindustan-scouts-guides'),
     ('yoga', 'yoga.html', 'yoga'),
     ('merit-day', 'merit-day.html', 'merit-day'),
     ('pta', 'pta.html', 'pta'),
@@ -45,7 +66,6 @@ require_once dirname(__DIR__) . '/index.php';
     # Strip any potential PHP warning/fallback messages at the very beginning
     if 'MySQL connection unavailable' in html:
         html = html.split('-->', 1)[-1] if '-->' in html else html.split('Fall back to embedded SQLite.', 1)[-1]
-        # Or remove until <!DOCTYPE html>
         if '<!DOCTYPE html>' in html:
             html = '<!DOCTYPE html>' + html.split('<!DOCTYPE html>', 1)[1]
 
@@ -60,7 +80,7 @@ require_once dirname(__DIR__) . '/index.php';
         with open(os.path.join(folder, 'index.html'), 'w', encoding='utf-8') as f:
             f.write(html)
 
-    print(f"Rendered {slug or 'home':25} -> {html_file:30} ({len(html)} bytes)")
+    print(f"Rendered {slug or 'home':30} -> {html_file:35} ({len(html)} bytes)")
 
 if os.path.exists('tools/tmp_runner.php'):
     os.remove('tools/tmp_runner.php')

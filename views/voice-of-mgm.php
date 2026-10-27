@@ -1,115 +1,209 @@
 <?php
 /**
- * Voice of MGM View
- * MGM Model School Recreation Project - School Radio Club
+ * Voice of MGM &ndash; School Radio Club View
+ * MGM Model School Campus Highlights
  */
 require_once __DIR__ . '/../config/config.php';
 
 $currentSlug = "voice-of-mgm";
-$page = get_page_by_slug($currentSlug);
-
-$pageTitle = "Voice Of MGM";
-$breadcrumbTitle = "Voice Of MGM";
-$metaDescription = "Voice of MGM - The Official Campus Radio Club of MGM Model School.";
-$wpId = 16036;
+$pageTitle = "Voice of MGM";
+$breadcrumbTitle = "Voice of MGM";
+$metaDescription = "Official campus radio and broadcasting studio empowering students to host news broadcasts, audio podcasts, creative storytelling, and interviews.";
 
 require_once __DIR__ . '/../templates/header.php';
 require_once __DIR__ . '/../templates/breadcrumb.php';
 ?>
 
-<div class="tp-subpage-container py-5" style="background: #FAF8F5;">
+<div class="highlight-detail-page py-5" style="background: #FAF8F5; min-height: 100vh;">
   <div class="container custom-container-larg">
-    
-    <!-- Header with ON-AIR Indicator -->
-    <div class="text-center mb-5">
-      <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill mb-3 shadow-sm" style="background: #ffffff; border: 1px solid #E2E8F0;">
-        <span style="width: 10px; height: 10px; border-radius: 50%; background: #ef4444; display: inline-block; animation: mgmPulse 1.5s infinite;"></span>
-        <span class="text-uppercase fw-bold" style="font-size: 11px; letter-spacing: 1.5px; color: #ef4444;">On Air &bull; Campus Broadcasting</span>
-      </div>
-      <h2 class="tp-section-title mb-3" style="font-size: 34px; font-weight: 700; color: #141B2B;">"Voice of MGM" &ndash; Our School Radio Club</h2>
-      <p class="text-muted mx-auto" style="max-width: 720px; font-size: 16px; line-height: 1.8;">
-        The "Voice of MGM" Radio Club provides an authentic broadcasting platform for students to cultivate self-assurance, develop polished public speaking skills, and broadcast creative stories across our campus community.
-      </p>
-    </div>
 
-    <!-- Studio Photography Cards -->
-    <div class="row g-4 mb-5 justify-content-center">
-      <div class="col-md-6 col-lg-5">
-        <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white">
-          <div style="height: 320px; overflow: hidden;">
-            <img src="assets/images/1750233724.jpeg" alt="Voice of MGM Studio Session" class="w-100 h-100" style="object-fit: cover; transition: transform 0.3s ease;">
-          </div>
-          <div class="p-3 text-center">
-            <span class="fw-bold text-dark d-block">Campus Radio Broadcasting Station</span>
-            <span class="text-muted small">Student sound engineers and radio jockeys in live broadcast</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-5">
-        <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white">
-          <div style="height: 320px; overflow: hidden;">
-            <img src="assets/images/1750233709.jpeg" alt="Voice of MGM Acoustic Studio" class="w-100 h-100" style="object-fit: cover; transition: transform 0.3s ease;">
-          </div>
-          <div class="p-3 text-center">
-            <span class="fw-bold text-dark d-block">Acoustic Recording &amp; Podcast Lab</span>
-            <span class="text-muted small">Professional broadcast microphones and digital mixing consoles</span>
-          </div>
-        </div>
+    <!-- Top Navigation Return & Category Pill -->
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+      <a href="<?= rtrim(BASE_URL, '/') ?>/highlights/" class="btn btn-outline-danger btn-sm rounded-pill px-3 py-2 fw-semibold d-inline-flex align-items-center gap-2">
+        <i class="fa-solid fa-arrow-left"></i> Back to All Highlights
+      </a>
+      <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-white shadow-sm border">
+        <i class="fa-solid fa-microphone text-danger"></i>
+        <span class="text-uppercase fw-bold small text-muted" style="letter-spacing: 1px;">Skills & Cadet Corps</span>
       </div>
     </div>
 
-    <!-- Core Features & Learning Outcomes -->
-    <div class="row g-4 mb-5">
-      <div class="col-md-6 col-lg-3">
-        <div class="p-4 rounded-4 h-100 shadow-sm bg-white" style="border-top: 3px solid var(--tp-theme-primary, #ab0c2f);">
-          <div class="mb-3 text-danger" style="font-size: 26px;"><i class="fa-solid fa-microphone-lines"></i></div>
-          <h5 class="fw-bold text-dark mb-2">Confidence Building</h5>
-          <p class="text-muted small mb-0">Unlike intimidating stage performances, speaking into an acoustic studio microphone allows children to express themselves naturally and freely.</p>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-3">
-        <div class="p-4 rounded-4 h-100 shadow-sm bg-white" style="border-top: 3px solid #2563EB;">
-          <div class="mb-3 text-primary" style="font-size: 26px;"><i class="fa-solid fa-bullhorn"></i></div>
-          <h5 class="fw-bold text-dark mb-2">Public Speaking</h5>
-          <p class="text-muted small mb-0">Mastering pronunciation, tone modulation, cadence, and eloquence to communicate impactful narratives with clarity and poise.</p>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-3">
-        <div class="p-4 rounded-4 h-100 shadow-sm bg-white" style="border-top: 3px solid #16A34A;">
-          <div class="mb-3 text-success" style="font-size: 26px;"><i class="fa-solid fa-pen-nib"></i></div>
-          <h5 class="fw-bold text-dark mb-2">Content Scripting</h5>
-          <p class="text-muted small mb-0">Writing campus bulletins, cultural reviews, science explainers, and poetry to hone journalistic research and storytelling flair.</p>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-3">
-        <div class="p-4 rounded-4 h-100 shadow-sm bg-white" style="border-top: 3px solid #D97706;">
-          <div class="mb-3 text-warning" style="font-size: 26px;"><i class="fa-solid fa-people-group"></i></div>
-          <h5 class="fw-bold text-dark mb-2">Team Collaboration</h5>
-          <p class="text-muted small mb-0">Managing live cue sheets, coordinating guest speaker interviews, and collaborating as a unified production crew.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Official Inauguration Dignitary Card -->
-    <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white">
+    <!-- Main Header Banner -->
+    <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 mb-5 bg-white">
       <div class="row align-items-center g-4">
-        <div class="col-md-2 text-center text-md-start">
-          <div style="width: 70px; height: 70px; border-radius: 50%; background: rgba(171,12,47,0.1); color: var(--tp-theme-primary, #ab0c2f); display: inline-flex; align-items: center; justify-content: center; font-size: 32px;">
-            <i class="fa-solid fa-quote-left"></i>
+        <div class="col-lg-8">
+          <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill mb-3" style="background: rgba(171, 12, 47, 0.08); color: var(--tp-theme-primary, #ab0c2f);">
+            <i class="fa-solid fa-star"></i>
+            <span class="fw-bold small">Campus Radio & Broadcasting Studio</span>
+          </div>
+          <h1 class="fw-bold text-dark mb-3" style="font-size: clamp(28px, 4vw, 42px); line-height: 1.25;">
+            Voice of MGM &ndash; School Radio Club
+          </h1>
+          <p class="text-secondary mb-0 leading-relaxed" style="font-size: 17px; line-height: 1.8;">
+            Official campus radio and broadcasting studio empowering students to host news broadcasts, audio podcasts, creative storytelling, and interviews.
+          </p>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+          <a href="<?= rtrim(BASE_URL, '/') ?>/contact/" class="btn btn-danger rounded-pill px-4 py-3 fw-bold shadow-sm d-inline-flex align-items-center gap-2">
+            <i class="fa-solid fa-calendar-check"></i> Book Campus Tour
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Featured High-Resolution Showcase Image -->
+    <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-5 bg-white">
+      <div class="position-relative" style="max-height: 520px; overflow: hidden;">
+        <img src="<?= rtrim(BASE_URL, '/') ?>/assets/images/1751285378.jpeg" alt="Voice of MGM" class="w-100 h-100" style="object-fit: cover; min-height: 380px; max-height: 520px;">
+        <div class="position-absolute bottom-0 start-0 w-100 p-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
+          <span class="badge bg-danger px-3 py-2 rounded-pill fw-bold"><i class="fa-solid fa-microphone me-1"></i> Voice of MGM</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- In-Depth Overview & Key Pillars -->
+    <div class="row g-4 mb-5">
+      <!-- Left Column: Detailed Overview -->
+      <div class="col-lg-7">
+        <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white h-100">
+          <h3 class="fw-bold text-dark mb-3 d-flex align-items-center gap-2">
+            <span style="width: 8px; height: 28px; background: var(--tp-theme-primary, #ab0c2f); border-radius: 4px; display: inline-block;"></span>
+            Educational Vision &amp; Facility Overview
+          </h3>
+          <p class="text-secondary leading-relaxed mb-4" style="font-size: 16px; line-height: 1.85;">
+            The "Voice of MGM" Radio Club provides an authentic broadcasting platform for students to cultivate self-assurance, develop polished public speaking skills, and broadcast creative stories across our campus community. Officially inaugurated by Smt. Rashmi Roja Thushara Nair IAS, Bureau Director of the Press Information Bureau (PIB), the club features soundproof recording booths, digital audio mixers, and student-run production desks.
+          </p>
+
+          <!-- Core Pillars Grid -->
+          <h4 class="fw-bold text-dark mb-3 mt-4" style="font-size: 20px;">Key Features &amp; Student Advantages</h4>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="p-3 rounded-4 h-100 border bg-light">
+                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
+                  <i class="fa-solid fa-microphone-lines fs-5"></i>
+                  <h6 class="fw-bold text-dark mb-0">Confidence Building</h6>
+                </div>
+                <p class="text-muted small mb-0" style="line-height: 1.6;">Speaking into an acoustic studio microphone allows children to express themselves naturally and overcome public stage apprehension.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="p-3 rounded-4 h-100 border bg-light">
+                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
+                  <i class="fa-solid fa-bullhorn fs-5"></i>
+                  <h6 class="fw-bold text-dark mb-0">Public Speaking & Diction</h6>
+                </div>
+                <p class="text-muted small mb-0" style="line-height: 1.6;">Mastering voice modulation, pronunciation, cadence, and storytelling eloquence to communicate compelling narratives.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="p-3 rounded-4 h-100 border bg-light">
+                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
+                  <i class="fa-solid fa-pen-nib fs-5"></i>
+                  <h6 class="fw-bold text-dark mb-0">Journalistic Scripting</h6>
+                </div>
+                <p class="text-muted small mb-0" style="line-height: 1.6;">Drafting daily campus news updates, science trivia bulletins, cultural features, and interview question cues.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="p-3 rounded-4 h-100 border bg-light">
+                <div class="d-flex align-items-center gap-2 mb-2 text-danger">
+                  <i class="fa-solid fa-headphones fs-5"></i>
+                  <h6 class="fw-bold text-dark mb-0">Sound Engineering & Production</h6>
+                </div>
+                <p class="text-muted small mb-0" style="line-height: 1.6;">Students operate digital mixing consoles, sound effects software, and podcast recording workflows independently.</p>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="col-md-10">
-          <h4 class="fw-bold text-dark mb-2">Inaugurated by Press Information Bureau Leadership</h4>
-          <p class="text-secondary mb-2" style="font-size: 15.5px; line-height: 1.8;">
-            The club was officially inaugurated by <strong>Smt. Rashmi Roja Thushara Nair IAS</strong>, Bureau Director of the <em>Press Information Bureau (PIB)</em>. Her encouragement marked a milestone for student media and democratic voice expression at MGM Model School.
+      </div>
+
+      <!-- Right Column: Factsheet & Gallery -->
+      <div class="col-lg-5">
+        <!-- Quick Factsheet Card -->
+        <div class="card border-0 shadow-sm rounded-4 p-4 p-md-4 bg-white mb-4">
+          <h5 class="fw-bold text-dark mb-3 d-flex align-items-center gap-2">
+            <i class="fa-solid fa-list-check text-danger"></i> Facility Highlights at a Glance
+          </h5>
+          <div class="d-flex flex-column gap-3">
+            <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
+              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Inaugural Dignitary</span>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Smt. Rashmi Roja Thushara Nair IAS (Director PIB)</strong>
+            </div>
+            <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
+              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Broadcast Format</span>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Daily Campus Morning News, Announcements & Audio Podcasts</strong>
+            </div>
+            <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
+              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Studio Gear</span>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Acoustic Soundproofing, Broadcast Mics & Digital Mixers</strong>
+            </div>
+            <div class="p-3 rounded-3" style="background: #FDFBF8; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);">
+              <span class="text-uppercase text-muted fw-bold d-block" style="font-size: 11px; letter-spacing: 0.5px;">Student Roles</span>
+              <strong class="text-dark d-block mt-1" style="font-size: 14.5px;">Radio Jockeys, News Anchors, Scriptwriters & Sound Techs</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Related Highlights Links -->
+        <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
+          <h5 class="fw-bold text-dark mb-3 d-flex align-items-center gap-2">
+            <i class="fa-solid fa-compass text-primary"></i> Explore Other Highlights
+          </h5>
+          <div class="d-flex flex-column gap-2">
+            <a href="<?= rtrim(BASE_URL, '/') ?>/swimming-pool/" class="d-flex align-items-center gap-3 p-2 rounded-3 text-decoration-none border bg-light text-dark hover-shadow transition">
+              <img src="<?= rtrim(BASE_URL, '/') ?>/assets/images/swimming-pool-1.jpeg" alt="Swimming Pool" class="rounded-2" style="width: 50px; height: 50px; object-fit: cover;">
+              <div class="flex-grow-1">
+                <strong class="d-block small">Swimming Pool</strong>
+                <span class="text-muted" style="font-size: 11px;">Student Well-being & Facilities</span>
+              </div>
+              <i class="fa-solid fa-chevron-right text-muted small me-2"></i>
+            </a>
+            <a href="<?= rtrim(BASE_URL, '/') ?>/twenty-twenty-method/" class="d-flex align-items-center gap-3 p-2 rounded-3 text-decoration-none border bg-light text-dark hover-shadow transition">
+              <img src="<?= rtrim(BASE_URL, '/') ?>/assets/images/1741692636.jpeg" alt="20-20 Method of Teaching" class="rounded-2" style="width: 50px; height: 50px; object-fit: cover;">
+              <div class="flex-grow-1">
+                <strong class="d-block small">20-20 Method of Teaching</strong>
+                <span class="text-muted" style="font-size: 11px;">Academic & Innovation</span>
+              </div>
+              <i class="fa-solid fa-chevron-right text-muted small me-2"></i>
+            </a>
+            <a href="<?= rtrim(BASE_URL, '/') ?>/libraries-at-mgm/" class="d-flex align-items-center gap-3 p-2 rounded-3 text-decoration-none border bg-light text-dark hover-shadow transition">
+              <img src="<?= rtrim(BASE_URL, '/') ?>/assets/images/libraries-1.jpeg" alt="Libraries at MGM" class="rounded-2" style="width: 50px; height: 50px; object-fit: cover;">
+              <div class="flex-grow-1">
+                <strong class="d-block small">Libraries at MGM</strong>
+                <span class="text-muted" style="font-size: 11px;">Academic & Innovation</span>
+              </div>
+              <i class="fa-solid fa-chevron-right text-muted small me-2"></i>
+            </a>
+          </div>
+          <div class="mt-3 pt-3 border-top text-center">
+            <a href="<?= rtrim(BASE_URL, '/') ?>/highlights/" class="fw-bold text-danger text-decoration-none small">
+              View All 21 Campus Highlights <i class="fa-solid fa-arrow-right ms-1"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Interactive CTA Section -->
+    <div class="card border-0 rounded-4 p-4 p-md-5 text-white position-relative overflow-hidden" style="background: linear-gradient(135deg, #141B2B 0%, #2A1724 50%, #800000 100%);">
+      <div class="row align-items-center position-relative" style="z-index: 2;">
+        <div class="col-lg-8">
+          <span class="badge bg-danger mb-2 px-3 py-1">Experience MGM Model School</span>
+          <h3 class="fw-bold text-white mb-2">Witness Voice of MGM in Person</h3>
+          <p class="text-light mb-0" style="opacity: 0.9; font-size: 15px;">
+            Book a guided campus tour or schedule an interactive counseling consultation to explore our comprehensive infrastructure and academic opportunities.
           </p>
-          <span class="badge bg-light text-dark border px-3 py-2 small fw-semibold">
-            <i class="fa-solid fa-certificate text-danger me-1"></i> Official Bureau Director Inauguration
-          </span>
+        </div>
+        <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+          <div class="d-flex flex-wrap gap-2 justify-content-lg-end">
+            <a href="<?= rtrim(BASE_URL, '/') ?>/contact/" class="btn btn-light rounded-pill px-4 py-2 fw-bold text-dark shadow-sm">
+              Contact Admissions
+            </a>
+            <a href="<?= rtrim(BASE_URL, '/') ?>/admission-procedure/" class="btn btn-outline-light rounded-pill px-4 py-2 fw-bold">
+              Admission Details
+            </a>
+          </div>
         </div>
       </div>
     </div>

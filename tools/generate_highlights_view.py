@@ -24,8 +24,8 @@ highlights = [
         'category_name': 'Academic & Innovation',
         'image': 'assets/images/1741692636.jpeg',
         'icon': 'fa-solid fa-chalkboard-user',
-        'url': '#twenty-twenty-method',
-        'has_dedicated_page': False,
+        'url': '/twenty-twenty-method/',
+        'has_dedicated_page': True,
         'summary': 'Signature pedagogical approach dividing class sessions into 20 minutes of dynamic concept foundation followed by 20 minutes of interactive problem-solving and peer discussion.',
         'details': 'This method transforms passive classrooms into vibrant hubs of active inquiry. Teachers introduce core principles with multimedia smartboards, and the remaining 20 minutes are dedicated to problem-solving, group presentations, and individual mentoring.',
         'bullets': ['20 mins dynamic concept teaching & visual demos', '20 mins student practice, problem solving & peer discussion', 'Immediate doubt clearance and conceptual mastery', 'Boosts classroom attentiveness and student retention'],
@@ -39,8 +39,8 @@ highlights = [
         'category_name': 'Academic & Innovation',
         'image': 'assets/images/libraries-1.jpeg',
         'icon': 'fa-solid fa-book-open-reader',
-        'url': '#libraries-at-mgm',
-        'has_dedicated_page': False,
+        'url': '/libraries-at-mgm/',
+        'has_dedicated_page': True,
         'summary': 'Expansive library ecosystem offering thousands of literary masterpieces, scientific journals, encyclopedia collections, and quiet reading alcoves fostering lifelong inquiry.',
         'details': 'Features over 10,000 carefully curated titles spanning literature, science, humanities, and competitive exam preparations. Complemented by digital e-library terminals and dedicated reading corners for junior scholars.',
         'bullets': ['Over 10,000+ volumes, encyclopedias & scientific journals', 'Digital e-library terminals with online reference databases', 'Dedicated junior storybook corner for primary students', 'Peaceful, air-conditioned study alcoves for self-paced reading'],
@@ -54,8 +54,8 @@ highlights = [
         'category_name': 'Campus & Green Initiatives',
         'image': 'assets/images/poly-house-akshara-muttathe-krishithottam-3.jpeg',
         'icon': 'fa-solid fa-leaf',
-        'url': '#poly-house',
-        'has_dedicated_page': False,
+        'url': '/poly-house/',
+        'has_dedicated_page': True,
         'summary': 'Modern controlled-environment greenhouse facility educating learners in microclimate management, precision agriculture, drip irrigation, and sustainable horticulture.',
         'details': 'Serves as an experiential outdoor science laboratory where students observe how temperature, humidity, and ventilation impact plant development, empowering them with 21st-century agritech skills.',
         'bullets': ['UV-stabilized microclimate controlled greenhouse structure', 'Precision drip irrigation and automated moisture sensing', 'Year-round cultivation of high-value organic crops', 'Practical botantical and agricultural science education'],
@@ -69,8 +69,8 @@ highlights = [
         'category_name': 'Campus & Green Initiatives',
         'image': 'assets/images/poly-house-akshara-muttathe-krishithottam-1.jpeg',
         'icon': 'fa-solid fa-seedling',
-        'url': '#krishi-thottam',
-        'has_dedicated_page': False,
+        'url': '/krishi-thottam/',
+        'has_dedicated_page': True,
         'summary': 'Acclaimed campus organic farming project where students engage in soil preparation, sowing, organic composting, and harvesting indigenous produce.',
         'details': 'Honored with prestigious awards, this initiative connects urban learners with Kerala heritage farming techniques. Students nurture pesticide-free vegetables, learn organic composting, and develop enduring ecological consciousness.',
         'bullets': ['100% organic soil management and natural pest deterrents', 'Hands-on student participation from seed germination to harvest', 'District and state recognition for campus agriculture excellence', 'Instills deep appreciation for food sovereignty and farming labor'],
@@ -84,8 +84,8 @@ highlights = [
         'category_name': 'Student Well-being & Facilities',
         'image': 'assets/images/1750242823.jpeg',
         'icon': 'fa-solid fa-heart',
-        'url': '#amma-school',
-        'has_dedicated_page': False,
+        'url': '/amma-school/',
+        'has_dedicated_page': True,
         'summary': 'Unique collaborative forum bringing mothers and educators together for regular seminars on modern parenting, adolescent well-being, and values-based upbringing.',
         'details': 'Recognizing the mother as the first teacher, Amma School conducts interactive workshops on managing screen time, emotional resilience, balanced adolescent diet, and nurturing positive communication at home.',
         'bullets': ['Regular interactive workshops led by child psychologists', 'Supportive maternal community sharing parenting strategies', 'Focus on emotional wellness, nutrition, and digital screen balance', 'Strengthens the harmonious triangle of student, mother, and teacher'],
@@ -99,8 +99,8 @@ highlights = [
         'category_name': 'Campus & Green Initiatives',
         'image': 'assets/images/polyhouse-garden.jpeg',
         'icon': 'fa-solid fa-tree',
-        'url': '#vriksha-chikitsa',
-        'has_dedicated_page': False,
+        'url': '/vriksha-chikitsa/',
+        'has_dedicated_page': True,
         'summary': 'Traditional arboriculture and eco-healing initiative reviving ancient Ayurvedic plant care techniques to protect campus biodiversity and heal aged trees.',
         'details': 'Students study ancient botanical treatises, inspect campus tree health, formulate herbal healing paste for wounded trunks, and cultivate medicinal herb gardens, preserving traditional ecological wisdom.',
         'bullets': ['Ancient Ayurvedic arboriculture applied to campus flora', 'Herbal healing formulations to preserve century-old trees', 'Botanical tagging and medicinal properties mapping', 'Fosters holistic reverence for sacred campus ecosystems'],
@@ -114,8 +114,8 @@ highlights = [
         'category_name': 'Student Well-being & Facilities',
         'image': 'assets/images/1750242779.jpeg',
         'icon': 'fa-solid fa-comments',
-        'url': '#counselling-centre',
-        'has_dedicated_page': False,
+        'url': '/counselling-centre/',
+        'has_dedicated_page': True,
         'summary': 'Safe, empathetic psychological guidance and emotional wellness sanctuary staffed by qualified counselors dedicated to student mental health and resilience.',
         'details': 'Offers confidential individual counseling, stress management workshops, emotional intelligence sessions, and peer bonding circles ensuring that every student has guidance throughout academic and teenage growth.',
         'bullets': ['Confidential, non-judgmental student counseling sessions', 'Expert guidance through exam stress, anxiety, and teenage transitions', 'Proactive emotional wellness and mindfulness seminars', 'Parent-counselor consultations for unified emotional support'],
@@ -129,8 +129,8 @@ highlights = [
         'category_name': 'Academic & Innovation',
         'image': 'assets/images/1756461341.jpg',
         'icon': 'fa-solid fa-flask-vial',
-        'url': '#innovation-centre',
-        'has_dedicated_page': False,
+        'url': '/innovation-centre/',
+        'has_dedicated_page': True,
         'summary': 'Inaugurated by the Hon\'ble Governor of Kerala, this cutting-edge facility unites robotics, IoT electronics, 3D prototyping, and design thinking to nurture future innovators.',
         'details': 'Features dedicated maker spaces, advanced electronic test benches, microcontroller development kits, and prototyping equipment where students collaborate on practical problem-solving for national competitions.',
         'bullets': ['Inaugurated by Hon\'ble Governor of Kerala Shri Arif Mohammed Khan', 'High-precision 3D printers and rapid prototyping stations', 'Electronics breadboards, sensor modules, and IoT development kits', 'Student teams mentored for national STEM & robotics Olympiads'],
@@ -144,8 +144,8 @@ highlights = [
         'category_name': 'Student Well-being & Facilities',
         'image': 'assets/images/1750242752.jpeg',
         'icon': 'fa-solid fa-compass',
-        'url': '#gdc',
-        'has_dedicated_page': False,
+        'url': '/gdc/',
+        'has_dedicated_page': True,
         'summary': 'Guidance & Development Cell offering specialized career counseling, higher education planning, and competitive examination orientation for secondary students.',
         'details': 'GDC conducts psychometric aptitude profiling, university discovery sessions, entrance coaching guidance (JEE, NEET, CUET, NDA), and interaction with industry leaders to guide each student toward their ideal career.',
         'bullets': ['Personalized psychometric aptitude profiling and interest mapping', 'Structured foundation orientation for JEE, NEET, CUET, and NDA', 'University admissions guidance for top Indian and overseas campuses', 'Alumni mentoring networks and industry professional masterclasses'],
@@ -159,8 +159,8 @@ highlights = [
         'category_name': 'Skills & Cadet Corps',
         'image': 'assets/images/1750233724.jpeg',
         'icon': 'fa-solid fa-lightbulb',
-        'url': '#life-skills',
-        'has_dedicated_page': False,
+        'url': '/life-skills/',
+        'has_dedicated_page': True,
         'summary': 'Curriculum-integrated developmental framework focusing on critical thinking, ethical reasoning, financial literacy, communication, and emotional adaptability.',
         'details': 'Through experiential role-play, teamwork simulations, crisis decision-making exercises, and public speaking, students build foundational life competencies that extend far beyond textbook examinations.',
         'bullets': ['CBSE-aligned emotional self-regulation and empathy training', 'Financial literacy fundamentals: budgeting, saving, and value of money', 'Conflict resolution, active listening, and public speaking mastery', 'Digital etiquette, cyber safety awareness, and ethical leadership'],
@@ -189,8 +189,8 @@ highlights = [
         'category_name': 'Student Well-being & Facilities',
         'image': 'assets/images/school-canteen.jpeg',
         'icon': 'fa-solid fa-utensils',
-        'url': '#school-canteen',
-        'has_dedicated_page': False,
+        'url': '/school-canteen/',
+        'has_dedicated_page': True,
         'summary': 'Spotless, hygienic dining hall serving fresh, wholesome, balanced vegetarian meals and healthy snacks in accordance with strict dietary health regulations.',
         'details': 'Monitored continuously for sanitation and culinary excellence. Provides students and faculty with balanced, nutrient-dense meals, fresh seasonal juices, and pure RO drinking water in an inviting cafeteria environment.',
         'bullets': ['Spotless, spacious cafeteria with continuous sanitization', 'Nutritious vegetarian meals planned by health nutritionists', 'Zero artificial additives, preservatives, or deep-fried junk food', 'High-capacity RO drinking water filtration stations'],
@@ -204,8 +204,8 @@ highlights = [
         'category_name': 'Campus & Green Initiatives',
         'image': 'assets/images/butterfly-garden-1.jpeg',
         'icon': 'fa-solid fa-shapes',
-        'url': '#butterfly-garden',
-        'has_dedicated_page': False,
+        'url': '/butterfly-garden/',
+        'has_dedicated_page': True,
         'summary': 'Captivating biodiversity garden attracting colorful butterflies amidst native nectar flora, coupled with a safe adventure playground for early learners.',
         'details': 'Combines outdoor botanical exploration with joyous motor-skill play. Little ones explore butterfly life stages in nature while enjoying soft-landing play structures, swings, and climbing bridges.',
         'bullets': ['Host and nectar plant ecosystem supporting diverse butterfly species', 'Safe, certified soft-landing turf play equipment for little children', 'Experiential outdoor nature walks integrated with kindergarten curriculum', 'Sensory sandpits, toddler balancing logs, and shaded rest pergolas'],
@@ -219,8 +219,8 @@ highlights = [
         'category_name': 'Academic & Innovation',
         'image': 'assets/images/maths-zone-3d.jpeg',
         'icon': 'fa-solid fa-cube',
-        'url': '#3d-max-zone',
-        'has_dedicated_page': False,
+        'url': '/3d-max-zone/',
+        'has_dedicated_page': True,
         'summary': 'Specialised mathematics and spatial reasoning lab equipped with tangible geometric solids, coordinate frames, and 3D manipulative models.',
         'details': 'Enables students to touch, assemble, and deconstruct complex geometric shapes, vectors, conic sections, and algebraic graphs, turning complex mathematics into an intuitive physical reality.',
         'bullets': ['Tangible physical models of polyhedra, cylinders, cones, and spheres', 'Coordinate geometry 3D projection boards and vector apparatus', 'Hands-on exploration turning abstract mathematical theorems into reality', 'Sparks spatial intuition, structural reasoning, and architecture interest'],
@@ -234,8 +234,8 @@ highlights = [
         'category_name': 'Academic & Innovation',
         'image': 'assets/images/omnis-robot.jpeg',
         'icon': 'fa-solid fa-robot',
-        'url': '#ominis',
-        'has_dedicated_page': False,
+        'url': '/ominis/',
+        'has_dedicated_page': True,
         'summary': 'MGM\'s state-of-the-art interactive humanoid robot companion that engages students in conversations, explains scientific phenomena, and showcases real-world AI.',
         'details': 'Ominis interacts during exhibitions, campus events, and tech workshops. Powered by speech recognition, natural language processing, and robotic actuators, Ominis makes future AI technology touchable.',
         'bullets': ['Speech recognition and conversational AI dialogue capabilities', 'Demonstrates kinematics, servo motor control, and sensory response', 'Featured during prestigious gubernatorial and scientific campus visits', 'Inspires students to pursue robotics, AI, and mechatronics engineering'],
@@ -249,8 +249,8 @@ highlights = [
         'category_name': 'Academic & Innovation',
         'image': 'assets/images/1756461341.jpg',
         'icon': 'fa-solid fa-microchip',
-        'url': '#nova-ai-hub',
-        'has_dedicated_page': False,
+        'url': '/nova-ai-hub/',
+        'has_dedicated_page': True,
         'summary': 'Dedicated AI innovation and introductory robotics studio for junior and primary learners featuring modular Cubelets, MIKO AI robots, and block coding.',
         'details': 'Designed to cultivate computational literacy without screen burnout. Young minds combine magnetic sensor blocks, learn logical cause-and-effect algorithms, and build intelligent robotic contraptions.',
         'bullets': ['Cubelets modular robotics: magnetic sense, think, and act blocks', 'MIKO intelligent student companion robots for interactive problem solving', 'Tangible block-based coding developing foundational algorithmic logic', 'Screen-healthy exploratory learning tailored for primary grades'],
@@ -294,8 +294,8 @@ highlights = [
         'category_name': 'Skills & Cadet Corps',
         'image': 'assets/images/investiture-ceremony.jpeg',
         'icon': 'fa-solid fa-drum',
-        'url': '#school-band-troop',
-        'has_dedicated_page': False,
+        'url': '/school-band-troop/',
+        'has_dedicated_page': True,
         'summary': 'Ceremonial marching brass and percussion band troop performing synchronized drills, patriotic anthems, and martial salutes with precision.',
         'details': 'Features side drummers, bass drummers, buglers, and cymbal players dressed in ceremonial regalia. The troop leads all school investitures, annual sports meets, Independence Day parades, and regional contests.',
         'bullets': ['Synchronized marching formations, military drills, and drumline beats', 'Trained on bass drums, side snare drums, tenor drums, bugles, and cymbals', 'Honors state and national dignitaries during ceremonial campus parades', 'Cultivates collective team rhythm, discipline, and performance stage confidence'],
@@ -309,8 +309,8 @@ highlights = [
         'category_name': 'Student Well-being & Facilities',
         'image': 'assets/images/1750242382.jpeg',
         'icon': 'fa-solid fa-face-smile',
-        'url': '#happiness-room',
-        'has_dedicated_page': False,
+        'url': '/happiness-room/',
+        'has_dedicated_page': True,
         'summary': 'Serene emotional rejuvenation sanctuary designed with sensory calming corners, mindfulness meditation spaces, and creative expressive art therapy.',
         'details': 'Created to alleviate academic tension and nurture positive mindset. Students visit during stress-relief intervals to practice guided breathing, engage in relaxing art therapy, and recharge mental stamina.',
         'bullets': ['Sound-dampened peaceful acoustic environment with warm natural light', 'Sensory relaxation zones with comfortable beanbags and meditation mats', 'Expressive art therapy supplies, mandalas, and calming mindfulness puzzles', 'Nurtures emotional balance, gratitude practices, and student happiness'],
@@ -434,10 +434,12 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
             
             <!-- Thumbnail & Badges -->
             <div class="highlight-thumb-wrap">
-              <img src="<?= asset_url(ltrim($h['image'], 'assets/')) ?>" 
-                   alt="<?= e($h['title']) ?>" 
-                   class="highlight-thumb-img" 
-                   loading="lazy">
+              <a href="<?= rtrim(BASE_URL, '/') ?>/<?= e($h['id']) ?>/" class="d-block w-100 h-100">
+                <img src="<?= asset_url(ltrim($h['image'], 'assets/')) ?>" 
+                     alt="<?= e($h['title']) ?>" 
+                     class="highlight-thumb-img" 
+                     loading="lazy">
+              </a>
               
               <span class="highlight-category-tag">
                 <?= e($h['category_name']) ?>
@@ -452,7 +454,9 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
             <div class="highlight-card-body">
               <h3 class="highlight-card-title">
                 <i class="<?= e($h['icon']) ?>"></i>
-                <span><?= e($h['title']) ?></span>
+                <a href="<?= rtrim(BASE_URL, '/') ?>/<?= e($h['id']) ?>/" class="text-dark text-decoration-none hover-danger">
+                  <span><?= e($h['title']) ?></span>
+                </a>
               </h3>
 
               <p class="highlight-card-desc">
@@ -480,15 +484,9 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
                   Quick Overview <i class="fa-solid fa-circle-info ms-1"></i>
                 </button>
 
-                <?php if ($h['has_dedicated_page']): ?>
-                  <a href="<?= e(url($h['url'])) ?>" class="highlight-btn-action text-danger fw-bold" title="View Dedicated Page">
-                    Full Page <i class="fa-solid fa-arrow-right ms-1"></i>
-                  </a>
-                <?php else: ?>
-                  <a href="#<?= e($h['id']) ?>" class="highlight-btn-action" title="Copy Direct Link to Highlight" onclick="navigator.clipboard.writeText(window.location.origin + window.location.pathname + '#<?= e($h['id']) ?>'); alert('Link copied to clipboard!'); return false;">
-                    <i class="fa-solid fa-share-nodes"></i>
-                  </a>
-                <?php endif; ?>
+                <a href="<?= rtrim(BASE_URL, '/') ?>/<?= e($h['id']) ?>/" class="highlight-btn-action text-danger fw-bold" title="View Dedicated Page">
+                  Full Page <i class="fa-solid fa-arrow-right ms-1"></i>
+                </a>
               </div>
 
             </div>
