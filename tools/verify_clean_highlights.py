@@ -12,6 +12,8 @@ checks = [
     ("/amma-school/", "assets/images/amma-school-clean.jpeg"),
     ("/voice-of-mgm/", "assets/images/voice-of-mgm-clean.jpeg"),
     ("/happiness-room/", "assets/images/happiness-room-clean.jpeg"),
+    ("/school-band-troop/", "assets/images/school-band-troop.jpeg"),
+    ("/highlights/", "assets/images/school-band-troop.jpeg"),
     ("/highlights/", "assets/images/gdc-clean.jpeg"),
     ("/highlights/", "assets/images/voice-of-mgm-clean.jpeg"),
     ("/highlights/", "assets/images/happiness-room-clean.jpeg"),

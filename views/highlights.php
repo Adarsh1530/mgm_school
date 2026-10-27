@@ -457,7 +457,7 @@ $highlights = json_decode(<<<'JSON'
     "title": "School Band Troop",
     "category_key": "skills",
     "category_name": "Skills & Cadet Corps",
-    "image": "assets/images/investiture-ceremony.jpeg",
+    "image": "assets/images/school-band-troop.jpeg",
     "icon": "fa-solid fa-drum",
     "url": "/school-band-troop/",
     "has_dedicated_page": true,
