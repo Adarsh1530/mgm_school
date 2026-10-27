@@ -641,13 +641,12 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
           
           <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white" id="<?= e($h['id']) ?>">
             
-            <!-- Thumbnail & Badges -->
-            <div class="position-relative" style="height: 220px; overflow: hidden;">
-              <a href="<?= rtrim(BASE_URL, '/') ?>/<?= e($h['id']) ?>/" class="d-block w-100 h-100">
+            <!-- Thumbnail & Badges (Exact Natural Ratio, No Forced Crop) -->
+            <div class="position-relative" style="height: 240px; background: #f8fafc; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+              <a href="<?= rtrim(BASE_URL, '/') ?>/<?= e($h['id']) ?>/" class="d-flex align-items-center justify-content-center w-100 h-100 p-2">
                 <img src="<?= asset_url(ltrim($h['image'], 'assets/')) ?>" 
                      alt="<?= e($h['title']) ?>" 
-                     class="w-100 h-100" 
-                     style="object-fit: cover; transition: transform 0.4s ease;"
+                     style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; transition: transform 0.4s ease;"
                      loading="lazy">
               </a>
               
@@ -729,8 +728,8 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
       <div class="modal-body p-4">
         <div class="row g-4">
           <div class="col-md-5">
-            <div class="rounded-3 overflow-hidden shadow-sm" style="height: 240px;">
-              <img id="highlightModalImage" src="" alt="Highlight" class="w-100 h-100" style="object-fit: cover;">
+            <div class="rounded-3 overflow-hidden shadow-sm p-2" style="height: 240px; background: #f8fafc; display: flex; align-items: center; justify-content: center;">
+              <img id="highlightModalImage" src="" alt="Highlight" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
             </div>
           </div>
           <div class="col-md-7">

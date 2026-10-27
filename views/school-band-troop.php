@@ -50,14 +50,12 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
       </div>
     </div>
 
-    <!-- Featured High-Resolution Showcase Image -->
-    <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-5 bg-white">
-      <div class="position-relative" style="max-height: 520px; overflow: hidden;">
-        <img src="<?= rtrim(BASE_URL, '/') ?>/assets/images/investiture-ceremony.jpeg" alt="School Band Troop" class="w-100 h-100" style="object-fit: cover; min-height: 380px; max-height: 520px;">
-        <div class="position-absolute bottom-0 start-0 w-100 p-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
-          <span class="badge bg-danger px-3 py-2 rounded-pill fw-bold"><i class="fa-solid fa-drum me-1"></i> School Band Troop</span>
-        </div>
-      </div>
+        <!-- Showcase Image (Exact Natural Ratio, No Cropping Frame) -->
+    <div class="mb-5 text-center">
+      <img src="<?= rtrim(BASE_URL, '/') ?>/assets/images/investiture-ceremony.jpeg" 
+           alt="School Band Troop" 
+           class="img-fluid rounded-4 shadow-sm" 
+           style="max-width: 100%; height: auto; max-height: 640px; object-fit: contain; display: inline-block;">
     </div>
 
     <!-- In-Depth Content & Factsheet -->
