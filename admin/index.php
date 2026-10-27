@@ -20,7 +20,12 @@ $disclosuresCount = (int)$db->query("SELECT COUNT(*) FROM mandatory_disclosures"
 $galleryCount = (int)$db->query("SELECT COUNT(*) FROM gallery")->fetchColumn();
 
 // Popup Notification Status
-$popupActive = (get_setting('popup_enabled', '0') === '1' && !empty(get_setting('popup_image_url', '')));
+$popupActive = false;
+try {
+    $popupActive = (int)$db->query("SELECT COUNT(*) FROM popups WHERE is_active = 1")->fetchColumn() > 0;
+} catch (\Throwable $e) {
+    $popupActive = (get_setting('popup_enabled', '0') === '1' && !empty(get_setting('popup_image_url', '')));
+}
 
 require_once __DIR__ . '/header.php';
 ?>

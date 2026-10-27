@@ -116,6 +116,22 @@ function set_setting(string $key, string $value): bool {
  * Get active image popup notification if enabled and within date range
  */
 function get_popup_notification(): ?array {
+    try {
+        $db = getDB();
+        $stmt = $db->query("SELECT * FROM popups WHERE is_active = 1 ORDER BY updated_at DESC, id DESC LIMIT 1");
+        $popup = $stmt ? $stmt->fetch() : null;
+        if ($popup && !empty($popup['image_url'])) {
+            return [
+                'enabled'   => true,
+                'image_url' => $popup['image_url'],
+                'title'     => $popup['title'] ?? 'Special Announcement',
+                'link_url'  => $popup['link_url'] ?? '',
+            ];
+        }
+    } catch (\Throwable $e) {
+        // Fallback to site_settings if popups table not available
+    }
+
     $enabled = get_setting('popup_enabled', '0');
     $imageUrl = get_setting('popup_image_url', '');
 
@@ -123,25 +139,11 @@ function get_popup_notification(): ?array {
         return null;
     }
 
-    $today = date('Y-m-d');
-    $startDate = get_setting('popup_start_date', '');
-    $endDate = get_setting('popup_end_date', '');
-
-    if (!empty($startDate) && $today < $startDate) {
-        return null;
-    }
-
-    if (!empty($endDate) && $today > $endDate) {
-        return null;
-    }
-
     return [
-        'enabled'    => true,
-        'image_url'  => $imageUrl,
-        'title'      => get_setting('popup_title', 'Special Announcement'),
-        'link_url'   => get_setting('popup_link_url', ''),
-        'start_date' => $startDate,
-        'end_date'   => $endDate,
+        'enabled'   => true,
+        'image_url' => $imageUrl,
+        'title'     => get_setting('popup_title', 'Special Announcement'),
+        'link_url'  => get_setting('popup_link_url', ''),
     ];
 }
 

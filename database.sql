@@ -2008,6 +2008,22 @@ INSERT INTO `site_settings` VALUES
 ('23', 'popup_start_date', ''),
 ('24', 'popup_end_date', '');
 
+DROP TABLE IF EXISTS `popups`;
+CREATE TABLE `popups` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `image_url` varchar(500) NOT NULL,
+  `link_url` varchar(500) DEFAULT '',
+  `is_active` tinyint(1) NOT NULL DEFAULT 0,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `popups` (`id`, `title`, `image_url`, `link_url`, `is_active`, `created_at`, `updated_at`) VALUES
+(1, 'Admissions Open 2026-27', 'assets/images/popups/popup_1793102512_WhatsApp_Image_2026-10-27_at_9.40.20_AM.jpeg', '/admission-procedure/', 1, '2026-10-27 09:40:20', '2026-10-27 09:40:20'),
+(2, 'Admissions Open 2026-27 Infographic Flyer', 'assets/images/admission-procedure-infographic.jpeg', '/admission-procedure/', 0, '2026-10-24 10:00:00', '2026-10-24 10:00:00');
+
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
