@@ -210,11 +210,12 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
   display: flex;
   align-items: center;
   background: #FFFFFF;
-  border: 1.5px solid #E2E8F0;
+  border: 1.5px solid #CBD5E1;
   border-radius: 9999px;
-  padding: 0.35rem 0.5rem 0.35rem 1.25rem;
+  padding: 0.25rem 0.75rem 0.25rem 1.25rem;
   box-shadow: 0 4px 15px rgba(6, 43, 92, 0.05);
   transition: all 0.25s ease;
+  overflow: hidden;
 }
 
 .gallery-search-box:focus-within {
@@ -233,19 +234,46 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
   color: #0B4EA2;
 }
 
+/* Remove any inner rectangle/box/border from the input */
+.gallery-search-box input[type="text"].gallery-search-input,
+.gallery-search-box input.gallery-search-input,
 .gallery-search-input {
-  flex: 1;
-  border: none;
-  background: transparent;
-  outline: none;
-  font-family: inherit;
-  font-size: 0.95rem;
-  color: #0B1329;
-  padding: 0.5rem 0;
+  flex: 1 !important;
+  border: none !important;
+  border-width: 0 !important;
+  border-color: transparent !important;
+  border-style: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  height: auto !important;
+  min-height: auto !important;
+  max-height: none !important;
+  line-height: 1.5 !important;
+  padding: 0.65rem 0.5rem 0.65rem 0.25rem !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  width: 100% !important;
+  color: #0B1329 !important;
+  font-family: inherit !important;
+  font-size: 0.95rem !important;
+}
+
+.gallery-search-box input[type="text"].gallery-search-input:focus,
+.gallery-search-box input.gallery-search-input:focus,
+.gallery-search-input:focus {
+  border: none !important;
+  border-width: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
 }
 
 .gallery-search-input::placeholder {
-  color: #94A3B8;
+  color: #94A3B8 !important;
+  opacity: 1 !important;
 }
 
 .gallery-search-clear {
