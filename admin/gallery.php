@@ -826,17 +826,16 @@ require_once __DIR__ . '/header.php';
         <tr>
           <th style="width: 100px; text-align: center;">Order (#)</th>
           <th style="width: 90px; text-align: center;">Main Image</th>
-          <th style="width: 30%;">Event Title & Details</th>
+          <th>Event Title &amp; Details</th>
           <th style="width: 160px;">Uploaded Date</th>
           <th style="width: 130px; text-align: center;">Sub-Images</th>
-          <th style="width: 20%;">Active Target Sections</th>
-          <th style="width: 110px; text-align: center;">Actions</th>
+          <th style="width: 120px; text-align: center;">Actions</th>
         </tr>
       </thead>
       <tbody>
         <?php if (empty($galleryEvents)): ?>
           <tr>
-            <td colspan="7" class="text-center py-5 text-muted">
+            <td colspan="6" class="text-center py-5 text-muted">
               No gallery events found. Click <strong>+ Upload New Gallery Event</strong> above to add your first event.
             </td>
           </tr>
@@ -894,26 +893,19 @@ require_once __DIR__ . '/header.php';
                 </span>
               </td>
 
-              <!-- Active Target Sections -->
-              <td>
-                <?php if (is_array($sections)): ?>
-                  <?php foreach ($sections as $sec): ?>
-                    <span class="badge-target-section"><?= strtoupper(e($sec)) ?></span>
-                  <?php endforeach; ?>
-                <?php endif; ?>
-              </td>
-
               <!-- Actions -->
-              <td class="text-center">
-                <button type="button" class="btn-action-edit" onclick='openEditModal(<?= json_encode($ev, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP) ?>);'>
-                  Edit
-                </button>
-                <form method="POST" action="<?= ADMIN_URL ?>/gallery.php" style="display:inline;" onsubmit="return confirm('Delete this gallery event?');">
-                  <input type="hidden" name="csrf_token" value="<?= csrf_token() ?>">
-                  <input type="hidden" name="action" value="delete">
-                  <input type="hidden" name="id" value="<?= $ev['id'] ?>">
-                  <button type="submit" class="btn-action-delete">Delete</button>
-                </form>
+              <td class="text-center" style="white-space: nowrap;">
+                <div class="d-inline-flex align-items-center justify-content-center gap-1">
+                  <button type="button" class="btn-action-edit" onclick='openEditModal(<?= json_encode($ev, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP) ?>);'>
+                    Edit
+                  </button>
+                  <form method="POST" action="<?= ADMIN_URL ?>/gallery.php" style="display:inline; margin:0;" onsubmit="return confirm('Delete this gallery event?');">
+                    <input type="hidden" name="csrf_token" value="<?= csrf_token() ?>">
+                    <input type="hidden" name="action" value="delete">
+                    <input type="hidden" name="id" value="<?= $ev['id'] ?>">
+                    <button type="submit" class="btn-action-delete">Delete</button>
+                  </form>
+                </div>
               </td>
 
             </tr>
@@ -985,36 +977,7 @@ require_once __DIR__ . '/header.php';
             </div>
           </div>
 
-          <!-- Row 4: Select Public Site Sections For Main Image Highlight -->
-          <div class="mb-4">
-            <label class="bvb-field-label">SELECT PUBLIC SITE SECTIONS FOR MAIN IMAGE HIGHLIGHT:</label>
-            <div class="bvb-checkbox-group">
-              <label class="bvb-checkbox-label">
-                <input type="checkbox" name="target_sections[]" value="WELCOME TO MGM MODEL SCHOOL" class="section-checkbox">
-                WELCOME TO MGM MODEL SCHOOL
-              </label>
-              <label class="bvb-checkbox-label">
-                <input type="checkbox" name="target_sections[]" value="MOMENTS AT SCHOOL (gallery)" class="section-checkbox" checked>
-                MOMENTS AT SCHOOL (gallery)
-              </label>
-              <label class="bvb-checkbox-label">
-                <input type="checkbox" name="target_sections[]" value="WHAT'S HAPPENING" class="section-checkbox">
-                WHAT'S HAPPENING
-              </label>
-              <label class="bvb-checkbox-label">
-                <input type="checkbox" name="target_sections[]" value="LIFE AT SCHOOL" class="section-checkbox">
-                LIFE AT SCHOOL
-              </label>
-              <label class="bvb-checkbox-label">
-                <input type="checkbox" name="target_sections[]" value="A CAMPUS FOR DISCOVERY" class="section-checkbox">
-                A CAMPUS FOR DISCOVERY
-              </label>
-              <label class="bvb-checkbox-label">
-                <input type="checkbox" name="target_sections[]" value="ACADEMIC ENVIRONMENT" class="section-checkbox">
-                ACADEMIC ENVIRONMENT
-              </label>
-            </div>
-          </div>
+          <input type="hidden" name="target_sections[]" value="MOMENTS (GALLERY)">
 
           <!-- Section 5: Main Highlight Image -->
           <div class="bvb-upload-panel">
@@ -1150,13 +1113,6 @@ function openEditModal(eventData) {
   const tagUpper = Array.isArray(rawTags) ? rawTags.map(t => t.toUpperCase()) : [];
   document.querySelectorAll('.tag-checkbox').forEach(cb => {
     cb.checked = tagUpper.includes(cb.value.toUpperCase());
-  });
-
-  // Target sections checkboxes
-  const rawSec = eventData.target_sections ? JSON.parse(eventData.target_sections) : ['MOMENTS (GALLERY)'];
-  const secUpper = Array.isArray(rawSec) ? rawSec.map(s => s.toUpperCase()) : [];
-  document.querySelectorAll('.section-checkbox').forEach(cb => {
-    cb.checked = secUpper.some(s => s.includes(cb.value.toUpperCase()) || cb.value.toUpperCase().includes(s));
   });
 
   // Populate sub-images
