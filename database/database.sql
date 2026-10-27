@@ -192,25 +192,43 @@ INSERT INTO `navigation` VALUES
 ('1', 'Home', '/', NULL, '1', '_self'),
 ('2', 'About Us', '#', NULL, '2', '_self'),
 ('3', 'Academics', '#', NULL, '3', '_self'),
-('4', 'Activities', '#', NULL, '4', '_self'),
-('5', 'Mandatory Disclosure', '/mandatory-disclosure/', NULL, '7', '_self'),
-('6', 'Contact', '/contact/', NULL, '8', '_self'),
+('4', 'Activities', '#', NULL, '5', '_self'),
+('5', 'Mandatory Disclosure', '/mandatory-disclosure/', NULL, '8', '_self'),
+('6', 'Contact', '/contact/', NULL, '9', '_self'),
 ('7', 'Our Founder', '/our-founder/', '2', '2', '_self'),
 ('8', 'Vision & Mission', '/our-mission/', '2', '3', '_self'),
 ('9', 'About Us', '/about-us/', '2', '1', '_self'),
 ('10', 'Courses Offered', '/courses-offered/', '3', '1', '_self'),
 ('11', 'Admission Procedure', '/admission-procedure/', '3', '2', '_self'),
 ('12', 'Attendance', '/attendance/', '3', '3', '_self'),
-('13', 'NCC', '/ncc/', '4', '1', '_self'),
-('14', 'Swimming Pool', '/swimming-pool/', '4', '2', '_self'),
-('15', 'Hindustan Scouts & Guides', '/hindustan-scouts-guides/', '4', '3', '_self'),
-('16', 'Voice Of MGM', '/voice-of-mgm/', '4', '4', '_self'),
-('17', 'Yoga', '/yoga/', '4', '5', '_self'),
-('18', 'Merit Day', '/merit-day/', '4', '6', '_self'),
-('19', 'PTA', '/pta/', '4', '7', '_self'),
-('20', 'Alumni', '/alumni/', '4', '8', '_self'),
-('21', 'Gallery', '/gallery/', NULL, '5', '_self'),
-('22', 'Notices', '/notices/', NULL, '6', '_self');
+('17', 'Yoga', '/yoga/', '4', '1', '_self'),
+('18', 'Merit Day', '/merit-day/', '4', '2', '_self'),
+('19', 'PTA', '/pta/', '4', '3', '_self'),
+('20', 'Alumni', '/alumni/', '4', '4', '_self'),
+('21', 'Gallery', '/gallery/', NULL, '6', '_self'),
+('22', 'Notices', '/notices/', NULL, '7', '_self'),
+('23', 'Highlights', '/highlights/', NULL, '4', '_self'),
+('24', 'Swimming Pool', '/swimming-pool/', '23', '1', '_self'),
+('25', '20-20 Method of Teaching', '/highlights/#twenty-twenty-method', '23', '2', '_self'),
+('26', 'Libraries at MGM', '/highlights/#libraries-at-mgm', '23', '3', '_self'),
+('27', 'Poly House', '/highlights/#poly-house', '23', '4', '_self'),
+('28', 'Akshara Muttathe Krishi Thottam', '/highlights/#krishi-thottam', '23', '5', '_self'),
+('29', 'Amma School', '/highlights/#amma-school', '23', '6', '_self'),
+('30', 'Vriksha Chikitsa', '/highlights/#vriksha-chikitsa', '23', '7', '_self'),
+('31', 'Counselling Centre', '/highlights/#counselling-centre', '23', '8', '_self'),
+('32', 'Innovation Centre', '/highlights/#innovation-centre', '23', '9', '_self'),
+('33', 'GDC', '/highlights/#gdc', '23', '10', '_self'),
+('34', 'Life Skills', '/highlights/#life-skills', '23', '11', '_self'),
+('35', 'Voice of MGM', '/voice-of-mgm/', '23', '12', '_self'),
+('36', 'School Canteen', '/highlights/#school-canteen', '23', '13', '_self'),
+('37', 'Butterfly Garden and Kids Zone', '/highlights/#butterfly-garden', '23', '14', '_self'),
+('38', '3D Max Zone', '/highlights/#3d-max-zone', '23', '15', '_self'),
+('39', 'Ominis', '/highlights/#ominis', '23', '16', '_self'),
+('40', 'NOVA AI Hub', '/highlights/#nova-ai-hub', '23', '17', '_self'),
+('41', 'NCC', '/ncc/', '23', '18', '_self'),
+('42', 'Hindustan Scouts and Guides', '/hindustan-scouts-guides/', '23', '19', '_self'),
+('43', 'School Band Troop', '/highlights/#school-band-troop', '23', '20', '_self'),
+('44', 'Happiness Room', '/highlights/#happiness-room', '23', '21', '_self');
 
 DROP TABLE IF EXISTS `newsletter_subscribers`;
 CREATE TABLE `newsletter_subscribers` (
@@ -273,7 +291,1365 @@ CREATE TABLE `pages` (
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `pages` VALUES
-('1', '16051', 'mandatory-disclosure', 'Mandatory Disclosure', 'Mandatory Disclosure', 'Mandatory Disclosure', '		<div data-elementor-type=\"wp-page\" data-elementor-id=\"16051\" class=\"elementor elementor-16051\" data-elementor-post-type=\"page\">\n				<div class=\"elementor-element elementor-element-5273ec4 e-flex e-con-boxed e-con e-parent\" data-id=\"5273ec4\" data-element_type=\"container\" data-e-type=\"container\">\n					<div class=\"e-con-inner\">\n		<div class=\"elementor-element elementor-element-70902a8 e-con-full e-flex e-con e-child\" data-id=\"70902a8\" data-element_type=\"container\" data-e-type=\"container\">\n		<div class=\"elementor-element elementor-element-35c8627 e-grid e-con-full e-con e-child\" data-id=\"35c8627\" data-element_type=\"container\" data-e-type=\"container\">\n				<div class=\"elementor-element elementor-element-76397cd elementor-position-top elementor-widget elementor-widget-image-box\" data-id=\"76397cd\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image-box.default\">\n					<div class=\"elementor-image-box-wrapper\"><figure class=\"elementor-image-box-img\"><a href=\"assets/docs/1737025323273-SARAS-5.0.pdf\" tabindex=\"-1\" target=\"_blank\" rel=\"noopener noreferrer\"><img decoding=\"async\" width=\"128\" height=\"128\" src=\"assets/images/download-pdf.png\" class=\"attachment-full size-full wp-image-16053\" alt=\"\" /></a></figure><div class=\"elementor-image-box-content\"><h3 class=\"elementor-image-box-title\"><a href=\"assets/docs/1737025323273-SARAS-5.0.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Saras</a></h3></div></div>				</div>\n				<div class=\"elementor-element elementor-element-7aff9bb elementor-position-top elementor-widget elementor-widget-image-box\" data-id=\"7aff9bb\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image-box.default\">\n					<div class=\"elementor-image-box-wrapper\"><figure class=\"elementor-image-box-img\"><img decoding=\"async\" width=\"128\" height=\"128\" src=\"assets/images/download-pdf.png\" class=\"attachment-full size-full wp-image-16053\" alt=\"\" /></figure><div class=\"elementor-image-box-content\"><h3 class=\"elementor-image-box-title\">REVISED PERFORMA</h3></div></div>				</div>\n				<div class=\"elementor-element elementor-element-6c972c7 elementor-position-top elementor-widget elementor-widget-image-box\" data-id=\"6c972c7\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image-box.default\">\n					<div class=\"elementor-image-box-wrapper\"><figure class=\"elementor-image-box-img\"><a href=\"assets/docs/1733382575212-AFFILIATION.pdf\"  tabindex=\"-1\" target=\"_blank\" rel=\"noopener noreferrer\"><img decoding=\"async\" width=\"128\" height=\"128\" src=\"assets/images/download-pdf.png\" class=\"attachment-full size-full wp-image-16053\" alt=\"\" /></a></figure><div class=\"elementor-image-box-content\"><h3 class=\"elementor-image-box-title\"><a href=\"assets/docs/1733382575212-AFFILIATION.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">AFFILIATION</a></h3></div></div>				</div>\n				<div class=\"elementor-element elementor-element-9140af1 elementor-position-top elementor-widget elementor-widget-image-box\" data-id=\"9140af1\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image-box.default\">\n					<div class=\"elementor-image-box-wrapper\"><figure class=\"elementor-image-box-img\"><img decoding=\"async\" width=\"128\" height=\"128\" src=\"assets/images/download-pdf.png\" class=\"attachment-full size-full wp-image-16053\" alt=\"\" /></figure><div class=\"elementor-image-box-content\"><h3 class=\"elementor-image-box-title\">Student Strength</h3></div></div>				</div>\n				<div class=\"elementor-element elementor-element-81941aa elementor-position-top elementor-widget elementor-widget-image-box\" data-id=\"81941aa\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image-box.default\">\n					<div class=\"elementor-image-box-wrapper\"><figure class=\"elementor-image-box-img\"><a href=\"assets/docs/1750226400981-SCHOOL-FEE-2025-26.pdf\"  tabindex=\"-1\" target=\"_blank\" rel=\"noopener noreferrer\"><img decoding=\"async\" width=\"128\" height=\"128\" src=\"assets/images/download-pdf.png\" class=\"attachment-full size-full wp-image-16053\" alt=\"\" /></a></figure><div class=\"elementor-image-box-content\"><h3 class=\"elementor-image-box-title\"><a href=\"assets/docs/1750226400981-SCHOOL-FEE-2025-26.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">FEE STRUCTURE</a></h3></div></div>				</div>\n				<div class=\"elementor-element elementor-element-7c776a5 elementor-position-top elementor-widget elementor-widget-image-box\" data-id=\"7c776a5\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image-box.default\">\n					<div class=\"elementor-image-box-wrapper\"><figure class=\"elementor-image-box-img\"><a href=\"assets/docs/1750226704411-cbse-results-from-2019.pdf\"  tabindex=\"-1\" target=\"_blank\" rel=\"noopener noreferrer\"><img decoding=\"async\" width=\"128\" height=\"128\" src=\"assets/images/download-pdf.png\" class=\"attachment-full size-full wp-image-16053\" alt=\"\" /></a></figure><div class=\"elementor-image-box-content\"><h3 class=\"elementor-image-box-title\"><a href=\"assets/docs/1750226704411-cbse-results-from-2019.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">RESULT ANALYSIS</a></h3></div></div>				</div>\n				<div class=\"elementor-element elementor-element-671b13e elementor-position-top elementor-widget elementor-widget-image-box\" data-id=\"671b13e\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image-box.default\">\n					<div class=\"elementor-image-box-wrapper\"><figure class=\"elementor-image-box-img\"><img decoding=\"async\" width=\"128\" height=\"128\" src=\"assets/images/download-pdf.png\" class=\"attachment-full size-full wp-image-16053\" alt=\"\" /></figure><div class=\"elementor-image-box-content\"><h3 class=\"elementor-image-box-title\">Student Strength</h3></div></div>				</div>\n				<div class=\"elementor-element elementor-element-378e053 elementor-position-top elementor-widget elementor-widget-image-box\" data-id=\"378e053\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image-box.default\">\n					<div class=\"elementor-image-box-wrapper\"><figure class=\"elementor-image-box-img\"><a href=\"assets/docs/1733383672169-BUILDING-SAFETY-CERTIFICATE.pdf\"  tabindex=\"-1\" target=\"_blank\" rel=\"noopener noreferrer\"><img decoding=\"async\" width=\"128\" height=\"128\" src=\"assets/images/download-pdf.png\" class=\"attachment-full size-full wp-image-16053\" alt=\"\" /></a></figure><div class=\"elementor-image-box-content\"><h3 class=\"elementor-image-box-title\"><a href=\"assets/docs/1733383672169-BUILDING-SAFETY-CERTIFICATE.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">BUILDING SAFETY CERTIFICATE</a></h3></div></div>				</div>\n				<div class=\"elementor-element elementor-element-898fec8 elementor-position-top elementor-widget elementor-widget-image-box\" data-id=\"898fec8\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image-box.default\">\n					<div class=\"elementor-image-box-wrapper\"><figure class=\"elementor-image-box-img\"><a href=\"assets/docs/1733383617275-FIRE-SAFETY-CERTIFICATE.pdf\"  tabindex=\"-1\" target=\"_blank\" rel=\"noopener noreferrer\"><img decoding=\"async\" width=\"128\" height=\"128\" src=\"assets/images/download-pdf.png\" class=\"attachment-full size-full wp-image-16053\" alt=\"\" /></a></figure><div class=\"elementor-image-box-content\"><h3 class=\"elementor-image-box-title\"><a href=\"assets/docs/1733383617275-FIRE-SAFETY-CERTIFICATE.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">FIRE &amp; SAFETY CERTIFICATE</a></h3></div></div>				</div>\n				<div class=\"elementor-element elementor-element-b9bd003 elementor-position-top elementor-widget elementor-widget-image-box\" data-id=\"b9bd003\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image-box.default\">\n					<div class=\"elementor-image-box-wrapper\"><figure class=\"elementor-image-box-img\"><a href=\"assets/docs/1751885656740-smc-new.pdf\"  tabindex=\"-1\" target=\"_blank\" rel=\"noopener noreferrer\"><img decoding=\"async\" width=\"128\" height=\"128\" src=\"assets/images/download-pdf.png\" class=\"attachment-full size-full wp-image-16053\" alt=\"\" /></a></figure><div class=\"elementor-image-box-content\"><h3 class=\"elementor-image-box-title\"><a href=\"assets/docs/1751885656740-smc-new.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">SMC LIST</a></h3></div></div>				</div>\n				<div class=\"elementor-element elementor-element-d1248a4 elementor-position-top elementor-widget elementor-widget-image-box\" data-id=\"d1248a4\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image-box.default\">\n					<div class=\"elementor-image-box-wrapper\"><figure class=\"elementor-image-box-img\"><a href=\"assets/docs/1733383474258-RECOGNITION-LETTER.pdf\"  tabindex=\"-1\" target=\"_blank\" rel=\"noopener noreferrer\"><img decoding=\"async\" width=\"128\" height=\"128\" src=\"assets/images/download-pdf.png\" class=\"attachment-full size-full wp-image-16053\" alt=\"\" /></a></figure><div class=\"elementor-image-box-content\"><h3 class=\"elementor-image-box-title\"><a href=\"assets/docs/1733383474258-RECOGNITION-LETTER.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">RECOGNITION LETTER</a></h3></div></div>				</div>\n				<div class=\"elementor-element elementor-element-ff94b63 elementor-position-top elementor-widget elementor-widget-image-box\" data-id=\"ff94b63\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image-box.default\">\n					<div class=\"elementor-image-box-wrapper\"><figure class=\"elementor-image-box-img\"><a href=\"assets/docs/1733383394165-Trust-Certificate.pdf\"  tabindex=\"-1\" target=\"_blank\" rel=\"noopener noreferrer\"><img decoding=\"async\" width=\"128\" height=\"128\" src=\"assets/images/download-pdf.png\" class=\"attachment-full size-full wp-image-16053\" alt=\"\" /></a></figure><div class=\"elementor-image-box-content\"><h3 class=\"elementor-image-box-title\"><a href=\"assets/docs/1733383394165-Trust-Certificate.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Trust Certificate</a></h3></div></div>				</div>\n				<div class=\"elementor-element elementor-element-8b752b6 elementor-position-top elementor-widget elementor-widget-image-box\" data-id=\"8b752b6\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image-box.default\">\n					<div class=\"elementor-image-box-wrapper\"><figure class=\"elementor-image-box-img\"><a href=\"assets/docs/Vehicle-Fitness-Certificate-2026.pdf\"  tabindex=\"-1\" target=\"_blank\" rel=\"noopener noreferrer\"><img decoding=\"async\" width=\"128\" height=\"128\" src=\"assets/images/download-pdf.png\" class=\"attachment-full size-full wp-image-16053\" alt=\"\" /></a></figure><div class=\"elementor-image-box-content\"><h3 class=\"elementor-image-box-title\"><a href=\"assets/docs/Vehicle-Fitness-Certificate-2026.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Vehicle Fitness Certificate</a></h3></div></div>				</div>\n				<div class=\"elementor-element elementor-element-c2a5c23 elementor-position-top elementor-widget elementor-widget-image-box\" data-id=\"c2a5c23\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image-box.default\">\n					<div class=\"elementor-image-box-wrapper\"><figure class=\"elementor-image-box-img\"><a href=\"assets/docs/1733383227929-DEO-Certificate.pdf\"  tabindex=\"-1\" target=\"_blank\" rel=\"noopener noreferrer\"><img decoding=\"async\" width=\"128\" height=\"128\" src=\"assets/images/download-pdf.png\" class=\"attachment-full size-full wp-image-16053\" alt=\"\" /></a></figure><div class=\"elementor-image-box-content\"><h3 class=\"elementor-image-box-title\"><a href=\"assets/docs/1733383227929-DEO-Certificate.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">DEO Certificate</a></h3></div></div>				</div>\n				<div class=\"elementor-element elementor-element-5365038 elementor-position-top elementor-widget elementor-widget-image-box\" data-id=\"5365038\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image-box.default\">\n					<div class=\"elementor-image-box-wrapper\"><figure class=\"elementor-image-box-img\"><a href=\"assets/docs/1767005946446-Academic-Caledandar.pdf\"  tabindex=\"-1\" target=\"_blank\" rel=\"noopener noreferrer\"><img decoding=\"async\" width=\"128\" height=\"128\" src=\"assets/images/download-pdf.png\" class=\"attachment-full size-full wp-image-16053\" alt=\"\" /></a></figure><div class=\"elementor-image-box-content\"><h3 class=\"elementor-image-box-title\"><a href=\"assets/docs/1767005946446-Academic-Caledandar.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">ACADEMIC CALENDER</a></h3></div></div>				</div>\n				</div>\n				</div>\n					</div>\n				</div>\n				</div>\n		', 'Official MGM Model School, Ayiroor, Varkala - Mandatory Disclosure page.', '1', '2026-10-21 23:28:40', '2026-10-24 12:14:47'),
+('1', '16051', 'mandatory-disclosure', 'Mandatory Disclosure', 'Mandatory Disclosure', 'Mandatory Disclosure', '		<div data-elementor-type="wp-page" data-elementor-id="16051" class="elementor elementor-16051" data-elementor-post-type="page">
+				<div class="elementor-element elementor-element-5273ec4 e-flex e-con-boxed e-con e-parent" data-id="5273ec4" data-element_type="container" data-e-type="container">
+					<div class="e-con-inner">
+		<div class="elementor-element elementor-element-70902a8 e-con-full e-flex e-con e-child" data-id="70902a8" data-element_type="container" data-e-type="container">
+		<div class="elementor-element elementor-element-35c8627 e-grid e-con-full e-con e-child" data-id="35c8627" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-76397cd elementor-position-top elementor-widget elementor-widget-image-box" data-id="76397cd" data-element_type="widget" data-e-type="widget" data-widget_type="image-box.default">
+					<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><a href="assets/docs/1737025323273-SARAS-5.0.pdf" tabindex="-1" target="_blank" rel="noopener noreferrer"><img decoding="async" width="128" height="128" src="assets/images/download-pdf.png" class="attachment-full size-full wp-image-16053" alt="" /></a></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title"><a href="assets/docs/1737025323273-SARAS-5.0.pdf" target="_blank" rel="noopener noreferrer">Saras</a></h3></div></div>				</div>
+				<div class="elementor-element elementor-element-7aff9bb elementor-position-top elementor-widget elementor-widget-image-box" data-id="7aff9bb" data-element_type="widget" data-e-type="widget" data-widget_type="image-box.default">
+					<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img decoding="async" width="128" height="128" src="assets/images/download-pdf.png" class="attachment-full size-full wp-image-16053" alt="" /></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">REVISED PERFORMA</h3></div></div>				</div>
+				<div class="elementor-element elementor-element-6c972c7 elementor-position-top elementor-widget elementor-widget-image-box" data-id="6c972c7" data-element_type="widget" data-e-type="widget" data-widget_type="image-box.default">
+					<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><a href="assets/docs/1733382575212-AFFILIATION.pdf"  tabindex="-1" target="_blank" rel="noopener noreferrer"><img decoding="async" width="128" height="128" src="assets/images/download-pdf.png" class="attachment-full size-full wp-image-16053" alt="" /></a></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title"><a href="assets/docs/1733382575212-AFFILIATION.pdf" target="_blank" rel="noopener noreferrer">AFFILIATION</a></h3></div></div>				</div>
+				<div class="elementor-element elementor-element-9140af1 elementor-position-top elementor-widget elementor-widget-image-box" data-id="9140af1" data-element_type="widget" data-e-type="widget" data-widget_type="image-box.default">
+					<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img decoding="async" width="128" height="128" src="assets/images/download-pdf.png" class="attachment-full size-full wp-image-16053" alt="" /></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Student Strength</h3></div></div>				</div>
+				<div class="elementor-element elementor-element-81941aa elementor-position-top elementor-widget elementor-widget-image-box" data-id="81941aa" data-element_type="widget" data-e-type="widget" data-widget_type="image-box.default">
+					<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><a href="assets/docs/1750226400981-SCHOOL-FEE-2025-26.pdf"  tabindex="-1" target="_blank" rel="noopener noreferrer"><img decoding="async" width="128" height="128" src="assets/images/download-pdf.png" class="attachment-full size-full wp-image-16053" alt="" /></a></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title"><a href="assets/docs/1750226400981-SCHOOL-FEE-2025-26.pdf" target="_blank" rel="noopener noreferrer">FEE STRUCTURE</a></h3></div></div>				</div>
+				<div class="elementor-element elementor-element-7c776a5 elementor-position-top elementor-widget elementor-widget-image-box" data-id="7c776a5" data-element_type="widget" data-e-type="widget" data-widget_type="image-box.default">
+					<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><a href="assets/docs/1750226704411-cbse-results-from-2019.pdf"  tabindex="-1" target="_blank" rel="noopener noreferrer"><img decoding="async" width="128" height="128" src="assets/images/download-pdf.png" class="attachment-full size-full wp-image-16053" alt="" /></a></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title"><a href="assets/docs/1750226704411-cbse-results-from-2019.pdf" target="_blank" rel="noopener noreferrer">RESULT ANALYSIS</a></h3></div></div>				</div>
+				<div class="elementor-element elementor-element-671b13e elementor-position-top elementor-widget elementor-widget-image-box" data-id="671b13e" data-element_type="widget" data-e-type="widget" data-widget_type="image-box.default">
+					<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img decoding="async" width="128" height="128" src="assets/images/download-pdf.png" class="attachment-full size-full wp-image-16053" alt="" /></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Student Strength</h3></div></div>				</div>
+				<div class="elementor-element elementor-element-378e053 elementor-position-top elementor-widget elementor-widget-image-box" data-id="378e053" data-element_type="widget" data-e-type="widget" data-widget_type="image-box.default">
+					<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><a href="assets/docs/1733383672169-BUILDING-SAFETY-CERTIFICATE.pdf"  tabindex="-1" target="_blank" rel="noopener noreferrer"><img decoding="async" width="128" height="128" src="assets/images/download-pdf.png" class="attachment-full size-full wp-image-16053" alt="" /></a></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title"><a href="assets/docs/1733383672169-BUILDING-SAFETY-CERTIFICATE.pdf" target="_blank" rel="noopener noreferrer">BUILDING SAFETY CERTIFICATE</a></h3></div></div>				</div>
+				<div class="elementor-element elementor-element-898fec8 elementor-position-top elementor-widget elementor-widget-image-box" data-id="898fec8" data-element_type="widget" data-e-type="widget" data-widget_type="image-box.default">
+					<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><a href="assets/docs/1733383617275-FIRE-SAFETY-CERTIFICATE.pdf"  tabindex="-1" target="_blank" rel="noopener noreferrer"><img decoding="async" width="128" height="128" src="assets/images/download-pdf.png" class="attachment-full size-full wp-image-16053" alt="" /></a></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title"><a href="assets/docs/1733383617275-FIRE-SAFETY-CERTIFICATE.pdf" target="_blank" rel="noopener noreferrer">FIRE &amp; SAFETY CERTIFICATE</a></h3></div></div>				</div>
+				<div class="elementor-element elementor-element-b9bd003 elementor-position-top elementor-widget elementor-widget-image-box" data-id="b9bd003" data-element_type="widget" data-e-type="widget" data-widget_type="image-box.default">
+					<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><a href="assets/docs/1751885656740-smc-new.pdf"  tabindex="-1" target="_blank" rel="noopener noreferrer"><img decoding="async" width="128" height="128" src="assets/images/download-pdf.png" class="attachment-full size-full wp-image-16053" alt="" /></a></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title"><a href="assets/docs/1751885656740-smc-new.pdf" target="_blank" rel="noopener noreferrer">SMC LIST</a></h3></div></div>				</div>
+				<div class="elementor-element elementor-element-d1248a4 elementor-position-top elementor-widget elementor-widget-image-box" data-id="d1248a4" data-element_type="widget" data-e-type="widget" data-widget_type="image-box.default">
+					<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><a href="assets/docs/1733383474258-RECOGNITION-LETTER.pdf"  tabindex="-1" target="_blank" rel="noopener noreferrer"><img decoding="async" width="128" height="128" src="assets/images/download-pdf.png" class="attachment-full size-full wp-image-16053" alt="" /></a></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title"><a href="assets/docs/1733383474258-RECOGNITION-LETTER.pdf" target="_blank" rel="noopener noreferrer">RECOGNITION LETTER</a></h3></div></div>				</div>
+				<div class="elementor-element elementor-element-ff94b63 elementor-position-top elementor-widget elementor-widget-image-box" data-id="ff94b63" data-element_type="widget" data-e-type="widget" data-widget_type="image-box.default">
+					<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><a href="assets/docs/1733383394165-Trust-Certificate.pdf"  tabindex="-1" target="_blank" rel="noopener noreferrer"><img decoding="async" width="128" height="128" src="assets/images/download-pdf.png" class="attachment-full size-full wp-image-16053" alt="" /></a></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title"><a href="assets/docs/1733383394165-Trust-Certificate.pdf" target="_blank" rel="noopener noreferrer">Trust Certificate</a></h3></div></div>				</div>
+				<div class="elementor-element elementor-element-8b752b6 elementor-position-top elementor-widget elementor-widget-image-box" data-id="8b752b6" data-element_type="widget" data-e-type="widget" data-widget_type="image-box.default">
+					<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><a href="assets/docs/Vehicle-Fitness-Certificate-2026.pdf"  tabindex="-1" target="_blank" rel="noopener noreferrer"><img decoding="async" width="128" height="128" src="assets/images/download-pdf.png" class="attachment-full size-full wp-image-16053" alt="" /></a></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title"><a href="assets/docs/Vehicle-Fitness-Certificate-2026.pdf" target="_blank" rel="noopener noreferrer">Vehicle Fitness Certificate</a></h3></div></div>				</div>
+				<div class="elementor-element elementor-element-c2a5c23 elementor-position-top elementor-widget elementor-widget-image-box" data-id="c2a5c23" data-element_type="widget" data-e-type="widget" data-widget_type="image-box.default">
+					<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><a href="assets/docs/1733383227929-DEO-Certificate.pdf"  tabindex="-1" target="_blank" rel="noopener noreferrer"><img decoding="async" width="128" height="128" src="assets/images/download-pdf.png" class="attachment-full size-full wp-image-16053" alt="" /></a></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title"><a href="assets/docs/1733383227929-DEO-Certificate.pdf" target="_blank" rel="noopener noreferrer">DEO Certificate</a></h3></div></div>				</div>
+				<div class="elementor-element elementor-element-5365038 elementor-position-top elementor-widget elementor-widget-image-box" data-id="5365038" data-element_type="widget" data-e-type="widget" data-widget_type="image-box.default">
+					<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><a href="assets/docs/1767005946446-Academic-Caledandar.pdf"  tabindex="-1" target="_blank" rel="noopener noreferrer"><img decoding="async" width="128" height="128" src="assets/images/download-pdf.png" class="attachment-full size-full wp-image-16053" alt="" /></a></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title"><a href="assets/docs/1767005946446-Academic-Caledandar.pdf" target="_blank" rel="noopener noreferrer">ACADEMIC CALENDER</a></h3></div></div>				</div>
+				</div>
+				</div>
+					</div>
+				</div>
+				</div>
+		', 'Official MGM Model School, Ayiroor, Varkala - Mandatory Disclosure page.', '1', '2026-10-21 23:28:40', '2026-10-24 12:14:47'),
+('2', '16043', 'yoga', 'Yoga', 'Yoga', 'Yoga', '		<div data-elementor-type="wp-page" data-elementor-id="16043" class="elementor elementor-16043" data-elementor-post-type="page">
+				<div class="elementor-element elementor-element-5273ec4 e-flex e-con-boxed e-con e-parent" data-id="5273ec4" data-element_type="container" data-e-type="container">
+					<div class="e-con-inner">
+		<div class="elementor-element elementor-element-70902a8 e-con-full e-flex e-con e-child" data-id="70902a8" data-element_type="container" data-e-type="container">
+		<div class="elementor-element elementor-element-35c8627 e-grid e-con-full e-con e-child" data-id="35c8627" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-12ae315 elementor-widget elementor-widget-image" data-id="12ae315" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+															<img fetchpriority="high" decoding="async" width="640" height="640" src="assets/images/1751285353.jpg" class="attachment-large size-large wp-image-16045" alt="" />															</div>
+				<div class="elementor-element elementor-element-5228691 elementor-widget elementor-widget-image" data-id="5228691" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+															<img decoding="async" width="640" height="640" src="assets/images/1751285378.jpeg" class="attachment-large size-large wp-image-16046" alt="" />															</div>
+				<div class="elementor-element elementor-element-e5b40ce elementor-widget elementor-widget-image" data-id="e5b40ce" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+															<img decoding="async" width="640" height="640" src="assets/images/1751285400.jpeg" class="attachment-large size-large wp-image-16047" alt="" />															</div>
+				</div>
+				</div>
+					</div>
+				</div>
+		<div class="elementor-element elementor-element-b889079 e-grid e-con-boxed e-con e-parent" data-id="b889079" data-element_type="container" data-e-type="container">
+					<div class="e-con-inner">
+					</div>
+				</div>
+				</div>
+		', 'Official MGM Model School, Ayiroor, Varkala - Yoga page.', '1', '2026-10-21 23:28:40', '2026-10-21 23:28:40'),
+('3', '16036', 'voice-of-mgm', 'Voice Of MGM', 'Voice Of MGM', 'Voice Of MGM', '		<div data-elementor-type="wp-page" data-elementor-id="16036" class="elementor elementor-16036" data-elementor-post-type="page">
+				<div class="elementor-element elementor-element-5273ec4 e-flex e-con-boxed e-con e-parent" data-id="5273ec4" data-element_type="container" data-e-type="container">
+					<div class="e-con-inner">
+		<div class="elementor-element elementor-element-70902a8 e-con-full e-flex e-con e-child" data-id="70902a8" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-8e7566c elementor-arrows-position-inside elementor-widget elementor-widget-image-carousel" data-id="8e7566c" data-element_type="widget" data-e-type="widget" data-settings="{&quot;slides_to_show&quot;:&quot;1&quot;,&quot;navigation&quot;:&quot;arrows&quot;,&quot;autoplay&quot;:&quot;yes&quot;,&quot;pause_on_hover&quot;:&quot;yes&quot;,&quot;pause_on_interaction&quot;:&quot;yes&quot;,&quot;autoplay_speed&quot;:5000,&quot;infinite&quot;:&quot;yes&quot;,&quot;effect&quot;:&quot;slide&quot;,&quot;speed&quot;:500}" data-widget_type="image-carousel.default">
+							<div class="elementor-image-carousel-wrapper swiper" role="region" aria-roledescription="carousel" aria-label="Image Carousel" dir="ltr">
+			<div class="elementor-image-carousel swiper-wrapper swiper-image-stretch" aria-live="off">
+								<div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="1 of 2"><a href="assets/images/1750233724.jpeg"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="assets/images/1750233724.jpeg" alt="1750233724" /></figure></a></div><div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="2 of 2"><a href="assets/images/1750233709.jpeg"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="assets/images/1750233709.jpeg" alt="1750233709" /></figure></a></div>			</div>
+												<div class="elementor-swiper-button elementor-swiper-button-prev" role="button" tabindex="0">
+						<svg aria-hidden="true" class="e-font-icon-svg e-eicon-chevron-left" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg"><path d="M646 125C629 125 613 133 604 142L308 442C296 454 292 471 292 487 292 504 296 521 308 533L604 854C617 867 629 875 646 875 663 875 679 871 692 858 704 846 713 829 713 812 713 796 708 779 692 767L438 487 692 225C700 217 708 204 708 187 708 171 704 154 692 142 675 129 663 125 646 125Z"></path></svg>					</div>
+					<div class="elementor-swiper-button elementor-swiper-button-next" role="button" tabindex="0">
+						<svg aria-hidden="true" class="e-font-icon-svg e-eicon-chevron-right" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg"><path d="M696 533C708 521 713 504 713 487 713 471 708 454 696 446L400 146C388 133 375 125 354 125 338 125 325 129 313 142 300 154 292 171 292 187 292 204 296 221 308 233L563 492 304 771C292 783 288 800 288 817 288 833 296 850 308 863 321 871 338 875 354 875 371 875 388 867 400 854L696 533Z"></path></svg>					</div>
+				
+									</div>
+						</div>
+				</div>
+		<div class="elementor-element elementor-element-4a139fb e-con-full e-flex e-con e-child" data-id="4a139fb" data-element_type="container" data-e-type="container">
+					<h2 data-interaction-id="44e03f8" class="e-44e03f8-9c56304 e-heading-base e-default-h2">​<strong>"<u>Voice of MGM" - Our School Radio Club</u></strong><br></h2>
+				<div class="elementor-element elementor-element-55c629b elementor-widget elementor-widget-text-editor" data-id="55c629b" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
+									<div class="row sa-row"><div class="col-sm sa-col"><p style="font-weight: 400;">The &#8220;Voice of MGM&#8221; Radio Club provides a unique platform for students to build confidence, develop public speaking skills, and showcase their creativity. Running a radio show fosters teamwork, communication, and commitment.</p><p style="font-weight: 400;">Our user-friendly systems encourage participation from students of all ages and abilities. Unlike camera or stage performances, speaking into a microphone in a closed room can be less intimidating, allowing students to express themselves freely.</p><p style="font-weight: 400;">​Inaugurated by Rashmi Roja Thushara Nair IAS, Bureau Director of the Press Information Bureau, our Radio Club empowers students to share their ideas and opinions, giving them a confident voice.</p></div></div>								</div>
+				</div>
+					</div>
+				</div>
+		<div class="elementor-element elementor-element-b889079 e-grid e-con-boxed e-con e-parent" data-id="b889079" data-element_type="container" data-e-type="container">
+					<div class="e-con-inner">
+					</div>
+				</div>
+				</div>
+		', 'Official MGM Model School, Ayiroor, Varkala - Voice Of MGM page.', '1', '2026-10-21 23:28:40', '2026-10-21 23:28:40'),
+('4', '16026', 'hindustan-scouts-guides', 'Hindustan Scouts & Guides.', 'Hindustan Scouts & Guides.', 'Hindustan Scouts & Guides.', '<div class="tp-subpage-container py-5">
+  <div class="container custom-container-larg">
+    <div class="row g-5 align-items-center">
+      
+      <!-- Left Column: Troop Photo -->
+      <div class="col-lg-6">
+        <div class="rounded-4 overflow-hidden shadow-sm" style="border: 1px solid #eaeaea;">
+          <img src="assets/images/scouts-and-guides.jpeg" class="w-100" style="min-height: 420px; max-height: 500px; object-fit: cover;" alt="Hindustan Scouts and Guides Troop at MGM Model School">
+        </div>
+      </div>
+
+      <!-- Right Column: Scouts & Guides Details -->
+      <div class="col-lg-6 ps-lg-4">
+        <span class="badge px-3 py-1 mb-2 text-uppercase" style="background: rgba(171,12,47,0.1); color: var(--tp-theme-primary); font-size: 11px; font-weight: 700;">Character &amp; Discipline</span>
+        <h2 class="tp-section-title mb-3" style="font-size: 32px; font-weight: 700; color: #141B2B;">Hindustan Scouts &amp; Guides</h2>
+        
+        <p class="text-secondary leading-relaxed mb-4" style="font-size: 15px; line-height: 1.8;">
+          As part of our mission to foster character development, moral fortitude, and responsible citizenry, MGM Model School, Ayiroor, Varkala has partnered with Hindustan Scouts and Guides Kerala since 2019.
+        </p>
+
+        <div class="card border-0 shadow-sm p-4 mb-4 rounded-4 bg-white">
+          <h6 class="fw-bold mb-3" style="color: #141B2B;"><i class="fa-solid fa-flag me-2 text-danger"></i>Our School Proudly Hosts:</h6>
+          <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+            <li class="d-flex align-items-center gap-2">
+              <i class="fa-solid fa-circle-check text-success"></i>
+              <span class="fw-medium text-dark">1 Scout Troop (104 Active Cadets)</span>
+            </li>
+            <li class="d-flex align-items-center gap-2">
+              <i class="fa-solid fa-circle-check text-success"></i>
+              <span class="fw-medium text-dark">1 Guide Company</span>
+            </li>
+            <li class="d-flex align-items-center gap-2">
+              <i class="fa-solid fa-circle-check text-success"></i>
+              <span class="fw-medium text-dark">1 Rover-Ranger unit</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card border-0 shadow-sm p-4 rounded-4" style="background: #FDFBF8; border-left: 4px solid #F5A623 !important;">
+          <p class="text-secondary mb-3" style="font-size: 15px; line-height: 1.8;">
+            Led by our trained Scout Master <strong>Mr. Pravin S R</strong>, our troop of 104 active cadets is learning the true spirit of discipline, leadership, and service to the nation. Notably, <strong>45 cadets have been awarded the prestigious Rajyapuraskar (Governor\'s Award)</strong> over the past several years.
+          </p>
+          <div>
+            <a href="merit-day/#rajyapuraskar" class="btn btn-sm btn-outline-danger rounded-pill px-3 py-2 fw-semibold">
+              <i class="fa-solid fa-award me-1"></i> View Rajyapuraskar Honors on Merit Day <i class="fa-solid fa-arrow-right ms-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>', 'Official MGM Model School, Ayiroor, Varkala - Hindustan Scouts &#038; Guides. page.', '1', '2026-10-21 23:28:40', '2026-10-24 14:35:23'),
+('5', '16019', 'swimming-pool', 'Swimming Pool', 'Swimming Pool', 'Swimming Pool', '		<div data-elementor-type="wp-page" data-elementor-id="16019" class="elementor elementor-16019" data-elementor-post-type="page">
+				<div class="elementor-element elementor-element-5273ec4 e-flex e-con-boxed e-con e-parent" data-id="5273ec4" data-element_type="container" data-e-type="container">
+					<div class="e-con-inner">
+		<div class="elementor-element elementor-element-70902a8 e-con-full e-flex e-con e-child" data-id="70902a8" data-element_type="container" data-e-type="container">
+				
+        <!-- Autoplay Video on Scroll with Controls -->
+        <div class="mgm-video-container" data-video-wrapper>
+          <video class="mgm-autoplay-video" playsinline webkit-playsinline muted loop preload="none" poster="assets/images/swimming-pool-facility-1.jpeg">
+            <source src="assets/videos/swimming-pool.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+          <div class="mgm-video-controls-overlay">
+            <div class="mgm-video-btn-group">
+              <button type="button" class="mgm-video-ctrl-btn mgm-btn-play" aria-label="Play / Pause Video">
+                <i class="fa-solid fa-play"></i> <span class="mgm-btn-label">Play</span>
+              </button>
+              <button type="button" class="mgm-video-ctrl-btn mgm-btn-mute" aria-label="Unmute Video">
+                <i class="fa-solid fa-volume-xmark"></i> <span class="mgm-btn-label">Unmute</span>
+              </button>
+            </div>
+            <div class="mgm-video-badge">
+              <span class="mgm-video-badge-dot"></span>
+              <span>Campus Swimming Pool</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Campus Pool Photo Showcase -->
+        <div class="row g-2 mt-2">
+          <div class="col-6">
+            <img src="assets/images/swimming-pool-facility-1.jpeg" alt="MGM Swimming Pool" class="img-fluid rounded" style="width:100%; height:140px; object-fit:cover;">
+          </div>
+          <div class="col-6">
+            <img src="assets/images/1750242382.jpeg" alt="Swimming Training" class="img-fluid rounded" style="width:100%; height:140px; object-fit:cover;">
+          </div>
+        </div>
+
+		</div>
+		<div class="elementor-element elementor-element-4a139fb e-con-full e-flex e-con e-child" data-id="4a139fb" data-element_type="container" data-e-type="container">
+					<h2 data-interaction-id="44e03f8" class="e-44e03f8-9c56304 e-heading-base e-default-h2">​<strong>Introducing Our Swimming Pool Facility!</strong><br></h2>
+				<div class="elementor-element elementor-element-55c629b elementor-widget elementor-widget-text-editor" data-id="55c629b" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
+									<p style="font-weight: 400;">Our state-of-the-art swimming pool complex has been a vibrant part of our campus for the last three years, enhancing physical fitness and providing a new dimension to our students’ holistic educational experience.</p>
+                  <p style="font-weight: 400;">Our facility features two pools, including a pool exclusively for children below 8 years old. Designed and constructed with the highest safety standards in mind, the pools are managed by well-trained and qualified coaches who ensure expert guidance and constant supervision.</p>
+                  <p style="font-weight: 400;">Our comprehensive swimming program for children covers essential aquatic skills and competitive strokes:</p>
+        </div>
+				<div class="elementor-element elementor-element-5a16a8c elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="5a16a8c" data-element_type="widget" data-e-type="widget" data-widget_type="icon-list.default">
+							<ul class="elementor-icon-list-items">
+							<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<svg aria-hidden="true" class="e-font-icon-svg e-fas-check" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>						</span>
+										<span class="elementor-icon-list-text">Breathing Techniques</span>
+									</li>
+								<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<svg aria-hidden="true" class="e-font-icon-svg e-fas-check" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>						</span>
+										<span class="elementor-icon-list-text">Water Body Balance and Gliding</span>
+									</li>
+								<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<svg aria-hidden="true" class="e-font-icon-svg e-fas-check" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>						</span>
+										<span class="elementor-icon-list-text">Kicking and Arm Action</span>
+									</li>
+								<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<svg aria-hidden="true" class="e-font-icon-svg e-fas-check" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>						</span>
+										<span class="elementor-icon-list-text">Side Breathing</span>
+									</li>
+								<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<svg aria-hidden="true" class="e-font-icon-svg e-fas-check" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>						</span>
+										<span class="elementor-icon-list-text">Full Stroke Freestyle</span>
+									</li>
+								<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<svg aria-hidden="true" class="e-font-icon-svg e-fas-check" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>						</span>
+										<span class="elementor-icon-list-text">Backstroke</span>
+									</li>
+								<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<svg aria-hidden="true" class="e-font-icon-svg e-fas-check" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>						</span>
+										<span class="elementor-icon-list-text">Breaststroke</span>
+									</li>
+								<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<svg aria-hidden="true" class="e-font-icon-svg e-fas-check" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>						</span>
+										<span class="elementor-icon-list-text">Floating</span>
+									</li>
+						</ul>
+						</div>
+				</div>
+					</div>
+				</div>
+		<div class="elementor-element elementor-element-b889079 e-grid e-con-boxed e-con e-parent" data-id="b889079" data-element_type="container" data-e-type="container">
+					<div class="e-con-inner">
+					</div>
+				</div>
+				</div>', 'Official MGM Model School, Ayiroor, Varkala - Swimming Pool page.', '1', '2026-10-21 23:28:40', '2026-10-24 11:04:58'),
+('6', '16013', 'ncc', 'NCC', 'NCC', 'NCC', '		<div data-elementor-type="wp-page" data-elementor-id="16013" class="elementor elementor-16013" data-elementor-post-type="page">
+				<div class="elementor-element elementor-element-5273ec4 e-flex e-con-boxed e-con e-parent" data-id="5273ec4" data-element_type="container" data-e-type="container">
+					<div class="e-con-inner">
+		<div class="elementor-element elementor-element-70902a8 e-con-full e-flex e-con e-child" data-id="70902a8" data-element_type="container" data-e-type="container">
+				
+        <div class="row g-3 mb-4">
+          <div class="col-md-7">
+            <img fetchpriority="high" decoding="async" src="assets/images/ncc-unit-1.jpeg" class="img-fluid rounded shadow-sm w-100" style="max-height: 340px; object-fit: cover;" alt="NCC Unit Parade" />
+          </div>
+          <div class="col-md-5">
+            <img decoding="async" src="assets/images/ncc-unit-2.jpeg" class="img-fluid rounded shadow-sm w-100" style="max-height: 340px; object-fit: cover;" alt="NCC Cadets Training" />
+          </div>
+        </div>
+
+					<h2 data-interaction-id="cad7f5b" class="e-cad7f5b-4376cff e-heading-base e-default-h2"><strong><u>NCC (National Cadet Corps) @ MGM</u></strong></h2>
+				<div class="elementor-element elementor-element-b9851de elementor-widget elementor-widget-text-editor" data-id="b9851de" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
+									<p>National Cadet Corps (NCC) is the largest youth organization functioning under the Ministry of Defence, Government of India. It inculcates discipline, unity, and a profound sense of patriotism in youth while training them in defense preparedness and civic duty.</p>
+                  <p>MGM Model School launched its NCC unit &mdash; <strong>\'1 Kerala Battalion, Kerala Lakshadweep Group\'</strong> &mdash; on 7th July 2022 with cadets from the Junior Wing (Class VIII). It functions as a self-financing scheme with 4 years of service.</p>
+                  <p>Cadets undergo regular training every Friday from <strong>3:00 PM to 5:30 PM</strong>, covering basic military parades, small arms training, drills, physical fitness, and community service. Cadets also participate in state and national camps and expeditions that develop leadership, resilience, and patriotic camaraderie.</p>
+                  <p>On successful completion of 2 years, cadets are awarded the prestigious NCC Certificate &mdash; a formal recognition of their dedication, hard work, and discipline, which adds significant merit to their academic and career pursuits.</p>
+                  <p><strong>The Associate NCC Officer (ANO) is Retd. Subedar Major Mr. Rajesh S.</strong></p>
+				</div>
+				<div class="elementor-element elementor-element-3a448bf elementor-widget elementor-widget-spacer" data-id="3a448bf" data-element_type="widget" data-e-type="widget" data-widget_type="spacer.default">
+							<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+						</div>
+				</div>
+					</div>
+				</div>
+				</div>', 'Official MGM Model School, Ayiroor, Varkala - NCC page.', '1', '2026-10-21 23:28:40', '2026-10-24 10:58:49'),
+('7', '16004', 'attendance', 'Attendance', 'Attendance', 'Attendance', '		<div data-elementor-type="wp-page" data-elementor-id="16004" class="elementor elementor-16004" data-elementor-post-type="page">
+				<div class="elementor-element elementor-element-5273ec4 e-flex e-con-boxed e-con e-parent" data-id="5273ec4" data-element_type="container" data-e-type="container">
+					<div class="e-con-inner">
+		<div class="elementor-element elementor-element-70902a8 e-con-full e-flex e-con e-child" data-id="70902a8" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-7fc1657 elementor-widget elementor-widget-image" data-id="7fc1657" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+															<img fetchpriority="high" decoding="async" width="640" height="427" src="assets/images/16628.jpg" class="attachment-large size-large wp-image-16006" alt="" />															</div>
+					<h2 data-interaction-id="cad7f5b" class="e-cad7f5b-4376cff e-heading-base e-default-h2">Attendance</h2>
+				<div class="elementor-element elementor-element-b9851de elementor-widget elementor-widget-text-editor" data-id="b9851de" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
+									Every student must have compulsory 75% attendance in an academic session.
+Medical certificate or other necessary documents must be produced to the school
+authorities for the leave already availed Leave shall be granted only when it is
+absolutely necessary or on medical grounds. Leave should be marked on the
+stipulated page in the Diary. Student shall not be allowed to attend the class
+without leave application on the day he/she presents himself/herself after leave.
+Students with perfect attendance (100%) will be honoured with certificates on the
+Convocation day								</div>
+				<div class="elementor-element elementor-element-3a448bf elementor-widget elementor-widget-spacer" data-id="3a448bf" data-element_type="widget" data-e-type="widget" data-widget_type="spacer.default">
+							<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+						</div>
+				</div>
+					</div>
+				</div>
+				</div>
+		', 'Official MGM Model School, Ayiroor, Varkala - Attendance page.', '1', '2026-10-21 23:28:40', '2026-10-21 23:28:40'),
+('8', '15998', 'admission-procedure', 'Admission Procedure', 'Admission Procedure', 'Admission Procedure', '		<div data-elementor-type="wp-page" data-elementor-id="15998" class="elementor elementor-15998" data-elementor-post-type="page">
+				<div class="elementor-element elementor-element-5273ec4 e-flex e-con-boxed e-con e-parent" data-id="5273ec4" data-element_type="container" data-e-type="container">
+					<div class="e-con-inner">
+		<div class="elementor-element elementor-element-70902a8 e-con-full e-flex e-con e-child" data-id="70902a8" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-c11317f elementor-widget__width-inherit elementor-widget elementor-widget-tp-faq" data-id="c11317f" data-element_type="widget" data-e-type="widget" data-widget_type="tp-faq.default">
+				<div class="elementor-widget-container">
+					
+
+        
+            <div class="tp-faq-quran-box">
+                <div class="tp-faq-box "  >
+                    <div class="tpd-accordion">
+                        <div class="accordion accordion-flush" id="accordionExample-c11317f">
+
+                            
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button " type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne-c11317f0"
+                                            aria-expanded="true"
+                                            aria-controls="collapseOne-c11317f0">
+                                            Step 1: Registration                                            <span class="accordion-btn"></span>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne-c11317f0"
+                                        class="accordion-collapse collapse show"
+                                        data-bs-parent="#accordionExample-c11317f">
+                                        <div class="accordion-body">
+                                            <p>Parents/guardians register their child\'s name and details in the school Website / office.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne-c11317f1"
+                                            aria-expanded="true"
+                                            aria-controls="collapseOne-c11317f1">
+                                            Step 2: Document Verification                                            <span class="accordion-btn"></span>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne-c11317f1"
+                                        class="accordion-collapse collapse "
+                                        data-bs-parent="#accordionExample-c11317f">
+                                        <div class="accordion-body">
+                                            <p>Shortlisted students and parents will be called to verify documents on a specified date</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne-c11317f2"
+                                            aria-expanded="true"
+                                            aria-controls="collapseOne-c11317f2">
+                                            Step 3: Admission                                            <span class="accordion-btn"></span>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne-c11317f2"
+                                        class="accordion-collapse collapse "
+                                        data-bs-parent="#accordionExample-c11317f">
+                                        <div class="accordion-body">
+                                            <p>After verification, willing parents submit the application form and required documents,
+agreeing to the school\'s rules, regulations, and fee structure.
+</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+
+        				</div>
+				</div>
+				<div class="elementor-element elementor-element-53dddac elementor-widget elementor-widget-heading" data-id="53dddac" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<h2 class="elementor-heading-title elementor-size-default">Important Notes</h2>				</div>
+				<div class="elementor-element elementor-element-8b79e90 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="8b79e90" data-element_type="widget" data-e-type="widget" data-widget_type="icon-list.default">
+							<ul class="elementor-icon-list-items">
+							<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<svg aria-hidden="true" class="e-font-icon-svg e-fas-check" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>						</span>
+										<span class="elementor-icon-list-text">Once fees are paid, no refunds will be made for discontinuation or expulsion due to indiscipline.</span>
+									</li>
+								<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<svg aria-hidden="true" class="e-font-icon-svg e-fas-check" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>						</span>
+										<span class="elementor-icon-list-text">Application for Transfer Certificate (TC) should be submitted 10 days in advance.</span>
+									</li>
+						</ul>
+						</div>
+				<div class="elementor-element elementor-element-506ec68 elementor-widget elementor-widget-heading" data-id="506ec68" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<h2 class="elementor-heading-title elementor-size-default">Documents to be submitted for admission
+</h2>				</div>
+				<div class="elementor-element elementor-element-b1e28b8 elementor-widget elementor-widget-shortcode" data-id="b1e28b8" data-element_type="widget" data-e-type="widget" data-widget_type="shortcode.default">
+							<div class="elementor-shortcode"><div id="footable_parent_16000"
+         class=" footable_parent ninja_table_wrapper loading_ninja_table wp_table_data_press_parent semantic_ui ">
+                <div class="ninja_table_wrapper"><table class="foo-table ninja_footable foo_table_16000 ui table celled striped selectable fixed"><thead><tr><th class="ninja_column_0" style="width: 25%;">Classes</th><th class="ninja_column_1">Documents Required</th></tr></thead><tbody><tr><td class="ninja_column_0 fw-bold">Kids School</td><td class="ninja_column_1">Birth Certificate, Aadhar card, 2 Photos</td></tr><tr><td class="ninja_column_0 fw-bold">LKG & UKG</td><td class="ninja_column_1">Birth Certificate, Aadhar card, 2 Photos</td></tr><tr><td class="ninja_column_0 fw-bold">Class I Birth</td><td class="ninja_column_1">Certificate, Aadhar card, 2 Photos</td></tr><tr><td class="ninja_column_0 fw-bold">Class II to IX</td><td class="ninja_column_1">Promoted TC from previous School, Birth Certificate, Aadhar, Photo</td></tr><tr><td class="ninja_column_0 fw-bold">Class X & XII</td><td class="ninja_column_1">Attested Copy of Report Card , Attested copy of TC , Reason for change of school , Documentary evidence in support of the reason for changing the school, Conduct Certificate from the previous sc</td></tr><tr><td class="ninja_column_0 fw-bold">Class XI</td><td class="ninja_column_1">Attested copy of mark list of class X exam, TC from the previous Institution, Conduct Certificate from the previous institution, 2 photos</td></tr></tbody></table></div>
+    
+    
+    
+</div>
+</div>
+						</div>
+				</div>
+					</div>
+				</div>
+				</div>
+		', 'Official MGM Model School, Ayiroor, Varkala - Admission Procedure page.', '1', '2026-10-21 23:28:40', '2026-10-21 23:28:40'),
+('9', '15992', 'alumni', 'Alumni', 'Alumni', 'Alumni', '		<div data-elementor-type="wp-page" data-elementor-id="15992" class="elementor elementor-15992" data-elementor-post-type="page">
+				<div class="elementor-element elementor-element-5273ec4 e-flex e-con-boxed e-con e-parent" data-id="5273ec4" data-element_type="container" data-e-type="container">
+					<div class="e-con-inner">
+		<div class="elementor-element elementor-element-70902a8 e-con-full e-flex e-con e-child" data-id="70902a8" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-9167be2 elementor-widget elementor-widget-text-editor" data-id="9167be2" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
+									Alumni Association of M.G.M. Model School is very active. It holds its annual meeting on December 24th every year in the school auditorium. The chief objective of the association is to keep in touch with our former students and solicit their sincere co-operation and suggestions to pool ideas for the upliftment of the school as a Centre of Excellence. The Alumni Association has a record of the present status and whereabouts of a majority of the students who have already passed out from the school. Once in a while the students of a same batch meet in the school and conduct a get together. Such reunions are helpful to the school as they conduct useful programmes like career guidance, social work, workshops etc.
+
+								</div>
+				<div class="elementor-element elementor-element-041c336 elementor-align-center elementor-widget elementor-widget-button" data-id="041c336" data-element_type="widget" data-e-type="widget" data-widget_type="button.default">
+										<a class="elementor-button elementor-button-link elementor-size-sm" href="https://forms.gle/t8gUMSj7oQhYYyY67">
+						<span class="elementor-button-content-wrapper">
+									<span class="elementor-button-text">Alumni Registration</span>
+					</span>
+					</a>
+								</div>
+				</div>
+					</div>
+				</div>
+				</div>
+		', 'Official MGM Model School, Ayiroor, Varkala - Alumni page.', '1', '2026-10-21 23:28:40', '2026-10-21 23:28:40'),
+('10', '15985', 'merit-day', 'Merit Day', 'Merit Day', 'Merit Day', '<div class="tp-subpage-container py-5" style="background: #FAF8F5;">
+  <div class="container custom-container-larg">
+    
+    <!-- Page Header -->
+    <div class="text-center mb-5">
+      <span class="badge px-3 py-2 text-uppercase mb-2" style="background: rgba(171,12,47,0.1); color: var(--tp-theme-primary, #ab0c2f); font-size: 11px; letter-spacing: 1px; font-weight: 700;">Celebrating Excellence</span>
+      <h2 class="tp-section-title mb-3" style="font-size: 34px; font-weight: 700; color: #141B2B;">Academic Honors &amp; Leadership Felicitations</h2>
+      <p class="text-muted mx-auto" style="max-width: 720px; font-size: 16px; line-height: 1.8;">
+        At MGM Model School, we celebrate hard work, character, and exceptional performance across academic disciplines, student governance, and state-level co-curricular pursuits.
+      </p>
+    </div>
+
+    <!-- Section 1: Investiture Ceremony -->
+    <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-5 bg-white">
+      <div class="row g-0 align-items-center">
+        <div class="col-lg-6">
+          <div style="height: 380px; overflow: hidden;">
+            <img src="<?= rtrim(BASE_URL, \'/\') ?>/assets/images/investiture-ceremony.jpeg" alt="Investiture Ceremony at MGM School" class="w-100 h-100" style="object-fit: cover;">
+          </div>
+        </div>
+        <div class="col-lg-6 p-4 p-md-5">
+          <span class="badge px-3 py-1 mb-2 text-uppercase" style="background: rgba(171,12,47,0.1); color: var(--tp-theme-primary); font-size: 10px; font-weight: 700;">Student Governance</span>
+          <h3 class="fw-bold text-dark mb-3" style="font-size: 26px;">Investiture Ceremony</h3>
+          <p class="text-secondary leading-relaxed mb-3" style="font-size: 15px; line-height: 1.8;">
+            The school\'s Investiture Ceremony is a time-honoured tradition where student leaders are chosen through a selective interview process to take on key roles as Head Boy, Head Girl, Deputy Head Boy &amp; Head Girl, Sports Captains, and House Prefects.
+          </p>
+          <p class="text-muted small mb-4">
+            These student leaders play a vital role in maintaining discipline, coordinating morning assemblies, and spearheading intra-school events, developing essential teamwork and ethical decision-making skills.
+          </p>
+          <div class="d-flex align-items-center gap-3">
+            <span class="badge bg-light text-dark border px-3 py-2 small"><i class="fa-solid fa-check text-success me-1"></i> Democratic Selection</span>
+            <span class="badge bg-light text-dark border px-3 py-2 small"><i class="fa-solid fa-check text-success me-1"></i> House Leadership</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2: Convocation Day -->
+    <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-5 bg-white">
+      <div class="row g-0 align-items-center flex-lg-row-reverse">
+        <div class="col-lg-6">
+          <div style="height: 380px; overflow: hidden;">
+            <img src="<?= rtrim(BASE_URL, \'/\') ?>/assets/images/convocation-day.jpeg" alt="Convocation Day at MGM School" class="w-100 h-100" style="object-fit: cover;">
+          </div>
+        </div>
+        <div class="col-lg-6 p-4 p-md-5">
+          <span class="badge px-3 py-1 mb-2 text-uppercase" style="background: rgba(37,99,235,0.1); color: #2563EB; font-size: 10px; font-weight: 700;">Academic Milestone</span>
+          <h3 class="fw-bold text-dark mb-3" style="font-size: 26px;">Annual Convocation Day</h3>
+          <p class="text-secondary leading-relaxed mb-3" style="font-size: 15px; line-height: 1.8;">
+            Held annually during the first and second weeks of April, the Convocation Day commemorates the transition of our young learners graduating from Kindergarten into Primary School, as well as acknowledging top performers throughout the academic year.
+          </p>
+          <p class="text-muted small mb-4">
+            Dressed in ceremonial robes and caps, students receive merit scrolls from the Principal and distinguished guests in the presence of proud parents and faculty members.
+          </p>
+          <div class="d-flex align-items-center gap-3">
+            <span class="badge bg-light text-dark border px-3 py-2 small"><i class="fa-solid fa-graduation-cap text-primary me-1"></i> KG Graduation</span>
+            <span class="badge bg-light text-dark border px-3 py-2 small"><i class="fa-solid fa-award text-primary me-1"></i> Merit Scrolls</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 3: Toppers Day (Board Exam Stars) -->
+    <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 mb-5 bg-white">
+      <div class="text-center mb-4">
+        <span class="badge px-3 py-1 mb-2 text-uppercase" style="background: rgba(22,163,74,0.1); color: #16A34A; font-size: 10px; font-weight: 700;">Board Exam Felicitations</span>
+        <h3 class="fw-bold text-dark mb-2" style="font-size: 26px;">Toppers Day &bull; AISSE &amp; SSCE Stars</h3>
+        <p class="text-muted small mx-auto" style="max-width: 650px;">
+          Honoring Class X and Class XII students who have achieved stellar distinction in the CBSE All India Secondary and Senior School Certificate Examinations.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="card border h-100 shadow-sm overflow-hidden" style="border-radius: 12px;">
+            <div style="height: 300px; overflow: hidden;">
+              <img src="<?= rtrim(BASE_URL, \'/\') ?>/assets/images/toppers-day-1.jpeg" alt="Toppers Day Felicitations" class="w-100 h-100" style="object-fit: cover;">
+            </div>
+            <div class="p-3 text-center bg-white">
+              <span class="fw-bold text-dark d-block">Class XII &bull; Senior School Toppers</span>
+              <span class="text-muted small">Science and Commerce stream rank holders felicitated by School Management</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card border h-100 shadow-sm overflow-hidden" style="border-radius: 12px;">
+            <div style="height: 300px; overflow: hidden;">
+              <img src="<?= rtrim(BASE_URL, \'/\') ?>/assets/images/toppers-day-2.jpeg" alt="AISSE Class X Merit Winners" class="w-100 h-100" style="object-fit: cover;">
+            </div>
+            <div class="p-3 text-center bg-white">
+              <span class="fw-bold text-dark d-block">Class X &bull; AISSE Distinction Winners</span>
+              <span class="text-muted small">Full A1 achievers and subject toppers awarded trophies and certificates</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 4: Rajyapuraskar (Governor\'s Award) Felicitations -->
+    <div id="rajyapuraskar" class="card border-0 shadow-sm rounded-4 overflow-hidden mb-5 bg-white">
+      <!-- Part A: Split Card Layout (Matching Section 1 & 2) -->
+      <div class="row g-0 align-items-center">
+        <div class="col-lg-6">
+          <div style="height: 400px; overflow: hidden; position: relative;">
+            <img src="<?= rtrim(BASE_URL, \'/\') ?>/assets/images/rajyapuraskar-2024.png" alt="Governor of Kerala presenting Rajyapuraskar Award" class="w-100 h-100" style="object-fit: cover; object-position: center;">
+            <div style="position: absolute; bottom: 15px; left: 15px; background: rgba(0,0,0,0.7); backdrop-filter: blur(4px); color: #fff; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600;">
+              <i class="fa-solid fa-award text-warning me-1"></i> Raj Bhavan Ceremony
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 p-4 p-md-5">
+          <span class="badge px-3 py-1 mb-2 text-uppercase" style="background: rgba(171,12,47,0.1); color: var(--tp-theme-primary); font-size: 10px; font-weight: 700;">State Governor\'s Honor</span>
+          <h3 class="fw-bold text-dark mb-3" style="font-size: 26px;">Rajyapuraskar (Governor\'s Award)</h3>
+          <p class="text-secondary leading-relaxed mb-3" style="font-size: 15px; line-height: 1.8;">
+            The prestigious Rajyapuraskar (Governor\'s Award) represents the highest scouting honor conferred at the state level by the Honourable Governor of Kerala upon senior cadets demonstrating extraordinary dedication, character, and civic service.
+          </p>
+          <p class="text-muted small mb-4">
+            Under the guidance of Scout Master <strong>Mr. Pravin S R</strong>, an exceptional cohort of <strong>45 cadets</strong> from MGM Model School has been decorated with this prestigious state honor across successive years.
+          </p>
+          <div class="d-flex align-items-center gap-3 flex-wrap">
+            <span class="badge bg-light text-dark border px-3 py-2 small"><i class="fa-solid fa-award text-danger me-1"></i> 45 Cadets Conferred</span>
+            <span class="badge bg-light text-dark border px-3 py-2 small"><i class="fa-solid fa-medal text-warning me-1"></i> Governor of Kerala</span>
+            <span class="badge bg-light text-dark border px-3 py-2 small"><i class="fa-solid fa-shield-halved text-success me-1"></i> Hindustan Scouts &amp; Guides</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Part B: 4-Card Certificate Roll of Honor (Matching Section 3 Card Grid with Round-Corner Square Thumbnails & Lightbox) -->
+      <div class="p-4 p-md-5 border-top" style="background: #FDFBF8;">
+        <div class="text-center mb-4">
+          <span class="badge px-3 py-1 mb-2 text-uppercase" style="background: rgba(171,12,47,0.1); color: var(--tp-theme-primary); font-size: 10px; font-weight: 700;">Roll of Honor</span>
+          <h4 class="fw-bold text-dark mb-2" style="font-size: 24px;">Rajyapuraskar Certificate Gallery</h4>
+          <p class="text-muted small mx-auto mb-0" style="max-width: 650px;">
+            Official award ceremony photographs and certificates conferred to MGM cadets. Click any certificate to view in high resolution:
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-6 col-lg-3">
+            <div class="card border h-100 shadow-sm overflow-hidden rajya-card-item" style="border-radius: 14px; cursor: pointer;" onclick="openRajyaLightbox(0)">
+              <div class="rajya-thumb-box">
+                <img src="<?= rtrim(BASE_URL, \'/\') ?>/assets/images/rajyapuraskar-2024.png" alt="Rajyapuraskar 2024">
+                <div class="rajya-thumb-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+              </div>
+              <div class="p-3 text-center bg-white border-top">
+                <span class="fw-bold text-dark d-block" style="font-size: 15px;">Rajyapuraskar 2024</span>
+                <span class="text-muted small d-block mt-1">Governor\'s Award Ceremony</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-lg-3">
+            <div class="card border h-100 shadow-sm overflow-hidden rajya-card-item" style="border-radius: 14px; cursor: pointer;" onclick="openRajyaLightbox(1)">
+              <div class="rajya-thumb-box">
+                <img src="<?= rtrim(BASE_URL, \'/\') ?>/assets/images/rajyapuraskar-2023.png" alt="Rajyapuraskar 2023">
+                <div class="rajya-thumb-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+              </div>
+              <div class="p-3 text-center bg-white border-top">
+                <span class="fw-bold text-dark d-block" style="font-size: 15px;">Rajyapuraskar 2023</span>
+                <span class="text-muted small d-block mt-1">Governor\'s Award Ceremony</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-lg-3">
+            <div class="card border h-100 shadow-sm overflow-hidden rajya-card-item" style="border-radius: 14px; cursor: pointer;" onclick="openRajyaLightbox(2)">
+              <div class="rajya-thumb-box">
+                <img src="<?= rtrim(BASE_URL, \'/\') ?>/assets/images/rajyapuraskar-2022.png" alt="Rajyapuraskar 2022">
+                <div class="rajya-thumb-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+              </div>
+              <div class="p-3 text-center bg-white border-top">
+                <span class="fw-bold text-dark d-block" style="font-size: 15px;">Rajyapuraskar 2022</span>
+                <span class="text-muted small d-block mt-1">Governor\'s Award Ceremony</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-lg-3">
+            <div class="card border h-100 shadow-sm overflow-hidden rajya-card-item" style="border-radius: 14px; cursor: pointer;" onclick="openRajyaLightbox(3)">
+              <div class="rajya-thumb-box">
+                <img src="<?= rtrim(BASE_URL, \'/\') ?>/assets/images/rajyapuraskar-2019.png" alt="Rajyapuraskar 2019">
+                <div class="rajya-thumb-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+              </div>
+              <div class="p-3 text-center bg-white border-top">
+                <span class="fw-bold text-dark d-block" style="font-size: 15px;">Rajyapuraskar 2019</span>
+                <span class="text-muted small d-block mt-1">Governor\'s Award Ceremony</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Lightbox Modal Popup -->
+<div id="mgmRajyaLightbox" class="mgm-lightbox-modal" role="dialog" aria-modal="true" aria-label="Certificate Image Viewer">
+  <div class="mgm-lightbox-backdrop" onclick="closeRajyaLightbox()"></div>
+  <button type="button" class="mgm-lightbox-btn mgm-lightbox-close" onclick="closeRajyaLightbox()" aria-label="Close viewer">&times;</button>
+  <button type="button" class="mgm-lightbox-btn mgm-lightbox-prev" onclick="prevRajyaSlide()" aria-label="Previous certificate"><i class="fa-solid fa-chevron-left"></i></button>
+  <button type="button" class="mgm-lightbox-btn mgm-lightbox-next" onclick="nextRajyaSlide()" aria-label="Next certificate"><i class="fa-solid fa-chevron-right"></i></button>
+  
+  <div class="mgm-lightbox-container">
+    <div class="mgm-lightbox-img-wrap">
+      <img id="mgmLightboxImg" src="<?= rtrim(BASE_URL, \'/\') ?>/assets/images/rajyapuraskar-2024.png" alt="Rajyapuraskar Certificate" class="mgm-lightbox-img">
+    </div>
+    <div class="mgm-lightbox-bar">
+      <span id="mgmLightboxTitle" class="mgm-lightbox-title">Rajyapuraskar 2024</span>
+      <span id="mgmLightboxCounter" class="mgm-lightbox-counter">1 / 4</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  const rajyaBaseUrl = \'<?= rtrim(BASE_URL, \'/\') ?>\';
+  const rajyaItems = [
+    { src: rajyaBaseUrl + \'/assets/images/rajyapuraskar-2024.png\', title: \'Rajyapuraskar 2024 - Governor\\'s Award Certificate\' },
+    { src: rajyaBaseUrl + \'/assets/images/rajyapuraskar-2023.png\', title: \'Rajyapuraskar 2023 - Governor\\'s Award Certificate\' },
+    { src: rajyaBaseUrl + \'/assets/images/rajyapuraskar-2022.png\', title: \'Rajyapuraskar 2022 - Governor\\'s Award Certificate\' },
+    { src: rajyaBaseUrl + \'/assets/images/rajyapuraskar-2019.png\', title: \'Rajyapuraskar 2019 - Governor\\'s Award Certificate\' }
+  ];
+  let currentRajyaIndex = 0;
+
+  function openRajyaLightbox(index) {
+    currentRajyaIndex = index;
+    updateRajyaLightbox();
+    const modal = document.getElementById(\'mgmRajyaLightbox\');
+    if (modal) {
+      modal.classList.add(\'active\');
+      document.body.style.overflow = \'hidden\';
+    }
+  }
+
+  function closeRajyaLightbox() {
+    const modal = document.getElementById(\'mgmRajyaLightbox\');
+    if (modal) {
+      modal.classList.remove(\'active\');
+      document.body.style.overflow = \'\';
+    }
+  }
+
+  function updateRajyaLightbox() {
+    const item = rajyaItems[currentRajyaIndex];
+    const img = document.getElementById(\'mgmLightboxImg\');
+    const title = document.getElementById(\'mgmLightboxTitle\');
+    const counter = document.getElementById(\'mgmLightboxCounter\');
+    
+    if (img) img.src = item.src;
+    if (title) title.innerText = item.title;
+    if (counter) counter.innerText = (currentRajyaIndex + 1) + \' / \' + rajyaItems.length;
+  }
+
+  function prevRajyaSlide() {
+    currentRajyaIndex = (currentRajyaIndex - 1 + rajyaItems.length) % rajyaItems.length;
+    updateRajyaLightbox();
+  }
+
+  function nextRajyaSlide() {
+    currentRajyaIndex = (currentRajyaIndex + 1) % rajyaItems.length;
+    updateRajyaLightbox();
+  }
+
+  document.addEventListener(\'keydown\', function(e) {
+    const modal = document.getElementById(\'mgmRajyaLightbox\');
+    if (!modal || !modal.classList.contains(\'active\')) return;
+    if (e.key === \'Escape\') closeRajyaLightbox();
+    else if (e.key === \'ArrowLeft\') prevRajyaSlide();
+    else if (e.key === \'ArrowRight\') nextRajyaSlide();
+  });
+</script>
+
+', 'Official MGM Model School, Ayiroor, Varkala - Merit Day page.', '1', '2026-10-21 23:28:40', '2026-10-24 14:43:18'),
+('11', '15979', 'pta', 'PTA', 'PTA', 'PTA', '		<div data-elementor-type="wp-page" data-elementor-id="15979" class="elementor elementor-15979" data-elementor-post-type="page">
+				<div class="elementor-element elementor-element-5273ec4 e-flex e-con-boxed e-con e-parent" data-id="5273ec4" data-element_type="container" data-e-type="container">
+					<div class="e-con-inner">
+				<div class="elementor-element elementor-element-a02afb9 elementor-widget elementor-widget-image" data-id="a02afb9" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+															<img fetchpriority="high" decoding="async" width="640" height="426" src="assets/images/2149220327.jpg" class="attachment-large size-large wp-image-15981" alt="" />															</div>
+				<div class="elementor-element elementor-element-9167be2 elementor-widget elementor-widget-text-editor" data-id="9167be2" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
+									<main role="main"><div class="container"><div class="row sa-row"><div class="col-sm sa-col"><p>M G M Model School is a community school. So a strong PTA is an inevitable feature. The school gives due importance to the PTA meetings. The PTA works on three levels – (1) Class room PTA, (2) PTA class representative – Executive meetings and (3) PTA Executive meetings. The PTA Class representative – Executive meeting has been converted into the General body. When the parents of nearly 3000 students participate in the General body meetings, it is natural that all of them cannot voice their opinions or complaints here. Hence it was decided to elect a class representative and an Executive member from each class. These elected members collect the suggestions, opinions and complaints from the other parents of the class they represent and present them at the PTA Executive meetings held on the second Saturday of each month. The class representatives are the chairpersons of the class room PTA meeting held each term. The class representatives and Executive members together elect the PTA President and PTA Vice President. The PTA Secretary, is elected by the teaching staff and PTA members from among the senior teachers.</p></div></div></div></main>								</div>
+					</div>
+				</div>
+				</div>
+		', 'Official MGM Model School, Ayiroor, Varkala - PTA page.', '1', '2026-10-21 23:28:40', '2026-10-21 23:28:40'),
+('12', '15930', 'courses-offered', 'Courses Offered', 'Courses Offered', 'Courses Offered', '<main id="content" class="site-main py-5" style="background: #FAF8F5;">
+  <div class="container custom-container-larg">
+    
+    <!-- Introduction Block -->
+    <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 mb-5" style="background: #ffffff; border-left: 5px solid var(--tp-theme-primary, #ab0c2f) !important;">
+      <span class="badge px-3 py-2 text-uppercase mb-2 d-inline-block" style="background: rgba(171,12,47,0.1); color: var(--tp-theme-primary, #ab0c2f); font-size: 11px; letter-spacing: 1px; font-weight: 700; width: fit-content;">Academic Framework</span>
+      <h2 class="tp-section-title mb-3" style="font-size: 28px; font-weight: 700; color: #141B2B;">CBSE Curriculum &amp; Academic Streams</h2>
+      <p class="text-secondary mb-2" style="font-size: 16px; line-height: 1.8;">
+        Our school, following the <strong>NCERT syllabus</strong>, prepares students for the <strong>All India Secondary School Examination (AISSE)</strong> and the <strong>Senior School Certificate Examination (SSCE)</strong> conducted by the <strong>Central Board of Secondary Education (CBSE)</strong>.
+      </p>
+      <p class="text-secondary mb-0" style="font-size: 15px; line-height: 1.7;">
+        The medium of instruction is English. The curriculum balances intellectual rigor, digital empowerment, athletic vitality, arts, and value education across all learning tiers.
+      </p>
+    </div>
+
+    <!-- Levels Grid (I - X) -->
+    <div class="row g-4 mb-5">
+      
+      <!-- Classes I - V -->
+      <div class="col-lg-4">
+        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden" style="background: #ffffff;">
+          <div class="p-3" style="background: linear-gradient(135deg, #FFF1F2 0%, #FFE4E6 100%); border-bottom: 2px solid #FDA4AF;">
+            <div class="d-flex align-items-center justify-content-between">
+              <span class="badge rounded-pill px-3 py-2 fw-bold" style="background: var(--tp-theme-primary, #ab0c2f); color: #fff; font-size: 13px;">Class I &ndash; V</span>
+              <span class="text-danger fw-semibold small"><i class="fa-solid fa-shapes me-1"></i> Primary School</span>
+            </div>
+          </div>
+          <div class="card-body p-4">
+            <h6 class="fw-bold text-dark mb-3">Subjects Taught:</h6>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">English</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Hindi</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Malayalam</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Maths</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">E.V.S</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">IT</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Music</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Dance</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Drawing &amp; Painting</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Chess</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Karate</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Swimming</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Robotics (from grade 3 onwards)</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Health &amp; Physical Education</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Yoga and Abacus</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Life Skill</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Theatre &amp; Drama</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">GDC (General Development Council)</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Kalari</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Classes VI - VIII -->
+      <div class="col-lg-4">
+        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden" style="background: #ffffff;">
+          <div class="p-3" style="background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%); border-bottom: 2px solid #93C5FD;">
+            <div class="d-flex align-items-center justify-content-between">
+              <span class="badge rounded-pill px-3 py-2 fw-bold" style="background: #2563EB; color: #fff; font-size: 13px;">Class VI &ndash; VIII</span>
+              <span class="text-primary fw-semibold small"><i class="fa-solid fa-book-open-reader me-1"></i> Middle School</span>
+            </div>
+          </div>
+          <div class="card-body p-4">
+            <h6 class="fw-bold text-dark mb-3">Subjects Taught:</h6>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">English</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Hindi</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Malayalam</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Maths</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Science</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Social Science</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">CT &amp; AI</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Health &amp; Physical Education</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Art Education and Life Skills</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Karate</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Chess</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Yoga</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Kalari</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Zoomba dance</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Sanskrit</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Swimming</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Theatre and Drama</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Craft</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Robotics</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">GDC</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Kaushal Bodh</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Classes IX - X -->
+      <div class="col-lg-4">
+        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden" style="background: #ffffff;">
+          <div class="p-3" style="background: linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%); border-bottom: 2px solid #86EFAC;">
+            <div class="d-flex align-items-center justify-content-between">
+              <span class="badge rounded-pill px-3 py-2 fw-bold" style="background: #16A34A; color: #fff; font-size: 13px;">Class IX &ndash; X</span>
+              <span class="text-success fw-semibold small"><i class="fa-solid fa-graduation-cap me-1"></i> Secondary (AISSE)</span>
+            </div>
+          </div>
+          <div class="card-body p-4">
+            <h6 class="fw-bold text-dark mb-3">Subjects Taught:</h6>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">English</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Hindi</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Malayalam</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Maths</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Science &amp; Technology</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Social Science</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">AI (Artificial Intelligence)</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Health &amp; Physical Education</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Work Experience &amp; Art</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Kaushal Vikas</span>
+              <span class="badge bg-light text-dark border py-2 px-2 fw-normal">Life Skills</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Senior Secondary (Classes XI - XII) - 16 Groups -->
+    <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-4" style="background: #ffffff;">
+      <div class="p-4" style="background: linear-gradient(135deg, #F8FAFC 0%, #EEF2F6 100%); border-bottom: 2px solid #E2E8F0;">
+        <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+          <div>
+            <span class="badge bg-dark px-3 py-2 rounded-pill text-uppercase mb-1" style="font-size: 11px; letter-spacing: 1px;">Senior Secondary Curriculum</span>
+            <h3 class="fw-bold text-dark mb-0" style="font-size: 24px;">Class XI &ndash; XII Subject Combinations (16 Groups)</h3>
+          </div>
+          <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-3 py-2 fw-semibold">
+            <i class="fa-solid fa-award me-1"></i> CBSE Senior School Certificate (SSCE)
+          </span>
+        </div>
+      </div>
+
+      <div class="card-body p-4 p-md-5">
+        
+        <!-- Science Stream (Groups I - VI) -->
+        <div class="mb-5">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <span class="badge bg-primary px-3 py-2 rounded-pill"><i class="fa-solid fa-atom me-1"></i> Science Stream</span>
+            <span class="text-muted small fw-semibold">Groups I to VI</span>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-hover align-middle border mb-0 rounded-3 overflow-hidden">
+              <thead class="table-light">
+                <tr>
+                  <th style="width: 140px;" class="fw-bold">Group</th>
+                  <th class="fw-bold">Subject Combination</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="badge bg-primary bg-opacity-10 text-primary fw-bold px-2 py-1">Group I</span></td>
+                  <td>English, Physics, Chemistry, Biology, Mathematics</td>
+                </tr>
+                <tr>
+                  <td><span class="badge bg-primary bg-opacity-10 text-primary fw-bold px-2 py-1">Group II</span></td>
+                  <td>English, Physics, Chemistry, Mathematics, Computer Science</td>
+                </tr>
+                <tr>
+                  <td><span class="badge bg-primary bg-opacity-10 text-primary fw-bold px-2 py-1">Group III</span></td>
+                  <td>English, Physics, Chemistry, Biology, Informatics Practices</td>
+                </tr>
+                <tr>
+                  <td><span class="badge bg-primary bg-opacity-10 text-primary fw-bold px-2 py-1">Group IV</span></td>
+                  <td>English, Physics, Chemistry, Biology, Malayalam</td>
+                </tr>
+                <tr>
+                  <td><span class="badge bg-primary bg-opacity-10 text-primary fw-bold px-2 py-1">Group V</span></td>
+                  <td>English, Physics, Chemistry, Biology, Psychology</td>
+                </tr>
+                <tr>
+                  <td><span class="badge bg-primary bg-opacity-10 text-primary fw-bold px-2 py-1">Group VI</span></td>
+                  <td>English, Physics, Chemistry, Biology, AI (Artificial Intelligence)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Commerce Stream (Groups VII - XI) -->
+        <div class="mb-5">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <span class="badge bg-success px-3 py-2 rounded-pill"><i class="fa-solid fa-chart-line me-1"></i> Commerce Stream</span>
+            <span class="text-muted small fw-semibold">Groups VII to XI</span>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-hover align-middle border mb-0 rounded-3 overflow-hidden">
+              <thead class="table-light">
+                <tr>
+                  <th style="width: 140px;" class="fw-bold">Group</th>
+                  <th class="fw-bold">Subject Combination</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="badge bg-success bg-opacity-10 text-success fw-bold px-2 py-1">Group VII</span></td>
+                  <td>English, Accountancy, Business Studies, Economics, Informatics Practices</td>
+                </tr>
+                <tr>
+                  <td><span class="badge bg-success bg-opacity-10 text-success fw-bold px-2 py-1">Group VIII</span></td>
+                  <td>English, Accountancy, Business Studies, Economics, Mathematics</td>
+                </tr>
+                <tr>
+                  <td><span class="badge bg-success bg-opacity-10 text-success fw-bold px-2 py-1">Group IX</span></td>
+                  <td>English, Accountancy, Business Studies, Economics, Malayalam</td>
+                </tr>
+                <tr>
+                  <td><span class="badge bg-success bg-opacity-10 text-success fw-bold px-2 py-1">Group X</span></td>
+                  <td>English, Accountancy, Business Studies, Economics, AI (Artificial Intelligence)</td>
+                </tr>
+                <tr>
+                  <td><span class="badge bg-success bg-opacity-10 text-success fw-bold px-2 py-1">Group XI</span></td>
+                  <td>English, Accountancy, Business Studies, Economics, Psychology</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Humanities Stream (Groups XII - XVI) -->
+        <div>
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <span class="badge bg-warning text-dark px-3 py-2 rounded-pill"><i class="fa-solid fa-landmark me-1"></i> Humanities Stream</span>
+            <span class="text-muted small fw-semibold">Groups XII to XVI</span>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-hover align-middle border mb-0 rounded-3 overflow-hidden">
+              <thead class="table-light">
+                <tr>
+                  <th style="width: 140px;" class="fw-bold">Group</th>
+                  <th class="fw-bold">Subject Combination</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="badge bg-warning bg-opacity-10 text-dark fw-bold px-2 py-1">Group XII</span></td>
+                  <td>English, History, Geography, Economics, Informatics Practices</td>
+                </tr>
+                <tr>
+                  <td><span class="badge bg-warning bg-opacity-10 text-dark fw-bold px-2 py-1">Group XIII</span></td>
+                  <td>English, History, Geography, Economics, Mathematics</td>
+                </tr>
+                <tr>
+                  <td><span class="badge bg-warning bg-opacity-10 text-dark fw-bold px-2 py-1">Group XIV</span></td>
+                  <td>English, History, Geography, Economics, Malayalam</td>
+                </tr>
+                <tr>
+                  <td><span class="badge bg-warning bg-opacity-10 text-dark fw-bold px-2 py-1">Group XV</span></td>
+                  <td>English, History, Geography, Economics, Psychology</td>
+                </tr>
+                <tr>
+                  <td><span class="badge bg-warning bg-opacity-10 text-dark fw-bold px-2 py-1">Group XVI</span></td>
+                  <td>English, History, Geography, Economics, AI (Artificial Intelligence)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</main>', 'Official MGM Model School, Ayiroor, Varkala - Courses Offered page.', '1', '2026-10-21 23:28:40', '2026-10-24 11:32:56'),
+('13', '15913', 'our-founder', 'Our Founder', 'Our Founder', 'Our Founder', '		<div data-elementor-type="wp-post" data-elementor-id="15913" class="elementor elementor-15913" data-elementor-post-type="page">
+				<div class="elementor-element elementor-element-9302a56 e-con e-atomic-element e-flexbox-base e-default-div e-5b8e314 " data-id="9302a56" data-element_type="e-flexbox" data-e-type="e-flexbox" data-interaction-id="9302a56">
+    <div class="elementor-element elementor-element-6eda635 e-flex e-con-boxed e-con e-parent" data-id="6eda635" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+					<div class="e-con-inner">
+		<div class="elementor-element elementor-element-f18831e e-con-full e-flex e-con e-child" data-id="f18831e" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-9df1c58 elementor-widget elementor-widget-image" data-id="9df1c58" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+															<img fetchpriority="high" decoding="async" width="500" height="500" src="assets/images/founder-dr-pk-sukumaran.jpeg" class="attachment-large size-large wp-image-15924" alt="" />															</div>
+				</div>
+		<div class="elementor-element elementor-element-339b3cd e-con-full e-flex e-con e-child" data-id="339b3cd" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-7d32fae elementor-widget elementor-widget-text-editor" data-id="7d32fae" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
+									<h4>Our Founder</h4><p>MGM Model School, a flagship project of Aikya Pradayini Trust, was founded in 1983 by a group of dedicated social workers with a vision to provide quality education. Under the leadership of Dr. P.k. Sukumaran, a renowned educationist and philanthropist, the school has grown exponentially from humble beginnings with just 5 students to a thriving institution with an impressive student body of around 2700. Dr. Sukumaran&#8217;s tireless efforts and commitment to excellence have been instrumental in shaping the school&#8217;s journey, transforming it into a centre of excellence that nurtures young minds and empowers them to reach their full potential.</p>								</div>
+				</div>
+					</div>
+				</div>
+		
+</div>
+<div class="elementor-element elementor-element-5a61714 e-con e-atomic-element e-flexbox-base e-default-div e-5a61714-f4a4a67 " data-id="5a61714" data-element_type="e-flexbox" data-e-type="e-flexbox" data-interaction-id="5a61714">
+    <div class="elementor-element elementor-element-f3bc3f2 e-flex e-con-boxed e-con e-parent" data-id="f3bc3f2" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+					<div class="e-con-inner">
+		<div class="elementor-element elementor-element-57f55d6 e-con-full e-flex e-con e-child" data-id="57f55d6" data-element_type="container" data-e-type="container">
+		<div class="elementor-element elementor-element-06e6afd e-grid e-con-full e-con e-child" data-id="06e6afd" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-59e87ce elementor-view-stacked elementor-position-inline-start elementor-shape-circle elementor-mobile-position-block-start elementor-widget elementor-widget-icon-box" data-id="59e87ce" data-element_type="widget" data-e-type="widget" data-widget_type="icon-box.default">
+							<div class="elementor-icon-box-wrapper">
+
+						<div class="elementor-icon-box-icon">
+				<span  class="elementor-icon">
+				<svg aria-hidden="true" class="e-font-icon-svg e-fas-calendar-alt" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"></path></svg>				</span>
+			</div>
+			
+						<div class="elementor-icon-box-content">
+
+									<h3 class="elementor-icon-box-title">
+						<span  >
+							Established						</span>
+					</h3>
+				
+									<p class="elementor-icon-box-description">
+						1983					</p>
+				
+			</div>
+			
+		</div>
+						</div>
+				<div class="elementor-element elementor-element-f3f23fc elementor-view-stacked elementor-position-inline-start elementor-shape-circle elementor-mobile-position-block-start elementor-widget elementor-widget-icon-box" data-id="f3f23fc" data-element_type="widget" data-e-type="widget" data-widget_type="icon-box.default">
+							<div class="elementor-icon-box-wrapper">
+
+						<div class="elementor-icon-box-icon">
+				<span  class="elementor-icon">
+				<svg xmlns="http://www.w3.org/2000/svg" id="Layer_3" height="512" viewBox="0 0 32 32" width="512" data-name="Layer 3"><path d="m15.867 14.881a4.941 4.941 0 1 0 -4.941-4.94 4.946 4.946 0 0 0 4.941 4.94zm0-7.881a2.941 2.941 0 1 1 -2.941 2.941 2.945 2.945 0 0 1 2.941-2.941z"></path><path d="m6.533 17.785a3.8 3.8 0 1 0 -3.8-3.8 3.8 3.8 0 0 0 3.8 3.8zm0-5.6a1.8 1.8 0 1 1 -1.8 1.8 1.8 1.8 0 0 1 1.8-1.8z"></path><path d="m25.2 17.785a3.8 3.8 0 1 0 -3.8-3.8 3.8 3.8 0 0 0 3.8 3.8zm0-5.6a1.8 1.8 0 1 1 -1.8 1.8 1.8 1.8 0 0 1 1.8-1.8z"></path><path d="m25.333 19.791a5.269 5.269 0 0 0 -2.506.653 8.237 8.237 0 0 0 -6.827-3.837 8.237 8.237 0 0 0 -6.827 3.837 5.269 5.269 0 0 0 -2.506-.653 5.963 5.963 0 0 0 -5.667 6.209 1 1 0 0 0 2 0 3.971 3.971 0 0 1 3.667-4.209 3.272 3.272 0 0 1 1.577.419 10.085 10.085 0 0 0 -.711 3.732 1 1 0 0 0 2 0c0-4.045 2.9-7.335 6.467-7.335s6.467 3.29 6.467 7.335a1 1 0 0 0 2 0 10.085 10.085 0 0 0 -.711-3.732 3.272 3.272 0 0 1 1.577-.419 3.971 3.971 0 0 1 3.667 4.209 1 1 0 0 0 2 0 5.963 5.963 0 0 0 -5.667-6.209z"></path></svg>				</span>
+			</div>
+			
+						<div class="elementor-icon-box-content">
+
+									<h3 class="elementor-icon-box-title">
+						<span  >
+							Founded By 						</span>
+					</h3>
+				
+									<p class="elementor-icon-box-description">
+						Aikya Pradayini Trust					</p>
+				
+			</div>
+			
+		</div>
+						</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-55a975f e-con-full e-flex e-con e-child" data-id="55a975f" data-element_type="container" data-e-type="container">
+		<div class="elementor-element elementor-element-aa8bba2 e-con-full e-flex e-con e-child" data-id="aa8bba2" data-element_type="container" data-e-type="container">
+		<div class="elementor-element elementor-element-01cc027 e-grid e-con-full e-con e-child" data-id="01cc027" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-3fa46bc elementor-view-stacked elementor-position-inline-start elementor-shape-circle elementor-mobile-position-block-start elementor-widget elementor-widget-icon-box" data-id="3fa46bc" data-element_type="widget" data-e-type="widget" data-widget_type="icon-box.default">
+							<div class="elementor-icon-box-wrapper">
+
+						<div class="elementor-icon-box-icon">
+				<span  class="elementor-icon">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="-42 0 512 512.001"><path d="m210.351562 246.632812c33.882813 0 63.21875-12.152343 87.195313-36.128906 23.96875-23.972656 36.125-53.304687 36.125-87.191406 0-33.875-12.152344-63.210938-36.128906-87.191406-23.976563-23.96875-53.3125-36.121094-87.191407-36.121094-33.886718 0-63.21875 12.152344-87.191406 36.125s-36.128906 53.308594-36.128906 87.1875c0 33.886719 12.15625 63.222656 36.128906 87.195312 23.980469 23.96875 53.316406 36.125 87.191406 36.125zm-65.972656-189.292968c18.394532-18.394532 39.972656-27.335938 65.972656-27.335938 25.996094 0 47.578126 8.941406 65.976563 27.335938 18.394531 18.398437 27.339844 39.980468 27.339844 65.972656 0 26-8.945313 47.578125-27.339844 65.976562-18.398437 18.398438-39.980469 27.339844-65.976563 27.339844-25.992187 0-47.570312-8.945312-65.972656-27.339844-18.398437-18.394531-27.34375-39.976562-27.34375-65.976562 0-25.992188 8.945313-47.574219 27.34375-65.972656zm0 0"></path><path d="m426.128906 393.703125c-.691406-9.976563-2.089844-20.859375-4.148437-32.351563-2.078125-11.578124-4.753907-22.523437-7.957031-32.527343-3.3125-10.339844-7.808594-20.550781-13.375-30.335938-5.769532-10.15625-12.550782-19-20.160157-26.277343-7.957031-7.613282-17.699219-13.734376-28.964843-18.199219-11.226563-4.441407-23.667969-6.691407-36.976563-6.691407-5.226563 0-10.28125 2.144532-20.042969 8.5-6.007812 3.917969-13.035156 8.449219-20.878906 13.460938-6.707031 4.273438-15.792969 8.277344-27.015625 11.902344-10.949219 3.542968-22.066406 5.339844-33.042969 5.339844-10.96875 0-22.085937-1.796876-33.042968-5.339844-11.210938-3.621094-20.300782-7.625-26.996094-11.898438-7.769532-4.964844-14.800782-9.496094-20.898438-13.46875-9.753906-6.355468-14.808594-8.5-20.035156-8.5-13.3125 0-25.75 2.253906-36.972656 6.699219-11.257813 4.457031-21.003906 10.578125-28.96875 18.199219-7.609375 7.28125-14.390625 16.121094-20.15625 26.273437-5.558594 9.785157-10.058594 19.992188-13.371094 30.339844-3.199219 10.003906-5.875 20.945313-7.953125 32.523437-2.0625 11.476563-3.457031 22.363282-4.148437 32.363282-.679688 9.777344-1.023438 19.953125-1.023438 30.234375 0 26.726562 8.496094 48.363281 25.25 64.320312 16.546875 15.746094 38.4375 23.730469 65.066406 23.730469h246.53125c26.621094 0 48.511719-7.984375 65.0625-23.730469 16.757813-15.945312 25.253906-37.589843 25.253906-64.324219-.003906-10.316406-.351562-20.492187-1.035156-30.242187zm-44.90625 72.828125c-10.933594 10.40625-25.449218 15.464844-44.378906 15.464844h-246.527344c-18.933594 0-33.449218-5.058594-44.378906-15.460938-10.722656-10.207031-15.933594-24.140625-15.933594-42.585937 0-9.59375.316406-19.066407.949219-28.160157.617187-8.921874 1.878906-18.722656 3.75-29.136718 1.847656-10.285156 4.199219-19.9375 6.996094-28.675782 2.683593-8.378906 6.34375-16.675781 10.882812-24.667968 4.332031-7.617188 9.316407-14.152344 14.816407-19.417969 5.144531-4.925781 11.628906-8.957031 19.269531-11.980469 7.066406-2.796875 15.007812-4.328125 23.628906-4.558594 1.050781.558594 2.921875 1.625 5.953125 3.601563 6.167969 4.019531 13.277344 8.605469 21.136719 13.625 8.859375 5.648437 20.273437 10.75 33.910156 15.152344 13.941406 4.507812 28.160156 6.796875 42.273437 6.796875 14.113282 0 28.335938-2.289063 42.269532-6.792969 13.648437-4.410156 25.058594-9.507813 33.929687-15.164063 8.042969-5.140624 14.953125-9.59375 21.121094-13.617187 3.03125-1.972656 4.902344-3.042969 5.953125-3.601563 8.625.230469 16.566406 1.761719 23.636719 4.558594 7.636719 3.023438 14.121093 7.058594 19.265625 11.980469 5.5 5.261719 10.484375 11.796875 14.816406 19.421875 4.542969 7.988281 8.207031 16.289062 10.886719 24.660156 2.800781 8.75 5.15625 18.398438 7 28.675782 1.867187 10.433593 3.132812 20.238281 3.75 29.144531v.007812c.636719 9.058594.957031 18.527344.960937 28.148438-.003906 18.449219-5.214844 32.378906-15.9375 42.582031zm0 0"></path></svg>				</span>
+			</div>
+			
+						<div class="elementor-icon-box-content">
+
+									<h3 class="elementor-icon-box-title">
+						<span  >
+							Founder						</span>
+					</h3>
+				
+									<p class="elementor-icon-box-description">
+						Dr. P.K Sukumaran					</p>
+				
+			</div>
+			
+		</div>
+						</div>
+				<div class="elementor-element elementor-element-834ea5d elementor-view-stacked elementor-position-inline-start elementor-shape-circle elementor-mobile-position-block-start elementor-widget elementor-widget-icon-box" data-id="834ea5d" data-element_type="widget" data-e-type="widget" data-widget_type="icon-box.default">
+							<div class="elementor-icon-box-wrapper">
+
+						<div class="elementor-icon-box-icon">
+				<span  class="elementor-icon">
+				<svg xmlns="http://www.w3.org/2000/svg" id="Layer_3" height="512" viewBox="0 0 32 32" width="512" data-name="Layer 3"><path d="m15.867 14.881a4.941 4.941 0 1 0 -4.941-4.94 4.946 4.946 0 0 0 4.941 4.94zm0-7.881a2.941 2.941 0 1 1 -2.941 2.941 2.945 2.945 0 0 1 2.941-2.941z"></path><path d="m6.533 17.785a3.8 3.8 0 1 0 -3.8-3.8 3.8 3.8 0 0 0 3.8 3.8zm0-5.6a1.8 1.8 0 1 1 -1.8 1.8 1.8 1.8 0 0 1 1.8-1.8z"></path><path d="m25.2 17.785a3.8 3.8 0 1 0 -3.8-3.8 3.8 3.8 0 0 0 3.8 3.8zm0-5.6a1.8 1.8 0 1 1 -1.8 1.8 1.8 1.8 0 0 1 1.8-1.8z"></path><path d="m25.333 19.791a5.269 5.269 0 0 0 -2.506.653 8.237 8.237 0 0 0 -6.827-3.837 8.237 8.237 0 0 0 -6.827 3.837 5.269 5.269 0 0 0 -2.506-.653 5.963 5.963 0 0 0 -5.667 6.209 1 1 0 0 0 2 0 3.971 3.971 0 0 1 3.667-4.209 3.272 3.272 0 0 1 1.577.419 10.085 10.085 0 0 0 -.711 3.732 1 1 0 0 0 2 0c0-4.045 2.9-7.335 6.467-7.335s6.467 3.29 6.467 7.335a1 1 0 0 0 2 0 10.085 10.085 0 0 0 -.711-3.732 3.272 3.272 0 0 1 1.577-.419 3.971 3.971 0 0 1 3.667 4.209 1 1 0 0 0 2 0 5.963 5.963 0 0 0 -5.667-6.209z"></path></svg>				</span>
+			</div>
+			
+						<div class="elementor-icon-box-content">
+
+									<h3 class="elementor-icon-box-title">
+						<span  >
+							Students						</span>
+					</h3>
+				
+									<p class="elementor-icon-box-description">
+						2700+					</p>
+				
+			</div>
+			
+		</div>
+						</div>
+				</div>
+				</div>
+				</div>
+					</div>
+				</div>
+		
+</div>
+		</div>
+		', 'Official MGM Model School, Ayiroor, Varkala - Our Founder page.', '1', '2026-10-21 23:28:40', '2026-10-24 10:59:54'),
+('14', '15937', 'gallery', 'Gallery', 'Gallery', 'Gallery', '		<div data-elementor-type="wp-page" data-elementor-id="15937" class="elementor elementor-15937" data-elementor-post-type="page">
+				<div class="elementor-element elementor-element-48d4b16 e-con-full e-flex e-con e-parent" data-id="48d4b16" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+		<div class="elementor-element elementor-element-b420351 e-flex e-con-boxed e-con e-child" data-id="b420351" data-element_type="container" data-e-type="container">
+					<div class="e-con-inner">
+				<div class="elementor-element elementor-element-08aa68c elementor-widget elementor-widget-tp-heading" data-id="08aa68c" data-element_type="widget" data-e-type="widget" data-settings="{&quot;tp_anima_type&quot;:&quot;fadeInUp&quot;}" data-widget_type="tp-heading.default">
+				<div class="elementor-widget-container">
+					
+		
+			<div class="tp-section tp-el-section align-box mb-40 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.3s">
+
+				
+				<h2 class="tp-section-3-title tp-el-span-image  tp-el-acadia-title tp-hero-2-title tp-el-title">Gallery </h2>
+							</div>
+
+						</div>
+				</div>
+					</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-b24a816 e-con e-atomic-element e-flexbox-base e-default-div e-5dbd71f " data-id="b24a816" data-element_type="e-flexbox" data-e-type="e-flexbox" data-interaction-id="b24a816">
+    		<div class="elementor-element elementor-element-5a1b72d elementor-widget elementor-widget-gallery" data-id="5a1b72d" data-element_type="widget" data-e-type="widget" data-settings="{&quot;lazyload&quot;:&quot;yes&quot;,&quot;gallery_layout&quot;:&quot;grid&quot;,&quot;columns&quot;:4,&quot;columns_tablet&quot;:2,&quot;columns_mobile&quot;:1,&quot;gap&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:10,&quot;sizes&quot;:[]},&quot;gap_widescreen&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;gap_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:10,&quot;sizes&quot;:[]},&quot;gap_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:10,&quot;sizes&quot;:[]},&quot;gap_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:10,&quot;sizes&quot;:[]},&quot;gap_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:10,&quot;sizes&quot;:[]},&quot;gap_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:10,&quot;sizes&quot;:[]},&quot;link_to&quot;:&quot;file&quot;,&quot;aspect_ratio&quot;:&quot;3:2&quot;,&quot;overlay_background&quot;:&quot;yes&quot;,&quot;content_hover_animation&quot;:&quot;fade-in&quot;}" data-widget_type="gallery.default">
+							<div class="elementor-gallery__container">
+							<a class="e-gallery-item elementor-gallery-item elementor-animated-content" href="assets/images/1752478940.jpeg">
+					<img class="e-gallery-image" src="assets/images/1752478940.jpeg" alt="Gallery Photo" loading="lazy">
+											<div class="elementor-gallery-item__overlay"></div>
+														</a>
+							<a class="e-gallery-item elementor-gallery-item elementor-animated-content" href="assets/images/1756461341.jpg">
+					<img class="e-gallery-image" src="assets/images/1756461341.jpg" alt="Gallery Photo" loading="lazy">
+											<div class="elementor-gallery-item__overlay"></div>
+														</a>
+							<a class="e-gallery-item elementor-gallery-item elementor-animated-content" href="assets/images/1776764248.jpg">
+					<img class="e-gallery-image" src="assets/images/1776764248.jpg" alt="Gallery Photo" loading="lazy">
+											<div class="elementor-gallery-item__overlay"></div>
+														</a>
+							<a class="e-gallery-item elementor-gallery-item elementor-animated-content" href="assets/images/1733377596.jpg">
+					<img class="e-gallery-image" src="assets/images/1733377596.jpg" alt="Gallery Photo" loading="lazy">
+											<div class="elementor-gallery-item__overlay"></div>
+														</a>
+							<a class="e-gallery-item elementor-gallery-item elementor-animated-content" href="assets/images/1733387135.jpg">
+					<img class="e-gallery-image" src="assets/images/1733387135.jpg" alt="Gallery Photo" loading="lazy">
+											<div class="elementor-gallery-item__overlay"></div>
+														</a>
+							<a class="e-gallery-item elementor-gallery-item elementor-animated-content" href="assets/images/1733374738.jpg">
+					<img class="e-gallery-image" src="assets/images/1733374738.jpg" alt="Gallery Photo" loading="lazy">
+											<div class="elementor-gallery-item__overlay"></div>
+														</a>
+							<a class="e-gallery-item elementor-gallery-item elementor-animated-content" href="assets/images/1741692636.jpeg">
+					<img class="e-gallery-image" src="assets/images/1741692636.jpeg" alt="Gallery Photo" loading="lazy">
+											<div class="elementor-gallery-item__overlay"></div>
+														</a>
+							<a class="e-gallery-item elementor-gallery-item elementor-animated-content" href="assets/images/1741692913.jpg">
+					<img class="e-gallery-image" src="assets/images/1741692913.jpg" alt="Gallery Photo" loading="lazy">
+											<div class="elementor-gallery-item__overlay"></div>
+														</a>
+							<a class="e-gallery-item elementor-gallery-item elementor-animated-content" href="assets/images/1741693092.jpg">
+					<img class="e-gallery-image" src="assets/images/1741693092.jpg" alt="Gallery Photo" loading="lazy">
+											<div class="elementor-gallery-item__overlay"></div>
+														</a>
+							<a class="e-gallery-item elementor-gallery-item elementor-animated-content" href="assets/images/1741693179.jpg">
+					<img class="e-gallery-image" src="assets/images/1741693179.jpg" alt="Gallery Photo" loading="lazy">
+											<div class="elementor-gallery-item__overlay"></div>
+														</a>
+							<a class="e-gallery-item elementor-gallery-item elementor-animated-content" href="assets/images/1751285591.jpeg">
+					<img class="e-gallery-image" src="assets/images/1751285591.jpeg" alt="Gallery Photo" loading="lazy">
+											<div class="elementor-gallery-item__overlay"></div>
+														</a>
+							<a class="e-gallery-item elementor-gallery-item elementor-animated-content" href="assets/images/1751285627.jpeg">
+					<img class="e-gallery-image" src="assets/images/1751285627.jpeg" alt="Gallery Photo" loading="lazy">
+											<div class="elementor-gallery-item__overlay"></div>
+														</a>
+					</div>
+					</div>
+		
+</div>
+		</div>
+		', 'Official MGM Model School, Ayiroor, Varkala - Gallery page.', '1', '2026-10-21 23:28:40', '2026-10-21 23:28:40'),
+('15', '15908', 'our-mission', 'Our Mission', 'Our Mission', 'Our Mission', '<div class="tp-subpage-container py-5" style="background: #FAF8F5;">
+  <div class="container custom-container-larg">
+    
+    <!-- Section Header -->
+    <div class="text-center mb-5">
+      <span class="badge px-3 py-2 text-uppercase mb-2" style="background: rgba(171,12,47,0.1); color: var(--tp-theme-primary, #ab0c2f); font-size: 11px; letter-spacing: 1px; font-weight: 700;">Guiding Philosophy</span>
+      <h2 class="tp-section-title" style="font-size: 34px; font-weight: 700; color: #141B2B;">Vision &amp; Mission of MGM Model School</h2>
+      <p class="text-muted mx-auto" style="max-width: 680px; font-size: 16px;">Nurturing young minds towards academic distinction, ethical integrity, and visionary leadership since 1983.</p>
+    </div>
+
+    <!-- Vision & Mission Cards Row -->
+    <div class="row g-4 mb-5 align-items-stretch">
+      
+      <!-- Vision Card -->
+      <div class="col-lg-6">
+        <div class="h-100 p-4 p-md-5 rounded-4 shadow-sm" style="background: #ffffff; border-top: 4px solid var(--tp-theme-primary, #ab0c2f);">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <div style="width: 52px; height: 52px; border-radius: 12px; background: rgba(171,12,47,0.1); color: var(--tp-theme-primary, #ab0c2f); display: flex; align-items: center; justify-content: center; font-size: 22px;">
+              <i class="fa-solid fa-eye"></i>
+            </div>
+            <h3 class="mb-0 fw-bold" style="font-size: 24px; color: #141B2B;">Vision</h3>
+          </div>
+          <p class="text-secondary leading-relaxed fw-medium mb-0" style="font-size: 16px; line-height: 1.85;">
+            To make our school a centre of excellence that shapes confident, adaptable and research-oriented global citizens with strong communication skills and deep Indian values, empowering them to lead with courage, integrity, empathy and responsibility.
+          </p>
+        </div>
+      </div>
+
+      <!-- Mission Card -->
+      <div class="col-lg-6">
+        <div class="h-100 p-4 p-md-5 rounded-4 shadow-sm" style="background: #ffffff; border-top: 4px solid #2563EB;">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <div style="width: 52px; height: 52px; border-radius: 12px; background: rgba(37,99,235,0.1); color: #2563EB; display: flex; align-items: center; justify-content: center; font-size: 22px;">
+              <i class="fa-solid fa-bullseye"></i>
+            </div>
+            <h3 class="mb-0 fw-bold" style="font-size: 24px; color: #141B2B;">Mission</h3>
+          </div>
+          <p class="text-secondary leading-relaxed fw-medium mb-0" style="font-size: 16px; line-height: 1.85;">
+            To nurture children with utmost care, giving equal opportunity, providing creative and critical learning, computational thinking rooted in Indian culture and values; to inspire them to become empathetic and confident thinkers, responsible citizens and future leaders.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>', 'Official MGM Model School, Ayiroor, Varkala - Our Mission page.', '1', '2026-10-21 23:28:40', '2026-10-21 23:28:40'),
+('16', '10042', 'about-us', 'About Us', 'About Us', 'About Us', '		<div data-elementor-type="wp-page" data-elementor-id="10042" class="elementor elementor-10042" data-elementor-post-type="page">
+				<div class="elementor-element elementor-element-7a9cfb86 e-con-full e-flex e-con e-parent" data-id="7a9cfb86" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+		<div class="elementor-element elementor-element-28b505f6 e-flex e-con-boxed e-con e-child" data-id="28b505f6" data-element_type="container" data-e-type="container">
+					<div class="e-con-inner">
+		<div class="elementor-element elementor-element-62e6efe6 e-con-full e-flex e-con e-child" data-id="62e6efe6" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-1a493e38 elementor-widget elementor-widget-tp-heading" data-id="1a493e38" data-element_type="widget" data-e-type="widget">
+				<div class="elementor-widget-container">
+					
+			<div class="tp-section tp-el-section mb-40 align-box">
+				<h5 class="tp-section-subtitle tp-el-subtitle">About Us</h5>
+				<h3 class="tp-section-title tp-el-acadia-title tp-el-title">A Legacy of Excellence<br> 
+          <span> Since 1983 <svg width="180" height="13" viewbox="0 0 180 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+             <path d="M173.163 12.3756C97.1838 -3.8242 30.6496 5.67799 7.32494 12.2553C5.30414 12.8252 2.43544 12.6722 0.917529 11.9135C-0.600387 11.1549 -0.192718 10.0779 1.82808 9.50807C27.5427 2.25675 98.002 -7.60121 177.683 9.38783C179.881 9.85641 180.65 10.9051 179.402 11.7301C178.154 12.5552 175.361 12.8442 173.163 12.3756Z" fill="currentColor"></path>
+             </svg>
+          </span>
+        </h3>
+			</div>
+
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-682bbbae elementor-widget elementor-widget-text-editor" data-id="682bbbae" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
+									<blockquote><p><strong>&#8220;Success is not about being the best. It&#8217;s about being better than you were yesterday.”</strong></p></blockquote>
+                  <p>MGM Model School\'s 43-year journey began in 1983 with five students, founded by dedicated social workers under Aikya Pradayini Trust\'s patronage. The late Padmasree Prem Nazeer laid the foundation stone. The school offers classes from standard I to XII, along with pre-school, play school and Kids school programs. The Kids International School, inaugurated by Education Minister Sri. Abdu Rabb in 2012, is a notable addition. The school is affiliated to the Central Board of Secondary Education (CBSE).</p>
+                  <p>From humble beginnings in a small rented building, MGM Model School has grown into a full-fledged institution with cutting-edge facilities, including an Innovation Lab, three digital libraries, an audio recording studio (Radio Club), globe, butterfly garden, swimming pools, Happiness corner and 3D Maths Zone. These resources foster curiosity and interest in learning among our <strong>2,700+</strong> students from pre-primary to senior secondary.</p>
+                  <p>Our institution strives to provide international-standard education, leveraging modern technologies and techniques to promote all-round development, character building and 21st-century skills. We also offer opportunities for community service, instilling values in our students.</p>
+                  <p>Notable events include the Silver Jubilee celebrations, inaugurated by the then Kerala Governor Shri. R. L Bhatia in 2007 and valedicted by former President Dr. A P J Abdul Kalam. His equation for knowledge &mdash; <strong>creativity + righteousness + courage</strong> &mdash; has become a guiding principle for our creative and value-based learning approach.</p>
+                  <p>We\'re honored that our innovative <strong>20-20 methodology</strong>, initiated by Founder &amp; Trust Secretary Dr. P K Sukumaran, was acknowledged and appreciated by Kerala Governor Shri Arif Mohammed Khan. Our team of qualified and dedicated teachers provides stimulating education, adhering to Mahatma Gandhi\'s principles and values. Under the guidance of our Founder Dr. P K Sukumaran and the visionary leadership of our Principal, Dr. Pooja S, the school continues to scale new heights.</p>
+                  <p>Our motto is <strong>nation\'s reconstruction and integration</strong>, and we spare no effort in inculcating moral values and the richness of Indian culture.</p>
+        </div>
+
+        <!-- Principal\'s Message Section -->
+        <div class="card border-0 shadow-sm p-4 my-5" style="background: #FFFBFB; border-left: 5px solid var(--tp-theme-primary, #ab0c2f) !important; border-radius: 12px;">
+          <div class="row align-items-center g-4">
+            <div class="col-md-4 text-center">
+              <img src="assets/images/principal-dr-pooja.jpeg" alt="Principal Dr. Pooja S" class="img-fluid rounded shadow-sm" style="max-height: 280px; object-fit: cover; width: 100%;">
+              <h5 class="mt-3 mb-1 fw-bold text-dark">Dr. Pooja S</h5>
+              <p class="text-muted small mb-0">Principal, MGM Model School</p>
+            </div>
+            <div class="col-md-8">
+              <span class="badge bg-danger mb-2 px-3 py-2 text-uppercase" style="letter-spacing: 0.5px;">Principal\'s Desk</span>
+              <blockquote class="fst-italic text-dark mb-3">
+                &ldquo;Education is not the learning of facts, but the training of the mind to think&rdquo; &mdash; Albert Einstein
+              </blockquote>
+              <p class="text-secondary small mb-2">Under the un-daunting leadership &amp; guidance of our Founder, Dr. P K Sukumaran, the school has completed a meritorious journey of 43 years.</p>
+              <p class="text-secondary small mb-2">Today we live in a world that is so different from the one we grew up in. Children today face multifarious challenges. The role of a school is not only to pursue academic excellence but also to motivate and empower students to be lifelong learners, critical thinkers, and productive members of an ever-changing global society.</p>
+              <p class="text-secondary small mb-0">NEP 20-20 develops cognitive capacities, literacy, numeracy, problem-solving, and emotional dispositions. The ultimate aim of MGM Model School is to make every student not just academically excellent, but a better individual in thought, deed &amp; character.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- National Awards Showcase -->
+        <div class="my-5">
+          <h3 class="tp-section-title mb-4">National Honors &amp; Prestigious Awards</h3>
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="card h-100 border-0 shadow-sm p-3 rounded-4" style="background: #F8FAFC;">
+                <img src="assets/images/water-award-2024.jpeg" alt="6th National Water Award 2024" class="card-img-top rounded-3" style="height: 240px; object-fit: cover;">
+                <div class="card-body px-1 pt-3 pb-0">
+                  <span class="badge bg-primary mb-2">Ministry of Jal Shakti, Govt of India</span>
+                  <h5 class="card-title fw-bold">6th National Water Award 2024</h5>
+                  <p class="card-text text-muted small">Conferred with <strong>Special Mention &ndash; Best School/College Category</strong> at Vigyan Bhawan, New Delhi in the august presence of Hon\'ble President of India Smt. Droupadi Murmu. Principal Dr. Pooja S received the honor from Union Minister Shri C. R. Paatil for our innovative rainwater harvesting system with 36 conservation pits across the campus.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card h-100 border-0 shadow-sm p-3 rounded-4" style="background: #F8FAFC;">
+                <img src="assets/images/national-principal-award-2025.jpeg" alt="National Principal Award 2025" class="card-img-top rounded-3" style="height: 240px; object-fit: cover;">
+                <div class="card-body px-1 pt-3 pb-0">
+                  <span class="badge bg-danger mb-2">National Honor</span>
+                  <h5 class="card-title fw-bold">Dr. Sarvepalli Radhakrishnan National Principal Award 2025</h5>
+                  <p class="card-text text-muted small">Presented to Principal Dr. Pooja S by Dr. Subramanyam Sharma, grandson of Bharat Ratna Dr. S. Radhakrishnan, at the Grand Conclave in Hyderabad, celebrating her visionary leadership, empowerment of 21st-century learners, and transformative commitment to quality education.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vriksha Chikitsa Video Feature -->
+        <div class="my-5">
+          <h3 class="tp-section-title mb-2">Vriksha Chikitsa &ndash; Traditional Ayurvedic Tree Treatment</h3>
+          <p class="text-muted">A unique campus environmental conservation project led by renowned tree healer Shri. K. Binu (\'Tree Doctor\') treating our beloved 40-year-old campus jackfruit tree:</p>
+          
+          <div class="mgm-video-container" data-video-wrapper>
+            <video class="mgm-autoplay-video" playsinline webkit-playsinline muted loop preload="none" poster="assets/images/about-us-campus.jpeg">
+              <source src="assets/videos/vriksha-chikitsa.mp4" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
+            <div class="mgm-video-controls-overlay">
+              <div class="mgm-video-btn-group">
+                <button type="button" class="mgm-video-ctrl-btn mgm-btn-play" aria-label="Play / Pause Video">
+                  <i class="fa-solid fa-play"></i> <span class="mgm-btn-label">Play</span>
+                </button>
+                <button type="button" class="mgm-video-ctrl-btn mgm-btn-mute" aria-label="Unmute Video">
+                  <i class="fa-solid fa-volume-xmark"></i> <span class="mgm-btn-label">Unmute</span>
+                </button>
+              </div>
+              <div class="mgm-video-badge">
+                <span class="mgm-video-badge-dot"></span>
+                <span>Vriksha Chikitsa Project</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+		<div class="elementor-element elementor-element-3c8b83e4 e-con-full e-flex e-con e-child" data-id="3c8b83e4" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-4b91b19b elementor-widget elementor-widget-tp-theme-button" data-id="4b91b19b" data-element_type="widget" data-e-type="widget">
+				<div class="elementor-widget-container">
+							<div class="tp-btn-wrapper">
+					<a href="/admission-procedure/" target="_self" rel="nofollow" class="tp-el-theme-btn d-inline-flex align-items-center tp-btn-round inline tp-el-btn">
+						<span class="theme-btn-text">Admissions &amp; Enquiries</span>
+						<span class="tp-theme_btn-svg-icon theme-btn-icon on-right">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 7H13" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M7 1L13 7L7 13" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </span>
+					</a>
+				</div>
+						</div>
+				</div>
+				</div>
+				</div>
+					</div>
+				</div>
+				</div>
+				</div>', 'Official MGM Model School, Ayiroor, Varkala - About Us page.', '1', '2026-10-21 23:28:40', '2026-10-24 11:04:58'),
+('17', NULL, 'contact', 'Contact Us', NULL, 'Contact Us', '', 'Contact MGM Model School, Ayiroor, Varkala - Location, phone numbers, email, and campus enquiry.', '1', '2026-10-24 12:15:05', '2026-10-24 12:15:05'),
+('18', NULL, 'notices', 'Notices', 'News, Announcements & Events', 'Notices', '', 'Official notices, circulars, academic milestones, and event updates from MGM Model School Ayiroor, Varkala.', '1', '2026-10-24 15:17:09', '2026-10-24 15:17:09'),
+('19', NULL, 'highlights', 'Highlights', 'Campus Highlights & Signature Initiatives', 'Highlights', '', 'Explore the signature educational innovations, world-class amenities, state-of-the-art labs, environmental sanctuaries, and character-building platforms at MGM Model School.', '1', '2026-10-27 00:50:12', '2026-10-27 00:50:12'); SAFETY CERTIFICATE</a></h3></div></div>				</div>\n				<div class=\"elementor-element elementor-element-b9bd003 elementor-position-top elementor-widget elementor-widget-image-box\" data-id=\"b9bd003\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image-box.default\">\n					<div class=\"elementor-image-box-wrapper\"><figure class=\"elementor-image-box-img\"><a href=\"assets/docs/1751885656740-smc-new.pdf\"  tabindex=\"-1\" target=\"_blank\" rel=\"noopener noreferrer\"><img decoding=\"async\" width=\"128\" height=\"128\" src=\"assets/images/download-pdf.png\" class=\"attachment-full size-full wp-image-16053\" alt=\"\" /></a></figure><div class=\"elementor-image-box-content\"><h3 class=\"elementor-image-box-title\"><a href=\"assets/docs/1751885656740-smc-new.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">SMC LIST</a></h3></div></div>				</div>\n				<div class=\"elementor-element elementor-element-d1248a4 elementor-position-top elementor-widget elementor-widget-image-box\" data-id=\"d1248a4\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image-box.default\">\n					<div class=\"elementor-image-box-wrapper\"><figure class=\"elementor-image-box-img\"><a href=\"assets/docs/1733383474258-RECOGNITION-LETTER.pdf\"  tabindex=\"-1\" target=\"_blank\" rel=\"noopener noreferrer\"><img decoding=\"async\" width=\"128\" height=\"128\" src=\"assets/images/download-pdf.png\" class=\"attachment-full size-full wp-image-16053\" alt=\"\" /></a></figure><div class=\"elementor-image-box-content\"><h3 class=\"elementor-image-box-title\"><a href=\"assets/docs/1733383474258-RECOGNITION-LETTER.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">RECOGNITION LETTER</a></h3></div></div>				</div>\n				<div class=\"elementor-element elementor-element-ff94b63 elementor-position-top elementor-widget elementor-widget-image-box\" data-id=\"ff94b63\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image-box.default\">\n					<div class=\"elementor-image-box-wrapper\"><figure class=\"elementor-image-box-img\"><a href=\"assets/docs/1733383394165-Trust-Certificate.pdf\"  tabindex=\"-1\" target=\"_blank\" rel=\"noopener noreferrer\"><img decoding=\"async\" width=\"128\" height=\"128\" src=\"assets/images/download-pdf.png\" class=\"attachment-full size-full wp-image-16053\" alt=\"\" /></a></figure><div class=\"elementor-image-box-content\"><h3 class=\"elementor-image-box-title\"><a href=\"assets/docs/1733383394165-Trust-Certificate.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Trust Certificate</a></h3></div></div>				</div>\n				<div class=\"elementor-element elementor-element-8b752b6 elementor-position-top elementor-widget elementor-widget-image-box\" data-id=\"8b752b6\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image-box.default\">\n					<div class=\"elementor-image-box-wrapper\"><figure class=\"elementor-image-box-img\"><a href=\"assets/docs/Vehicle-Fitness-Certificate-2026.pdf\"  tabindex=\"-1\" target=\"_blank\" rel=\"noopener noreferrer\"><img decoding=\"async\" width=\"128\" height=\"128\" src=\"assets/images/download-pdf.png\" class=\"attachment-full size-full wp-image-16053\" alt=\"\" /></a></figure><div class=\"elementor-image-box-content\"><h3 class=\"elementor-image-box-title\"><a href=\"assets/docs/Vehicle-Fitness-Certificate-2026.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Vehicle Fitness Certificate</a></h3></div></div>				</div>\n				<div class=\"elementor-element elementor-element-c2a5c23 elementor-position-top elementor-widget elementor-widget-image-box\" data-id=\"c2a5c23\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image-box.default\">\n					<div class=\"elementor-image-box-wrapper\"><figure class=\"elementor-image-box-img\"><a href=\"assets/docs/1733383227929-DEO-Certificate.pdf\"  tabindex=\"-1\" target=\"_blank\" rel=\"noopener noreferrer\"><img decoding=\"async\" width=\"128\" height=\"128\" src=\"assets/images/download-pdf.png\" class=\"attachment-full size-full wp-image-16053\" alt=\"\" /></a></figure><div class=\"elementor-image-box-content\"><h3 class=\"elementor-image-box-title\"><a href=\"assets/docs/1733383227929-DEO-Certificate.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">DEO Certificate</a></h3></div></div>				</div>\n				<div class=\"elementor-element elementor-element-5365038 elementor-position-top elementor-widget elementor-widget-image-box\" data-id=\"5365038\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image-box.default\">\n					<div class=\"elementor-image-box-wrapper\"><figure class=\"elementor-image-box-img\"><a href=\"assets/docs/1767005946446-Academic-Caledandar.pdf\"  tabindex=\"-1\" target=\"_blank\" rel=\"noopener noreferrer\"><img decoding=\"async\" width=\"128\" height=\"128\" src=\"assets/images/download-pdf.png\" class=\"attachment-full size-full wp-image-16053\" alt=\"\" /></a></figure><div class=\"elementor-image-box-content\"><h3 class=\"elementor-image-box-title\"><a href=\"assets/docs/1767005946446-Academic-Caledandar.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">ACADEMIC CALENDER</a></h3></div></div>				</div>\n				</div>\n				</div>\n					</div>\n				</div>\n				</div>\n		', 'Official MGM Model School, Ayiroor, Varkala - Mandatory Disclosure page.', '1', '2026-10-21 23:28:40', '2026-10-24 12:14:47'),
 ('2', '16043', 'yoga', 'Yoga', 'Yoga', 'Yoga', '		<div data-elementor-type=\"wp-page\" data-elementor-id=\"16043\" class=\"elementor elementor-16043\" data-elementor-post-type=\"page\">\n				<div class=\"elementor-element elementor-element-5273ec4 e-flex e-con-boxed e-con e-parent\" data-id=\"5273ec4\" data-element_type=\"container\" data-e-type=\"container\">\n					<div class=\"e-con-inner\">\n		<div class=\"elementor-element elementor-element-70902a8 e-con-full e-flex e-con e-child\" data-id=\"70902a8\" data-element_type=\"container\" data-e-type=\"container\">\n		<div class=\"elementor-element elementor-element-35c8627 e-grid e-con-full e-con e-child\" data-id=\"35c8627\" data-element_type=\"container\" data-e-type=\"container\">\n				<div class=\"elementor-element elementor-element-12ae315 elementor-widget elementor-widget-image\" data-id=\"12ae315\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image.default\">\n															<img fetchpriority=\"high\" decoding=\"async\" width=\"640\" height=\"640\" src=\"assets/images/1751285353.jpg\" class=\"attachment-large size-large wp-image-16045\" alt=\"\" />															</div>\n				<div class=\"elementor-element elementor-element-5228691 elementor-widget elementor-widget-image\" data-id=\"5228691\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image.default\">\n															<img decoding=\"async\" width=\"640\" height=\"640\" src=\"assets/images/1751285378.jpeg\" class=\"attachment-large size-large wp-image-16046\" alt=\"\" />															</div>\n				<div class=\"elementor-element elementor-element-e5b40ce elementor-widget elementor-widget-image\" data-id=\"e5b40ce\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image.default\">\n															<img decoding=\"async\" width=\"640\" height=\"640\" src=\"assets/images/1751285400.jpeg\" class=\"attachment-large size-large wp-image-16047\" alt=\"\" />															</div>\n				</div>\n				</div>\n					</div>\n				</div>\n		<div class=\"elementor-element elementor-element-b889079 e-grid e-con-boxed e-con e-parent\" data-id=\"b889079\" data-element_type=\"container\" data-e-type=\"container\">\n					<div class=\"e-con-inner\">\n					</div>\n				</div>\n				</div>\n		', 'Official MGM Model School, Ayiroor, Varkala - Yoga page.', '1', '2026-10-21 23:28:40', '2026-10-21 23:28:40'),
 ('3', '16036', 'voice-of-mgm', 'Voice Of MGM', 'Voice Of MGM', 'Voice Of MGM', '		<div data-elementor-type=\"wp-page\" data-elementor-id=\"16036\" class=\"elementor elementor-16036\" data-elementor-post-type=\"page\">\n				<div class=\"elementor-element elementor-element-5273ec4 e-flex e-con-boxed e-con e-parent\" data-id=\"5273ec4\" data-element_type=\"container\" data-e-type=\"container\">\n					<div class=\"e-con-inner\">\n		<div class=\"elementor-element elementor-element-70902a8 e-con-full e-flex e-con e-child\" data-id=\"70902a8\" data-element_type=\"container\" data-e-type=\"container\">\n				<div class=\"elementor-element elementor-element-8e7566c elementor-arrows-position-inside elementor-widget elementor-widget-image-carousel\" data-id=\"8e7566c\" data-element_type=\"widget\" data-e-type=\"widget\" data-settings=\"{&quot;slides_to_show&quot;:&quot;1&quot;,&quot;navigation&quot;:&quot;arrows&quot;,&quot;autoplay&quot;:&quot;yes&quot;,&quot;pause_on_hover&quot;:&quot;yes&quot;,&quot;pause_on_interaction&quot;:&quot;yes&quot;,&quot;autoplay_speed&quot;:5000,&quot;infinite&quot;:&quot;yes&quot;,&quot;effect&quot;:&quot;slide&quot;,&quot;speed&quot;:500}\" data-widget_type=\"image-carousel.default\">\n							<div class=\"elementor-image-carousel-wrapper swiper\" role=\"region\" aria-roledescription=\"carousel\" aria-label=\"Image Carousel\" dir=\"ltr\">\n			<div class=\"elementor-image-carousel swiper-wrapper swiper-image-stretch\" aria-live=\"off\">\n								<div class=\"swiper-slide\" role=\"group\" aria-roledescription=\"slide\" aria-label=\"1 of 2\"><a href=\"assets/images/1750233724.jpeg\"><figure class=\"swiper-slide-inner\"><img decoding=\"async\" class=\"swiper-slide-image\" src=\"assets/images/1750233724.jpeg\" alt=\"1750233724\" /></figure></a></div><div class=\"swiper-slide\" role=\"group\" aria-roledescription=\"slide\" aria-label=\"2 of 2\"><a href=\"assets/images/1750233709.jpeg\"><figure class=\"swiper-slide-inner\"><img decoding=\"async\" class=\"swiper-slide-image\" src=\"assets/images/1750233709.jpeg\" alt=\"1750233709\" /></figure></a></div>			</div>\n												<div class=\"elementor-swiper-button elementor-swiper-button-prev\" role=\"button\" tabindex=\"0\">\n						<svg aria-hidden=\"true\" class=\"e-font-icon-svg e-eicon-chevron-left\" viewBox=\"0 0 1000 1000\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M646 125C629 125 613 133 604 142L308 442C296 454 292 471 292 487 292 504 296 521 308 533L604 854C617 867 629 875 646 875 663 875 679 871 692 858 704 846 713 829 713 812 713 796 708 779 692 767L438 487 692 225C700 217 708 204 708 187 708 171 704 154 692 142 675 129 663 125 646 125Z\"></path></svg>					</div>\n					<div class=\"elementor-swiper-button elementor-swiper-button-next\" role=\"button\" tabindex=\"0\">\n						<svg aria-hidden=\"true\" class=\"e-font-icon-svg e-eicon-chevron-right\" viewBox=\"0 0 1000 1000\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M696 533C708 521 713 504 713 487 713 471 708 454 696 446L400 146C388 133 375 125 354 125 338 125 325 129 313 142 300 154 292 171 292 187 292 204 296 221 308 233L563 492 304 771C292 783 288 800 288 817 288 833 296 850 308 863 321 871 338 875 354 875 371 875 388 867 400 854L696 533Z\"></path></svg>					</div>\n				\n									</div>\n						</div>\n				</div>\n		<div class=\"elementor-element elementor-element-4a139fb e-con-full e-flex e-con e-child\" data-id=\"4a139fb\" data-element_type=\"container\" data-e-type=\"container\">\n					<h2 data-interaction-id=\"44e03f8\" class=\"e-44e03f8-9c56304 e-heading-base e-default-h2\">​<strong>\"<u>Voice of MGM\" - Our School Radio Club</u></strong><br></h2>\n				<div class=\"elementor-element elementor-element-55c629b elementor-widget elementor-widget-text-editor\" data-id=\"55c629b\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">\n									<div class=\"row sa-row\"><div class=\"col-sm sa-col\"><p style=\"font-weight: 400;\">The &#8220;Voice of MGM&#8221; Radio Club provides a unique platform for students to build confidence, develop public speaking skills, and showcase their creativity. Running a radio show fosters teamwork, communication, and commitment.</p><p style=\"font-weight: 400;\">Our user-friendly systems encourage participation from students of all ages and abilities. Unlike camera or stage performances, speaking into a microphone in a closed room can be less intimidating, allowing students to express themselves freely.</p><p style=\"font-weight: 400;\">​Inaugurated by Rashmi Roja Thushara Nair IAS, Bureau Director of the Press Information Bureau, our Radio Club empowers students to share their ideas and opinions, giving them a confident voice.</p></div></div>								</div>\n				</div>\n					</div>\n				</div>\n		<div class=\"elementor-element elementor-element-b889079 e-grid e-con-boxed e-con e-parent\" data-id=\"b889079\" data-element_type=\"container\" data-e-type=\"container\">\n					<div class=\"e-con-inner\">\n					</div>\n				</div>\n				</div>\n		', 'Official MGM Model School, Ayiroor, Varkala - Voice Of MGM page.', '1', '2026-10-21 23:28:40', '2026-10-21 23:28:40'),
 ('4', '16026', 'hindustan-scouts-guides', 'Hindustan Scouts & Guides.', 'Hindustan Scouts & Guides.', 'Hindustan Scouts & Guides.', '<div class=\"tp-subpage-container py-5\">\n  <div class=\"container custom-container-larg\">\n    <div class=\"row g-5 align-items-center\">\n      \n      <!-- Left Column: Troop Photo -->\n      <div class=\"col-lg-6\">\n        <div class=\"rounded-4 overflow-hidden shadow-sm\" style=\"border: 1px solid #eaeaea;\">\n          <img src=\"assets/images/scouts-and-guides.jpeg\" class=\"w-100\" style=\"min-height: 420px; max-height: 500px; object-fit: cover;\" alt=\"Hindustan Scouts and Guides Troop at MGM Model School\">\n        </div>\n      </div>\n\n      <!-- Right Column: Scouts & Guides Details -->\n      <div class=\"col-lg-6 ps-lg-4\">\n        <span class=\"badge px-3 py-1 mb-2 text-uppercase\" style=\"background: rgba(171,12,47,0.1); color: var(--tp-theme-primary); font-size: 11px; font-weight: 700;\">Character &amp; Discipline</span>\n        <h2 class=\"tp-section-title mb-3\" style=\"font-size: 32px; font-weight: 700; color: #141B2B;\">Hindustan Scouts &amp; Guides</h2>\n        \n        <p class=\"text-secondary leading-relaxed mb-4\" style=\"font-size: 15px; line-height: 1.8;\">\n          As part of our mission to foster character development, moral fortitude, and responsible citizenry, MGM Model School, Ayiroor, Varkala has partnered with Hindustan Scouts and Guides Kerala since 2019.\n        </p>\n\n        <div class=\"card border-0 shadow-sm p-4 mb-4 rounded-4 bg-white\">\n          <h6 class=\"fw-bold mb-3\" style=\"color: #141B2B;\"><i class=\"fa-solid fa-flag me-2 text-danger\"></i>Our School Proudly Hosts:</h6>\n          <ul class=\"list-unstyled mb-0 d-flex flex-column gap-2\">\n            <li class=\"d-flex align-items-center gap-2\">\n              <i class=\"fa-solid fa-circle-check text-success\"></i>\n              <span class=\"fw-medium text-dark\">1 Scout Troop (104 Active Cadets)</span>\n            </li>\n            <li class=\"d-flex align-items-center gap-2\">\n              <i class=\"fa-solid fa-circle-check text-success\"></i>\n              <span class=\"fw-medium text-dark\">1 Guide Company</span>\n            </li>\n            <li class=\"d-flex align-items-center gap-2\">\n              <i class=\"fa-solid fa-circle-check text-success\"></i>\n              <span class=\"fw-medium text-dark\">1 Rover-Ranger unit</span>\n            </li>\n          </ul>\n        </div>\n\n        <div class=\"card border-0 shadow-sm p-4 rounded-4\" style=\"background: #FDFBF8; border-left: 4px solid #F5A623 !important;\">\n          <p class=\"text-secondary mb-3\" style=\"font-size: 15px; line-height: 1.8;\">\n            Led by our trained Scout Master <strong>Mr. Pravin S R</strong>, our troop of 104 active cadets is learning the true spirit of discipline, leadership, and service to the nation. Notably, <strong>45 cadets have been awarded the prestigious Rajyapuraskar (Governor\'s Award)</strong> over the past several years.\n          </p>\n          <div>\n            <a href=\"merit-day/#rajyapuraskar\" class=\"btn btn-sm btn-outline-danger rounded-pill px-3 py-2 fw-semibold\">\n              <i class=\"fa-solid fa-award me-1\"></i> View Rajyapuraskar Honors on Merit Day <i class=\"fa-solid fa-arrow-right ms-1\"></i>\n            </a>\n          </div>\n        </div>\n      </div>\n\n    </div>\n  </div>\n</div>', 'Official MGM Model School, Ayiroor, Varkala - Hindustan Scouts &#038; Guides. page.', '1', '2026-10-21 23:28:40', '2026-10-24 14:35:23'),

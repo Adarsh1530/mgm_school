@@ -54,8 +54,8 @@ $innovationSection = <<<'HTML'
           </div>
         </div>
 
-        <a href="about-us/" class="btn btn-danger px-4 py-2 rounded-pill fw-bold" style="background: var(--tp-theme-primary, #ab0c2f); border: none;">
-          Explore Campus Facilities <i class="fa-solid fa-arrow-right ms-2"></i>
+        <a href="highlights/" class="btn btn-danger px-4 py-2 rounded-pill fw-bold" style="background: var(--tp-theme-primary, #ab0c2f); border: none;">
+          Explore All 21 Campus Highlights <i class="fa-solid fa-arrow-right ms-2"></i>
         </a>
       </div>
 

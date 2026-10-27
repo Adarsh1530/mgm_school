@@ -25,6 +25,9 @@ import_cpanel_db.php
 create_cpanel_archive.php
 cpanel_unzip_helper.php
 cpanel_cookies.txt
+tools/deploy_*.py
+tools/deploy_*.php
+tools/remote_db_migrate.php
 *.zip
 config/db_credentials.php
 

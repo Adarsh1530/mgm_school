@@ -145,7 +145,7 @@ $address = get_setting('school_address', 'MGM Model School, Ayiroor, Varkala 695
                       </a>
 
                       <?php if ($hasChildren): ?>
-                        <ul class="dropdown-menu-custom">
+                        <ul class="dropdown-menu-custom <?= count($nav['children']) > 8 ? 'dropdown-mega' : '' ?>">
                           <?php foreach ($nav['children'] as $child): 
                             $childActive = !empty($currentSlug) && strpos($child['url'], '/' . $currentSlug . '/') !== false;
                           ?>
