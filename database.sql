@@ -165,15 +165,16 @@ INSERT INTO `mandatory_disclosures` VALUES
 ('1', 'Saras 5.0', '1737025323273-SARAS-5.0.pdf', 'assets/docs/1737025323273-SARAS-5.0.pdf', '150 KB', '1', '1', '2026-10-21 23:28:40'),
 ('2', 'AFFILIATION', '1733382575212-AFFILIATION.pdf', 'assets/docs/1733382575212-AFFILIATION.pdf', '163 KB', '2', '1', '2026-10-21 23:28:40'),
 ('3', 'FEE STRUCTURE', 'fee-structure-2026-27.png', 'assets/images/fee-structure-2026-27.png', '442 KB', '3', '1', '2026-10-27 12:00:00'),
-('4', 'CBSE Results (From 2019)', '1750226704411-cbse-results-from-2019.pdf', 'assets/docs/1750226704411-cbse-results-from-2019.pdf', '42 KB', '4', '1', '2026-10-21 23:28:40'),
-('5', 'BUILDING SAFETY CERTIFICATE', '1733383672169-BUILDING-SAFETY-CERTIFICATE.pdf', 'assets/docs/1733383672169-BUILDING-SAFETY-CERTIFICATE.pdf', '62 KB', '5', '1', '2026-10-21 23:28:40'),
-('6', 'FIRE SAFETY CERTIFICATE', '1733383617275-FIRE-SAFETY-CERTIFICATE.pdf', 'assets/docs/1733383617275-FIRE-SAFETY-CERTIFICATE.pdf', '51 KB', '6', '1', '2026-10-21 23:28:40'),
-('7', 'SMC LIST', 'smc-list-2026-27.jpg', 'assets/images/smc-list-2026-27.jpg', '256 KB', '7', '1', '2026-10-21 23:28:40'),
-('8', 'RECOGNITION LETTER', '1733383474258-RECOGNITION-LETTER.pdf', 'assets/docs/1733383474258-RECOGNITION-LETTER.pdf', '458 KB', '8', '1', '2026-10-21 23:28:40'),
-('9', 'Trust Certificate', '1733383394165-Trust-Certificate.pdf', 'assets/docs/1733383394165-Trust-Certificate.pdf', '432 KB', '9', '1', '2026-10-21 23:28:40'),
-('10', 'Vehicle Fitness Certificate', 'Vehicle-Fitness-Certificate-2026.pdf', 'assets/docs/Vehicle-Fitness-Certificate-2026.pdf', '138 KB', '10', '1', '2026-10-21 23:28:40'),
-('11', 'DEO Certificate', '1733383227929-DEO-Certificate.pdf', 'assets/docs/1733383227929-DEO-Certificate.pdf', '485 KB', '11', '1', '2026-10-21 23:28:40'),
-('12', 'ACADEMIC CALENDAR', '1767005946446-Academic-Caledandar.pdf', 'assets/docs/1767005946446-Academic-Caledandar.pdf', '1.9 MB', '12', '1', '2026-10-21 23:28:40');
+('13', 'Student Strength', 'student-strength-2026-27.png', 'assets/images/student-strength-2026-27.png', '459 KB', '4', '1', '2026-10-27 12:00:00'),
+('4', 'CBSE Results (From 2019)', '1750226704411-cbse-results-from-2019.pdf', 'assets/docs/1750226704411-cbse-results-from-2019.pdf', '42 KB', '5', '1', '2026-10-21 23:28:40'),
+('5', 'BUILDING SAFETY CERTIFICATE', '1733383672169-BUILDING-SAFETY-CERTIFICATE.pdf', 'assets/docs/1733383672169-BUILDING-SAFETY-CERTIFICATE.pdf', '62 KB', '6', '1', '2026-10-21 23:28:40'),
+('6', 'FIRE SAFETY CERTIFICATE', '1733383617275-FIRE-SAFETY-CERTIFICATE.pdf', 'assets/docs/1733383617275-FIRE-SAFETY-CERTIFICATE.pdf', '51 KB', '7', '1', '2026-10-21 23:28:40'),
+('7', 'SMC LIST', 'smc-list-2026-27.jpg', 'assets/images/smc-list-2026-27.jpg', '256 KB', '8', '1', '2026-10-27 12:00:00'),
+('8', 'RECOGNITION LETTER', '1733383474258-RECOGNITION-LETTER.pdf', 'assets/docs/1733383474258-RECOGNITION-LETTER.pdf', '458 KB', '9', '1', '2026-10-21 23:28:40'),
+('9', 'Trust Certificate', '1733383394165-Trust-Certificate.pdf', 'assets/docs/1733383394165-Trust-Certificate.pdf', '432 KB', '10', '1', '2026-10-21 23:28:40'),
+('10', 'Vehicle Fitness Certificate', 'Vehicle-Fitness-Certificate-2026.pdf', 'assets/docs/Vehicle-Fitness-Certificate-2026.pdf', '138 KB', '11', '1', '2026-10-27 12:00:00'),
+('11', 'DEO Certificate', '1733383227929-DEO-Certificate.pdf', 'assets/docs/1733383227929-DEO-Certificate.pdf', '485 KB', '12', '1', '2026-10-21 23:28:40'),
+('12', 'ACADEMIC CALENDAR', '1767005946446-Academic-Caledandar.pdf', 'assets/docs/1767005946446-Academic-Caledandar.pdf', '1.9 MB', '13', '1', '2026-10-21 23:28:40');
 
 DROP TABLE IF EXISTS `navigation`;
 CREATE TABLE `navigation` (

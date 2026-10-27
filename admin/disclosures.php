@@ -2,6 +2,7 @@
 /**
  * Admin Mandatory Disclosures Management
  * MGM Model School Management Portal
+ * Supports both PDF documents and uploaded Images with live previews
  */
 require_once __DIR__ . '/../config/config.php';
 require_once __DIR__ . '/../includes/auth.php';
@@ -13,6 +14,12 @@ $adminTitle = 'Mandatory Disclosures Management';
 
 $db = getDB();
 
+// Helper to check if file is an image
+function is_image_file(string $path): bool {
+    $ext = strtolower(pathinfo($path, PATHINFO_EXTENSION));
+    return in_array($ext, ['png', 'jpg', 'jpeg', 'webp', 'gif']);
+}
+
 // Handle Actions (Add, Edit, Delete)
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!verify_csrf($_POST['csrf_token'] ?? '')) {
@@ -20,17 +27,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         $action = $_POST['action'] ?? '';
 
-        // Add New Document
+        // Add New Document / Image
         if ($action === 'add') {
             $title = trim($_POST['title'] ?? '');
             $sort = (int)($_POST['sort_order'] ?? 0);
 
             if (empty($title) || empty($_FILES['document']['name'])) {
-                set_flash('error', 'Please provide both title and document file.');
+                set_flash('error', 'Please provide both title and document/image file.');
             } else {
                 $file = $_FILES['document'];
                 $ext = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
-                $allowed = ['pdf', 'png', 'jpg', 'jpeg', 'webp'];
+                $allowed = ['pdf', 'png', 'jpg', 'jpeg', 'webp', 'gif'];
 
                 if (!in_array($ext, $allowed)) {
                     set_flash('error', 'Allowed formats: PDF, PNG, JPG, JPEG, WebP.');
@@ -38,23 +45,46 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     set_flash('error', 'File size exceeds 25MB limit.');
                 } else {
                     $cleanName = time() . '_' . preg_replace('/[^a-zA-Z0-9_\.-]/', '_', $file['name']);
-                    $subFolder = ($ext === 'pdf') ? 'docs' : 'images';
-                    $targetDir = ($ext === 'pdf') ? DOCS_DIR : IMAGES_DIR;
-                    $targetPath = $targetDir . '/' . $cleanName;
+                    $isImg = in_array($ext, ['png', 'jpg', 'jpeg', 'webp', 'gif']);
+                    
+                    if ($isImg) {
+                        $targetPathImg = IMAGES_DIR . '/' . $cleanName;
+                        $targetPathDoc = DOCS_DIR . '/' . $cleanName;
+                        if (move_uploaded_file($file['tmp_name'], $targetPathImg)) {
+                            @copy($targetPathImg, $targetPathDoc);
+                            $sizeKb = round($file['size'] / 1024) . ' KB';
+                            $fileUrl = "assets/images/" . $cleanName;
 
-                    if (move_uploaded_file($file['tmp_name'], $targetPath)) {
-                        $sizeKb = round($file['size'] / 1024) . ' KB';
-                        $ins = $db->prepare("INSERT INTO mandatory_disclosures (title, file_name, file_url, file_size, sort_order) VALUES (:title, :fn, :url, :sz, :so)");
-                        $ins->execute([
-                            ':title' => $title,
-                            ':fn'    => $cleanName,
-                            ':url'   => "assets/{$subFolder}/" . $cleanName,
-                            ':sz'    => $sizeKb,
-                            ':so'    => $sort
-                        ]);
-                        set_flash('success', "Disclosure '{$title}' added successfully.");
+                            $ins = $db->prepare("INSERT INTO mandatory_disclosures (title, file_name, file_url, file_size, sort_order) VALUES (:title, :fn, :url, :sz, :so)");
+                            $ins->execute([
+                                ':title' => $title,
+                                ':fn'    => $cleanName,
+                                ':url'   => $fileUrl,
+                                ':sz'    => $sizeKb,
+                                ':so'    => $sort
+                            ]);
+                            set_flash('success', "Image disclosure '{$title}' added successfully.");
+                        } else {
+                            set_flash('error', 'Failed to save uploaded image.');
+                        }
                     } else {
-                        set_flash('error', 'Failed to save uploaded document.');
+                        $targetPathDoc = DOCS_DIR . '/' . $cleanName;
+                        if (move_uploaded_file($file['tmp_name'], $targetPathDoc)) {
+                            $sizeKb = round($file['size'] / 1024) . ' KB';
+                            $fileUrl = "assets/docs/" . $cleanName;
+
+                            $ins = $db->prepare("INSERT INTO mandatory_disclosures (title, file_name, file_url, file_size, sort_order) VALUES (:title, :fn, :url, :sz, :so)");
+                            $ins->execute([
+                                ':title' => $title,
+                                ':fn'    => $cleanName,
+                                ':url'   => $fileUrl,
+                                ':sz'    => $sizeKb,
+                                ':so'    => $sort
+                            ]);
+                            set_flash('success', "PDF disclosure '{$title}' added successfully.");
+                        } else {
+                            set_flash('error', 'Failed to save uploaded document.');
+                        }
                     }
                 }
             }
@@ -62,14 +92,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit;
         }
 
-        // Edit & Replace Document
+        // Edit & Replace Document / Image
         if ($action === 'edit') {
             $id = (int)($_POST['id'] ?? 0);
             $title = trim($_POST['title'] ?? '');
             $sort = (int)($_POST['sort_order'] ?? 0);
 
             if ($id > 0 && !empty($title)) {
-                $existing = $db->query("SELECT * FROM mandatory_disclosures WHERE id = {$id}")->fetch();
+                $stmt = $db->prepare("SELECT * FROM mandatory_disclosures WHERE id = ?");
+                $stmt->execute([$id]);
+                $existing = $stmt->fetch();
+
                 if ($existing) {
                     $fileName = $existing['file_name'];
                     $fileUrl = $existing['file_url'];
@@ -79,7 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     if (!empty($_FILES['document']['name'])) {
                         $file = $_FILES['document'];
                         $ext = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
-                        $allowed = ['pdf', 'png', 'jpg', 'jpeg', 'webp'];
+                        $allowed = ['pdf', 'png', 'jpg', 'jpeg', 'webp', 'gif'];
 
                         if (!in_array($ext, $allowed)) {
                             set_flash('error', 'Allowed formats: PDF, PNG, JPG, JPEG, WebP.');
@@ -91,14 +124,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             exit;
                         } else {
                             $cleanName = time() . '_' . preg_replace('/[^a-zA-Z0-9_\.-]/', '_', $file['name']);
-                            $subFolder = ($ext === 'pdf') ? 'docs' : 'images';
-                            $targetDir = ($ext === 'pdf') ? DOCS_DIR : IMAGES_DIR;
-                            $targetPath = $targetDir . '/' . $cleanName;
+                            $isImg = in_array($ext, ['png', 'jpg', 'jpeg', 'webp', 'gif']);
 
-                            if (move_uploaded_file($file['tmp_name'], $targetPath)) {
-                                $fileName = $cleanName;
-                                $fileUrl = "assets/{$subFolder}/" . $cleanName;
-                                $fileSize = round($file['size'] / 1024) . ' KB';
+                            if ($isImg) {
+                                $targetPathImg = IMAGES_DIR . '/' . $cleanName;
+                                $targetPathDoc = DOCS_DIR . '/' . $cleanName;
+                                if (move_uploaded_file($file['tmp_name'], $targetPathImg)) {
+                                    @copy($targetPathImg, $targetPathDoc);
+                                    $fileName = $cleanName;
+                                    $fileUrl = "assets/images/" . $cleanName;
+                                    $fileSize = round($file['size'] / 1024) . ' KB';
+                                }
+                            } else {
+                                $targetPathDoc = DOCS_DIR . '/' . $cleanName;
+                                if (move_uploaded_file($file['tmp_name'], $targetPathDoc)) {
+                                    $fileName = $cleanName;
+                                    $fileUrl = "assets/docs/" . $cleanName;
+                                    $fileSize = round($file['size'] / 1024) . ' KB';
+                                }
                             }
                         }
                     }
@@ -124,9 +167,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($action === 'delete') {
             $id = (int)($_POST['id'] ?? 0);
             if ($id > 0) {
-                $doc = $db->query("SELECT * FROM mandatory_disclosures WHERE id = {$id}")->fetch();
+                $stmt = $db->prepare("SELECT * FROM mandatory_disclosures WHERE id = ?");
+                $stmt->execute([$id]);
+                $doc = $stmt->fetch();
                 if ($doc) {
-                    $db->exec("DELETE FROM mandatory_disclosures WHERE id = {$id}");
+                    $delStmt = $db->prepare("DELETE FROM mandatory_disclosures WHERE id = ?");
+                    $delStmt->execute([$id]);
                     set_flash('success', "Document '{$doc['title']}' deleted.");
                 }
             }
@@ -140,7 +186,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $editDoc = null;
 if (isset($_GET['edit'])) {
     $editId = (int)$_GET['edit'];
-    $editDoc = $db->query("SELECT * FROM mandatory_disclosures WHERE id = {$editId}")->fetch();
+    $stmt = $db->prepare("SELECT * FROM mandatory_disclosures WHERE id = ?");
+    $stmt->execute([$editId]);
+    $editDoc = $stmt->fetch();
 }
 
 $disclosures = $db->query("SELECT * FROM mandatory_disclosures ORDER BY sort_order ASC, id ASC")->fetchAll();
@@ -155,7 +203,7 @@ require_once __DIR__ . '/header.php';
     <div class="bg-white p-4 rounded-3 border shadow-sm">
       <h5 class="fw-bold text-dark mb-3">
         <?php if ($editDoc): ?>
-          <i class="fa-solid fa-pen-to-square me-1 text-primary"></i> Edit & Replace Document
+          <i class="fa-solid fa-pen-to-square me-1 text-primary"></i> Edit Disclosure
         <?php else: ?>
           <i class="fa-solid fa-plus-circle me-1 text-danger"></i> Add New Disclosure
         <?php endif; ?>
@@ -170,23 +218,50 @@ require_once __DIR__ . '/header.php';
 
         <div class="mb-3">
           <label class="form-label fw-semibold small">Document Title *</label>
-          <input type="text" name="title" class="form-control" value="<?= e($editDoc['title'] ?? '') ?>" placeholder="e.g. FIRE SAFETY CERTIFICATE" required>
+          <input type="text" name="title" class="form-control" value="<?= e($editDoc['title'] ?? '') ?>" placeholder="e.g. FEE STRUCTURE, FIRE SAFETY CERTIFICATE" required>
         </div>
 
         <div class="mb-3">
           <label class="form-label fw-semibold small">
-            <?= $editDoc ? 'Replace Document / Photo (Optional)' : 'Upload Document / Photo *' ?>
+            <?= $editDoc ? 'Replace Document / Image (Optional)' : 'Upload Document / Image *' ?>
           </label>
-          <input type="file" name="document" class="form-control" accept=".pdf,image/*" <?= $editDoc ? '' : 'required' ?>>
-          <div class="form-text small">Accepted formats: PDF, PNG, JPG, WebP (Max 25MB)</div>
+          <input type="file" name="document" class="form-control" accept=".pdf,image/png,image/jpeg,image/webp,image/*" <?= $editDoc ? '' : 'required' ?>>
+          <div class="form-text small text-muted">Accepted formats: PDF, PNG, JPG, JPEG, WebP (Max 25MB)</div>
 
-          <?php if ($editDoc): ?>
-            <div class="alert alert-light border mt-2 p-2 small">
-              <div class="fw-semibold text-dark">Current Document:</div>
-              <div class="text-truncate text-muted"><?= e($editDoc['file_name']) ?> (<?= e($editDoc['file_size']) ?>)</div>
-              <a href="<?= asset_url($editDoc['file_url']) ?>" target="_blank" class="fw-bold text-primary text-decoration-none mt-1 d-inline-block">
-                <i class="fa-solid fa-arrow-up-right-from-square me-1"></i> Preview Current File
-              </a>
+          <?php if ($editDoc): 
+            $isEditImg = is_image_file($editDoc['file_url']);
+          ?>
+            <div class="alert alert-light border mt-3 p-3 rounded-3 small">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <span class="fw-bold text-dark">Current Attached File:</span>
+                <?php if ($isEditImg): ?>
+                  <span class="badge bg-primary-subtle text-primary border border-primary-subtle fw-semibold">
+                    <i class="fa-solid fa-file-image me-1"></i> IMAGE
+                  </span>
+                <?php else: ?>
+                  <span class="badge bg-danger-subtle text-danger border border-danger-subtle fw-semibold">
+                    <i class="fa-solid fa-file-pdf me-1"></i> PDF
+                  </span>
+                <?php endif; ?>
+              </div>
+
+              <div class="text-truncate text-muted mb-2">
+                <strong>File:</strong> <?= e($editDoc['file_name']) ?> <span class="badge bg-light text-dark border ms-1"><?= e($editDoc['file_size']) ?></span>
+              </div>
+
+              <?php if ($isEditImg): ?>
+                <div class="text-center p-2 bg-white rounded border my-2">
+                  <a href="<?= asset_url($editDoc['file_url']) ?>" target="_blank" title="Click to view full image">
+                    <img src="<?= asset_url($editDoc['file_url']) ?>" alt="Preview" class="img-fluid rounded" style="max-height: 140px; object-fit: contain;">
+                  </a>
+                </div>
+              <?php endif; ?>
+
+              <div class="mt-2 pt-2 border-top">
+                <a href="<?= asset_url($editDoc['file_url']) ?>" target="_blank" class="fw-bold text-primary text-decoration-none d-inline-flex align-items-center gap-1">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Current Document in New Tab
+                </a>
+              </div>
             </div>
           <?php endif; ?>
         </div>
@@ -197,7 +272,7 @@ require_once __DIR__ . '/header.php';
         </div>
 
         <div class="d-flex gap-2">
-          <button type="submit" class="btn-admin-primary flex-grow-1 py-2">
+          <button type="submit" class="btn btn-danger flex-grow-1 py-2 fw-semibold" style="background: var(--admin-primary); border-color: var(--admin-primary);">
             <i class="fa-solid <?= $editDoc ? 'fa-floppy-disk' : 'fa-cloud-arrow-up' ?> me-1"></i>
             <?= $editDoc ? 'Save Updates' : 'Upload Document' ?>
           </button>
@@ -212,38 +287,67 @@ require_once __DIR__ . '/header.php';
   <!-- Right Column: Disclosures List -->
   <div class="col-lg-8">
     <div class="bg-white p-4 rounded-3 border shadow-sm">
-      <div class="d-flex justify-content-between align-items-center mb-3">
-        <h5 class="fw-bold text-dark mb-0">Active Disclosure Documents (<?= count($disclosures) ?>)</h5>
-        <a href="<?= url('/mandatory-disclosure/') ?>" target="_blank" class="btn btn-outline-info btn-sm">
-          <i class="fa-solid fa-eye me-1"></i> View Live Page
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+        <div>
+          <h5 class="fw-bold text-dark mb-0">Active Mandatory Disclosures (<?= count($disclosures) ?>)</h5>
+          <span class="text-muted small">Synchronized with public Mandatory Disclosure section</span>
+        </div>
+        <a href="<?= url('/mandatory-disclosure/') ?>" target="_blank" class="btn btn-outline-danger btn-sm rounded-pill px-3 fw-semibold">
+          <i class="fa-solid fa-eye me-1"></i> View Public Page
         </a>
       </div>
 
       <div class="table-responsive">
-        <table class="table table-hover align-middle mb-0" style="font-size: 13px;">
+        <table class="table table-hover align-middle mb-0" style="font-size: 13.5px;">
           <thead class="table-light">
             <tr>
-              <th style="width: 60px;">Order</th>
+              <th style="width: 50px;">#</th>
+              <th style="width: 70px;">Preview</th>
+              <th style="width: 80px;">Type</th>
               <th>Document Title</th>
-              <th>File Name</th>
-              <th>Size</th>
-              <th class="text-end" style="width: 130px;">Actions</th>
+              <th>File Name &amp; Size</th>
+              <th class="text-end" style="width: 120px;">Actions</th>
             </tr>
           </thead>
           <tbody>
-            <?php foreach ($disclosures as $d): ?>
+            <?php foreach ($disclosures as $d): 
+              $isImg = is_image_file($d['file_url']);
+            ?>
               <tr class="<?= ($editDoc && $editDoc['id'] == $d['id']) ? 'table-warning' : '' ?>">
                 <td class="fw-bold text-muted">#<?= $d['sort_order'] ?></td>
-                <td class="fw-bold text-dark"><?= e($d['title']) ?></td>
-                <td class="text-muted text-truncate" style="max-width: 180px;">
-                  <?php if (str_ends_with(strtolower($d['file_url']), '.pdf')): ?>
-                    <i class="fa-solid fa-file-pdf text-danger me-1"></i>
+                <td>
+                  <?php if ($isImg): ?>
+                    <a href="<?= asset_url($d['file_url']) ?>" target="_blank" class="d-inline-block border rounded p-1 bg-white shadow-sm" title="Preview image in new tab">
+                      <img src="<?= asset_url($d['file_url']) ?>" alt="<?= e($d['title']) ?>" style="width: 40px; height: 40px; object-fit: cover; border-radius: 4px; display: block;">
+                    </a>
                   <?php else: ?>
-                    <i class="fa-solid fa-file-image text-primary me-1"></i>
+                    <a href="<?= asset_url($d['file_url']) ?>" target="_blank" class="d-inline-flex align-items-center justify-content-center border rounded bg-danger-subtle text-danger shadow-sm text-decoration-none" style="width: 40px; height: 40px;" title="Open PDF">
+                      <i class="fa-solid fa-file-pdf fa-lg"></i>
+                    </a>
                   <?php endif; ?>
-                  <?= e($d['file_name']) ?>
                 </td>
-                <td><span class="badge bg-light text-dark border"><?= e($d['file_size']) ?></span></td>
+                <td>
+                  <?php if ($isImg): ?>
+                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle py-1 px-2 fw-semibold">
+                      <i class="fa-solid fa-image me-1"></i> Image
+                    </span>
+                  <?php else: ?>
+                    <span class="badge bg-danger-subtle text-danger border border-danger-subtle py-1 px-2 fw-semibold">
+                      <i class="fa-solid fa-file-pdf me-1"></i> PDF
+                    </span>
+                  <?php endif; ?>
+                </td>
+                <td>
+                  <a href="<?= asset_url($d['file_url']) ?>" target="_blank" class="fw-bold text-dark text-decoration-none">
+                    <?= e($d['title']) ?>
+                  </a>
+                </td>
+                <td>
+                  <div class="text-truncate text-muted small" style="max-width: 220px;" title="<?= e($d['file_name']) ?>">
+                    <?= e($d['file_name']) ?>
+                  </div>
+                  <span class="badge bg-light text-dark border small mt-1"><?= e($d['file_size']) ?></span>
+                </td>
                 <td class="text-end">
                   <a href="<?= asset_url($d['file_url']) ?>" target="_blank" class="btn btn-sm btn-outline-secondary me-1" title="View Document">
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
