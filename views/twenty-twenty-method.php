@@ -32,7 +32,7 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
     <!-- Main Header Banner -->
     <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 mb-5 bg-white">
       <div class="row align-items-center g-4">
-        <div class="col-lg-8">
+        <div class="col-lg-12">
           <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill mb-3" style="background: rgba(171, 12, 47, 0.08); color: var(--tp-theme-primary, #ab0c2f);">
             <i class="fa-solid fa-star"></i>
             <span class="fw-bold small">Innovative Pedagogical Model</span>
@@ -46,11 +46,6 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
           <p class="text-secondary mb-0 leading-relaxed" style="font-size: 17px; line-height: 1.8;">
             At MGM Model School, true education is not about imposing knowledge, but about nurturing the power of thought in every student. Our innovative Twenty-20 method redefines the 40-minute period into 20 minutes for the teacher and 20 minutes for the students. The next day's topic is given in advance, so students come prepared.
           </p>
-        </div>
-        <div class="col-lg-4 text-lg-end">
-          <a href="<?= rtrim(BASE_URL, '/') ?>/contact/" class="btn btn-danger rounded-pill px-4 py-3 fw-bold shadow-sm d-inline-flex align-items-center gap-2">
-            <i class="fa-solid fa-calendar-check"></i> Book Campus Tour
-          </a>
         </div>
       </div>
     </div>

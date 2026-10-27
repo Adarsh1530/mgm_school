@@ -50,7 +50,7 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
     <!-- Main Header Banner -->
     <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 mb-5 bg-white">
       <div class="row align-items-center g-4">
-        <div class="col-lg-8">
+        <div class="col-lg-12">
           <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill mb-3" style="background: rgba(171, 12, 47, 0.08); color: var(--tp-theme-primary, #ab0c2f);">
             <i class="fa-solid fa-star"></i>
             <span class="fw-bold small">{badge}</span>
@@ -70,25 +70,16 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
             {lead}
           </p>
         </div>
-        <div class="col-lg-4 text-lg-end">
-          <a href="<?= rtrim(BASE_URL, '/') ?>/contact/" class="btn btn-danger rounded-pill px-4 py-3 fw-bold shadow-sm d-inline-flex align-items-center gap-2">
-            <i class="fa-solid fa-calendar-check"></i> Book Campus Tour
-          </a>
-        </div>
       </div>
     </div>
 """
 
     if video:
         php_code += f"""
-    <!-- Featured Video Showcase -->
+    <!-- Featured Video Section -->
     <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-5 bg-dark">
-      <div class="p-3 bg-dark border-bottom border-secondary d-flex align-items-center justify-content-between text-white flex-wrap gap-2">
-        <div class="d-flex align-items-center gap-2">
-          <span class="badge bg-danger px-2 py-1"><i class="fa-solid fa-circle-play me-1"></i> VIDEO SHOWCASE</span>
-          <strong class="text-white small text-uppercase" style="letter-spacing: 0.5px;">{title} &bull; MGM Model School</strong>
-        </div>
-        <span class="badge bg-light text-dark small"><i class="fa-solid fa-video me-1"></i> High Definition MP4</span>
+      <div class="p-3 bg-dark border-bottom border-secondary d-flex align-items-center text-white">
+        <strong class="text-white small text-uppercase" style="letter-spacing: 0.5px;">{title} &bull; MGM Model School</strong>
       </div>
       <div class="p-2 p-md-4 text-center bg-black">
         <video id="highlightVideo_{slug.replace('-', '_')}" 
@@ -191,4 +182,4 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
 for slug, data in DOCX_HIGHLIGHTS.items():
     build_view(slug, data)
 
-print(f"\nSuccessfully generated all {len(DOCX_HIGHLIGHTS)} views with exact docx contents!")
+print(f"\nSuccessfully generated all {len(DOCX_HIGHLIGHTS)} views cleanly!")
