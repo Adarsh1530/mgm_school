@@ -32,7 +32,7 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
 
 <!-- BVB Manvila Exact Gallery Section Layout & Alignment -->
 <section class="bvb-gallery-section bg-white py-5">
-  <div class="container custom-container-larg">
+  <div class="container bvb-gallery-container">
 
     <!-- Section Header (Clean, Balanced Typography) -->
     <div class="section-header text-center mb-4">
@@ -182,13 +182,24 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
 
 <!-- Embedded BVB Manvila Exact CSS Rules -->
 <style>
-/* BVB Manvila Layout & Alignment System */
+/* BVB Manvila Exact Layout & Alignment System */
 .bvb-gallery-section {
   background-color: #FFFFFF;
+  padding-top: 3.5rem;
+  padding-bottom: 5rem;
+}
+
+.bvb-gallery-container {
+  max-width: 1240px !important;
+  width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .gallery-search-container {
-  max-width: 580px;
+  max-width: 540px;
   margin: 0 auto 1.75rem auto;
   position: relative;
   width: 100%;
@@ -307,7 +318,9 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.75rem;
+  gap: 1.5rem;
+  width: 100%;
+  margin: 0 auto;
 }
 
 @media (max-width: 991px) {
@@ -317,23 +330,23 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 600px) {
   .gallery-grid {
     grid-template-columns: 1fr;
     gap: 1.25rem;
   }
 }
 
-/* Gallery Item with Exact 16:11 Aspect Ratio */
+/* Gallery Item with BVB Manvila Medium Sizing & Exact 16:11 Aspect Ratio */
 .gallery-item {
   position: relative;
-  border-radius: 14px;
+  border-radius: 12px;
   overflow: hidden;
   background-color: #FFFFFF;
   border: 1px solid #E2E8F0;
   aspect-ratio: 16 / 11;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
 }
 
@@ -342,8 +355,8 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
 }
 
 .gallery-item:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(11, 78, 162, 0.14);
   border-color: #0B4EA2;
 }
 
@@ -351,22 +364,23 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
   display: block;
-  background-color: #F1F5F9;
-  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  background-color: #F8FAFC;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .gallery-item:hover img {
-  transform: scale(1.06);
+  transform: scale(1.025); /* Subtle, elegant zoom - NOT overly cropped or zoomed */
 }
 
 /* BVB Manvila Floating Top-Right Zoom Button */
 .gallery-zoom-icon {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  width: 38px;
-  height: 38px;
+  top: 0.85rem;
+  right: 0.85rem;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: rgba(11, 78, 162, 0.85);
   backdrop-filter: blur(4px);
@@ -380,7 +394,7 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
 }
 
 .gallery-item:hover .gallery-zoom-icon {
-  transform: scale(1.1);
+  transform: scale(1.08);
   background: #0B4EA2;
 }
 
