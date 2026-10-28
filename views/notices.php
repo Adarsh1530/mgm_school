@@ -56,17 +56,15 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
       </div>
     </div>
 
-    <!-- Main 2-Column Grid -->
-    <div class="row g-4 align-items-start">
-      
-      <!-- Left Column: Featured News Stories & Reports (col-lg-8) -->
-      <div class="col-lg-8">
+    <!-- Main Notices Grid -->
+    <div class="row justify-content-center">
+      <div class="col-lg-10 col-xl-9">
         
-        <div class="d-flex align-items-center justify-content-between mb-4">
+        <div class="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-2">
           <h4 class="fw-bold text-dark mb-0" style="font-size: 22px;">
-            <i class="fa-solid fa-newspaper text-danger me-2"></i>Campus Articles &amp; Reports
+            <i class="fa-solid fa-bullhorn text-danger me-2"></i>Official Notices &amp; Circulars
           </h4>
-          <span class="text-muted small" id="noticeCountBadge"><?= count($allNotices) ?> Articles Available</span>
+          <span class="badge bg-white text-dark border px-3 py-2 small fw-semibold shadow-sm" id="noticeCountBadge"><?= count($allNotices) ?> Notices Active</span>
         </div>
 
         <div class="d-flex flex-column gap-4" id="noticesListContainer">
@@ -115,7 +113,7 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
                     </p>
                   </div>
 
-                  <div class="pt-2 border-top d-flex align-items-center justify-content-between flex-wrap gap-2">
+                  <div class="pt-3 border-top d-flex align-items-center justify-content-between flex-wrap gap-2">
                     <button type="button" 
                             class="btn btn-outline-danger btn-sm rounded-pill px-3 py-1 fw-bold notice-detail-btn"
                             data-bs-toggle="modal" 
@@ -124,17 +122,14 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
                             data-category="<?= $cat ?>"
                             data-date="<?= htmlspecialchars($notice['display_date']) ?>"
                             data-img="<?= $img ?>"
+                            data-pdf="<?= !empty($notice['pdf_url']) ? asset_url($notice['pdf_url']) : '' ?>"
                             data-summary="<?= htmlspecialchars($notice['summary']) ?>"
                             data-content="<?= htmlspecialchars($notice['content']) ?>">
                       Read Full Details <i class="fa-solid fa-arrow-right ms-1"></i>
                     </button>
-                    <?php if ($cat === 'Admission'): ?>
-                      <a href="<?= url('/admission-procedure/') ?>" class="btn btn-sm btn-danger rounded-pill px-3 py-1 fw-bold" style="background: var(--tp-theme-primary, #ab0c2f);">
-                        Apply Now
-                      </a>
-                    <?php elseif ($cat === 'Achievement'): ?>
-                      <a href="<?= url('/merit-day/') ?>" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 fw-bold">
-                        View Honors
+                    <?php if (!empty($notice['pdf_url'])): ?>
+                      <a href="<?= asset_url($notice['pdf_url']) ?>" target="_blank" class="btn btn-sm btn-danger rounded-pill px-3 py-1 fw-bold" style="background: var(--tp-theme-primary, #ab0c2f);">
+                        <i class="fa-solid fa-file-pdf me-1"></i> View PDF
                       </a>
                     <?php endif; ?>
                   </div>
@@ -146,72 +141,6 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
         </div>
 
       </div>
-
-      <!-- Right Column: Active Circulars & Notices Sidebar (col-lg-4) -->
-      <div class="col-lg-4">
-        <div style="position: sticky; top: 100px;">
-          
-          <!-- Circulars Widget -->
-          <div class="card border-0 shadow-sm rounded-4 overflow-hidden bg-white mb-4">
-            <div class="p-4 border-bottom d-flex align-items-center justify-content-between" style="background: linear-gradient(135deg, #141B2B 0%, #212C42 100%);">
-              <div class="d-flex align-items-center gap-2 text-white">
-                <i class="fa-solid fa-scroll text-warning fs-5"></i>
-                <h5 class="fw-bold mb-0 text-white" style="font-size: 17px;">Circulars &amp; Notices</h5>
-              </div>
-              <span class="badge bg-danger rounded-pill px-2 py-1 small animate-pulse">Active</span>
-            </div>
-
-            <div class="p-3" style="max-height: 520px; overflow-y: auto;">
-              <div class="d-flex flex-column gap-3">
-                <?php foreach ($allNotices as $notice): 
-                  $cat = htmlspecialchars($notice['category']);
-                ?>
-                  <div class="p-3 rounded-3 bg-light hover-shadow-sm transition-all sidebar-notice-link" 
-                       style="cursor: pointer; border-left: 3px solid var(--tp-theme-primary, #ab0c2f);"
-                       onclick="scrollToNotice('notice-<?= htmlspecialchars($notice['slug']) ?>')">
-                    <div class="d-flex align-items-center justify-content-between mb-1">
-                      <span class="badge bg-white text-danger border px-2 py-1 small fw-bold" style="font-size: 10px;">
-                        <?= $cat ?>
-                      </span>
-                      <span class="text-muted" style="font-size: 11px;">
-                        <i class="fa-regular fa-calendar me-1"></i><?= htmlspecialchars($notice['display_date']) ?>
-                      </span>
-                    </div>
-                    <h6 class="fw-bold text-dark mb-1" style="font-size: 13.5px; line-height: 1.35;">
-                      <?= htmlspecialchars($notice['title']) ?>
-                    </h6>
-                    <p class="text-muted small mb-0 text-truncate" style="font-size: 12px;">
-                      <?= htmlspecialchars($notice['summary']) ?>
-                    </p>
-                  </div>
-                <?php endforeach; ?>
-              </div>
-            </div>
-
-            <div class="p-3 bg-light border-top text-center">
-              <a href="<?= url('/contact/') ?>" class="fw-semibold text-danger small text-decoration-none">
-                <i class="fa-solid fa-headset me-1"></i> Contact Administrative Desk for Circular Enquiries
-              </a>
-            </div>
-          </div>
-
-          <!-- Quick Helpline Card -->
-          <div class="card border-0 shadow-sm rounded-4 p-4 text-white" style="background: linear-gradient(135deg, #ab0c2f 0%, #800720 100%);">
-            <h5 class="fw-bold mb-2 text-white"><i class="fa-solid fa-phone-volume me-2"></i>Campus Helpline</h5>
-            <p class="small text-white-50 mb-3">For clarifications regarding admissions, exam schedules, or circulars, please connect with our office desks.</p>
-            <div class="d-flex flex-column gap-2">
-              <a href="tel:04702602193" class="btn btn-sm btn-light rounded-pill fw-bold text-danger text-start px-3">
-                <i class="fa-solid fa-phone me-2"></i> 0470-2602193
-              </a>
-              <a href="tel:8891509590" class="btn btn-sm btn-outline-light rounded-pill fw-bold text-start px-3">
-                <i class="fa-brands fa-whatsapp me-2 text-success"></i> +91 8891509590
-              </a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
     </div>
 
   </div>
@@ -245,8 +174,12 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
         <div class="text-dark" id="modalContentText" style="font-size: 14.5px; line-height: 1.7;"></div>
       </div>
 
-      <div class="modal-footer border-0 pt-0 bg-light d-flex justify-content-between">
-        <span class="text-muted small"><i class="fa-solid fa-stamp text-danger me-1"></i> Official Publication &bull; MGM Model School</span>
+      <div class="modal-footer border-0 pt-0 bg-light d-flex justify-content-between align-items-center">
+        <div>
+          <a href="#" id="modalPdfBtn" target="_blank" class="btn btn-danger btn-sm rounded-pill px-3 py-1 fw-bold" style="background: var(--tp-theme-primary, #ab0c2f); display: none;">
+            <i class="fa-solid fa-file-pdf me-1"></i> View / Download Circular (PDF)
+          </a>
+        </div>
         <button type="button" class="btn btn-secondary btn-sm rounded-pill px-4" data-bs-dismiss="modal">Close</button>
       </div>
 
@@ -289,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
 
       if (countBadge) {
-        countBadge.innerText = visibleCount + ' Articles Available';
+        countBadge.innerText = visibleCount + ' Notices Active';
       }
     });
   });
@@ -314,6 +247,17 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       document.getElementById('modalSummaryText').innerText = btn.getAttribute('data-summary') || '';
       document.getElementById('modalContentText').innerText = btn.getAttribute('data-content') || '';
+      
+      const pdfUrl = btn.getAttribute('data-pdf') || '';
+      const modalPdfBtn = document.getElementById('modalPdfBtn');
+      if (modalPdfBtn) {
+        if (pdfUrl) {
+          modalPdfBtn.href = pdfUrl;
+          modalPdfBtn.style.display = 'inline-flex';
+        } else {
+          modalPdfBtn.style.display = 'none';
+        }
+      }
     });
   }
 
