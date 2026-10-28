@@ -101,16 +101,22 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
         $uploadDate = $hasCreatedAt ? date('F d, Y', strtotime($item['created_at'])) : (!empty($item['event_date']) ? $item['event_date'] : date('F d, Y'));
         $eventDate = !empty($item['event_date']) ? $item['event_date'] : $uploadDate;
 
-        // Parse sub-images
+        // Parse sub-images (ensure clean root-relative paths)
         $rawSub = !empty($item['sub_images']) ? json_decode($item['sub_images'], true) : [];
         $subUrls = [];
         if (is_array($rawSub)) {
             foreach ($rawSub as $subPath) {
                 if (!empty($subPath)) {
-                    $subUrls[] = asset_url($subPath);
+                    $cleanSub = ltrim(str_replace('\\', '/', $subPath), '/');
+                    if (strpos($cleanSub, 'http://') === 0 || strpos($cleanSub, 'https://') === 0) {
+                        $subUrls[] = $cleanSub;
+                    } else {
+                        $subUrls[] = '/' . $cleanSub;
+                    }
                 }
             }
         }
+        $totalPhotos = count($subUrls) + 1;
       ?>
         <div class="gallery-item" 
              data-id="<?= $item['id'] ?>"
@@ -124,10 +130,16 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
              data-date="<?= e($eventDate) ?>"
              data-upload-date="<?= e($uploadDate) ?>"
              data-main-img="<?= $itemImg ?>"
-             data-sub-images='<?= json_encode($subUrls) ?>'>
+             data-sub-images='<?= json_encode($subUrls, JSON_UNESCAPED_SLASHES) ?>'>
           
           <img src="<?= $itemImg ?>" alt="<?= e($title) ?>" loading="lazy">
           
+          <?php if ($totalPhotos > 1): ?>
+            <div class="gallery-album-badge" title="<?= $totalPhotos ?> photos in this album">
+              <i class="fa-solid fa-images"></i> <span><?= $totalPhotos ?> Photos</span>
+            </div>
+          <?php endif; ?>
+
           <!-- Hover Overlay: Showing Title, Caption, Description, and Exact Upload Date -->
           <div class="gallery-overlay">
             <span class="gallery-overlay-badge"><?= strtoupper(e($catLabel)) ?></span>
@@ -155,6 +167,12 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
             <div class="gallery-overlay-date-row">
               <span class="gallery-overlay-date-value"><?= e($uploadDate) ?></span>
             </div>
+
+            <?php if ($totalPhotos > 1): ?>
+              <div class="gallery-overlay-album-tag">
+                <i class="fa-solid fa-images"></i> <?= $totalPhotos ?> Photos &bull; Click to view album
+              </div>
+            <?php endif; ?>
           </div>
 
           <!-- BVB Manvila Floating Top-Right Zoom Icon Button -->
@@ -179,6 +197,12 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
   <div class="lightbox-dialog">
     <button type="button" class="lightbox-close" aria-label="Close Lightbox" id="lightboxClose">&times;</button>
     
+    <!-- Lightbox Title & Counter Header -->
+    <div class="lightbox-header-bar" id="lightboxHeaderBar">
+      <span class="lightbox-counter-badge" id="lightboxCounter">1 / 1</span>
+      <h6 class="lightbox-title-text" id="lightboxEventTitle"></h6>
+    </div>
+
     <div class="lightbox-stage">
       <button type="button" class="lightbox-nav lightbox-prev" aria-label="Previous image" id="lightboxPrev">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
@@ -648,13 +672,107 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
   .lightbox-next { right: 10px; }
 }
 
+/* Card Album Badge */
+.gallery-album-badge {
+  position: absolute;
+  top: 0.85rem;
+  left: 0.85rem;
+  background: rgba(4, 27, 59, 0.82);
+  backdrop-filter: blur(6px);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 2;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.gallery-album-badge i {
+  color: #F59E0B;
+  font-size: 0.78rem;
+}
+
+.gallery-item:hover .gallery-album-badge {
+  background: #0B4EA2;
+  transform: translateY(-1px);
+}
+
+.gallery-overlay-album-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #FDE047;
+  margin-top: 0.25rem;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+}
+
+/* Lightbox Header Bar */
+.lightbox-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 0.85rem;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.lightbox-counter-badge {
+  background: rgba(245, 158, 11, 0.2);
+  border: 1px solid #F59E0B;
+  color: #FDE047;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.05em;
+}
+
+.lightbox-title-text {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
 .lightbox-thumbs-wrap {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
-  margin-top: 1.5rem;
+  margin-top: 1.25rem;
   max-width: 90%;
-  overflow: hidden;
+  width: 100%;
+}
+
+.lightbox-thumb-scroll-btn {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.lightbox-thumb-scroll-btn:hover {
+  background: #0B4EA2;
+  color: #FFFFFF;
+  border-color: #0B4EA2;
 }
 
 .lightbox-thumbs-track {
@@ -662,23 +780,46 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
   gap: 10px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding: 4px;
+  padding: 6px 4px;
+  scrollbar-width: none;
+  max-width: 820px;
 }
 
-.lightbox-thumb-img {
-  width: 68px;
-  height: 48px;
-  object-fit: cover;
-  border-radius: 6px;
-  opacity: 0.6;
+.lightbox-thumbs-track::-webkit-scrollbar {
+  display: none;
+}
+
+.lightbox-thumb-item {
+  width: 72px;
+  height: 52px;
+  border-radius: 8px;
+  overflow: hidden;
   cursor: pointer;
   border: 2px solid transparent;
-  transition: all 0.2s ease;
+  opacity: 0.55;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+  background: #000;
 }
 
-.lightbox-thumb-img:hover, .lightbox-thumb-img.active {
+.lightbox-thumb-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.lightbox-thumb-item:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.lightbox-thumb-item.active {
   opacity: 1;
-  border-color: #0B4EA2;
+  border-color: #F59E0B;
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.4), 0 4px 12px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
 }
 </style>
 

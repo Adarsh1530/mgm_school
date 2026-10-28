@@ -66,6 +66,11 @@ foreach ($routes as $route => $outFiles) {
         'C:/xampp/htdocs/MGM SCHOOL/' => '/',
         'http://localhost/' => '/',
         'https://localhost/' => '/',
+        'http:\/\/localhost\/MGM%20SCHOOL\/' => '\/',
+        'http:\/\/localhost\/MGM SCHOOL\/' => '\/',
+        'https:\/\/localhost\/MGM%20SCHOOL\/' => '\/',
+        'http:\/\/localhost\/' => '\/',
+        'https:\/\/localhost\/' => '\/',
         'https://mgmschool.vercel.app/' => '/',
         'http://mgmschool.vercel.app/' => '/'
     ];

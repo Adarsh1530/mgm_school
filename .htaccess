@@ -21,11 +21,13 @@ DirectoryIndex index.php index.html
     RewriteCond %{REQUEST_FILENAME} -d
     RewriteRule ^ - [L]
 
-    # Clean URL fallback for pre-rendered .html pages
+    # Clean URL fallback for pre-rendered .html pages (except dynamic database pages: gallery, notices, mandatory-disclosure)
+    RewriteCond $1 !^(gallery|notices|mandatory-disclosure)$ [NC]
     RewriteCond %{DOCUMENT_ROOT}/$1.html -f
     RewriteRule ^([^/]+)/?$ $1.html [L]
 
-    # Clean URL fallback for subfolder index.html
+    # Clean URL fallback for subfolder index.html (except dynamic database pages: gallery, notices, mandatory-disclosure)
+    RewriteCond $1 !^(gallery|notices|mandatory-disclosure)$ [NC]
     RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
     RewriteRule ^([^/]+)/?$ $1/index.html [L]
 

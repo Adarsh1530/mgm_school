@@ -748,7 +748,20 @@ require_once __DIR__ . '/header.php';
 
   /* Modal Dialog Styling (Matching BVB Image 2) */
   .modal-dialog-bvb {
-    max-width: 760px;
+    max-width: 920px;
+    margin: 1.5rem auto;
+  }
+  .modal-dialog-bvb.modal-dialog-scrollable .modal-content {
+    max-height: calc(100vh - 3rem);
+    display: flex;
+    flex-direction: column;
+  }
+  .modal-dialog-bvb.modal-dialog-scrollable .modal-body {
+    max-height: calc(100vh - 185px);
+    overflow-y: auto !important;
+    padding: 24px 28px;
+    background: #ffffff;
+    flex: 1 1 auto;
   }
   .modal-header-bvb {
     background: var(--bvb-navy);
@@ -756,6 +769,7 @@ require_once __DIR__ . '/header.php';
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
     padding: 16px 24px;
+    flex-shrink: 0;
   }
   .modal-header-bvb .modal-title {
     font-size: 16.5px;
@@ -1031,7 +1045,7 @@ require_once __DIR__ . '/header.php';
 <!-- Upload / Edit Modal Dialog (Exact BVB Image 2 Layout) -->
 <div class="modal fade" id="uploadEventModal" tabindex="-1" aria-labelledby="modalEventTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-bvb modal-dialog-scrollable">
-    <div class="modal-content" style="border-radius: 12px; overflow: hidden; border: none; box-shadow: 0 10px 40px rgba(0,0,0,0.2);">
+    <form method="POST" action="<?= ADMIN_URL ?>/gallery.php" enctype="multipart/form-data" id="eventForm" class="modal-content" style="border-radius: 12px; overflow: hidden; border: none; box-shadow: 0 10px 40px rgba(0,0,0,0.2);">
       
       <!-- Modal Header -->
       <div class="modal-header modal-header-bvb">
@@ -1039,14 +1053,12 @@ require_once __DIR__ . '/header.php';
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
 
-      <!-- Modal Form -->
-      <form method="POST" action="<?= ADMIN_URL ?>/gallery.php" enctype="multipart/form-data" id="eventForm">
-        <input type="hidden" name="csrf_token" value="<?= csrf_token() ?>">
-        <input type="hidden" name="action" id="formAction" value="add">
-        <input type="hidden" name="id" id="eventId" value="">
-        <input type="hidden" name="clear_all_sub_images" id="clearAllSubImagesInput" value="0">
+      <input type="hidden" name="csrf_token" value="<?= csrf_token() ?>">
+      <input type="hidden" name="action" id="formAction" value="add">
+      <input type="hidden" name="id" id="eventId" value="">
+      <input type="hidden" name="clear_all_sub_images" id="clearAllSubImagesInput" value="0">
 
-        <div class="modal-body bvb-modal-body">
+      <div class="modal-body bvb-modal-body">
           
           <!-- Row 1: Title & Caption -->
           <div class="row g-3 mb-3">
@@ -1156,9 +1168,7 @@ require_once __DIR__ . '/header.php';
           </button>
         </div>
 
-      </form>
-
-    </div>
+    </form>
   </div>
 </div>
 

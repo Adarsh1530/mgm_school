@@ -177,10 +177,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
   let currentEventPhotos = [];
   let currentEventPhotoIndex = 0;
+  let activeEventTitle = '';
+
+  function sanitizeImageUrl(url) {
+    if (!url) return '';
+    return url.replace(/^https?:\/\/localhost(:\d+)?(\/MGM%20SCHOOL|\/MGM SCHOOL)?\//i, '/');
+  }
 
   function openLightboxForEvent(itemElement) {
-    const title = itemElement.getAttribute('data-title') || 'Gallery Photo';
-    const mainImg = itemElement.getAttribute('data-main-img') || (itemElement.querySelector('img') ? itemElement.querySelector('img').src : '');
+    activeEventTitle = itemElement.getAttribute('data-title') || 'Gallery Photo';
+    const rawMain = itemElement.getAttribute('data-main-img') || (itemElement.querySelector('img') ? itemElement.querySelector('img').getAttribute('src') : '');
+    const mainImg = sanitizeImageUrl(rawMain);
     
     // Parse sub-images
     let subImgs = [];
@@ -198,15 +205,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (Array.isArray(subImgs)) {
       subImgs.forEach(imgUrl => {
-        if (imgUrl && imgUrl !== mainImg && !currentEventPhotos.includes(imgUrl)) {
-          currentEventPhotos.push(imgUrl);
+        const cleanUrl = sanitizeImageUrl(imgUrl);
+        if (cleanUrl && cleanUrl !== mainImg && !currentEventPhotos.includes(cleanUrl)) {
+          currentEventPhotos.push(cleanUrl);
         }
       });
     }
 
     currentEventPhotoIndex = 0;
-    populateEventThumbnails(title);
-    renderLightboxSlide(currentEventPhotoIndex, title);
+    populateEventThumbnails(activeEventTitle);
+    renderLightboxSlide(currentEventPhotoIndex, activeEventTitle);
 
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -262,10 +270,21 @@ document.addEventListener('DOMContentLoaded', function () {
     if (lightboxImg) {
       lightboxImg.style.opacity = '0.3';
       lightboxImg.src = currentPhotoUrl;
-      lightboxImg.alt = title || 'Gallery Image';
+      lightboxImg.alt = title || activeEventTitle || 'Gallery Image';
       lightboxImg.onload = function () {
         lightboxImg.style.opacity = '1';
       };
+    }
+
+    // Update counter and title in lightbox
+    const counterEl = document.getElementById('lightboxCounter');
+    const titleEl = document.getElementById('lightboxEventTitle');
+    if (counterEl) {
+      counterEl.textContent = `${currentEventPhotoIndex + 1} / ${currentEventPhotos.length}`;
+      counterEl.style.display = currentEventPhotos.length > 1 ? 'inline-block' : 'none';
+    }
+    if (titleEl) {
+      titleEl.textContent = title || activeEventTitle || '';
     }
 
     // Highlight active thumbnail and scroll into view
@@ -293,11 +312,11 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function nextSlide() {
-    renderLightboxSlide(currentEventPhotoIndex + 1);
+    renderLightboxSlide(currentEventPhotoIndex + 1, activeEventTitle);
   }
 
   function prevSlide() {
-    renderLightboxSlide(currentEventPhotoIndex - 1);
+    renderLightboxSlide(currentEventPhotoIndex - 1, activeEventTitle);
   }
 
   // Click on gallery item opens event's sub-images
