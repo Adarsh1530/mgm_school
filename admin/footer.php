@@ -8,7 +8,7 @@
 
     <footer class="admin-footer bg-white">
       <div>
-        MGM Model School Admin Portal &copy; <?= date('Y') ?> &bull; Internal Content Management System
+        <strong>MGM Model School</strong> | Admin Portal - Content Management System | &copy; <?= date('Y') ?> | <em>Technology Partner:</em> <a href="https://sparkitts.com" target="_blank" rel="noopener noreferrer"><strong>SparkIT Techno Solutions Pvt. Ltd.</strong></a>
       </div>
     </footer>
 

@@ -187,6 +187,16 @@ $activePage = $activePage ?? 'dashboard';
       box-sizing: border-box;
       z-index: 20;
     }
+    .admin-footer a {
+      color: var(--admin-primary);
+      text-decoration: none;
+      font-weight: 700;
+      transition: color 0.15s ease, text-decoration 0.15s ease;
+    }
+    .admin-footer a:hover {
+      color: var(--admin-primary-dark);
+      text-decoration: underline;
+    }
 
     /* Mobile & Tablet Responsiveness */
     @media (max-width: 991.98px) {
