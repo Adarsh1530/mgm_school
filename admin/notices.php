@@ -13,7 +13,39 @@ $adminTitle = 'Notice Management System';
 
 $db = getDB();
 
-// Handle Actions (Add, Edit, Delete, Toggle)
+/**
+ * Automatically reorder and normalize notice positions into continuous 1..N
+ */
+function reorder_and_normalize_notices(PDO $db, ?int $targetNoticeId = null, ?int $desiredPosition = null): void {
+    $allNotices = $db->query("SELECT id FROM notices ORDER BY sort_order ASC, publish_date DESC, id DESC")->fetchAll(PDO::FETCH_ASSOC);
+    if (empty($allNotices)) return;
+
+    $idList = array_map('intval', array_column($allNotices, 'id'));
+
+    if ($targetNoticeId !== null && in_array((int)$targetNoticeId, $idList, true)) {
+        $targetNoticeId = (int)$targetNoticeId;
+        $currentIdx = array_search($targetNoticeId, $idList, true);
+        array_splice($idList, $currentIdx, 1);
+
+        $total = count($idList) + 1;
+        if ($desiredPosition === null || $desiredPosition <= 0) {
+            $desiredPosition = $total;
+        }
+        $pos = max(1, min((int)$desiredPosition, $total));
+        $targetIdx = $pos - 1;
+
+        array_splice($idList, $targetIdx, 0, [$targetNoticeId]);
+    }
+
+    $stmt = $db->prepare("UPDATE notices SET sort_order = :ord WHERE id = :id");
+    $pos = 1;
+    foreach ($idList as $id) {
+        $stmt->execute([':ord' => $pos, ':id' => $id]);
+        $pos++;
+    }
+}
+
+// Handle Actions (Add, Edit, Delete, Toggle, Move)
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!verify_csrf($_POST['csrf_token'] ?? '')) {
         set_flash('error', 'CSRF verification failed.');
@@ -94,6 +126,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     ':ticker'   => $isTicker,
                     ':sort'     => $sortOrder
                 ]);
+                $newId = (int)$db->lastInsertId();
+                reorder_and_normalize_notices($db, $newId, $sortOrder);
 
                 set_flash('success', "Notice '{$title}' added successfully.");
             }
@@ -155,7 +189,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     }
                 }
 
-                $stmt = $db->prepare("UPDATE notices SET title = :title, category = :cat, badge_color = :badge, publish_date = :pdate, display_date = :ddate, summary = :summary, content = :content, image_url = :img, pdf_url = :pdf, is_active = :active, is_ticker = :ticker, sort_order = :sort WHERE id = :id");
+                $stmt = $db->prepare("UPDATE notices SET title = :title, category = :cat, badge_color = :badge, publish_date = :pdate, display_date = :ddate, summary = :summary, content = :content, image_url = :img, pdf_url = :pdf, is_active = :active, is_ticker = :ticker WHERE id = :id");
                 $stmt->execute([
                     ':title'    => $title,
                     ':cat'      => $category,
@@ -168,11 +202,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     ':pdf'      => $pdfUrl,
                     ':active'   => $isActive,
                     ':ticker'   => $isTicker,
-                    ':sort'     => $sortOrder,
                     ':id'       => $id
                 ]);
 
+                reorder_and_normalize_notices($db, $id, $sortOrder);
+
                 set_flash('success', "Notice '{$title}' updated successfully.");
+            }
+            header("Location: " . ADMIN_URL . "/notices.php");
+            exit;
+        }
+
+        // Quick Move Up in Order
+        if ($action === 'move_up') {
+            $id = (int)($_POST['id'] ?? 0);
+            $curr = (int)$db->query("SELECT sort_order FROM notices WHERE id = {$id}")->fetchColumn();
+            if ($curr > 1) {
+                reorder_and_normalize_notices($db, $id, $curr - 1);
+                set_flash('success', "Notice moved up to position #" . ($curr - 1) . ".");
+            }
+            header("Location: " . ADMIN_URL . "/notices.php");
+            exit;
+        }
+
+        // Quick Move Down in Order
+        if ($action === 'move_down') {
+            $id = (int)($_POST['id'] ?? 0);
+            $curr = (int)$db->query("SELECT sort_order FROM notices WHERE id = {$id}")->fetchColumn();
+            $totalCount = (int)$db->query("SELECT COUNT(*) FROM notices")->fetchColumn();
+            if ($curr > 0 && $curr < $totalCount) {
+                reorder_and_normalize_notices($db, $id, $curr + 1);
+                set_flash('success', "Notice moved down to position #" . ($curr + 1) . ".");
             }
             header("Location: " . ADMIN_URL . "/notices.php");
             exit;
@@ -196,6 +256,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $notice = $db->query("SELECT * FROM notices WHERE id = {$id}")->fetch();
                 if ($notice) {
                     $db->exec("DELETE FROM notices WHERE id = {$id}");
+                    reorder_and_normalize_notices($db);
                     set_flash('success', "Notice '{$notice['title']}' deleted.");
                 }
             }
@@ -212,6 +273,8 @@ if (isset($_GET['edit'])) {
     $editNotice = $db->query("SELECT * FROM notices WHERE id = {$editId}")->fetch();
 }
 
+// Automatically ensure notices are strictly sequential 1..N without gaps or duplicates
+reorder_and_normalize_notices($db);
 $notices = $db->query("SELECT * FROM notices ORDER BY sort_order ASC, publish_date DESC")->fetchAll();
 
 require_once __DIR__ . '/header.php';
@@ -274,7 +337,8 @@ require_once __DIR__ . '/header.php';
           </div>
           <div class="col-sm-6">
             <label class="form-label fw-semibold small">Sort Order</label>
-            <input type="number" name="sort_order" class="form-control" value="<?= e($editNotice['sort_order'] ?? count($notices) + 1) ?>" min="0">
+            <input type="number" name="sort_order" class="form-control" value="<?= e($editNotice['sort_order'] ?? count($notices) + 1) ?>" min="1">
+            <div class="form-text small" style="font-size: 11px;">Moving position auto-resequences all notices continuously without duplicates.</div>
           </div>
         </div>
 
@@ -348,7 +412,33 @@ require_once __DIR__ . '/header.php';
           <tbody>
             <?php foreach ($notices as $n): ?>
               <tr class="<?= ($editNotice && $editNotice['id'] == $n['id']) ? 'table-warning' : '' ?>">
-                <td class="fw-bold text-muted">#<?= $n['sort_order'] ?></td>
+                <td class="fw-bold text-muted" style="min-width: 85px;">
+                  <div class="d-flex align-items-center gap-1">
+                    <span class="badge bg-light text-dark border">#<?= $n['sort_order'] ?></span>
+                    <div class="d-inline-flex flex-column" style="gap: 1px;">
+                      <?php if ($n['sort_order'] > 1): ?>
+                        <form method="POST" action="" style="margin: 0; line-height: 1;">
+                          <input type="hidden" name="action" value="move_up">
+                          <input type="hidden" name="id" value="<?= $n['id'] ?>">
+                          <input type="hidden" name="csrf_token" value="<?= csrf_token() ?>">
+                          <button type="submit" class="btn btn-sm btn-light border p-0 px-1 text-muted" title="Move Up" style="font-size: 9px; line-height: 1.1;">
+                            <i class="fa-solid fa-chevron-up"></i>
+                          </button>
+                        </form>
+                      <?php endif; ?>
+                      <?php if ($n['sort_order'] < count($notices)): ?>
+                        <form method="POST" action="" style="margin: 0; line-height: 1;">
+                          <input type="hidden" name="action" value="move_down">
+                          <input type="hidden" name="id" value="<?= $n['id'] ?>">
+                          <input type="hidden" name="csrf_token" value="<?= csrf_token() ?>">
+                          <button type="submit" class="btn btn-sm btn-light border p-0 px-1 text-muted" title="Move Down" style="font-size: 9px; line-height: 1.1;">
+                            <i class="fa-solid fa-chevron-down"></i>
+                          </button>
+                        </form>
+                      <?php endif; ?>
+                    </div>
+                  </div>
+                </td>
                 <td>
                   <div class="fw-bold text-dark"><?= e($n['title']) ?></div>
                   <div class="d-flex align-items-center gap-2 mt-1">
