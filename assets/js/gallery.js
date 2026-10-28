@@ -31,12 +31,15 @@ document.addEventListener('DOMContentLoaded', function () {
       const category = (item.getAttribute('data-category') || 'all').toLowerCase();
       const title = (item.getAttribute('data-title') || '').toLowerCase();
       const subtitle = (item.getAttribute('data-subtitle') || '').toLowerCase();
+      const caption = (item.getAttribute('data-caption') || '').toLowerCase();
+      const description = (item.getAttribute('data-description') || '').toLowerCase();
       const catLabel = (item.getAttribute('data-category-label') || '').toLowerCase();
       const date = (item.getAttribute('data-date') || '').toLowerCase();
+      const uploadDate = (item.getAttribute('data-upload-date') || '').toLowerCase();
       const img = item.querySelector('img');
       const altText = (img ? img.getAttribute('alt') || '' : '').toLowerCase();
 
-      const fullSearchableText = `${title} ${subtitle} ${catLabel} ${category} ${date} ${altText}`;
+      const fullSearchableText = `${title} ${caption} ${description} ${subtitle} ${catLabel} ${category} ${date} ${uploadDate} ${altText}`;
 
       // Check category match
       const matchesCategory = (activeFilter === 'all' || category === activeFilter);

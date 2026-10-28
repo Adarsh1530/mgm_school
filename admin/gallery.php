@@ -75,7 +75,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // 1. ADD NEW GALLERY EVENT (Appears #1 Automatically)
     if ($action === 'add') {
         $title = trim($_POST['title'] ?? '');
+        $caption = trim($_POST['caption'] ?? '');
         $subtitle = trim($_POST['subtitle'] ?? '');
+        if (empty($caption)) $caption = $subtitle;
+        if (empty($subtitle)) $subtitle = $caption;
         $eventDate = trim($_POST['event_date'] ?? date('F d, Y'));
         $displayOrder = max(1, (int)($_POST['display_order'] ?? 1));
         $tags = $_POST['filter_tags'] ?? ['EVENTS'];
@@ -179,7 +182,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $ins->execute([
             ':title'    => $title,
             ':sub'      => $subtitle,
-            ':cap'      => $subtitle,
+            ':cap'      => $caption,
             ':ed'       => $eventDate,
             ':img'      => $mainImgPath,
             ':cat'      => $primaryCategory,
@@ -199,7 +202,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($action === 'edit') {
         $id = (int)($_POST['id'] ?? 0);
         $title = trim($_POST['title'] ?? '');
+        $caption = trim($_POST['caption'] ?? '');
         $subtitle = trim($_POST['subtitle'] ?? '');
+        if (empty($caption)) $caption = $subtitle;
+        if (empty($subtitle)) $subtitle = $caption;
         $eventDate = trim($_POST['event_date'] ?? date('F d, Y'));
         $displayOrder = max(1, (int)($_POST['display_order'] ?? 1));
         $tags = $_POST['filter_tags'] ?? ['EVENTS'];
@@ -331,7 +337,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $upd->execute([
             ':title'    => $title,
             ':sub'      => $subtitle,
-            ':cap'      => $subtitle,
+            ':cap'      => $caption,
             ':ed'       => $eventDate,
             ':img'      => $mainImgPath,
             ':cat'      => $primaryCategory,
@@ -1042,26 +1048,30 @@ require_once __DIR__ . '/header.php';
 
         <div class="modal-body bvb-modal-body">
           
-          <!-- Row 1: Title & Subtitle -->
+          <!-- Row 1: Title & Caption -->
           <div class="row g-3 mb-3">
             <div class="col-md-6">
               <label class="bvb-field-label">EVENT / PACKAGE TITLE *</label>
               <input type="text" name="title" id="fieldTitle" class="bvb-input" required placeholder="e.g. Samskrithi / Annual Sports & Cultural Meet">
             </div>
             <div class="col-md-6">
-              <label class="bvb-field-label">SUBTITLE / EVENT LABEL</label>
-              <input type="text" name="subtitle" id="fieldSubtitle" class="bvb-input" placeholder="e.g. Celebrated at Campus Grounds">
+              <label class="bvb-field-label">IMAGE CAPTION</label>
+              <input type="text" name="caption" id="fieldCaption" class="bvb-input" placeholder="e.g. Students performing traditional art on stage">
             </div>
           </div>
 
-          <!-- Row 2: Date & Order -->
+          <!-- Row 2: Description, Date & Order -->
           <div class="row g-3 mb-3">
             <div class="col-md-6">
-              <label class="bvb-field-label">UPLOADED DATE (AUTO-IDENTIFIED)</label>
+              <label class="bvb-field-label">DESCRIPTION / SUBTITLE</label>
+              <input type="text" name="subtitle" id="fieldSubtitle" class="bvb-input" placeholder="e.g. Grand Cultural Extravaganza & Theatrical Performances">
+            </div>
+            <div class="col-md-3">
+              <label class="bvb-field-label">UPLOADED DATE</label>
               <input type="text" name="event_date" id="fieldEventDate" class="bvb-input" value="<?= date('F d, Y') ?>">
             </div>
-            <div class="col-md-6">
-              <label class="bvb-field-label">DISPLAY ORDER (# POSITION)</label>
+            <div class="col-md-3">
+              <label class="bvb-field-label">DISPLAY ORDER (#)</label>
               <input type="number" name="display_order" id="fieldDisplayOrder" class="bvb-input" value="1" min="1">
             </div>
           </div>
@@ -1178,6 +1188,9 @@ function resetUploadModal() {
   document.getElementById('formAction').value = 'add';
   document.getElementById('eventId').value = '';
   document.getElementById('modalEventTitle').textContent = 'Upload New Gallery Event (Appears #1 Automatically)';
+  document.getElementById('fieldTitle').value = '';
+  document.getElementById('fieldCaption').value = '';
+  document.getElementById('fieldSubtitle').value = '';
   document.getElementById('fieldDisplayOrder').value = '1';
   document.getElementById('fieldEventDate').value = '<?= date('F d, Y') ?>';
   document.getElementById('mainImagePreviewWrap').style.display = 'none';
@@ -1202,6 +1215,7 @@ function openEditModal(eventData) {
   document.getElementById('eventId').value = eventData.id;
   document.getElementById('modalEventTitle').textContent = 'Edit Gallery Event: ' + eventData.title;
   document.getElementById('fieldTitle').value = eventData.title || '';
+  document.getElementById('fieldCaption').value = eventData.caption || '';
   document.getElementById('fieldSubtitle').value = eventData.subtitle || eventData.caption || '';
   document.getElementById('fieldEventDate').value = eventData.event_date || '';
   document.getElementById('fieldDisplayOrder').value = eventData.sort_order || '1';

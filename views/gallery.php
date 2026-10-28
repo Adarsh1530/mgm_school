@@ -92,8 +92,14 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
         $catSlug = strtolower(preg_replace('/[^a-zA-Z0-9]/', '-', $item['category'] ?? 'general'));
         $catLabel = $item['category'] ?? 'Campus';
         $itemImg = asset_url($item['image_path']);
-        $subtitle = $item['subtitle'] ?? $item['caption'] ?? '';
-        $eventDate = !empty($item['event_date']) ? $item['event_date'] : date('F d, Y', strtotime($item['created_at']));
+        $title = $item['title'] ?? '';
+        $caption = trim($item['caption'] ?? '');
+        $description = trim($item['subtitle'] ?? '');
+
+        // Exact upload date formatting (e.g. October 21, 2026)
+        $hasCreatedAt = !empty($item['created_at']) && $item['created_at'] !== '0000-00-00 00:00:00';
+        $uploadDate = $hasCreatedAt ? date('F d, Y', strtotime($item['created_at'])) : (!empty($item['event_date']) ? $item['event_date'] : date('F d, Y'));
+        $eventDate = !empty($item['event_date']) ? $item['event_date'] : $uploadDate;
 
         // Parse sub-images
         $rawSub = !empty($item['sub_images']) ? json_decode($item['sub_images'], true) : [];
@@ -111,23 +117,46 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
              data-index="<?= $idx ?>"
              data-category="<?= e($catSlug) ?>"
              data-category-label="<?= e($catLabel) ?>"
-             data-title="<?= e($item['title']) ?>"
-             data-subtitle="<?= e($subtitle) ?>"
+             data-title="<?= e($title) ?>"
+             data-caption="<?= e($caption) ?>"
+             data-description="<?= e($description) ?>"
+             data-subtitle="<?= e($description) ?>"
              data-date="<?= e($eventDate) ?>"
+             data-upload-date="<?= e($uploadDate) ?>"
              data-main-img="<?= $itemImg ?>"
              data-sub-images='<?= json_encode($subUrls) ?>'>
           
-          <img src="<?= $itemImg ?>" alt="<?= e($item['title']) ?>" loading="lazy">
+          <img src="<?= $itemImg ?>" alt="<?= e($title) ?>" loading="lazy">
           
-          <!-- Hover Overlay (Exact BVB Manvila Gradient with Gold Badge & White Typography) -->
+          <!-- Hover Overlay: Showing Title, Caption, Description, and Exact Upload Date -->
           <div class="gallery-overlay">
             <span class="gallery-overlay-badge"><?= strtoupper(e($catLabel)) ?></span>
-            <span class="gallery-overlay-title"><?= e($item['title']) ?></span>
-            <?php if (!empty($subtitle)): ?>
-              <span class="gallery-overlay-subtitle"><?= e($subtitle) ?></span>
-            <?php else: ?>
-              <span class="gallery-overlay-subtitle"><?= e($eventDate) ?></span>
+            <span class="gallery-overlay-title"><?= e($title) ?></span>
+            
+            <?php if (!empty($caption)): ?>
+              <div class="gallery-overlay-row gallery-overlay-caption-wrap">
+                <span class="gallery-overlay-label">Caption:</span>
+                <span class="gallery-overlay-caption-text"><?= e($caption) ?></span>
+              </div>
             <?php endif; ?>
+
+            <?php if (!empty($description) && $description !== $caption): ?>
+              <div class="gallery-overlay-row gallery-overlay-desc-wrap">
+                <span class="gallery-overlay-label">Description:</span>
+                <span class="gallery-overlay-desc-text"><?= e($description) ?></span>
+              </div>
+            <?php elseif (empty($caption) && !empty($description)): ?>
+              <div class="gallery-overlay-row gallery-overlay-desc-wrap">
+                <span class="gallery-overlay-label">Description:</span>
+                <span class="gallery-overlay-desc-text"><?= e($description) ?></span>
+              </div>
+            <?php endif; ?>
+
+            <div class="gallery-overlay-date-row">
+              <i class="fa-solid fa-calendar-days"></i>
+              <span class="gallery-overlay-date-label">Upload Date:</span>
+              <span class="gallery-overlay-date-value"><?= e($uploadDate) ?></span>
+            </div>
           </div>
 
           <!-- BVB Manvila Floating Top-Right Zoom Icon Button -->
@@ -430,15 +459,16 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
 .gallery-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(6, 43, 92, 0.92) 0%, rgba(6, 43, 92, 0.4) 55%, transparent 100%);
+  background: linear-gradient(to top, rgba(6, 43, 92, 0.96) 0%, rgba(6, 43, 92, 0.90) 50%, rgba(6, 43, 92, 0.55) 85%, rgba(6, 43, 92, 0.25) 100%);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 1.5rem;
+  padding: 1.15rem 1.25rem;
   color: #FFFFFF;
   z-index: 1;
+  pointer-events: none;
 }
 
 .gallery-item:hover .gallery-overlay {
@@ -446,31 +476,89 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
 }
 
 .gallery-overlay-badge {
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 700;
   text-transform: uppercase;
   color: #F59E0B;
   letter-spacing: 0.08em;
   margin-bottom: 0.25rem;
-  display: block;
+  display: inline-block;
+  align-self: flex-start;
 }
 
 .gallery-overlay-title {
   font-size: 1.05rem;
   font-weight: 700;
   color: #FFFFFF;
-  line-height: 1.3;
+  line-height: 1.25;
+  margin-bottom: 0.35rem;
   display: block;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
 }
 
-.gallery-overlay-subtitle {
-  font-size: 0.8rem;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.88);
+.gallery-overlay-row {
+  font-size: 0.78rem;
   line-height: 1.35;
-  margin-top: 0.25rem;
-  display: block;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 0.2rem;
+}
+
+.gallery-overlay-caption-wrap,
+.gallery-overlay-desc-wrap {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gallery-overlay-label {
+  font-weight: 700;
+  color: #93C5FD;
+  margin-right: 4px;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.gallery-overlay-caption-text {
+  color: #FFFFFF;
+  font-weight: 500;
+}
+
+.gallery-overlay-desc-text {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 400;
+}
+
+.gallery-overlay-date-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 0.35rem;
+  padding-top: 0.35rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: #FDE047;
+}
+
+.gallery-overlay-date-row i {
+  color: #F59E0B;
+  font-size: 0.78rem;
+}
+
+.gallery-overlay-date-label {
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 500;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.gallery-overlay-date-value {
+  color: #FFFFFF;
+  font-weight: 600;
 }
 
 /* Lightbox Styling */
