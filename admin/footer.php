@@ -10,11 +10,6 @@
       <div>
         MGM Model School Admin Portal &copy; <?= date('Y') ?> &bull; Internal Content Management System
       </div>
-      <div>
-        <a href="<?= url('/') ?>" target="_blank" class="btn btn-outline-dark btn-sm">
-          <i class="fa-solid fa-arrow-up-right-from-square me-1"></i> View Live Site
-        </a>
-      </div>
     </footer>
 
   </div>
