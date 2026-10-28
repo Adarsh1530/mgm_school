@@ -133,12 +133,6 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
              data-sub-images='<?= json_encode($subUrls, JSON_UNESCAPED_SLASHES) ?>'>
           
           <img src="<?= $itemImg ?>" alt="<?= e($title) ?>" loading="lazy">
-          
-          <?php if ($totalPhotos > 1): ?>
-            <div class="gallery-album-badge" title="<?= $totalPhotos ?> photos in this album">
-              <i class="fa-solid fa-images"></i> <span><?= $totalPhotos ?> Photos</span>
-            </div>
-          <?php endif; ?>
 
           <!-- Hover Overlay: Showing Title, Caption, Description, and Exact Upload Date -->
           <div class="gallery-overlay">
@@ -174,17 +168,6 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
               </div>
             <?php endif; ?>
           </div>
-
-          <!-- BVB Manvila Floating Top-Right Zoom Icon Button -->
-          <div class="gallery-zoom-icon" aria-label="Zoom photograph">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              <line x1="11" y1="8" x2="11" y2="14"></line>
-              <line x1="8" y1="11" x2="14" y2="11"></line>
-            </svg>
-          </div>
-
         </div>
       <?php endforeach; ?>
     </div>
