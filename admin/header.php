@@ -15,7 +15,7 @@ $activePage = $activePage ?? 'dashboard';
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><?= e($adminTitle ?? 'Admin Dashboard') ?> – MGM School Portal</title>
+  <title><?= e($adminTitle ?? 'Admin Dashboard') ?> – MGM Model School Portal</title>
   
   <link rel="icon" type="image/png" href="<?= asset_url('images/new-mgm-logo.png') ?>">
 
@@ -87,8 +87,9 @@ $activePage = $activePage ?? 'dashboard';
     .admin-brand span {
       color: #ffffff;
       font-weight: 700;
-      font-size: 16px;
-      letter-spacing: 0.3px;
+      font-size: 15px;
+      letter-spacing: 0.2px;
+      white-space: nowrap;
     }
     .admin-menu {
       list-style: none;
@@ -330,7 +331,7 @@ $activePage = $activePage ?? 'dashboard';
     <div class="admin-brand">
       <img src="<?= asset_url('images/new-mgm-logo.png') ?>" alt="MGM Crest">
       <div>
-        <span>MGM School</span>
+        <span>MGM Model School</span>
         <div style="font-size: 11px; color: #9CA3AF;">Admin Portal</div>
       </div>
     </div>
