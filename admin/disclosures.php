@@ -317,14 +317,9 @@ require_once __DIR__ . '/header.php';
   <!-- Right Column: Disclosures List -->
   <div class="col-lg-8">
     <div class="bg-white p-4 rounded-3 border shadow-sm">
-      <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
-        <div>
-          <h5 class="fw-bold text-dark mb-0">Active Mandatory Disclosures (<?= count($disclosures) ?>)</h5>
-          <span class="text-muted small">Synchronized with public Mandatory Disclosure section</span>
-        </div>
-        <a href="<?= url('/mandatory-disclosure/') ?>" target="_blank" class="btn btn-outline-danger btn-sm rounded-pill px-3 fw-semibold">
-          <i class="fa-solid fa-eye me-1"></i> View Public Page
-        </a>
+      <div class="mb-3">
+        <h5 class="fw-bold text-dark mb-0">Active Mandatory Disclosures (<?= count($disclosures) ?>)</h5>
+        <span class="text-muted small">Synchronized with public Mandatory Disclosure section</span>
       </div>
 
       <div class="table-responsive">

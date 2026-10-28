@@ -323,16 +323,9 @@ require_once __DIR__ . '/header.php';
 ?>
 
 <!-- Page Header -->
-<div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
-  <div>
-    <h4 class="fw-bold mb-1 text-dark">Image Popup Notification Management</h4>
-    <p class="text-muted small mb-0">Create, manage, and instantly switch popup announcements and admission flyers on the school website.</p>
-  </div>
-  <div class="d-flex align-items-center gap-2">
-    <a href="<?= url('/') ?>" target="_blank" class="btn btn-outline-danger btn-sm rounded-pill px-3 fw-semibold">
-      <i class="fa-solid fa-arrow-up-right-from-square me-1"></i> Preview On Live Site
-    </a>
-  </div>
+<div class="mb-4">
+  <h4 class="fw-bold mb-1 text-dark">Image Popup Notification Management</h4>
+  <p class="text-muted small mb-0">Create, manage, and instantly switch popup announcements and admission flyers on the school website.</p>
 </div>
 
 <!-- Active Status Banner -->

@@ -330,11 +330,8 @@ require_once __DIR__ . '/header.php';
   <!-- Right Column: Notice List Table -->
   <div class="col-lg-7">
     <div class="bg-white p-4 rounded-3 border shadow-sm">
-      <div class="d-flex justify-content-between align-items-center mb-3">
+      <div class="mb-3">
         <h5 class="fw-bold text-dark mb-0">Active Notices & Circulars (<?= count($notices) ?>)</h5>
-        <a href="<?= url('/notices/') ?>" target="_blank" class="btn btn-outline-info btn-sm">
-          <i class="fa-solid fa-eye me-1"></i> View Live Notices
-        </a>
       </div>
 
       <div class="table-responsive">

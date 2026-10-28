@@ -51,9 +51,12 @@ $activePage = $activePage ?? 'dashboard';
       background-color: var(--admin-sidebar);
       color: #9CA3AF;
       flex-shrink: 0;
-      min-height: 100vh;
+      height: 100vh;
+      position: sticky;
+      top: 0;
       display: flex;
       flex-direction: column;
+      z-index: 1000;
     }
     .admin-brand {
       padding: 18px 22px;
@@ -82,6 +85,7 @@ $activePage = $activePage ?? 'dashboard';
       padding: 18px 12px;
       margin: 0;
       flex-grow: 1;
+      overflow-y: auto;
     }
     .admin-menu li {
       margin-bottom: 6px;

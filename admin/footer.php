@@ -6,8 +6,15 @@
 ?>
     </main>
 
-    <footer class="bg-white border-top py-3 px-4 text-muted small text-center">
-      MGM Model School Admin Portal &copy; <?= date('Y') ?> &bull; Internal Content Management System
+    <footer class="bg-white border-top py-3 px-4 text-muted small d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <div>
+        MGM Model School Admin Portal &copy; <?= date('Y') ?> &bull; Internal Content Management System
+      </div>
+      <div>
+        <a href="<?= url('/') ?>" target="_blank" class="btn btn-outline-dark btn-sm">
+          <i class="fa-solid fa-arrow-up-right-from-square me-1"></i> View Live Site
+        </a>
+      </div>
     </footer>
 
   </div>
