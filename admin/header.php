@@ -197,6 +197,43 @@ $activePage = $activePage ?? 'dashboard';
       color: var(--admin-primary-dark);
       text-decoration: underline;
     }
+    .admin-footer-text {
+      flex: 1;
+      min-width: 0;
+      line-height: 1.4;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .admin-footer-brand {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      margin-left: 20px;
+    }
+    .sparkit-footer-logo-link {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none !important;
+      line-height: 1;
+      border-radius: 4px;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+    .sparkit-footer-logo-link:hover {
+      transform: scale(1.04);
+      opacity: 0.95;
+    }
+    .sparkit-footer-logo-video {
+      height: 34px;
+      width: auto;
+      max-width: 82px;
+      object-fit: contain;
+      mix-blend-mode: multiply;
+      display: block;
+      border-radius: 4px;
+      background: transparent;
+      pointer-events: none;
+    }
 
     /* Mobile & Tablet Responsiveness */
     @media (max-width: 991.98px) {
@@ -231,6 +268,26 @@ $activePage = $activePage ?? 'dashboard';
       }
       .admin-footer {
         padding: 0 16px;
+      }
+    }
+    @media (max-width: 767.98px) {
+      .admin-footer {
+        height: auto;
+        min-height: 60px;
+        max-height: none;
+        padding: 10px 16px;
+        gap: 12px;
+      }
+      .admin-footer-text {
+        white-space: normal;
+        font-size: 11.5px;
+      }
+      .admin-footer-brand {
+        margin-left: 8px;
+      }
+      .sparkit-footer-logo-video {
+        height: 28px;
+        max-width: 65px;
       }
     }
     .card-metric {
