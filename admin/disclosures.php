@@ -38,15 +38,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $file = $_FILES['document'];
                 $ext = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
                 $allowed = ['pdf', 'png', 'jpg', 'jpeg'];
-                $maxSize = 10 * 1024 * 1024; // 10 MB
+                $maxSize = 3 * 1024 * 1024; // 3 MB
 
                 if (!in_array($ext, $allowed)) {
-                    set_flash('error', "Invalid file format for '{$file['name']}'. Only JPEG, PNG, and PDF files are allowed.");
+                    set_flash('error', "Invalid file format for '{$file['name']}'. Allowed formats: JPEG, JPG, PNG, and PDF.");
                     header("Location: " . ADMIN_URL . "/disclosures.php");
                     exit;
                 } elseif ($file['size'] > $maxSize) {
                     $sizeMb = round($file['size'] / (1024 * 1024), 2);
-                    set_flash('error', "File '{$file['name']}' exceeds the 10 MB limit ({$sizeMb} MB). Please upload a file up to 10 MB.");
+                    set_flash('error', "File '{$file['name']}' exceeds the 3 MB limit ({$sizeMb} MB). Please upload a file up to 3 MB.");
                     header("Location: " . ADMIN_URL . "/disclosures.php");
                     exit;
                 } else {
@@ -127,15 +127,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         $file = $_FILES['document'];
                         $ext = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
                         $allowed = ['pdf', 'png', 'jpg', 'jpeg'];
-                        $maxSize = 10 * 1024 * 1024; // 10 MB
+                        $maxSize = 3 * 1024 * 1024; // 3 MB
 
                         if (!in_array($ext, $allowed)) {
-                            set_flash('error', "Invalid file format for '{$file['name']}'. Only JPEG, PNG, and PDF files are allowed.");
+                            set_flash('error', "Invalid file format for '{$file['name']}'. Allowed formats: JPEG, JPG, PNG, and PDF.");
                             header("Location: " . ADMIN_URL . "/disclosures.php?edit={$id}");
                             exit;
                         } elseif ($file['size'] > $maxSize) {
                             $sizeMb = round($file['size'] / (1024 * 1024), 2);
-                            set_flash('error', "File '{$file['name']}' exceeds the 10 MB limit ({$sizeMb} MB). Please upload a file up to 10 MB.");
+                            set_flash('error', "File '{$file['name']}' exceeds the 3 MB limit ({$sizeMb} MB). Please upload a file up to 3 MB.");
                             header("Location: " . ADMIN_URL . "/disclosures.php?edit={$id}");
                             exit;
                         } else {
@@ -249,11 +249,11 @@ require_once __DIR__ . '/header.php';
 
         <div class="mb-3">
           <label class="form-label fw-semibold small">
-            <?= $editDoc ? 'Replace Document / Image (Optional &mdash; Max 10 MB)' : 'Upload Document or Image (Max 10 MB) *' ?>
+            <?= $editDoc ? 'Replace Document / Image (Optional &mdash; Max 3 MB)' : 'Upload Document or Image (Max 3 MB) *' ?>
           </label>
           <input type="file" name="document" id="disclosureFileInput" class="form-control" accept=".pdf,.png,.jpg,.jpeg,image/jpeg,image/png,application/pdf" <?= $editDoc ? '' : 'required' ?>>
           <div class="form-text small text-muted">
-            <i class="fa-solid fa-circle-info me-1 text-primary"></i> Accepted formats: <strong>JPEG, PNG, PDF</strong> (Max <strong>10 MB</strong>).
+            <i class="fa-solid fa-circle-info me-1 text-primary"></i> Accepted formats: <strong>JPEG, JPG, PNG, PDF</strong> (Max <strong>3 MB</strong>).
           </div>
 
           <?php if ($editDoc): 
@@ -383,24 +383,41 @@ require_once __DIR__ . '/header.php';
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const fileInput = document.getElementById('disclosureFileInput');
+  const form = fileInput ? fileInput.closest('form') : null;
+  const maxBytes = 3 * 1024 * 1024; // 3 MB
+  const allowedExts = ['jpg', 'jpeg', 'png', 'pdf'];
+
+  function validateFile(file) {
+    if (!file) return true;
+    const ext = (file.name || '').split('.').pop().toLowerCase();
+    if (!allowedExts.includes(ext)) {
+      alert('Invalid file format ("' + file.name + '"). Allowed formats: JPEG, JPG, PNG, and PDF.');
+      return false;
+    }
+    if (file.size > maxBytes) {
+      const sizeMb = (file.size / (1024 * 1024)).toFixed(2);
+      alert('File size exceeds the 3 MB limit (Selected: ' + sizeMb + ' MB). Please choose a file up to 3 MB.');
+      return false;
+    }
+    return true;
+  }
+
   if (fileInput) {
     fileInput.addEventListener('change', function() {
       if (!this.files || !this.files[0]) return;
-      const file = this.files[0];
-      const maxBytes = 10 * 1024 * 1024; // 10MB
-      const allowedExts = ['jpg', 'jpeg', 'png', 'pdf'];
-      const ext = file.name.split('.').pop().toLowerCase();
-      
-      if (!allowedExts.includes(ext)) {
-        alert('Invalid file format ("' + file.name + '"). Only JPEG, PNG, and PDF files are allowed.');
+      if (!validateFile(this.files[0])) {
         this.value = '';
-        return;
       }
-      if (file.size > maxBytes) {
-        const sizeMb = (file.size / (1024 * 1024)).toFixed(2);
-        alert('File size exceeds the 10 MB limit (Selected: ' + sizeMb + ' MB). Please choose a file up to 10 MB.');
-        this.value = '';
-        return;
+    });
+  }
+
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      if (fileInput && fileInput.files && fileInput.files[0]) {
+        if (!validateFile(fileInput.files[0])) {
+          e.preventDefault();
+          fileInput.value = '';
+        }
       }
     });
   }

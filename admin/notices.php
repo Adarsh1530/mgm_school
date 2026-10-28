@@ -80,15 +80,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $file = $_FILES['attachment'];
                     $ext = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
                     $allowed = ['jpg', 'jpeg', 'png', 'pdf'];
-                    $maxSize = 10 * 1024 * 1024; // 10 MB
+                    $maxSize = 3 * 1024 * 1024; // 3 MB
 
                     if (!in_array($ext, $allowed)) {
-                        set_flash('error', "Invalid file format for attachment '{$file['name']}'. Only JPEG, PNG, and PDF files are allowed.");
+                        set_flash('error', "Invalid file format for attachment '{$file['name']}'. Allowed formats: JPEG, JPG, PNG, and PDF.");
                         header("Location: " . ADMIN_URL . "/notices.php");
                         exit;
                     } elseif ($file['size'] > $maxSize) {
                         $sizeMb = round($file['size'] / (1024 * 1024), 2);
-                        set_flash('error', "Attachment '{$file['name']}' exceeds the 10 MB limit ({$sizeMb} MB). Please upload a file up to 10 MB.");
+                        set_flash('error', "Attachment '{$file['name']}' exceeds the 3 MB limit ({$sizeMb} MB). Please upload a file up to 3 MB.");
                         header("Location: " . ADMIN_URL . "/notices.php");
                         exit;
                     } else {
@@ -159,15 +159,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $file = $_FILES['attachment'];
                     $ext = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
                     $allowed = ['jpg', 'jpeg', 'png', 'pdf'];
-                    $maxSize = 10 * 1024 * 1024; // 10 MB
+                    $maxSize = 3 * 1024 * 1024; // 3 MB
 
                     if (!in_array($ext, $allowed)) {
-                        set_flash('error', "Invalid file format for attachment '{$file['name']}'. Only JPEG, PNG, and PDF files are allowed.");
+                        set_flash('error', "Invalid file format for attachment '{$file['name']}'. Allowed formats: JPEG, JPG, PNG, and PDF.");
                         header("Location: " . ADMIN_URL . "/notices.php?edit={$id}");
                         exit;
                     } elseif ($file['size'] > $maxSize) {
                         $sizeMb = round($file['size'] / (1024 * 1024), 2);
-                        set_flash('error', "Attachment '{$file['name']}' exceeds the 10 MB limit ({$sizeMb} MB). Please upload a file up to 10 MB.");
+                        set_flash('error', "Attachment '{$file['name']}' exceeds the 3 MB limit ({$sizeMb} MB). Please upload a file up to 3 MB.");
                         header("Location: " . ADMIN_URL . "/notices.php?edit={$id}");
                         exit;
                     } else {
@@ -353,9 +353,9 @@ require_once __DIR__ . '/header.php';
         </div>
 
         <div class="mb-3">
-          <label class="form-label fw-semibold small">Upload Attachment (JPEG, PNG, or PDF &mdash; Max 10 MB)</label>
+          <label class="form-label fw-semibold small">Upload Attachment (JPEG, JPG, PNG, or PDF &mdash; Max 3 MB)</label>
           <input type="file" name="attachment" id="noticeAttachmentInput" class="form-control" accept=".jpg,.jpeg,.png,.pdf,image/jpeg,image/png,application/pdf">
-          <div class="form-text small text-muted">Allowed formats: <strong>JPEG, PNG, PDF</strong> (Max <strong>10 MB</strong>).</div>
+          <div class="form-text small text-muted">Allowed formats: <strong>JPEG, JPG, PNG, PDF</strong> (Max <strong>3 MB</strong>).</div>
           <?php if (!empty($editNotice['pdf_url'])): ?>
             <div class="form-text mt-1 text-success">
               <i class="fa-solid fa-file-pdf me-1"></i> Current PDF: <a href="<?= asset_url($editNotice['pdf_url']) ?>" target="_blank" class="fw-semibold">View File</a> (upload new to replace)
@@ -492,24 +492,41 @@ require_once __DIR__ . '/header.php';
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const fileInput = document.getElementById('noticeAttachmentInput');
+  const form = fileInput ? fileInput.closest('form') : null;
+  const maxBytes = 3 * 1024 * 1024; // 3 MB
+  const allowedExts = ['jpg', 'jpeg', 'png', 'pdf'];
+
+  function validateNoticeFile(file) {
+    if (!file) return true;
+    const ext = (file.name || '').split('.').pop().toLowerCase();
+    if (!allowedExts.includes(ext)) {
+      alert('Invalid file format ("' + file.name + '"). Allowed formats: JPEG, JPG, PNG, and PDF.');
+      return false;
+    }
+    if (file.size > maxBytes) {
+      const sizeMb = (file.size / (1024 * 1024)).toFixed(2);
+      alert('File size exceeds the 3 MB limit (Selected: ' + sizeMb + ' MB). Please choose a file up to 3 MB.');
+      return false;
+    }
+    return true;
+  }
+
   if (fileInput) {
     fileInput.addEventListener('change', function() {
       if (!this.files || !this.files[0]) return;
-      const file = this.files[0];
-      const maxBytes = 10 * 1024 * 1024; // 10MB
-      const allowedExts = ['jpg', 'jpeg', 'png', 'pdf'];
-      const ext = file.name.split('.').pop().toLowerCase();
-      
-      if (!allowedExts.includes(ext)) {
-        alert('Invalid file format ("' + file.name + '"). Only JPEG, PNG, and PDF files are allowed.');
+      if (!validateNoticeFile(this.files[0])) {
         this.value = '';
-        return;
       }
-      if (file.size > maxBytes) {
-        const sizeMb = (file.size / (1024 * 1024)).toFixed(2);
-        alert('File size exceeds the 10 MB limit (Selected: ' + sizeMb + ' MB). Please choose a file up to 10 MB.');
-        this.value = '';
-        return;
+    });
+  }
+
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      if (fileInput && fileInput.files && fileInput.files[0]) {
+        if (!validateNoticeFile(fileInput.files[0])) {
+          e.preventDefault();
+          fileInput.value = '';
+        }
       }
     });
   }

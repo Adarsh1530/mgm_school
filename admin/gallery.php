@@ -25,21 +25,21 @@ function normalize_gallery_positions(PDO $db): void {
     }
 }
 
-// Process Upload Helper & Validator (JPEG and PNG only, up to 5 MB each)
+// Process Upload Helper & Validator (JPEG, JPG, and PNG only, up to 1 MB each)
 function validate_gallery_file(array $file): ?string {
     if (empty($file['name']) || $file['error'] !== UPLOAD_ERR_OK) {
         return null;
     }
     $ext = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
     $allowed = ['jpg', 'jpeg', 'png'];
-    $maxSize = 5 * 1024 * 1024; // 5 MB
+    $maxSize = 1 * 1024 * 1024; // 1 MB
 
     if (!in_array($ext, $allowed)) {
-        return "Invalid image format for '{$file['name']}'. Only JPEG and PNG images are allowed.";
+        return "Invalid image format for '{$file['name']}'. Allowed formats: JPEG, JPG, and PNG only.";
     }
     if ($file['size'] > $maxSize) {
         $sizeMb = round($file['size'] / (1024 * 1024), 2);
-        return "Image '{$file['name']}' exceeds the 5 MB limit ({$sizeMb} MB). Please upload images up to 5 MB each.";
+        return "Image '{$file['name']}' exceeds the 1 MB limit ({$sizeMb} MB). Please upload images up to 1 MB each.";
     }
     return null;
 }
@@ -50,7 +50,7 @@ function handle_image_upload(array $file): ?string {
     }
     $ext = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
     $allowed = ['jpg', 'jpeg', 'png'];
-    if (!in_array($ext, $allowed) || $file['size'] > 5 * 1024 * 1024) {
+    if (!in_array($ext, $allowed) || $file['size'] > 1 * 1024 * 1024) {
         return null;
     }
     if (!is_dir(IMAGES_DIR)) @mkdir(IMAGES_DIR, 0777, true);
@@ -135,7 +135,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $mainImgPath = handle_image_upload($_FILES['main_image']);
         if (!$mainImgPath) {
-            set_flash('error', 'Failed to upload Main Highlight Image. Only JPEG and PNG images up to 5 MB are allowed.');
+            set_flash('error', 'Failed to upload Main Highlight Image. Allowed formats: JPEG, JPG, and PNG up to 1 MB only.');
             header("Location: " . ADMIN_URL . "/gallery.php");
             exit;
         }
@@ -1101,7 +1101,7 @@ require_once __DIR__ . '/header.php';
           <!-- Section 5: Main Highlight Image -->
           <div class="bvb-upload-panel">
             <div class="bvb-upload-panel-title">
-              <span><i class="fa-solid fa-camera"></i> 1. MAIN HIGHLIGHT IMAGE (UPLOAD JPEG OR PNG — MAX 5 MB)</span>
+              <span><i class="fa-solid fa-camera"></i> 1. MAIN HIGHLIGHT IMAGE (UPLOAD JPEG OR PNG — MAX 1 MB)</span>
             </div>
             <div class="d-flex align-items-center gap-3">
               <input type="file" name="main_image" id="fieldMainImage" class="form-control" accept=".jpg,.jpeg,.png,image/jpeg,image/png">
@@ -1109,7 +1109,7 @@ require_once __DIR__ . '/header.php';
                 <img src="" id="mainImagePreview" class="table-thumb" alt="Preview">
               </div>
             </div>
-            <div class="form-text small text-muted mt-1">Allowed formats: <strong>JPEG, PNG</strong> (Max <strong>5 MB</strong>).</div>
+            <div class="form-text small text-muted mt-1">Allowed formats: <strong>JPEG, JPG, PNG</strong> (Max <strong>1 MB</strong>).</div>
           </div>
 
           <!-- Section 6: Sub Images (Up to 10) -->
@@ -1124,10 +1124,10 @@ require_once __DIR__ . '/header.php';
             <!-- Batch Upload Input -->
             <div class="p-3 mb-3" style="background:#eff6ff; border:1px dashed #60a5fa; border-radius:8px;">
               <label class="d-flex align-items-center gap-2 mb-2 fw-semibold text-primary" style="font-size:13px;">
-                <i class="fa-solid fa-bolt"></i> Quick Batch Upload: Select multiple JPEG or PNG sub-images at once (up to 5 MB each, max 10 files):
+                <i class="fa-solid fa-bolt"></i> Quick Batch Upload: Select multiple JPEG or PNG sub-images at once (up to 1 MB each, max 10 files):
               </label>
               <input type="file" name="batch_sub_images[]" id="batchSubImagesInput" class="form-control" multiple accept=".jpg,.jpeg,.png,image/jpeg,image/png">
-              <div class="form-text small text-muted mt-1">Allowed formats: <strong>JPEG, PNG</strong> (Max <strong>5 MB</strong> each).</div>
+              <div class="form-text small text-muted mt-1">Allowed formats: <strong>JPEG, JPG, PNG</strong> (Max <strong>1 MB</strong> each).</div>
             </div>
 
             <!-- Grid of 10 Sub-Image Slots -->
@@ -1268,14 +1268,14 @@ function validateGalleryFileObj(file) {
   if (!file) return null;
   const allowed = ['jpg', 'jpeg', 'png'];
   const ext = (file.name || '').split('.').pop().toLowerCase();
-  const maxSize = 5 * 1024 * 1024; // 5 MB
+  const maxSize = 1 * 1024 * 1024; // 1 MB
 
   if (!allowed.includes(ext)) {
-    return 'Invalid image format for "' + file.name + '". Only JPEG and PNG images are allowed.';
+    return 'Invalid image format for "' + file.name + '". Allowed formats: JPEG, JPG, and PNG only.';
   }
   if (file.size > maxSize) {
     const sizeMb = (file.size / (1024 * 1024)).toFixed(2);
-    return 'Image "' + file.name + '" exceeds the 5 MB limit (' + sizeMb + ' MB). Please upload images up to 5 MB each.';
+    return 'Image "' + file.name + '" exceeds the 1 MB limit (' + sizeMb + ' MB). Please upload images up to 1 MB each.';
   }
   return null;
 }

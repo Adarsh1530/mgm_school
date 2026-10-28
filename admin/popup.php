@@ -201,16 +201,16 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST') {
             if (!empty($_FILES['popup_image']['name'])) {
                 $file = $_FILES['popup_image'];
                 $ext = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
-                $allowed = ['jpg', 'jpeg', 'png', 'pdf'];
-                $maxSize = 10 * 1024 * 1024; // 10 MB
+                $allowed = ['jpg', 'jpeg', 'png'];
+                $maxSize = 1 * 1024 * 1024; // 1 MB
 
                 if (!in_array($ext, $allowed)) {
-                    set_flash('error', "Invalid file format for '{$file['name']}'. Only JPEG, PNG, and PDF files are allowed.");
+                    set_flash('error', "Invalid file format for '{$file['name']}'. Allowed formats: JPEG, JPG, and PNG only.");
                     header("Location: " . ADMIN_URL . "/popup.php?edit={$id}");
                     exit;
                 } elseif ($file['size'] > $maxSize) {
                     $sizeMb = round($file['size'] / (1024 * 1024), 2);
-                    set_flash('error', "File '{$file['name']}' exceeds the 10 MB limit ({$sizeMb} MB). Please upload a file up to 10 MB.");
+                    set_flash('error', "File '{$file['name']}' exceeds the 1 MB limit ({$sizeMb} MB). Please upload a file up to 1 MB.");
                     header("Location: " . ADMIN_URL . "/popup.php?edit={$id}");
                     exit;
                 } else {
@@ -268,16 +268,16 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST') {
 
             $file = $_FILES['popup_image'];
             $ext = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
-            $allowed = ['jpg', 'jpeg', 'png', 'pdf'];
-            $maxSize = 10 * 1024 * 1024; // 10 MB
+            $allowed = ['jpg', 'jpeg', 'png'];
+            $maxSize = 1 * 1024 * 1024; // 1 MB
 
             if (!in_array($ext, $allowed)) {
-                set_flash('error', "Invalid file format for '{$file['name']}'. Only JPEG, PNG, and PDF files are allowed.");
+                set_flash('error', "Invalid file format for '{$file['name']}'. Allowed formats: JPEG, JPG, and PNG only.");
                 header("Location: " . ADMIN_URL . "/popup.php");
                 exit;
             } elseif ($file['size'] > $maxSize) {
                 $sizeMb = round($file['size'] / (1024 * 1024), 2);
-                set_flash('error', "File '{$file['name']}' exceeds the 10 MB limit ({$sizeMb} MB). Please upload a file up to 10 MB.");
+                set_flash('error', "File '{$file['name']}' exceeds the 1 MB limit ({$sizeMb} MB). Please upload a file up to 1 MB.");
                 header("Location: " . ADMIN_URL . "/popup.php");
                 exit;
             } else {
@@ -416,10 +416,10 @@ require_once __DIR__ . '/header.php';
           <!-- Image Upload -->
           <div class="mb-3">
             <label class="form-label fw-bold text-dark small">
-              Popup Banner / Flyer <?= $editPopup ? '(Optional Replacement &mdash; Max 10 MB)' : '(Max 10 MB) *' ?>
+              Popup Banner / Flyer <?= $editPopup ? '(Optional Replacement &mdash; Max 1 MB)' : '(Max 1 MB) *' ?>
             </label>
-            <input type="file" name="popup_image" id="popupImageFileInput" class="form-control" accept=".jpg,.jpeg,.png,.pdf,image/jpeg,image/png,application/pdf" <?= $editPopup ? '' : 'required' ?>>
-            <div class="form-text small text-muted">Supported formats: <strong>JPEG, PNG, PDF</strong> (Max <strong>10 MB</strong>).</div>
+            <input type="file" name="popup_image" id="popupImageFileInput" class="form-control" accept=".jpg,.jpeg,.png,image/jpeg,image/png" <?= $editPopup ? '' : 'required' ?>>
+            <div class="form-text small text-muted">Supported formats: <strong>JPEG, JPG, PNG</strong> (Max <strong>1 MB</strong>).</div>
 
             <?php if ($editPopup && !empty($editPopup['image_url'])): ?>
               <div class="mt-3 p-2 border rounded-3 bg-light text-center">
@@ -593,24 +593,41 @@ require_once __DIR__ . '/header.php';
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const fileInput = document.getElementById('popupImageFileInput');
+  const form = fileInput ? fileInput.closest('form') : null;
+  const maxBytes = 1 * 1024 * 1024; // 1 MB
+  const allowedExts = ['jpg', 'jpeg', 'png'];
+
+  function validatePopupFile(file) {
+    if (!file) return true;
+    const ext = (file.name || '').split('.').pop().toLowerCase();
+    if (!allowedExts.includes(ext)) {
+      alert('Invalid file format ("' + file.name + '"). Allowed formats: JPEG, JPG, and PNG only.');
+      return false;
+    }
+    if (file.size > maxBytes) {
+      const sizeMb = (file.size / (1024 * 1024)).toFixed(2);
+      alert('File size exceeds the 1 MB limit (Selected: ' + sizeMb + ' MB). Please choose a file up to 1 MB.');
+      return false;
+    }
+    return true;
+  }
+
   if (fileInput) {
     fileInput.addEventListener('change', function() {
       if (!this.files || !this.files[0]) return;
-      const file = this.files[0];
-      const maxBytes = 10 * 1024 * 1024; // 10MB
-      const allowedExts = ['jpg', 'jpeg', 'png', 'pdf'];
-      const ext = file.name.split('.').pop().toLowerCase();
-      
-      if (!allowedExts.includes(ext)) {
-        alert('Invalid file format ("' + file.name + '"). Only JPEG, PNG, and PDF files are allowed.');
+      if (!validatePopupFile(this.files[0])) {
         this.value = '';
-        return;
       }
-      if (file.size > maxBytes) {
-        const sizeMb = (file.size / (1024 * 1024)).toFixed(2);
-        alert('File size exceeds the 10 MB limit (Selected: ' + sizeMb + ' MB). Please choose a file up to 10 MB.');
-        this.value = '';
-        return;
+    });
+  }
+
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      if (fileInput && fileInput.files && fileInput.files[0]) {
+        if (!validatePopupFile(fileInput.files[0])) {
+          e.preventDefault();
+          fileInput.value = '';
+        }
       }
     });
   }
