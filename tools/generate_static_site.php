@@ -2,14 +2,13 @@
 /**
  * Static Site Generator for MGM Model School
  * Renders all pages with up-to-date navigation, mega-dropdown, and assets
+ * Uses isolated process execution to ensure every page includes full header, navigation, and footer.
  */
-$_SERVER['REQUEST_METHOD'] = 'GET';
-$_SERVER['HTTP_HOST'] = 'mgmmodelschool.edu.in';
-$_SERVER['HTTPS'] = 'on';
-$_SERVER['SCRIPT_NAME'] = '/index.php';
 
-require_once __DIR__ . '/../config/config.php';
-require_once __DIR__ . '/../includes/functions.php';
+$phpBinary = 'c:\\xampp\\php\\php.exe';
+if (!file_exists($phpBinary)) {
+    $phpBinary = 'php';
+}
 
 $pagesToRender = [
     '' => ['file' => 'index.html', 'dir' => null],
@@ -32,31 +31,45 @@ $pagesToRender = [
     'notices' => ['file' => 'notices.html', 'dir' => 'notices'],
     'mandatory-disclosure' => ['file' => 'mandatory-disclosure.html', 'dir' => 'mandatory-disclosure'],
     'contact' => ['file' => 'contact.html', 'dir' => 'contact'],
+    'twenty-twenty-method' => ['file' => 'twenty-twenty-method.html', 'dir' => 'twenty-twenty-method'],
+    'libraries-at-mgm' => ['file' => 'libraries-at-mgm.html', 'dir' => 'libraries-at-mgm'],
+    'poly-house' => ['file' => 'poly-house.html', 'dir' => 'poly-house'],
+    'krishi-thottam' => ['file' => 'krishi-thottam.html', 'dir' => 'krishi-thottam'],
+    'amma-school' => ['file' => 'amma-school.html', 'dir' => 'amma-school'],
+    'vriksha-chikitsa' => ['file' => 'vriksha-chikitsa.html', 'dir' => 'vriksha-chikitsa'],
+    'counselling-centre' => ['file' => 'counselling-centre.html', 'dir' => 'counselling-centre'],
+    'innovation-centre' => ['file' => 'innovation-centre.html', 'dir' => 'innovation-centre'],
+    'gdc' => ['file' => 'gdc.html', 'dir' => 'gdc'],
+    'life-skills' => ['file' => 'life-skills.html', 'dir' => 'life-skills'],
+    'school-canteen' => ['file' => 'school-canteen.html', 'dir' => 'school-canteen'],
+    'butterfly-garden' => ['file' => 'butterfly-garden.html', 'dir' => 'butterfly-garden'],
+    '3d-max-zone' => ['file' => '3d-max-zone.html', 'dir' => '3d-max-zone'],
+    'ominis' => ['file' => 'ominis.html', 'dir' => 'ominis'],
+    'nova-ai-hub' => ['file' => 'nova-ai-hub.html', 'dir' => 'nova-ai-hub'],
+    'school-band-troop' => ['file' => 'school-band-troop.html', 'dir' => 'school-band-troop'],
+    'happiness-room' => ['file' => 'happiness-room.html', 'dir' => 'happiness-room'],
+    'club-and-house-activities' => ['file' => 'club-and-house-activities.html', 'dir' => 'club-and-house-activities'],
+    'club-house-activities' => ['file' => 'club-house-activities.html', 'dir' => 'club-house-activities'],
 ];
 
-foreach ($pagesToRender as $slug => $dest) {
-    echo "Rendering: " . ($slug ?: 'home') . "... ";
-    $_SERVER['REQUEST_URI'] = $slug ? '/' . $slug . '/' : '/';
-    
-    ob_start();
-    if ($slug === '') {
-        $wpId = 1119;
-        $currentSlug = '';
-        require __DIR__ . '/../views/home.php';
-    } else {
-        $page = get_page_by_slug($slug);
-        $currentSlug = $slug;
-        $customView = __DIR__ . '/../views/' . $slug . '.php';
-        if (file_exists($customView)) {
-            require $customView;
-        } else {
-            require __DIR__ . '/../views/page.php';
-        }
-    }
-    $html = ob_get_clean();
+$cliRenderer = __DIR__ . '/render_page_cli.php';
+$errors = 0;
 
-    // Standardize root-relative asset URLs to ensure local and live portability
-    $html = str_replace('https://mgmmodelschool.edu.in/assets/', '/assets/', $html);
+foreach ($pagesToRender as $slug => $dest) {
+    $label = $slug ?: 'home';
+    echo "Rendering: " . str_pad($label, 28) . "... ";
+
+    $cmd = escapeshellarg($phpBinary) . ' ' . escapeshellarg($cliRenderer) . ' ' . escapeshellarg($slug);
+    $html = shell_exec($cmd);
+
+    if (empty($html) || strpos($html, '<!DOCTYPE html>') === false) {
+        echo "FAILED (incomplete or missing doctype)\n";
+        $errors++;
+        continue;
+    }
+
+    // Strip out any fallback SQLite warning line if present at the top
+    $html = preg_replace('/^MySQL connection unavailable[^\n]*\n+/i', '', $html);
 
     // Save to root html file
     $rootFile = __DIR__ . '/../' . $dest['file'];
@@ -70,7 +83,11 @@ foreach ($pagesToRender as $slug => $dest) {
         }
         file_put_contents($dirPath . '/index.html', $html);
     }
-    echo "Done (" . strlen($html) . " bytes)\n";
+    echo "Done (" . strlen($html) . " bytes, full HTML)\n";
 }
 
-echo "All static pages successfully generated!\n";
+if ($errors === 0) {
+    echo "\nAll " . count($pagesToRender) . " static pages successfully generated with complete stylesheets & layouts!\n";
+} else {
+    echo "\nCompleted with $errors errors.\n";
+}

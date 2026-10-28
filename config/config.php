@@ -52,18 +52,27 @@ if (php_sapi_name() === 'cli-server') {
     $basePath = '';
 } elseif (php_sapi_name() === 'cli' && empty($_SERVER['HTTP_HOST'])) {
     $basePath = '/MGM SCHOOL';
+} elseif (strpos($host, 'mgmmodelschool.edu.in') !== false || strpos($host, 'vercel.app') !== false) {
+    // Production domain is always hosted at root
+    $basePath = '';
 } else {
     $scriptDir = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? ''));
     $basePath = rtrim($scriptDir, '/');
     if ($basePath !== '' && $basePath[0] !== '/') {
         $basePath = '/' . $basePath;
     }
-    // If accessed inside /admin or /api (Vercel serverless entry), adjust base path
+    // If accessed inside /admin, /api, or a subpage directory, adjust base path back to root
     if (substr($basePath, -6) === '/admin') {
         $basePath = substr($basePath, 0, -6);
     }
     if (substr($basePath, -4) === '/api') {
         $basePath = substr($basePath, 0, -4);
+    }
+    if (substr($basePath, -8) === '/notices') {
+        $basePath = substr($basePath, 0, -8);
+    }
+    if (substr($basePath, -8) === '/gallery') {
+        $basePath = substr($basePath, 0, -8);
     }
 }
 
