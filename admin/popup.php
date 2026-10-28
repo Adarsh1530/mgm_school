@@ -345,12 +345,6 @@ foreach ($popupsList as $p) {
 require_once __DIR__ . '/header.php';
 ?>
 
-<!-- Page Header -->
-<div class="mb-4">
-  <h4 class="fw-bold mb-1 text-dark">Image Popup Notification Management</h4>
-  <p class="text-muted small mb-0">Create, manage, and instantly switch popup announcements and admission flyers on the school website.</p>
-</div>
-
 <!-- Active Status Banner -->
 <div class="card border-0 shadow-sm rounded-4 mb-4" style="background: #ffffff;">
   <div class="card-body p-4">

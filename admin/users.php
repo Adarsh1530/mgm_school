@@ -196,14 +196,11 @@ foreach ($usersList as $u) {
 require_once __DIR__ . '/header.php';
 ?>
 
-<!-- Page Header -->
+<!-- Page Actions Bar -->
 <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
-  <div>
-    <div class="d-flex align-items-center gap-2">
-      <h4 class="fw-bold mb-0 text-dark">User Roles &amp; Access Management</h4>
-      <span class="badge bg-danger text-white"><i class="fa-solid fa-lock me-1"></i> Super Admin Only</span>
-    </div>
-    <p class="text-muted small mb-0 mt-1">Configure administrator logins, privilege levels, passwords, and user access across MGM Model School.</p>
+  <div class="d-flex align-items-center gap-2">
+    <span class="badge bg-danger text-white"><i class="fa-solid fa-lock me-1"></i> Super Admin Only</span>
+    <span class="text-muted small">Configure administrator logins, privilege levels, passwords, and user access across MGM Model School.</span>
   </div>
   <div>
     <button type="button" class="btn btn-admin-primary btn-sm px-3 py-2 fw-semibold shadow-sm" data-bs-toggle="collapse" data-bs-target="#addUserCollapse">
