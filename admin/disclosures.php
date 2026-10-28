@@ -17,7 +17,7 @@ $db = getDB();
 // Helper to check if file is an image
 function is_image_file(string $path): bool {
     $ext = strtolower(pathinfo($path, PATHINFO_EXTENSION));
-    return in_array($ext, ['png', 'jpg', 'jpeg', 'webp', 'gif']);
+    return in_array($ext, ['png', 'jpg', 'jpeg']);
 }
 
 // Handle Actions (Add, Edit, Delete)
@@ -37,15 +37,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             } else {
                 $file = $_FILES['document'];
                 $ext = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
-                $allowed = ['pdf', 'png', 'jpg', 'jpeg', 'webp', 'gif'];
+                $allowed = ['pdf', 'png', 'jpg', 'jpeg'];
+                $maxSize = 10 * 1024 * 1024; // 10 MB
 
                 if (!in_array($ext, $allowed)) {
-                    set_flash('error', 'Allowed formats: PDF, PNG, JPG, JPEG, WebP.');
-                } elseif ($file['size'] > 25 * 1024 * 1024) {
-                    set_flash('error', 'File size exceeds 25MB limit.');
+                    set_flash('error', "Invalid file format for '{$file['name']}'. Only JPEG, PNG, and PDF files are allowed.");
+                    header("Location: " . ADMIN_URL . "/disclosures.php");
+                    exit;
+                } elseif ($file['size'] > $maxSize) {
+                    $sizeMb = round($file['size'] / (1024 * 1024), 2);
+                    set_flash('error', "File '{$file['name']}' exceeds the 10 MB limit ({$sizeMb} MB). Please upload a file up to 10 MB.");
+                    header("Location: " . ADMIN_URL . "/disclosures.php");
+                    exit;
                 } else {
                     $cleanName = time() . '_' . preg_replace('/[^a-zA-Z0-9_\.-]/', '_', $file['name']);
-                    $isImg = in_array($ext, ['png', 'jpg', 'jpeg', 'webp', 'gif']);
+                    $isImg = in_array($ext, ['png', 'jpg', 'jpeg']);
 
                     if (!is_dir(DOCS_DIR)) @mkdir(DOCS_DIR, 0777, true);
                     if (!is_dir(IMAGES_DIR)) @mkdir(IMAGES_DIR, 0777, true);
@@ -121,14 +127,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     if (!empty($_FILES['document']['name'])) {
                         $file = $_FILES['document'];
                         $ext = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
-                        $allowed = ['pdf', 'png', 'jpg', 'jpeg', 'webp', 'gif'];
+                        $allowed = ['pdf', 'png', 'jpg', 'jpeg'];
+                        $maxSize = 10 * 1024 * 1024; // 10 MB
 
                         if (!in_array($ext, $allowed)) {
-                            set_flash('error', 'Allowed formats: PDF, PNG, JPG, JPEG, WebP, GIF.');
+                            set_flash('error', "Invalid file format for '{$file['name']}'. Only JPEG, PNG, and PDF files are allowed.");
                             header("Location: " . ADMIN_URL . "/disclosures.php?edit={$id}");
                             exit;
-                        } elseif ($file['size'] > 25 * 1024 * 1024) {
-                            set_flash('error', 'File size exceeds 25MB limit.');
+                        } elseif ($file['size'] > $maxSize) {
+                            $sizeMb = round($file['size'] / (1024 * 1024), 2);
+                            set_flash('error', "File '{$file['name']}' exceeds the 10 MB limit ({$sizeMb} MB). Please upload a file up to 10 MB.");
                             header("Location: " . ADMIN_URL . "/disclosures.php?edit={$id}");
                             exit;
                         } else {
@@ -136,7 +144,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             if (!is_dir(IMAGES_DIR)) @mkdir(IMAGES_DIR, 0777, true);
 
                             $cleanName = time() . '_' . preg_replace('/[^a-zA-Z0-9_\.-]/', '_', $file['name']);
-                            $isImg = in_array($ext, ['png', 'jpg', 'jpeg', 'webp', 'gif']);
+                            $isImg = in_array($ext, ['png', 'jpg', 'jpeg']);
 
                             if ($file['size'] >= 1048576) {
                                 $sizeFormatted = round($file['size'] / 1048576, 1) . ' MB';
@@ -243,11 +251,11 @@ require_once __DIR__ . '/header.php';
 
         <div class="mb-3">
           <label class="form-label fw-semibold small">
-            <?= $editDoc ? 'Replace Document / Image (Optional)' : 'Upload Document or Image *' ?>
+            <?= $editDoc ? 'Replace Document / Image (Optional &mdash; Max 10 MB)' : 'Upload Document or Image (Max 10 MB) *' ?>
           </label>
-          <input type="file" name="document" class="form-control" accept=".pdf,.png,.jpg,.jpeg,.webp,.gif,image/*,application/pdf" <?= $editDoc ? '' : 'required' ?>>
+          <input type="file" name="document" id="disclosureFileInput" class="form-control" accept=".pdf,.png,.jpg,.jpeg,image/jpeg,image/png,application/pdf" <?= $editDoc ? '' : 'required' ?>>
           <div class="form-text small text-muted">
-            <i class="fa-solid fa-circle-info me-1 text-primary"></i> Accepted formats: <strong>PDF</strong> and Images (<strong>PNG, JPG, WebP</strong>) up to 25MB.
+            <i class="fa-solid fa-circle-info me-1 text-primary"></i> Accepted formats: <strong>JPEG, PNG, PDF</strong> (Max <strong>10 MB</strong>).
           </div>
 
           <?php if ($editDoc): 
@@ -385,5 +393,32 @@ require_once __DIR__ . '/header.php';
   </div>
 
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const fileInput = document.getElementById('disclosureFileInput');
+  if (fileInput) {
+    fileInput.addEventListener('change', function() {
+      if (!this.files || !this.files[0]) return;
+      const file = this.files[0];
+      const maxBytes = 10 * 1024 * 1024; // 10MB
+      const allowedExts = ['jpg', 'jpeg', 'png', 'pdf'];
+      const ext = file.name.split('.').pop().toLowerCase();
+      
+      if (!allowedExts.includes(ext)) {
+        alert('Invalid file format ("' + file.name + '"). Only JPEG, PNG, and PDF files are allowed.');
+        this.value = '';
+        return;
+      }
+      if (file.size > maxBytes) {
+        const sizeMb = (file.size / (1024 * 1024)).toFixed(2);
+        alert('File size exceeds the 10 MB limit (Selected: ' + sizeMb + ' MB). Please choose a file up to 10 MB.');
+        this.value = '';
+        return;
+      }
+    });
+  }
+});
+</script>
 
 <?php require_once __DIR__ . '/footer.php'; ?>

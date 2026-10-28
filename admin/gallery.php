@@ -25,16 +25,35 @@ function normalize_gallery_positions(PDO $db): void {
     }
 }
 
-// Process Upload Helper
+// Process Upload Helper & Validator (JPEG and PNG only, up to 5 MB each)
+function validate_gallery_file(array $file): ?string {
+    if (empty($file['name']) || $file['error'] !== UPLOAD_ERR_OK) {
+        return null;
+    }
+    $ext = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
+    $allowed = ['jpg', 'jpeg', 'png'];
+    $maxSize = 5 * 1024 * 1024; // 5 MB
+
+    if (!in_array($ext, $allowed)) {
+        return "Invalid image format for '{$file['name']}'. Only JPEG and PNG images are allowed.";
+    }
+    if ($file['size'] > $maxSize) {
+        $sizeMb = round($file['size'] / (1024 * 1024), 2);
+        return "Image '{$file['name']}' exceeds the 5 MB limit ({$sizeMb} MB). Please upload images up to 5 MB each.";
+    }
+    return null;
+}
+
 function handle_image_upload(array $file): ?string {
     if (empty($file['name']) || $file['error'] !== UPLOAD_ERR_OK) {
         return null;
     }
     $ext = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
-    $allowed = ['jpg', 'jpeg', 'png', 'webp'];
-    if (!in_array($ext, $allowed) || $file['size'] > 20 * 1024 * 1024) {
+    $allowed = ['jpg', 'jpeg', 'png'];
+    if (!in_array($ext, $allowed) || $file['size'] > 5 * 1024 * 1024) {
         return null;
     }
+    if (!is_dir(IMAGES_DIR)) @mkdir(IMAGES_DIR, 0777, true);
     $filename = time() . '_' . bin2hex(random_bytes(4)) . '.' . $ext;
     $target = IMAGES_DIR . '/' . $filename;
     if (move_uploaded_file($file['tmp_name'], $target)) {
@@ -69,9 +88,51 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit;
         }
 
+        // Validate Main Highlight Image
+        $mainErr = validate_gallery_file($_FILES['main_image']);
+        if ($mainErr) {
+            set_flash('error', $mainErr);
+            header("Location: " . ADMIN_URL . "/gallery.php");
+            exit;
+        }
+
+        // Validate Batch Sub-images
+        if (!empty($_FILES['batch_sub_images']['name'][0])) {
+            $totalBatch = count($_FILES['batch_sub_images']['name']);
+            for ($i = 0; $i < $totalBatch; $i++) {
+                if ($_FILES['batch_sub_images']['error'][$i] === UPLOAD_ERR_OK) {
+                    $singleFile = [
+                        'name' => $_FILES['batch_sub_images']['name'][$i],
+                        'type' => $_FILES['batch_sub_images']['type'][$i],
+                        'tmp_name' => $_FILES['batch_sub_images']['tmp_name'][$i],
+                        'error' => $_FILES['batch_sub_images']['error'][$i],
+                        'size' => $_FILES['batch_sub_images']['size'][$i]
+                    ];
+                    $subErr = validate_gallery_file($singleFile);
+                    if ($subErr) {
+                        set_flash('error', $subErr);
+                        header("Location: " . ADMIN_URL . "/gallery.php");
+                        exit;
+                    }
+                }
+            }
+        }
+
+        // Validate Individual Slot Sub-images
+        for ($s = 1; $s <= 10; $s++) {
+            if (!empty($_FILES["sub_image_{$s}"]['name'])) {
+                $subErr = validate_gallery_file($_FILES["sub_image_{$s}"]);
+                if ($subErr) {
+                    set_flash('error', $subErr);
+                    header("Location: " . ADMIN_URL . "/gallery.php");
+                    exit;
+                }
+            }
+        }
+
         $mainImgPath = handle_image_upload($_FILES['main_image']);
         if (!$mainImgPath) {
-            set_flash('error', 'Failed to upload Main Highlight Image. Only JPG, PNG, and WebP up to 20MB are allowed.');
+            set_flash('error', 'Failed to upload Main Highlight Image. Only JPEG and PNG images up to 5 MB are allowed.');
             header("Location: " . ADMIN_URL . "/gallery.php");
             exit;
         }
@@ -150,6 +211,50 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             set_flash('error', 'Gallery event not found.');
             header("Location: " . ADMIN_URL . "/gallery.php");
             exit;
+        }
+
+        // Validate Main Image replacement if provided
+        if (!empty($_FILES['main_image']['name'])) {
+            $mainErr = validate_gallery_file($_FILES['main_image']);
+            if ($mainErr) {
+                set_flash('error', $mainErr);
+                header("Location: " . ADMIN_URL . "/gallery.php");
+                exit;
+            }
+        }
+
+        // Validate Batch Sub-images
+        if (!empty($_FILES['batch_sub_images']['name'][0])) {
+            $totalBatch = count($_FILES['batch_sub_images']['name']);
+            for ($i = 0; $i < $totalBatch; $i++) {
+                if ($_FILES['batch_sub_images']['error'][$i] === UPLOAD_ERR_OK) {
+                    $singleFile = [
+                        'name' => $_FILES['batch_sub_images']['name'][$i],
+                        'type' => $_FILES['batch_sub_images']['type'][$i],
+                        'tmp_name' => $_FILES['batch_sub_images']['tmp_name'][$i],
+                        'error' => $_FILES['batch_sub_images']['error'][$i],
+                        'size' => $_FILES['batch_sub_images']['size'][$i]
+                    ];
+                    $subErr = validate_gallery_file($singleFile);
+                    if ($subErr) {
+                        set_flash('error', $subErr);
+                        header("Location: " . ADMIN_URL . "/gallery.php");
+                        exit;
+                    }
+                }
+            }
+        }
+
+        // Validate Individual Slot Sub-images
+        for ($s = 1; $s <= 10; $s++) {
+            if (!empty($_FILES["sub_image_{$s}"]['name'])) {
+                $subErr = validate_gallery_file($_FILES["sub_image_{$s}"]);
+                if ($subErr) {
+                    set_flash('error', $subErr);
+                    header("Location: " . ADMIN_URL . "/gallery.php");
+                    exit;
+                }
+            }
         }
 
         // Main Image replacement or keep existing
@@ -982,14 +1087,15 @@ require_once __DIR__ . '/header.php';
           <!-- Section 5: Main Highlight Image -->
           <div class="bvb-upload-panel">
             <div class="bvb-upload-panel-title">
-              <span><i class="fa-solid fa-camera"></i> 1. MAIN HIGHLIGHT IMAGE (UPLOAD JPG, PNG, WEBP VIA FILE EXPLORER)</span>
+              <span><i class="fa-solid fa-camera"></i> 1. MAIN HIGHLIGHT IMAGE (UPLOAD JPEG OR PNG — MAX 5 MB)</span>
             </div>
             <div class="d-flex align-items-center gap-3">
-              <input type="file" name="main_image" id="fieldMainImage" class="form-control" accept="image/jpeg,image/png,image/webp">
+              <input type="file" name="main_image" id="fieldMainImage" class="form-control" accept=".jpg,.jpeg,.png,image/jpeg,image/png">
               <div id="mainImagePreviewWrap" style="display:none;">
                 <img src="" id="mainImagePreview" class="table-thumb" alt="Preview">
               </div>
             </div>
+            <div class="form-text small text-muted mt-1">Allowed formats: <strong>JPEG, PNG</strong> (Max <strong>5 MB</strong>).</div>
           </div>
 
           <!-- Section 6: Sub Images (Up to 10) -->
@@ -1004,9 +1110,10 @@ require_once __DIR__ . '/header.php';
             <!-- Batch Upload Input -->
             <div class="p-3 mb-3" style="background:#eff6ff; border:1px dashed #60a5fa; border-radius:8px;">
               <label class="d-flex align-items-center gap-2 mb-2 fw-semibold text-primary" style="font-size:13px;">
-                <i class="fa-solid fa-bolt"></i> Quick Batch Upload: Select multiple sub-images at once (up to 10 files):
+                <i class="fa-solid fa-bolt"></i> Quick Batch Upload: Select multiple JPEG or PNG sub-images at once (up to 5 MB each, max 10 files):
               </label>
-              <input type="file" name="batch_sub_images[]" id="batchSubImagesInput" class="form-control" multiple accept="image/jpeg,image/png,image/webp">
+              <input type="file" name="batch_sub_images[]" id="batchSubImagesInput" class="form-control" multiple accept=".jpg,.jpeg,.png,image/jpeg,image/png">
+              <div class="form-text small text-muted mt-1">Allowed formats: <strong>JPEG, PNG</strong> (Max <strong>5 MB</strong> each).</div>
             </div>
 
             <!-- Grid of 10 Sub-Image Slots -->
@@ -1022,7 +1129,7 @@ require_once __DIR__ . '/header.php';
                   </div>
                   <img src="" class="sub-image-thumb-preview" id="subThumb_<?= $s ?>" style="display:none;" alt="Sub <?= $s ?>">
                   <input type="hidden" name="existing_sub_images[]" id="existingSubVal_<?= $s ?>" value="">
-                  <input type="file" name="sub_image_<?= $s ?>" id="subFileInput_<?= $s ?>" class="form-control form-control-sm" accept="image/jpeg,image/png,image/webp" onchange="previewSubFile(this, <?= $s ?>);">
+                  <input type="file" name="sub_image_<?= $s ?>" id="subFileInput_<?= $s ?>" class="form-control form-control-sm" accept=".jpg,.jpeg,.png,image/jpeg,image/png" onchange="previewSubFile(this, <?= $s ?>);">
                 </div>
               <?php endfor; ?>
             </div>
@@ -1141,8 +1248,36 @@ function openEditModal(eventData) {
   modal.show();
 }
 
+function validateGalleryFileObj(file) {
+  if (!file) return null;
+  const allowed = ['jpg', 'jpeg', 'png'];
+  const ext = (file.name || '').split('.').pop().toLowerCase();
+  const maxSize = 5 * 1024 * 1024; // 5 MB
+
+  if (!allowed.includes(ext)) {
+    return 'Invalid image format for "' + file.name + '". Only JPEG and PNG images are allowed.';
+  }
+  if (file.size > maxSize) {
+    const sizeMb = (file.size / (1024 * 1024)).toFixed(2);
+    return 'Image "' + file.name + '" exceeds the 5 MB limit (' + sizeMb + ' MB). Please upload images up to 5 MB each.';
+  }
+  return null;
+}
+
 function previewSubFile(input, slot) {
   if (input.files && input.files[0]) {
+    const file = input.files[0];
+    const err = validateGalleryFileObj(file);
+    if (err) {
+      alert(err);
+      input.value = '';
+      const thumb = document.getElementById('subThumb_' + slot);
+      if (thumb) {
+        thumb.src = '';
+        thumb.style.display = 'none';
+      }
+      return;
+    }
     const reader = new FileReader();
     reader.onload = function(e) {
       const thumb = document.getElementById('subThumb_' + slot);
@@ -1151,7 +1286,7 @@ function previewSubFile(input, slot) {
         thumb.style.display = 'block';
       }
     };
-    reader.readAsDataURL(input.files[0]);
+    reader.readAsDataURL(file);
   }
 }
 
@@ -1191,6 +1326,89 @@ function moveSubImageSlot(currentSlot, direction) {
   curHid.value = tgtHid.value;
   tgtHid.value = tempVal;
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  const mainImageInput = document.getElementById('fieldMainImage');
+  if (mainImageInput) {
+    mainImageInput.addEventListener('change', function() {
+      if (!this.files || !this.files[0]) return;
+      const file = this.files[0];
+      const err = validateGalleryFileObj(file);
+      if (err) {
+        alert(err);
+        this.value = '';
+        const previewWrap = document.getElementById('mainImagePreviewWrap');
+        const preview = document.getElementById('mainImagePreview');
+        if (previewWrap) previewWrap.style.display = 'none';
+        if (preview) preview.src = '';
+        return;
+      }
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const preview = document.getElementById('mainImagePreview');
+        const previewWrap = document.getElementById('mainImagePreviewWrap');
+        if (preview) preview.src = e.target.result;
+        if (previewWrap) previewWrap.style.display = 'block';
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+
+  const batchInput = document.getElementById('batchSubImagesInput');
+  if (batchInput) {
+    batchInput.addEventListener('change', function() {
+      if (!this.files || this.files.length === 0) return;
+      for (let i = 0; i < this.files.length; i++) {
+        const err = validateGalleryFileObj(this.files[i]);
+        if (err) {
+          alert(err);
+          this.value = '';
+          return;
+        }
+      }
+    });
+  }
+
+  const eventForm = document.getElementById('eventForm');
+  if (eventForm) {
+    eventForm.addEventListener('submit', function(e) {
+      // Validate main image
+      const mainInput = document.getElementById('fieldMainImage');
+      if (mainInput && mainInput.files && mainInput.files[0]) {
+        const err = validateGalleryFileObj(mainInput.files[0]);
+        if (err) {
+          alert(err);
+          e.preventDefault();
+          return;
+        }
+      }
+      // Validate batch sub-images
+      const bInput = document.getElementById('batchSubImagesInput');
+      if (bInput && bInput.files && bInput.files.length > 0) {
+        for (let i = 0; i < bInput.files.length; i++) {
+          const err = validateGalleryFileObj(bInput.files[i]);
+          if (err) {
+            alert(err);
+            e.preventDefault();
+            return;
+          }
+        }
+      }
+      // Validate slot sub-images
+      for (let s = 1; s <= 10; s++) {
+        const slotInp = document.getElementById('subFileInput_' + s);
+        if (slotInp && slotInp.files && slotInp.files[0]) {
+          const err = validateGalleryFileObj(slotInp.files[0]);
+          if (err) {
+            alert(err);
+            e.preventDefault();
+            return;
+          }
+        }
+      }
+    });
+  }
+});
 </script>
 
 <?php require_once __DIR__ . '/footer.php'; ?>

@@ -47,17 +47,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 if (!empty($_FILES['attachment']['name'])) {
                     $file = $_FILES['attachment'];
                     $ext = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
-                    $cleanName = time() . '_' . preg_replace('/[^a-zA-Z0-9_\.-]/', '_', $file['name']);
+                    $allowed = ['jpg', 'jpeg', 'png', 'pdf'];
+                    $maxSize = 10 * 1024 * 1024; // 10 MB
 
-                    if ($ext === 'pdf') {
-                        $targetPath = DOCS_DIR . '/' . $cleanName;
-                        if (move_uploaded_file($file['tmp_name'], $targetPath)) {
-                            $pdfUrl = 'assets/docs/' . $cleanName;
-                        }
-                    } elseif (in_array($ext, ['jpg', 'jpeg', 'png', 'webp'])) {
-                        $targetPath = IMAGES_DIR . '/' . $cleanName;
-                        if (move_uploaded_file($file['tmp_name'], $targetPath)) {
-                            $imageUrl = 'assets/images/' . $cleanName;
+                    if (!in_array($ext, $allowed)) {
+                        set_flash('error', "Invalid file format for attachment '{$file['name']}'. Only JPEG, PNG, and PDF files are allowed.");
+                        header("Location: " . ADMIN_URL . "/notices.php");
+                        exit;
+                    } elseif ($file['size'] > $maxSize) {
+                        $sizeMb = round($file['size'] / (1024 * 1024), 2);
+                        set_flash('error', "Attachment '{$file['name']}' exceeds the 10 MB limit ({$sizeMb} MB). Please upload a file up to 10 MB.");
+                        header("Location: " . ADMIN_URL . "/notices.php");
+                        exit;
+                    } else {
+                        if (!is_dir(DOCS_DIR)) @mkdir(DOCS_DIR, 0777, true);
+                        if (!is_dir(IMAGES_DIR)) @mkdir(IMAGES_DIR, 0777, true);
+                        $cleanName = time() . '_' . preg_replace('/[^a-zA-Z0-9_\.-]/', '_', $file['name']);
+
+                        if ($ext === 'pdf') {
+                            $targetPath = DOCS_DIR . '/' . $cleanName;
+                            if (move_uploaded_file($file['tmp_name'], $targetPath)) {
+                                $pdfUrl = 'assets/docs/' . $cleanName;
+                            }
+                        } elseif (in_array($ext, ['jpg', 'jpeg', 'png'])) {
+                            $targetPath = IMAGES_DIR . '/' . $cleanName;
+                            if (move_uploaded_file($file['tmp_name'], $targetPath)) {
+                                $imageUrl = 'assets/images/' . $cleanName;
+                            }
                         }
                     }
                 }
@@ -108,17 +124,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 if (!empty($_FILES['attachment']['name'])) {
                     $file = $_FILES['attachment'];
                     $ext = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
-                    $cleanName = time() . '_' . preg_replace('/[^a-zA-Z0-9_\.-]/', '_', $file['name']);
+                    $allowed = ['jpg', 'jpeg', 'png', 'pdf'];
+                    $maxSize = 10 * 1024 * 1024; // 10 MB
 
-                    if ($ext === 'pdf') {
-                        $targetPath = DOCS_DIR . '/' . $cleanName;
-                        if (move_uploaded_file($file['tmp_name'], $targetPath)) {
-                            $pdfUrl = 'assets/docs/' . $cleanName;
-                        }
-                    } elseif (in_array($ext, ['jpg', 'jpeg', 'png', 'webp'])) {
-                        $targetPath = IMAGES_DIR . '/' . $cleanName;
-                        if (move_uploaded_file($file['tmp_name'], $targetPath)) {
-                            $imageUrl = 'assets/images/' . $cleanName;
+                    if (!in_array($ext, $allowed)) {
+                        set_flash('error', "Invalid file format for attachment '{$file['name']}'. Only JPEG, PNG, and PDF files are allowed.");
+                        header("Location: " . ADMIN_URL . "/notices.php?edit={$id}");
+                        exit;
+                    } elseif ($file['size'] > $maxSize) {
+                        $sizeMb = round($file['size'] / (1024 * 1024), 2);
+                        set_flash('error', "Attachment '{$file['name']}' exceeds the 10 MB limit ({$sizeMb} MB). Please upload a file up to 10 MB.");
+                        header("Location: " . ADMIN_URL . "/notices.php?edit={$id}");
+                        exit;
+                    } else {
+                        if (!is_dir(DOCS_DIR)) @mkdir(DOCS_DIR, 0777, true);
+                        if (!is_dir(IMAGES_DIR)) @mkdir(IMAGES_DIR, 0777, true);
+                        $cleanName = time() . '_' . preg_replace('/[^a-zA-Z0-9_\.-]/', '_', $file['name']);
+
+                        if ($ext === 'pdf') {
+                            $targetPath = DOCS_DIR . '/' . $cleanName;
+                            if (move_uploaded_file($file['tmp_name'], $targetPath)) {
+                                $pdfUrl = 'assets/docs/' . $cleanName;
+                            }
+                        } elseif (in_array($ext, ['jpg', 'jpeg', 'png'])) {
+                            $targetPath = IMAGES_DIR . '/' . $cleanName;
+                            if (move_uploaded_file($file['tmp_name'], $targetPath)) {
+                                $imageUrl = 'assets/images/' . $cleanName;
+                            }
                         }
                     }
                 }
@@ -257,8 +289,9 @@ require_once __DIR__ . '/header.php';
         </div>
 
         <div class="mb-3">
-          <label class="form-label fw-semibold small">Upload Attachment (PDF / Photo)</label>
-          <input type="file" name="attachment" class="form-control" accept=".pdf,image/*">
+          <label class="form-label fw-semibold small">Upload Attachment (JPEG, PNG, or PDF &mdash; Max 10 MB)</label>
+          <input type="file" name="attachment" id="noticeAttachmentInput" class="form-control" accept=".jpg,.jpeg,.png,.pdf,image/jpeg,image/png,application/pdf">
+          <div class="form-text small text-muted">Allowed formats: <strong>JPEG, PNG, PDF</strong> (Max <strong>10 MB</strong>).</div>
           <?php if (!empty($editNotice['pdf_url'])): ?>
             <div class="form-text mt-1 text-success">
               <i class="fa-solid fa-file-pdf me-1"></i> Current PDF: <a href="<?= asset_url($editNotice['pdf_url']) ?>" target="_blank" class="fw-semibold">View File</a> (upload new to replace)
@@ -267,8 +300,6 @@ require_once __DIR__ . '/header.php';
             <div class="form-text mt-1 text-primary">
               <i class="fa-solid fa-image me-1"></i> Current Photo: <a href="<?= asset_url($editNotice['image_url']) ?>" target="_blank" class="fw-semibold">View Image</a> (upload new to replace)
             </div>
-          <?php else: ?>
-            <div class="form-text small">Optional PDF document or banner image</div>
           <?php endif; ?>
         </div>
 
@@ -370,5 +401,32 @@ require_once __DIR__ . '/header.php';
   </div>
 
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const fileInput = document.getElementById('noticeAttachmentInput');
+  if (fileInput) {
+    fileInput.addEventListener('change', function() {
+      if (!this.files || !this.files[0]) return;
+      const file = this.files[0];
+      const maxBytes = 10 * 1024 * 1024; // 10MB
+      const allowedExts = ['jpg', 'jpeg', 'png', 'pdf'];
+      const ext = file.name.split('.').pop().toLowerCase();
+      
+      if (!allowedExts.includes(ext)) {
+        alert('Invalid file format ("' + file.name + '"). Only JPEG, PNG, and PDF files are allowed.');
+        this.value = '';
+        return;
+      }
+      if (file.size > maxBytes) {
+        const sizeMb = (file.size / (1024 * 1024)).toFixed(2);
+        alert('File size exceeds the 10 MB limit (Selected: ' + sizeMb + ' MB). Please choose a file up to 10 MB.');
+        this.value = '';
+        return;
+      }
+    });
+  }
+});
+</script>
 
 <?php require_once __DIR__ . '/footer.php'; ?>
