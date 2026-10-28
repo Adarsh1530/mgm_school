@@ -148,13 +148,43 @@ $activePage = $activePage ?? 'dashboard';
       overflow-y: auto;
       overflow-x: hidden;
     }
+    /* Uniform Bottom Bar Height & Alignment for both Sidebar and Footer */
+    .admin-sidebar-footer {
+      height: 60px;
+      min-height: 60px;
+      max-height: 60px;
+      flex-shrink: 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+    }
+    .admin-sidebar-footer .btn {
+      height: 38px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 0 12px;
+      margin: 0;
+    }
+
     .admin-footer {
+      height: 60px;
+      min-height: 60px;
+      max-height: 60px;
       flex-shrink: 0;
       background-color: #ffffff;
       border-top: 1px solid var(--admin-border);
-      padding: 14px 28px;
+      padding: 0 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       color: #6B7280;
       font-size: 13px;
+      box-sizing: border-box;
       z-index: 20;
     }
 
@@ -190,7 +220,7 @@ $activePage = $activePage ?? 'dashboard';
         padding: 16px 16px 28px 16px;
       }
       .admin-footer {
-        padding: 12px 16px;
+        padding: 0 16px;
       }
     }
     .card-metric {
@@ -261,8 +291,8 @@ $activePage = $activePage ?? 'dashboard';
       <?php endif; ?>
     </ul>
 
-    <div class="p-3 border-top border-secondary">
-      <a href="<?= url('/') ?>" target="_blank" class="btn btn-outline-light btn-sm w-100 py-2">
+    <div class="admin-sidebar-footer">
+      <a href="<?= url('/') ?>" target="_blank" class="btn btn-outline-light btn-sm w-100">
         <i class="fa-solid fa-arrow-up-right-from-square me-1"></i> View Live Site
       </a>
     </div>

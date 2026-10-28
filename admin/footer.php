@@ -6,7 +6,7 @@
 ?>
     </main>
 
-    <footer class="admin-footer bg-white border-top py-3 px-4 text-muted small d-flex flex-wrap justify-content-between align-items-center gap-2">
+    <footer class="admin-footer bg-white">
       <div>
         MGM Model School Admin Portal &copy; <?= date('Y') ?> &bull; Internal Content Management System
       </div>
