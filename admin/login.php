@@ -125,7 +125,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label class="form-label fw-semibold text-dark small">Username</label>
         <div class="input-group">
           <span class="input-group-text bg-light text-muted"><i class="fa-solid fa-user"></i></span>
-          <input type="text" name="username" class="form-control" placeholder="Enter username" required autofocus value="<?= e($_POST['username'] ?? '') ?>">
+          <input type="text" name="username" class="form-control" placeholder="Enter your username" required autofocus value="<?= e($_POST['username'] ?? '') ?>">
         </div>
       </div>
 
@@ -133,7 +133,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label class="form-label fw-semibold text-dark small">Password</label>
         <div class="input-group">
           <span class="input-group-text bg-light text-muted"><i class="fa-solid fa-lock"></i></span>
-          <input type="password" name="password" class="form-control" placeholder="Enter password" required>
+          <input type="password" name="password" class="form-control" placeholder="Enter your password" required>
         </div>
       </div>
 

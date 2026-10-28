@@ -190,6 +190,11 @@ $activePage = $activePage ?? 'dashboard';
       <li class="<?= $activePage === 'popup' ? 'active' : '' ?>">
         <a href="<?= ADMIN_URL ?>/popup.php"><i class="fa-solid fa-window-restore"></i> Popup Notification</a>
       </li>
+      <?php if (($user['role'] ?? '') === 'superadmin'): ?>
+        <li class="<?= $activePage === 'users' ? 'active' : '' ?>">
+          <a href="<?= ADMIN_URL ?>/users.php"><i class="fa-solid fa-users-gear"></i> User Roles Management</a>
+        </li>
+      <?php endif; ?>
     </ul>
 
     <div class="p-3 border-top border-secondary">
@@ -208,7 +213,11 @@ $activePage = $activePage ?? 'dashboard';
         <h5 class="fw-bold mb-0 text-dark"><?= e($adminTitle ?? 'Dashboard') ?></h5>
       </div>
       <div class="d-flex align-items-center gap-3">
-        <span class="text-muted small">Signed in as <b><?= e($user['username']) ?></b> (<?= e($user['role']) ?>)</span>
+        <?php
+          $roleRaw = $user['role'] ?? 'admin';
+          $roleBadge = ($roleRaw === 'superadmin') ? 'Super Admin' : (($roleRaw === 'admin') ? 'School Admin' : ucfirst($roleRaw));
+        ?>
+        <span class="text-muted small">Signed in as <b><?= e($user['username']) ?></b> (<span class="badge <?= $roleRaw === 'superadmin' ? 'bg-danger' : 'bg-primary' ?> text-white fw-bold"><?= e($roleBadge) ?></span>)</span>
         <a href="<?= ADMIN_URL ?>/logout.php" class="btn btn-outline-danger btn-sm">
           <i class="fa-solid fa-right-from-bracket me-1"></i> Logout
         </a>

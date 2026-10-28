@@ -2030,15 +2030,16 @@ CREATE TABLE `users` (
   `username` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password_hash` varchar(255) NOT NULL,
-  `role` enum('admin','editor') NOT NULL DEFAULT 'admin',
+  `role` varchar(50) NOT NULL DEFAULT 'admin',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `users` VALUES
-('1', 'admin', 'admin@mgmschool.edu', '$2y$10$HcCEyfCBhsugDTL/HIMHx.IIydf9lGMVIGrz7gPke2ATBwvjOGcCW', 'admin', '2026-10-21 23:28:40', '2026-10-21 23:28:40');
+('1', 'superadmin', 'superadmin@mgmschool.edu.in', '$2y$10$SyY4aHm0Nvio27dPJCWfjOYQHrmb1Ad5qe3FNQ9W7/WbeiKRntDa6', 'superadmin', '2026-10-28 01:30:00', '2026-10-28 01:30:00'),
+('2', 'mgmschool', 'mgmschool@mgmschool.edu.in', '$2y$10$Fa01zkCC2qL/MdMqX1ernufTJfSAMh3NjSzxyxCEawgdj4mvzlVWS', 'admin', '2026-10-28 01:30:00', '2026-10-28 01:30:00');
 
 SET FOREIGN_KEY_CHECKS=1;

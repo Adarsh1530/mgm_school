@@ -18,6 +18,10 @@ $noticesCount = (int)$db->query("SELECT COUNT(*) FROM notices")->fetchColumn();
 $activeNoticesCount = (int)$db->query("SELECT COUNT(*) FROM notices WHERE is_active = 1")->fetchColumn();
 $disclosuresCount = (int)$db->query("SELECT COUNT(*) FROM mandatory_disclosures")->fetchColumn();
 $galleryCount = (int)$db->query("SELECT COUNT(*) FROM gallery")->fetchColumn();
+$usersCount = 0;
+if (is_superadmin()) {
+    $usersCount = (int)$db->query("SELECT COUNT(*) FROM users")->fetchColumn();
+}
 
 // Popup Notification Status
 $popupActive = false;
@@ -102,5 +106,30 @@ require_once __DIR__ . '/header.php';
     </div>
   </div>
 </div>
+
+<?php if (is_superadmin()): ?>
+  <!-- Super Admin Management Banner -->
+  <div class="card border-0 shadow-sm rounded-3 mb-4" style="background: linear-gradient(135deg, #1A1D24 0%, #2A303C 100%); color: #ffffff;">
+    <div class="card-body p-4 d-flex justify-content-between align-items-center flex-wrap gap-3">
+      <div class="d-flex align-items-center gap-3">
+        <div style="width: 54px; height: 54px; border-radius: 12px; background: rgba(171, 12, 47, 0.2); border: 1px solid rgba(171, 12, 47, 0.4); display: flex; align-items: center; justify-content: center; font-size: 24px; color: #ff6b81;">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <div>
+          <div class="d-flex align-items-center gap-2">
+            <h5 class="fw-bold mb-0 text-white">User Roles &amp; Access Control</h5>
+            <span class="badge bg-danger text-white">Super Admin Exclusive</span>
+          </div>
+          <p class="text-white-50 small mb-0 mt-1">There are currently <b><?= $usersCount ?> users</b> configured. Manage administrative credentials, roles, and access rights.</p>
+        </div>
+      </div>
+      <div>
+        <a href="<?= ADMIN_URL ?>/users.php" class="btn btn-danger btn-sm px-3 py-2 fw-semibold shadow-sm">
+          <i class="fa-solid fa-users-gear me-1"></i> Manage User Roles &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+<?php endif; ?>
 
 <?php require_once __DIR__ . '/footer.php'; ?>

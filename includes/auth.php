@@ -32,8 +32,21 @@ function require_login(): void {
 
 function require_admin(): void {
     require_login();
-    if ($_SESSION['user_role'] !== 'admin') {
+    if (($_SESSION['user_role'] ?? '') !== 'admin' && ($_SESSION['user_role'] ?? '') !== 'superadmin') {
         http_response_code(403);
         die("Access Denied: You do not have administrative privileges.");
+    }
+}
+
+function is_superadmin(): bool {
+    return is_logged_in() && (($_SESSION['user_role'] ?? '') === 'superadmin');
+}
+
+function require_superadmin(): void {
+    require_login();
+    if (!is_superadmin()) {
+        set_flash('error', 'Access Denied: User roles management is restricted to Super Admin.');
+        header("Location: " . ADMIN_URL . "/");
+        exit;
     }
 }
