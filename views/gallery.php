@@ -153,8 +153,6 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
             <?php endif; ?>
 
             <div class="gallery-overlay-date-row">
-              <i class="fa-solid fa-calendar-days"></i>
-              <span class="gallery-overlay-date-label">Upload Date:</span>
               <span class="gallery-overlay-date-value"><?= e($uploadDate) ?></span>
             </div>
           </div>
@@ -532,33 +530,14 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
 }
 
 .gallery-overlay-date-row {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 0.35rem;
-  padding-top: 0.35rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.18);
-  font-size: 0.74rem;
-  font-weight: 600;
-  color: #FDE047;
-}
-
-.gallery-overlay-date-row i {
-  color: #F59E0B;
-  font-size: 0.78rem;
-}
-
-.gallery-overlay-date-label {
-  color: rgba(255, 255, 255, 0.75);
-  font-weight: 500;
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
+  margin-top: 0.25rem;
+  font-size: 0.76rem;
+  line-height: 1.35;
 }
 
 .gallery-overlay-date-value {
-  color: #FFFFFF;
-  font-weight: 600;
+  color: rgba(255, 255, 255, 0.88);
+  font-weight: 500;
 }
 
 /* Lightbox Styling */
