@@ -38,12 +38,20 @@ $activePage = $activePage ?? 'dashboard';
       --admin-sidebar: #1A1D24;
       --admin-border: #E5E7EB;
     }
+    html, body {
+      height: 100%;
+      height: 100dvh;
+      margin: 0;
+      padding: 0;
+    }
     body {
       font-family: 'DM Sans', sans-serif;
       background-color: #F8F9FA;
       color: #374151;
-      margin: 0;
-      min-height: 100vh;
+      height: 100vh;
+      height: 100dvh;
+      width: 100%;
+      overflow: hidden;
       display: flex;
     }
     .admin-sidebar {
@@ -52,11 +60,13 @@ $activePage = $activePage ?? 'dashboard';
       color: #9CA3AF;
       flex-shrink: 0;
       height: 100vh;
+      height: 100dvh;
       position: sticky;
       top: 0;
       display: flex;
       flex-direction: column;
       z-index: 1000;
+      transition: transform 0.3s ease, left 0.3s ease;
     }
     .admin-brand {
       padding: 18px 22px;
@@ -112,22 +122,76 @@ $activePage = $activePage ?? 'dashboard';
       box-shadow: 0 4px 10px rgba(171, 12, 47, 0.3);
     }
     .admin-content-wrap {
-      flex-grow: 1;
+      flex: 1 1 auto;
+      min-width: 0;
+      height: 100vh;
+      height: 100dvh;
       display: flex;
       flex-direction: column;
-      overflow-x: hidden;
+      overflow: hidden;
+      position: relative;
     }
     .admin-topbar {
+      flex-shrink: 0;
       background-color: #ffffff;
       border-bottom: 1px solid var(--admin-border);
       padding: 14px 28px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      z-index: 10;
     }
     .admin-main {
-      padding: 28px;
-      flex-grow: 1;
+      padding: 24px 28px 36px 28px;
+      flex: 1 1 auto;
+      min-height: 0;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+    .admin-footer {
+      flex-shrink: 0;
+      background-color: #ffffff;
+      border-top: 1px solid var(--admin-border);
+      padding: 14px 28px;
+      color: #6B7280;
+      font-size: 13px;
+      z-index: 20;
+    }
+
+    /* Mobile & Tablet Responsiveness */
+    @media (max-width: 991.98px) {
+      .admin-sidebar {
+        position: fixed;
+        left: -260px;
+        top: 0;
+        bottom: 0;
+        height: 100vh;
+        height: 100dvh;
+        z-index: 1050;
+        box-shadow: 4px 0 20px rgba(0,0,0,0.3);
+      }
+      .admin-sidebar.show {
+        left: 0;
+      }
+      .admin-sidebar-backdrop {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 1040;
+      }
+      .admin-sidebar-backdrop.show {
+        display: block;
+      }
+      .admin-topbar {
+        padding: 12px 16px;
+      }
+      .admin-main {
+        padding: 16px 16px 28px 16px;
+      }
+      .admin-footer {
+        padding: 12px 16px;
+      }
     }
     .card-metric {
       background: #ffffff;
@@ -165,7 +229,7 @@ $activePage = $activePage ?? 'dashboard';
 <body>
 
   <!-- Admin Sidebar -->
-  <aside class="admin-sidebar">
+  <aside class="admin-sidebar" id="adminSidebar">
     <div class="admin-brand">
       <img src="<?= asset_url('images/new-mgm-logo.png') ?>" alt="MGM Crest">
       <div>
@@ -204,12 +268,18 @@ $activePage = $activePage ?? 'dashboard';
     </div>
   </aside>
 
+  <!-- Mobile Sidebar Backdrop Overlay -->
+  <div class="admin-sidebar-backdrop" id="sidebarBackdrop"></div>
+
   <!-- Admin Main Content Wrap -->
   <div class="admin-content-wrap">
     
     <!-- Top Header -->
     <header class="admin-topbar">
-      <div>
+      <div class="d-flex align-items-center gap-2">
+        <button class="btn btn-sm btn-outline-secondary d-lg-none" type="button" id="sidebarToggle" aria-label="Toggle navigation" style="padding: 4px 10px;">
+          <i class="fa-solid fa-bars"></i>
+        </button>
         <h5 class="fw-bold mb-0 text-dark"><?= e($adminTitle ?? 'Dashboard') ?></h5>
       </div>
       <div class="d-flex align-items-center gap-3">
