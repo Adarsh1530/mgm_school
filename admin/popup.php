@@ -382,17 +382,6 @@ require_once __DIR__ . '/header.php';
           </div>
         <?php endif; ?>
       </div>
-
-      <?php if ($activePopup): ?>
-        <form method="POST" action="<?= ADMIN_URL ?>/popup.php" class="m-0">
-          <input type="hidden" name="csrf_token" value="<?= csrf_token() ?>">
-          <input type="hidden" name="action" value="toggle_active">
-          <input type="hidden" name="id" value="<?= $activePopup['id'] ?>">
-          <button type="submit" class="btn btn-outline-secondary btn-sm px-3 py-2 fw-semibold rounded-pill">
-            <i class="fa-solid fa-power-off me-1"></i> Deactivate Popup
-          </button>
-        </form>
-      <?php endif; ?>
     </div>
   </div>
 </div>
