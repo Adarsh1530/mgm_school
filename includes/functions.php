@@ -259,3 +259,10 @@ function get_ticker_notices(): array {
         return [];
     }
 }
+
+if (!function_exists('redirect')) {
+    function redirect(string $url): void {
+        header("Location: " . $url);
+        exit;
+    }
+}

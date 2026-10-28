@@ -73,11 +73,20 @@ try {
     // Ignore schema creation errors if already exists
 }
 
+// Ensure redirect function is available
+if (!function_exists('redirect')) {
+    function redirect(string $url): void {
+        header("Location: " . $url);
+        exit;
+    }
+}
+
 // Handle POST Actions (Create, Edit, Toggle Active, Delete)
 if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST') {
     if (!verify_csrf($_POST['csrf_token'] ?? '')) {
         set_flash('error', 'CSRF verification failed. Please try again.');
-        redirect(ADMIN_URL . '/popup.php');
+        header("Location: " . ADMIN_URL . "/popup.php");
+        exit;
     }
 
     $action = $_POST['action'] ?? '';
@@ -109,7 +118,8 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST') {
                 set_flash('success', "Popup '" . e($popup['title']) . "' is now Live & Active on the website.");
             }
         }
-        redirect(ADMIN_URL . '/popup.php');
+        header("Location: " . ADMIN_URL . "/popup.php");
+        exit;
     }
 
     // Action 2: Delete Popup
@@ -151,7 +161,8 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST') {
 
             set_flash('success', "Popup '" . e($popup['title']) . "' was deleted successfully.");
         }
-        redirect(ADMIN_URL . '/popup.php');
+        header("Location: " . ADMIN_URL . "/popup.php");
+        exit;
     }
 
     // Action 3: Save (Create or Edit)
@@ -163,7 +174,8 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST') {
 
         if (empty($title)) {
             set_flash('error', 'Please enter a title/caption for the popup.');
-            redirect(ADMIN_URL . ($id > 0 ? "/popup.php?edit={$id}" : "/popup.php"));
+            header("Location: " . ADMIN_URL . ($id > 0 ? "/popup.php?edit={$id}" : "/popup.php"));
+            exit;
         }
 
         $popupsDir = IMAGES_DIR . '/popups';
@@ -179,7 +191,8 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST') {
 
             if (!$existing) {
                 set_flash('error', 'Popup record not found.');
-                redirect(ADMIN_URL . '/popup.php');
+                header("Location: " . ADMIN_URL . "/popup.php");
+                exit;
             }
 
             $imageUrl = $existing['image_url'];
@@ -193,11 +206,13 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST') {
 
                 if (!in_array($ext, $allowed)) {
                     set_flash('error', "Invalid file format for '{$file['name']}'. Only JPEG, PNG, and PDF files are allowed.");
-                    redirect(ADMIN_URL . "/popup.php?edit={$id}");
+                    header("Location: " . ADMIN_URL . "/popup.php?edit={$id}");
+                    exit;
                 } elseif ($file['size'] > $maxSize) {
                     $sizeMb = round($file['size'] / (1024 * 1024), 2);
                     set_flash('error', "File '{$file['name']}' exceeds the 10 MB limit ({$sizeMb} MB). Please upload a file up to 10 MB.");
-                    redirect(ADMIN_URL . "/popup.php?edit={$id}");
+                    header("Location: " . ADMIN_URL . "/popup.php?edit={$id}");
+                    exit;
                 } else {
                     $cleanName = 'popup_' . time() . '_' . preg_replace('/[^a-zA-Z0-9_\.-]/', '_', $file['name']);
                     $targetPath = $popupsDir . '/' . $cleanName;
@@ -206,13 +221,14 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST') {
                         $imageUrl = 'assets/images/popups/' . $cleanName;
                     } else {
                         set_flash('error', 'Failed to save the uploaded image file.');
-                        redirect(ADMIN_URL . "/popup.php?edit={$id}");
+                        header("Location: " . ADMIN_URL . "/popup.php?edit={$id}");
+                        exit;
                     }
                 }
             }
 
-            // If user checked "Set as Active", deactivate all others
-            if ($setActive === 1) {
+            $newActive = ($setActive === 1) ? 1 : 0;
+            if ($newActive === 1) {
                 $db->exec("UPDATE popups SET is_active = 0");
             }
 
@@ -224,26 +240,30 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST') {
                 ':t'  => $title,
                 ':l'  => $linkUrl,
                 ':i'  => $imageUrl,
-                ':a'  => ($setActive === 1 ? 1 : (int)$existing['is_active']),
+                ':a'  => $newActive,
                 ':id' => $id
             ]);
 
-            // If active, sync to site_settings
-            if ($setActive === 1 || (int)$existing['is_active'] === 1) {
+            // Sync to site_settings
+            if ($newActive === 1) {
                 set_setting('popup_enabled', '1');
                 set_setting('popup_image_url', $imageUrl);
                 set_setting('popup_title', $title);
                 set_setting('popup_link_url', $linkUrl);
+            } elseif ((int)$existing['is_active'] === 1 && $newActive === 0) {
+                set_setting('popup_enabled', '0');
             }
 
             set_flash('success', "Popup '{$title}' updated successfully.");
-            redirect(ADMIN_URL . '/popup.php');
+            header("Location: " . ADMIN_URL . "/popup.php");
+            exit;
 
         } else {
             // CREATE MODE
             if (empty($_FILES['popup_image']['name'])) {
                 set_flash('error', 'Please select an image banner for the popup.');
-                redirect(ADMIN_URL . '/popup.php');
+                header("Location: " . ADMIN_URL . "/popup.php");
+                exit;
             }
 
             $file = $_FILES['popup_image'];
@@ -253,11 +273,13 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST') {
 
             if (!in_array($ext, $allowed)) {
                 set_flash('error', "Invalid file format for '{$file['name']}'. Only JPEG, PNG, and PDF files are allowed.");
-                redirect(ADMIN_URL . '/popup.php');
+                header("Location: " . ADMIN_URL . "/popup.php");
+                exit;
             } elseif ($file['size'] > $maxSize) {
                 $sizeMb = round($file['size'] / (1024 * 1024), 2);
                 set_flash('error', "File '{$file['name']}' exceeds the 10 MB limit ({$sizeMb} MB). Please upload a file up to 10 MB.");
-                redirect(ADMIN_URL . '/popup.php');
+                header("Location: " . ADMIN_URL . "/popup.php");
+                exit;
             } else {
                 $cleanName = 'popup_' . time() . '_' . preg_replace('/[^a-zA-Z0-9_\.-]/', '_', $file['name']);
                 $targetPath = $popupsDir . '/' . $cleanName;
@@ -293,7 +315,8 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST') {
                     set_flash('error', 'Failed to save the uploaded image.');
                 }
             }
-            redirect(ADMIN_URL . '/popup.php');
+            header("Location: " . ADMIN_URL . "/popup.php");
+            exit;
         }
     }
 }
