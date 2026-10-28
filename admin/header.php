@@ -224,9 +224,9 @@ $activePage = $activePage ?? 'dashboard';
       opacity: 0.95;
     }
     .sparkit-footer-logo-video {
-      height: 34px;
+      height: 54px;
       width: auto;
-      max-width: 82px;
+      max-width: 115px;
       object-fit: contain;
       mix-blend-mode: multiply;
       display: block;
@@ -286,8 +286,8 @@ $activePage = $activePage ?? 'dashboard';
         margin-left: 8px;
       }
       .sparkit-footer-logo-video {
-        height: 28px;
-        max-width: 65px;
+        height: 38px;
+        max-width: 85px;
       }
     }
     .card-metric {
