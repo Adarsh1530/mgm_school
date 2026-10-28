@@ -56,7 +56,7 @@ require_once __DIR__ . '/header.php';
     <div class="card-metric">
       <div class="d-flex justify-content-between align-items-center">
         <div>
-          <div class="text-muted small fw-semibold text-uppercase">Disclosures</div>
+          <div class="text-muted small fw-semibold text-uppercase">MANDATORY DISCLOSURES</div>
           <h2 class="fw-bold my-1 text-dark"><?= $disclosuresCount ?></h2>
           <div class="text-muted small mb-2"><span class="badge bg-secondary bg-opacity-10 text-secondary fw-bold">CBSE Documents</span></div>
           <a href="<?= ADMIN_URL ?>/disclosures.php" class="text-danger small fw-bold">Manage Documents &rarr;</a>

@@ -14,16 +14,50 @@ if (isset($_SERVER['HTTP_HOST']) && strpos($_SERVER['HTTP_HOST'], 'vercel.app') 
     ini_set('log_errors', 1);
 }
 
-// Start secure session ONLY for admin area
-if (isset($_SERVER['REQUEST_URI']) && strpos($_SERVER['REQUEST_URI'], '/admin') !== false) {
+// Start secure persistent session for admin area
+function start_admin_session(): void {
     if (session_status() === PHP_SESSION_NONE) {
-        if (is_dir('/tmp') && is_writable('/tmp')) {
-            @ini_set('session.save_path', '/tmp');
+        if (isset($_SERVER['HTTP_HOST']) && strpos($_SERVER['HTTP_HOST'], 'vercel.app') !== false) {
+            if (is_dir('/tmp') && is_writable('/tmp')) {
+                @ini_set('session.save_path', '/tmp');
+            }
         }
-        @ini_set('session.cookie_httponly', 1);
-        @ini_set('session.use_only_cookies', 1);
+
+        $lifetime = 1209600; // 14 days
+        @ini_set('session.gc_maxlifetime', (string)$lifetime);
+        @ini_set('session.cookie_lifetime', (string)$lifetime);
+        @ini_set('session.cookie_httponly', '1');
+        @ini_set('session.use_only_cookies', '1');
+
+        $isHttps = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+            || (isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == 443)
+            || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https')
+            || (isset($_SERVER['HTTP_CF_VISITOR']) && strpos($_SERVER['HTTP_CF_VISITOR'], 'https') !== false)
+            || (isset($_SERVER['HTTP_HOST']) && strpos($_SERVER['HTTP_HOST'], 'mgmmodelschool.edu.in') !== false);
+
+        if (PHP_VERSION_ID >= 70300) {
+            session_set_cookie_params([
+                'lifetime' => $lifetime,
+                'path' => '/',
+                'domain' => '',
+                'secure' => $isHttps,
+                'httponly' => true,
+                'samesite' => 'Lax'
+            ]);
+        } else {
+            session_set_cookie_params($lifetime, '/', '', $isHttps, true);
+        }
+
         @session_start();
     }
+}
+
+if (!defined('AUTH_SECRET_KEY')) {
+    define('AUTH_SECRET_KEY', 'mgm_school_auth_key_sparkit_2026_x89a');
+}
+
+if (isset($_SERVER['REQUEST_URI']) && (strpos($_SERVER['REQUEST_URI'], '/admin') !== false || strpos($_SERVER['REQUEST_URI'], 'admin') !== false)) {
+    start_admin_session();
 }
 
 // Database Credentials

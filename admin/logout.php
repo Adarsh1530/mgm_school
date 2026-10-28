@@ -10,6 +10,8 @@ if (is_logged_in()) {
     log_audit("User Logout", "Admin user " . ($_SESSION['username'] ?? '') . " logged out.");
 }
 
+clear_admin_token();
+
 $_SESSION = [];
 if (ini_get("session.use_cookies")) {
     $params = session_get_cookie_params();

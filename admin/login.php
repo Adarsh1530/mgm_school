@@ -8,11 +8,18 @@ require_once __DIR__ . '/../includes/auth.php';
 
 // If already logged in, redirect to dashboard
 if (is_logged_in()) {
+    if (!empty($_SESSION['flash']) && strpos($_SESSION['flash']['message'] ?? '', 'Please log in') !== false) {
+        unset($_SESSION['flash']);
+    }
     header("Location: " . ADMIN_URL . "/");
     exit;
 }
 
 $error = '';
+$flash = get_flash();
+if ($flash && ($flash['type'] ?? '') === 'error') {
+    $error = $flash['message'];
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!verify_csrf($_POST['csrf_token'] ?? '')) {
@@ -31,6 +38,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $user = $stmt->fetch();
 
                 if ($user && password_verify($password, $user['password_hash'])) {
+                    // Wipe any stale flash messages before entering dashboard
+                    unset($_SESSION['flash']);
+
                     // Regenerate session id to protect against session fixation
                     session_regenerate_id(true);
 
@@ -38,6 +48,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $_SESSION['username'] = $user['username'];
                     $_SESSION['user_email'] = $user['email'];
                     $_SESSION['user_role'] = $user['role'];
+
+                    // Issue persistent 14-day authentication token
+                    issue_admin_token($user);
 
                     log_audit("User Login", "Admin user {$user['username']} logged in successfully.");
 
