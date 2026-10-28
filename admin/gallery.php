@@ -899,7 +899,7 @@ require_once __DIR__ . '/header.php';
 <div class="bvb-admin-card">
   
   <div class="bvb-card-topbar">
-    <h2 class="bvb-card-heading">Active Gallery Packages (<?= count($galleries) ?>)</h2>
+    <h2 class="bvb-card-heading">Active Gallery Packages (<?= count($galleryEvents) ?>)</h2>
     <div class="bvb-top-actions">
       <form method="POST" action="<?= ADMIN_URL ?>/gallery.php" onsubmit="return confirm('WARNING: Are you sure you want to delete ALL gallery packages? This cannot be undone.');" style="margin:0;">
         <input type="hidden" name="csrf_token" value="<?= csrf_token() ?>">
