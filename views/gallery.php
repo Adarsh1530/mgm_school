@@ -161,12 +161,6 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
             <div class="gallery-overlay-date-row">
               <span class="gallery-overlay-date-value"><?= e($uploadDate) ?></span>
             </div>
-
-            <?php if ($totalPhotos > 1): ?>
-              <div class="gallery-overlay-album-tag">
-                <i class="fa-solid fa-images"></i> <?= $totalPhotos ?> Photos &bull; Click to view album
-              </div>
-            <?php endif; ?>
           </div>
         </div>
       <?php endforeach; ?>
