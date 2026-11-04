@@ -501,6 +501,30 @@ $highlights = json_decode(<<<'JSON'
       "Pause. Create. Express. Shine.",
       "Pause. Create. Express. Shine."
     ]
+  },
+  {
+    "id": "kaushal-bodh",
+    "order": 22,
+    "title": "Kaushal Bodh",
+    "category_key": "skills",
+    "category_name": "Skills & Cadet Corps",
+    "image": "assets/images/kaushal-bodh.jpeg",
+    "icon": "fa-solid fa-puzzle-piece",
+    "url": "/kaushal-bodh/",
+    "has_dedicated_page": true,
+    "summary": "Kaushal Bodh is an initiative introduced under the CBSE curriculum to promote skill-based and experiential learning among students. The programme focuses on developing practical knowledge, creativity, problem-solving abilities, teamwork and self-reliance through hands-on activities and real-life projects.",
+    "details": "At MGM Model School, students participate in various activities under Kaushal Bodh, providing them with opportunities to explore their interests, learn new skills and apply their knowledge in practical situations. The programme helps students understand the dignity of labour and prepares them for everyday challenges by connecting classroom learning with practical experiences.",
+    "bullets": [
+      "Promotes skill-based and experiential learning through hands-on activities",
+      "Develops practical knowledge, creativity, problem-solving abilities and teamwork",
+      "Instills self-reliance and deep appreciation for the dignity of labour",
+      "Connects classroom theoretical learning with real-life projects and practical experiences"
+    ],
+    "tags": [
+      "Learning by Doing",
+      "Skill-Based & Experiential Learning",
+      "CBSE Kaushal Bodh"
+    ]
   }
 ]
 JSON
@@ -589,7 +613,7 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
         <div class="col-lg-7 col-md-12">
           <div class="d-flex flex-wrap gap-2 justify-content-lg-end" id="highlightFilterGroup">
             <button type="button" class="btn btn-outline-danger btn-sm rounded-pill active highlights-filter-btn" data-category="all">
-              All Highlights <span class="badge bg-danger text-white ms-1">21</span>
+              All Highlights <span class="badge bg-danger text-white ms-1">22</span>
             </button>
             <button type="button" class="btn btn-outline-secondary btn-sm rounded-pill highlights-filter-btn" data-category="academic">
               Academic &amp; Innovation <span class="badge bg-secondary text-white ms-1">6</span>
@@ -601,7 +625,7 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
               Student Facilities <span class="badge bg-secondary text-white ms-1">6</span>
             </button>
             <button type="button" class="btn btn-outline-secondary btn-sm rounded-pill highlights-filter-btn" data-category="skills">
-              Skills &amp; Cadets <span class="badge bg-secondary text-white ms-1">5</span>
+              Skills &amp; Cadets <span class="badge bg-secondary text-white ms-1">6</span>
             </button>
           </div>
         </div>
@@ -611,7 +635,7 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
       <!-- Live Count Indicator -->
       <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top" style="border-color: #F1F5F9 !important;">
         <span class="small text-muted" id="highlightResultsCounter">
-          Showing <strong class="text-dark">21</strong> of <strong>21</strong> campus highlights
+          Showing <strong class="text-dark"><?= count($highlights) ?></strong> of <strong><?= count($highlights) ?></strong> campus highlights
         </span>
         <span class="small text-muted d-none d-md-inline">
           <i class="fa-solid fa-circle-info text-danger me-1"></i> Click any card to explore its dedicated separate page
@@ -750,7 +774,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     if (counter) {
-      counter.innerHTML = 'Showing <strong class="text-dark">' + visibleCount + '</strong> of <strong>21</strong> campus highlights';
+      counter.innerHTML = 'Showing <strong class="text-dark">' + visibleCount + '</strong> of <strong>' + cardCols.length + '</strong> campus highlights';
     }
 
     if (noFound) {

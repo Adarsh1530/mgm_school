@@ -230,7 +230,8 @@ INSERT INTO `navigation` VALUES
 ('41', 'NCC', '/ncc/', '23', '18', '_self'),
 ('42', 'Hindustan Scouts and Guides', '/hindustan-scouts-guides/', '23', '19', '_self'),
 ('43', 'School Band Troop', '/school-band-troop/', '23', '20', '_self'),
-('44', 'Happiness Room', '/happiness-room/', '23', '21', '_self');
+('44', 'Happiness Room', '/happiness-room/', '23', '21', '_self'),
+('45', 'Kaushal Bodh', '/kaushal-bodh/', '23', '22', '_self');
 
 DROP TABLE IF EXISTS `newsletter_subscribers`;
 CREATE TABLE `newsletter_subscribers` (
@@ -1971,7 +1972,8 @@ agreeing to the school\'s rules, regulations, and fee structure.
 ('36', NULL, 'ncc', 'NCC (National Cadet Corps)', 'NCC (National Cadet Corps)', 'NCC (National Cadet Corps)', '', 'MGM Model School launched its NCC unit - \'1 Kerala Battalion, Kerala Lakshadweep Group\' on 7th July 2022 with cadets from the Junior Wing (Class VIII).', '1', NOW(), NOW()),
 ('37', NULL, 'hindustan-scouts-guides', 'Hindustan Scouts & Guides', 'Hindustan Scouts & Guides', 'Hindustan Scouts & Guides', '', 'MGM Model School, Ayiroor, Varkala is proud to be associated with Hindustan Scouts & Guides, Kerala since 2019. Led by our trained Scout Master Mr. Pravin S R, our troop of 104 active cadets is learning the true spirit of discipline, leadership and service to the nation.', '1', NOW(), NOW()),
 ('38', NULL, 'school-band-troop', 'School Band Troop', 'School Band Troop', 'School Band Troop', '', 'One band, one rhythm marching with courage and confidence. Our band troop of 25 boys & girls perform with precision, harmony, discipline & unwavering dedication.', '1', NOW(), NOW()),
-('39', NULL, 'happiness-room', 'Happiness Room', 'Happiness Room', 'Happiness Room', '', 'Pause. Create. Express. Shine.', '1', NOW(), NOW());
+('39', NULL, 'happiness-room', 'Happiness Room', 'Happiness Room', 'Happiness Room', '', 'Pause. Create. Express. Shine.', '1', NOW(), NOW()),
+('40', NULL, 'kaushal-bodh', 'Kaushal Bodh', 'Kaushal Bodh', 'Kaushal Bodh', '', 'Learning by Doing – Kaushal Bodh at MGM Model School promotes skill-based and experiential learning under the CBSE curriculum.', '1', NOW(), NOW());
 
 DROP TABLE IF EXISTS `site_settings`;
 CREATE TABLE `site_settings` (

@@ -27,6 +27,7 @@ pages = [
     ('hindustan-scouts-guides', 'hindustan-scouts-guides.html', 'hindustan-scouts-guides'),
     ('school-band-troop', 'school-band-troop.html', 'school-band-troop'),
     ('happiness-room', 'happiness-room.html', 'happiness-room'),
+    ('kaushal-bodh', 'kaushal-bodh.html', 'kaushal-bodh'),
 
     # Other Pages
     ('about-us', 'about-us.html', 'about-us'),
