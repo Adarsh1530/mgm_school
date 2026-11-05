@@ -170,12 +170,20 @@ document.addEventListener('DOMContentLoaded', function () {
     if (document.querySelector('.tp-testimonial-active')) {
       new Swiper('.tp-testimonial-active', {
         slidesPerView: 1,
-        spaceBetween: 20,
+        spaceBetween: 25,
         loop: true,
+        speed: 600,
+        autoHeight: true,
         touchReleaseOnEdges: true,
         passiveListeners: true,
-        breakpoints: {
-          '768': { slidesPerView: 2 }
+        navigation: {
+          nextEl: '.tp-testimonial-next',
+          prevEl: '.tp-testimonial-prev',
+        },
+        autoplay: {
+          delay: 8000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
         }
       });
     }
