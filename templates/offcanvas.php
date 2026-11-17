@@ -66,7 +66,7 @@
     <p class="mb-2" style="font-size: 13px;"><i class="fa-solid fa-location-dot text-danger me-2"></i> <?= e(get_setting('school_address')) ?></p>
     <p class="mb-2" style="font-size: 13px;"><i class="fa-solid fa-phone text-danger me-2"></i> <?= e(get_setting('phone_primary')) ?></p>
     <p class="mb-3" style="font-size: 13px;"><i class="fa-solid fa-envelope text-danger me-2"></i> <?= e(get_setting('email_primary')) ?></p>
-    <a href="<?= url('/admission-procedure/') ?>" class="tp-btn-primary w-100 text-center py-2">
+    <a href="https://mgmmodel.amserp.in/index.php/user/login/loginguest" target="_blank" rel="noopener noreferrer" class="tp-btn-primary w-100 text-center py-2">
       Apply For Admission
     </a>
   </div>

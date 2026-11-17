@@ -64,6 +64,32 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
   </div>
 <?php endif; ?>
 
+<!-- Online Admission CTA Hero Card -->
+<section class="mgm-admission-portal-banner py-4" style="background: #ffffff;">
+  <div class="container custom-container-larg">
+    <div class="p-4 p-md-5 rounded-4 shadow text-center position-relative overflow-hidden" style="background: linear-gradient(135deg, #ab0c2f 0%, #760920 100%); color: #ffffff;">
+      <div style="position: absolute; right: -25px; bottom: -30px; opacity: 0.08; font-size: 180px; pointer-events: none; color: #fff;">
+        <i class="fa-solid fa-graduation-cap"></i>
+      </div>
+      <div class="position-relative" style="z-index: 2;">
+        <span class="badge px-3 py-2 text-uppercase mb-3 rounded-pill" style="background: rgba(255,255,255,0.2); color: #ffffff; font-size: 12px; letter-spacing: 1px; font-weight: 700;">
+          <i class="fa-solid fa-bell me-1"></i> Admissions Open for Academic Year 2026–2027
+        </span>
+        <h2 class="text-white fw-bold mb-3" style="font-size: clamp(24px, 3.5vw, 34px); letter-spacing: -0.5px;">Online Admission Application Portal</h2>
+        <p class="text-white-50 mb-4 mx-auto" style="max-width: 700px; font-size: 16px; line-height: 1.6;">
+          Parents and guardians can now register student admissions directly through our official MGM Model School AMS ERP Portal.
+        </p>
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+          <a href="https://mgmmodel.amserp.in/index.php/user/login/loginguest" target="_blank" rel="noopener noreferrer" class="d-inline-flex align-items-center gap-2 px-4 py-3 rounded-pill fw-bold" style="background: #ffffff; color: #ab0c2f; text-decoration: none; font-size: 16px; box-shadow: 0 6px 18px rgba(0,0,0,0.2); transition: transform 0.2s ease, box-shadow 0.2s ease;">
+            <span>Apply Online Now (AMS ERP Portal)</span>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Original Elementor Content & Accordions -->
 <?= render_content($page['content_html']) ?>
 

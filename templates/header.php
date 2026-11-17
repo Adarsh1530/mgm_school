@@ -169,7 +169,7 @@ $address = get_setting('school_address', 'MGM Model School, Ayiroor, Varkala 695
             <div class="tp-header-2-contact d-flex align-items-center justify-content-end gap-3">
               
               <div class="tp-header-inner-btn home-2 d-none d-xxl-block">
-                <a href="<?= url('/admission-procedure/') ?>" class="tp-btn-inner tp-el-btn2 tp-el-btn">
+                <a href="https://mgmmodel.amserp.in/index.php/user/login/loginguest" target="_blank" rel="noopener noreferrer" class="tp-btn-inner tp-el-btn2 tp-el-btn">
                   Apply Now
                 </a>
               </div>

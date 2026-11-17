@@ -44,7 +44,7 @@ try {
     if ($pCount === 0) {
         $currImg = get_setting('popup_image_url', '');
         $currTitle = get_setting('popup_title', 'Admissions Open 2026-27');
-        $currLink = get_setting('popup_link_url', '/admission-procedure/');
+        $currLink = get_setting('popup_link_url', 'https://mgmmodel.amserp.in/index.php/user/login/loginguest');
         $currEnabled = (get_setting('popup_enabled', '0') === '1') ? 1 : 0;
 
         if (!empty($currImg)) {
@@ -64,7 +64,7 @@ try {
             $ins2->execute([
                 ':t' => 'Admissions Open 2026-27 Infographic Flyer',
                 ':i' => $altImg,
-                ':l' => '/admission-procedure/',
+                ':l' => 'https://mgmmodel.amserp.in/index.php/user/login/loginguest',
                 ':a' => 0
             ]);
         }
@@ -439,7 +439,7 @@ require_once __DIR__ . '/header.php';
             <label class="form-label fw-bold text-dark small">Target Action Link (Optional)</label>
             <div class="input-group">
               <span class="input-group-text bg-light text-muted"><i class="fa-solid fa-link"></i></span>
-              <input type="text" name="link_url" class="form-control" value="<?= e($editPopup['link_url'] ?? '') ?>" placeholder="e.g. /admission-procedure/ or https://...">
+              <input type="text" name="link_url" class="form-control" value="<?= e($editPopup['link_url'] ?? '') ?>" placeholder="e.g. https://mgmmodel.amserp.in/index.php/user/login/loginguest">
             </div>
             <div class="form-text small text-muted">When visitors click the popup, they are redirected here.</div>
           </div>

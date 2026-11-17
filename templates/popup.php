@@ -16,7 +16,9 @@ if (!preg_match('#^https?://#i', $popupImage)) {
     $popupImage = asset_url(str_replace('assets/', '', $popupImage));
 }
 $popupTitle = $popupData['title'] ?? 'School Announcement';
-$popupLink = $popupData['link_url'] ?? '';
+$popupLink = !empty($popupData['link_url']) && $popupData['link_url'] !== '/admission-procedure/'
+    ? $popupData['link_url']
+    : 'https://mgmmodel.amserp.in/index.php/user/login/loginguest';
 ?>
 
 <!-- MGM Image Popup Notification -->
@@ -29,13 +31,9 @@ $popupLink = $popupData['link_url'] ?? '';
 
     <!-- Modal Content Body -->
     <div class="mgm-popup-body">
-      <?php if (!empty($popupLink)): ?>
-        <a href="<?= e($popupLink) ?>" class="mgm-popup-link" title="<?= e($popupTitle) ?>" style="display: block; cursor: pointer;">
-          <img src="<?= e($popupImage) ?>" alt="<?= e($popupTitle) ?>" class="mgm-popup-img" loading="eager">
-        </a>
-      <?php else: ?>
+      <a href="<?= e($popupLink) ?>" target="_blank" rel="noopener noreferrer" class="mgm-popup-link" title="<?= e($popupTitle) ?>" style="display: block; cursor: pointer;">
         <img src="<?= e($popupImage) ?>" alt="<?= e($popupTitle) ?>" class="mgm-popup-img" loading="eager">
-      <?php endif; ?>
+      </a>
     </div>
   </div>
 </div>
