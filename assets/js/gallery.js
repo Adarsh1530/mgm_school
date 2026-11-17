@@ -29,6 +29,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     allItems.forEach(item => {
       const category = (item.getAttribute('data-category') || 'all').toLowerCase();
+      const dataTags = (item.getAttribute('data-tags') || '').toLowerCase();
+      const tagsList = dataTags.split(/\s+/).filter(Boolean);
       const title = (item.getAttribute('data-title') || '').toLowerCase();
       const subtitle = (item.getAttribute('data-subtitle') || '').toLowerCase();
       const caption = (item.getAttribute('data-caption') || '').toLowerCase();
@@ -39,10 +41,10 @@ document.addEventListener('DOMContentLoaded', function () {
       const img = item.querySelector('img');
       const altText = (img ? img.getAttribute('alt') || '' : '').toLowerCase();
 
-      const fullSearchableText = `${title} ${caption} ${description} ${subtitle} ${catLabel} ${category} ${date} ${uploadDate} ${altText}`;
+      const fullSearchableText = `${title} ${caption} ${description} ${subtitle} ${catLabel} ${category} ${dataTags} ${date} ${uploadDate} ${altText}`;
 
-      // Check category match
-      const matchesCategory = (activeFilter === 'all' || category === activeFilter);
+      // Check category/tags match
+      const matchesCategory = (activeFilter === 'all' || category === activeFilter || tagsList.includes(activeFilter));
 
       // Check keyword search match (all tokens must match)
       const matchesSearch = tokens.length === 0 || tokens.every(token => fullSearchableText.includes(token));

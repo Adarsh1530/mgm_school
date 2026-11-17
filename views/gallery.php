@@ -18,13 +18,20 @@ $db = getDB();
 $stmt = $db->query("SELECT * FROM gallery WHERE is_active = 1 ORDER BY sort_order ASC, id ASC");
 $galleryItems = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// Extract unique categories preserving order
-$categories = [];
-foreach ($galleryItems as $item) {
-    if (!empty($item['category']) && !in_array($item['category'], $categories)) {
-        $categories[] = $item['category'];
-    }
-}
+// Official 10 Public Gallery Filter Tags
+$officialFilters = [
+    'all'            => 'ALL',
+    'events'         => 'EVENTS',
+    'academics'      => 'ACADEMICS',
+    'sports'         => 'SPORTS',
+    'culture'        => 'CULTURE',
+    'celebrations'   => 'CELEBRATIONS',
+    'campus'         => 'CAMPUS',
+    'infrastructure' => 'INFRASTRUCTURE',
+    'wellness'       => 'WELLNESS',
+    'achievements'   => 'ACHIEVEMENTS',
+    'activities'     => 'ACTIVITIES'
+];
 
 require_once __DIR__ . '/../templates/header.php';
 require_once __DIR__ . '/../templates/breadcrumb.php';
@@ -64,12 +71,9 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
 
     <!-- Category Filter Pills (Exact BVB Manvila Alignment & Styling) -->
     <div class="gallery-filters" id="galleryFilterBtns">
-      <button type="button" class="filter-btn active" data-filter="all">ALL</button>
-      <?php foreach ($categories as $cat): 
-        $catSlug = strtolower(preg_replace('/[^a-zA-Z0-9]/', '-', $cat));
-      ?>
-        <button type="button" class="filter-btn" data-filter="<?= e($catSlug) ?>">
-          <?= strtoupper(e($cat)) ?>
+      <?php foreach ($officialFilters as $filterSlug => $filterLabel): ?>
+        <button type="button" class="filter-btn <?= $filterSlug === 'all' ? 'active' : '' ?>" data-filter="<?= e($filterSlug) ?>">
+          <?= e($filterLabel) ?>
         </button>
       <?php endforeach; ?>
     </div>
@@ -89,12 +93,27 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
     <!-- Gallery Grid (Exact BVB Manvila 3-Column Layout, 16:11 Aspect Ratio, Top-Right Zoom Button) -->
     <div class="gallery-grid" id="publicGalleryGrid">
       <?php foreach ($galleryItems as $idx => $item): 
-        $catSlug = strtolower(preg_replace('/[^a-zA-Z0-9]/', '-', $item['category'] ?? 'general'));
-        $catLabel = $item['category'] ?? 'Campus';
+        $catLabel = !empty($item['category']) ? $item['category'] : 'Events';
+        $primaryCatSlug = strtolower(preg_replace('/[^a-zA-Z0-9]/', '-', $catLabel));
         $itemImg = asset_url($item['image_path']);
         $title = $item['title'] ?? '';
         $caption = trim($item['caption'] ?? '');
         $description = trim($item['subtitle'] ?? '');
+
+        // Extract all filter tags
+        $itemTagList = [$primaryCatSlug];
+        if (!empty($item['filter_tags'])) {
+            $decodedTags = json_decode($item['filter_tags'], true);
+            if (is_array($decodedTags)) {
+                foreach ($decodedTags as $t) {
+                    $slug = strtolower(preg_replace('/[^a-zA-Z0-9]/', '-', $t));
+                    if (!in_array($slug, $itemTagList)) {
+                        $itemTagList[] = $slug;
+                    }
+                }
+            }
+        }
+        $dataTagsStr = implode(' ', $itemTagList);
 
         // Exact upload date formatting (e.g. October 21, 2026)
         $hasCreatedAt = !empty($item['created_at']) && $item['created_at'] !== '0000-00-00 00:00:00';
@@ -121,7 +140,8 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
         <div class="gallery-item" 
              data-id="<?= $item['id'] ?>"
              data-index="<?= $idx ?>"
-             data-category="<?= e($catSlug) ?>"
+             data-category="<?= e($primaryCatSlug) ?>"
+             data-tags="<?= e($dataTagsStr) ?>"
              data-category-label="<?= e($catLabel) ?>"
              data-title="<?= e($title) ?>"
              data-caption="<?= e($caption) ?>"

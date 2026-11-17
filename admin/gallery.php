@@ -1085,7 +1085,18 @@ require_once __DIR__ . '/header.php';
             <label class="bvb-field-label">PUBLIC GALLERY FILTER TAGS (OPTIONAL):</label>
             <div class="bvb-checkbox-group">
               <?php 
-                $standardTags = ['EVENTS', 'ACADEMICS', 'SPORTS', 'CULTURE', 'STUDENT LIFE', 'ACHIEVEMENTS', 'COMMUNITY'];
+                $standardTags = [
+                    'EVENTS',
+                    'ACADEMICS',
+                    'SPORTS',
+                    'CULTURE',
+                    'CELEBRATIONS',
+                    'CAMPUS',
+                    'INFRASTRUCTURE',
+                    'WELLNESS',
+                    'ACHIEVEMENTS',
+                    'ACTIVITIES'
+                ];
                 foreach ($standardTags as $tg):
               ?>
                 <label class="bvb-checkbox-label">
