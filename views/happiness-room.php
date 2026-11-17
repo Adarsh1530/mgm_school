@@ -50,12 +50,24 @@ require_once __DIR__ . '/../templates/breadcrumb.php';
       </div>
     </div>
 
-        <!-- Showcase Image (Exact Natural Ratio, No Cropping Frame) -->
-    <div class="mb-5 text-center">
-      <img src="<?= rtrim(BASE_URL, '/') ?>/assets/images/happiness-room-clean.jpeg" 
-           alt="Happiness Room" 
-           class="img-fluid rounded-4 shadow-sm" 
-           style="max-width: 100%; height: auto; max-height: 640px; object-fit: contain; display: inline-block;">
+        <!-- Showcase Images (Aligned in One Line) -->
+    <div class="row g-4 mb-5 align-items-stretch">
+      <div class="col-md-6">
+        <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white">
+          <img src="<?= rtrim(BASE_URL, '/') ?>/assets/images/happiness-room-clean.jpeg" 
+               alt="Happiness Room - Relaxation & Reading Zone" 
+               class="img-fluid w-100 h-100" 
+               style="aspect-ratio: 4/3; object-fit: cover; display: block;">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white">
+          <img src="<?= rtrim(BASE_URL, '/') ?>/assets/images/happiness-room-2.jpeg" 
+               alt="Happiness Room - Joyful Creative Activities" 
+               class="img-fluid w-100 h-100" 
+               style="aspect-ratio: 4/3; object-fit: cover; display: block;">
+        </div>
+      </div>
     </div>
 
     <!-- In-Depth Content & Factsheet -->
